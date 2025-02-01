@@ -11,7 +11,7 @@
     };
 
     disko = {
-      urL = "github:nix-community/disko";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -38,7 +38,7 @@
         modules = [
           disko.nixosModules.disko
           ./config.nix
-          ./hardeware-config.nix
+          ./hardware-config.nix
           ./disko-config.nix
         ];
       };

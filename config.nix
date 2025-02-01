@@ -1,10 +1,7 @@
 { config, lib, pkgs, meta, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -80,7 +77,7 @@
   # services.xserver.libinput.enable = true;
 
   # Bluetooth
-  services.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.profidev = {
