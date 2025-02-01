@@ -2,15 +2,13 @@
 {
   disko.devices = {
     disk = {
-      sda = {
+      main = {
         type = "disk";
         device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
             ESP = {
-              label = "boot";
-              name = "ESP";
               size = "512M";
               type = "EF00";
               content = {
@@ -19,32 +17,22 @@
                 mountpoint = "/boot";
                 mountOptions = [
                   "defaults"
+                  "umask=0077"
                 ];
               };
             };
             luks = {
               size = "100%";
-              label = "luks";
               content = {
                 type = "luks";
-                name = "cryptroot";
-                extraOpenArgs = [
-                  "--allow-discards"
-                  "--perf-no_read_workqueue"
-                  "--perf-no_write_workqueue"
-                ];
-
+                name = "crypted";
                 settings = {
-                  crypttabExtraOpts = [
-                    "fido2-device=auto"
-                    "token-timeout=10"
-                  ];
+                  allowDiscards = true;
                 };
+
                 content = {
                   type = "btrfs";
                   extraArgs = [
-                    "-L"
-                    "nixos"
                     "-f"
                   ];
                   subvolumes = {
