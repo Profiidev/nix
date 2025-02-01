@@ -4,8 +4,14 @@
   imports = [];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    useOSProber = true;
+    theme = pkgs.nixos-grub2-theme;
+    efiSupport = true;
+  };
 
   networking.hostName = meta.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -84,6 +90,8 @@
     isNormalUser = true;
     description = "Profidev";
     extraGroups = [ "networkmanager" "wheel" ];
+    hashedPassword = "$y$j9T$halYxhBlpG0WwEVppW5Fg/$RToHC2VXnnVDN5fFjRklQo4A9vzStUhSAvQO5KRC/3B";
+
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -101,6 +109,9 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    git
+    nano
+    os-prober
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

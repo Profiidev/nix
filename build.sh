@@ -1,3 +1,2 @@
 #!/bin/bash
-
-sudo nix shell nixpkgs#nixos-generators --command nixos-generate --flake .#home -f iso -o out
+sudo nix run github:nix-community/nixos-anywhere -- --flake .#home root@$1
