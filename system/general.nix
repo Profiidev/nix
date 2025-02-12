@@ -1,9 +1,9 @@
-{ meta, inputs, lib, ... }:
+{ config, inputs, lib, ... }:
 
 {
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = ["root" meta.username];
+    trusted-users = ["root" config.hostSpec.username];
   };
 
   nixpkgs = {

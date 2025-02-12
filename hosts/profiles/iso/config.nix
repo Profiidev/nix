@@ -88,7 +88,7 @@
   };
 
   networking = {
-    hostname = "iso";
+    hostName = "iso";
   };
 
   systemd = {
