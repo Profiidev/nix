@@ -28,33 +28,19 @@
     };
   };
 
-  outputs = { self, nixpkgs, disko, ... }@inputs: let
-    systems = [
-      { 
-        name = "home"; 
-        hostname = "nix"; 
-        username = "profidev"; 
-      }
-      {
-        name = "iso";
-        hostname = "nix"; 
-        username = "profidev"; 
-      }
-    ];
+  outputs = { self, nixpkgs, ... }@inputs: let
+    inherit (self) outputs;
+    inherit (nixpkgs) lib;
   in {
-    nixosConfigurations = builtins.listToAttrs(map (meta: {
-      name = meta.name;
+    nixosConfigurations = builtins.listToAttrs(map (host: {
+      name = host;
       value = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit meta;
-          inherit inputs;
+          inherit inputs outputs host;
           lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
         };
-        system = "x86_64-linux";
-        modules = [
-          (./. + "/hosts/profiles" + ("/" + meta.name) + "/config.nix")
-        ];
+        modules = [ ./hosts/profiles/${host}/config.nix ];
       };
-    }) systems);
+    }) (lib.attrNames (builtins.readDir ./hosts/profiles)));
   };
 }

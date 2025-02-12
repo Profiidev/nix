@@ -22,7 +22,7 @@
   ];
 
   hostSpec = {
-    hostName = "iso";
+    hostname = "iso";
     username = "iso";
     isProduction = lib.mkForce false;
     isMinimal = lib.mkForce true;
@@ -88,7 +88,7 @@
   };
 
   networking = {
-    hostName = "iso";
+    hostname = "iso";
   };
 
   systemd = {

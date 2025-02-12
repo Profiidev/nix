@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, ... }:
+{ inputs, pkgs, config, lib, host, ... }:
 
 let 
   hostSpec = config.hostSpec;
@@ -62,13 +62,14 @@ lib.optionalAttrs (inputs ? "home-manager") {
         lib.optional (!hostSpec.isMinimal) [
           (
             { config, ... }:
-            import (lib.custom.relativeToRoot "hosts/profiles/${hostSpec.username}/home.nix") {
+            import (lib.custom.relativeToRoot "hosts/profiles/${host}/home.nix") {
               inherit
                 pkgs
                 inputs
                 config
                 lib
-                  hostSpec
+                hostSpec
+                host
                 ;
             }
           )

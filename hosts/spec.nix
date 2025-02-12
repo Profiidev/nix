@@ -11,31 +11,14 @@
       type = lib.types.str;
       description = "The username of the host";
     };
-    hostName = lib.mkOption {
+    hostname = lib.mkOption {
       type = lib.types.str;
       description = "The hostname of the host";
-    };
-    email = lib.mkOption {
-      type = lib.types.attrsOf lib.types.str;
-      description = "The email of the user";
-    };
-    networking = lib.mkOption {
-      default = { };
-      type = lib.types.attrsOf lib.types.anything;
-      description = "An attribute set of networking information";
-    };
-    userFullName = lib.mkOption {
-      type = lib.types.str;
-      description = "The full name of the user";
     };
     home = lib.mkOption {
       type = lib.types.str;
       description = "The home directory of the user";
-      default =
-        let
-          user = config.hostSpec.username;
-        in
-        if pkgs.stdenv.isLinux then "/home/${user}" else "/Users/${user}";
+      default = "/home/${config.hostSpec.username}";
     };
     # FIXME(hostSpec): This should probably just switch to an impermenance option?
     persistFolder = lib.mkOption {
@@ -52,11 +35,6 @@
       type = lib.types.bool;
       default = true;
       description = "Used to indicate a production host";
-    };
-    isServer = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Used to indicate a server host";
     };
     useYubikey = lib.mkOption {
       type = lib.types.bool;

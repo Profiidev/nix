@@ -25,7 +25,7 @@
         (
           let
             diskSpecPath =
-              if useLuks then ../hosts/disks/btrfs-luks-disk.nix else ../hosts/disks/btrfs-disk.nix;
+              if useLuks then ../hosts/disks/btrfs-luks.nix else ../hosts/disks/btrfs.nix;
           in
           nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
@@ -43,7 +43,7 @@
               ./minimal-configuration.nix
               ../hosts/profiles/${name}/hardware-config.nix
 
-              { networking.hostName = name; }
+              { networking.hostname = name; }
             ];
           }
         );
