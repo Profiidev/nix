@@ -23,7 +23,7 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, pkgs, nixpkgs, disko, ... }@inputs: let
+  outputs = { self, nixpkgs, disko, ... }@inputs: let
     home-manager = inputs.home-manager;
 
     systems = [
@@ -59,8 +59,8 @@
 
         extraSpecialArgs = {
           inherit meta;
-        }
-      }
+        };
+      };
     }) systems);
   };
 }

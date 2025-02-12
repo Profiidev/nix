@@ -1,4 +1,4 @@
-{ meta, ... }:
+{ meta, lib, ... }:
 
 {
   networking.hostName = meta.hostname;
@@ -8,5 +8,5 @@
   networking.useDHCP = lib.mkDefault true;
   networking.firewall.enable = true;
 
-  users.user.${meta.username}.extraGroups = [ "networkmanager" ];
+  users.users.${meta.username}.extraGroups = [ "networkmanager" ];
 }

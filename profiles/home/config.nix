@@ -26,5 +26,5 @@
     ../../system/services/ssh.nix
     ../../system/services/time.nix
     ../../system/services/virtualization.nix
-  ]
+  ];
 }

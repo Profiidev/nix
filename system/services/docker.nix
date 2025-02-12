@@ -13,5 +13,5 @@
     lazydocker
   ];
 
-  users.user.${meta.username}.extraGroups = [ "docker" ];
+  users.users.${meta.username}.extraGroups = [ "docker" ];
 }

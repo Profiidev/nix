@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, meta, ... }:
 
 {
   environment.systemPackages = with pkgs; [ 
@@ -33,5 +33,5 @@
   };
   virtualisation.waydroid.enable = true;
 
-  users.user.${meta.username}.extraGroups = [ "vboxusers" ];
+  users.users.${meta.username}.extraGroups = [ "vboxusers" ];
 }

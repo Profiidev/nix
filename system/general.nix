@@ -1,4 +1,4 @@
-{ meta, inputs, ... }:
+{ meta, inputs, lib, ... }:
 
 {
   nix.settings = {
@@ -12,12 +12,10 @@
       allowUnfreePredicate = _: true;
     };
     hostPlatform = lib.mkDefault "x86_64-linux";
-      overlays = [ inputs.rust-overlay.overlays.default ];
+    overlays = [ inputs.rust-overlay.overlays.default ];
   };
 
   systemd.tmpfiles.rules = [
     "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
   ];
-
-  programs.home-manager.enable = true;
 }
