@@ -19,29 +19,48 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, nixpkgs, disko, ... }@inputs: let
+  outputs = { self, pkgs, nixpkgs, disko, ... }@inputs: let
+    home-manager = inputs.home-manager;
+
     systems = [
-      { name = "home"; hostname = "nix"; }
+      { 
+        name = "home"; 
+        hostname = "nix"; 
+        username = "profidev"; 
+      }
     ];
   in {
-    nixosConfigurations = builtins.listToAttrs(map (device: {
-      name = device.name;
+    nixosConfigurations = builtins.listToAttrs(map (meta: {
+      name = meta.name;
       value = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          meta = {
-            hostname = device.hostname;
-          };
+          inherit meta;
+          inherit inputs;
         };
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          ./config.nix
-          ./hardware-config.nix
           ./disko-config.nix
+          (./. + "/profiles" + ("/" + meta.name) + "/config.nix")
         ];
       };
+    }) systems);
+
+    homeConfigurations = builtins.listToAttrs(map (meta: {
+      name = meta.name;
+      value = home-manager.lib.homeManagerConfiguration {
+        modules = [
+          (./. + "/profiles" + ("/" + meta.name) + "/home.nix")
+        ];
+
+        extraSpecialArgs = {
+          inherit meta;
+        }
+      }
     }) systems);
   };
 }

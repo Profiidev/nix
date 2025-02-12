@@ -29,6 +29,7 @@
                 settings = {
                   allowDiscards = true;
                 };
+                passwordFile = "/tmp/disk-encryption.key";
 
                 content = {
                   type = "btrfs";
@@ -39,41 +40,56 @@
                     "/root" = {
                       mountpoint = "/";
                       mountOptions = [
+                        "defaults"
                         "subvol=root"
                         "compress=zstd"
                         "noatime"
+                        "space_cache=v2"
+                        "discard=async"
                       ];
                     };
                     "/home" = {
                       mountpoint = "/home";
                       mountOptions = [
+                        "defaults"
                         "subvol=home"
                         "compress=zstd"
                         "noatime"
+                        "space_cache=v2"
+                        "discard=async"
                       ];
                     };
                     "/nix" = {
                       mountpoint = "/nix";
                       mountOptions = [
+                        "defaults"
                         "subvol=nix"
                         "compress=zstd"
                         "noatime"
+                        "space_cache=v2"
+                        "discard=async"
                       ];
                     };
                     "/persist" = {
                       mountpoint = "/persist";
                       mountOptions = [
+                        "defaults"
                         "subvol=persist"
                         "compress=zstd"
                         "noatime"
+                        "space_cache=v2"
+                        "discard=async"
                       ];
                     };
                     "/log" = {
                       mountpoint = "/var/log";
                       mountOptions = [
+                        "defaults"
                         "subvol=log"
                         "compress=zstd"
                         "noatime"
+                        "space_cache=v2"
+                        "discard=async"
                       ];
                     };
                     "/swap" = {
