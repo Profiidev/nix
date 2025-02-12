@@ -11,11 +11,12 @@
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
-    hostPlatform = lib.mkDefault "x86_64-linux";
     overlays = [ inputs.rust-overlay.overlays.default ];
   };
 
   systemd.tmpfiles.rules = [
     "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
   ];
+
+  system.stateVersion = "24.11";
 }

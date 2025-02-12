@@ -1,4 +1,4 @@
-{ pkgs, meta, ... }:
+{ pkgs, ... }:
 
 {
   virtualisation.docker = {
@@ -12,6 +12,4 @@
     docker-compose
     lazydocker
   ];
-
-  users.users.${meta.username}.extraGroups = [ "docker" ];
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, meta, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [ 
@@ -32,6 +32,4 @@
     qemu.runAsRoot = false;
   };
   virtualisation.waydroid.enable = true;
-
-  users.users.${meta.username}.extraGroups = [ "vboxusers" ];
 }

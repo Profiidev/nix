@@ -21,6 +21,11 @@
     };
 
     rust-overlay.url = "github:oxalica/rust-overlay";
+
+    nix-secrets = {
+      url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=master&shallow=1";
+      inputs = { };
+    };
   };
 
   outputs = { self, nixpkgs, disko, ... }@inputs: let
@@ -29,6 +34,11 @@
     systems = [
       { 
         name = "home"; 
+        hostname = "nix"; 
+        username = "profidev"; 
+      }
+      {
+        name = "iso";
         hostname = "nix"; 
         username = "profidev"; 
       }
@@ -43,23 +53,8 @@
         };
         system = "x86_64-linux";
         modules = [
-          disko.nixosModules.disko
-          ./disko-config.nix
-          (./. + "/profiles" + ("/" + meta.name) + "/config.nix")
+          (./. + "/hosts/profiles" + ("/" + meta.name) + "/config.nix")
         ];
-      };
-    }) systems);
-
-    homeConfigurations = builtins.listToAttrs(map (meta: {
-      name = meta.name;
-      value = home-manager.lib.homeManagerConfiguration {
-        modules = [
-          (./. + "/profiles" + ("/" + meta.name) + "/home.nix")
-        ];
-
-        extraSpecialArgs = {
-          inherit meta;
-        };
       };
     }) systems);
   };
