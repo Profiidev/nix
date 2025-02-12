@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib ... }:
+{ inputs, pkgs, config, lib, ... }:
 
 let 
   hostSpec = config.hostSpec;
@@ -9,7 +9,7 @@ let
   ) config.sops.secrets."passwords/${hostSpec.username}".path;
 in
 {
-  users.users.${meta.username} = {
+  users.users.${hostSpec.username} = {
     isNormalUser = true;
     extraGroups = lib.flatten [
       "wheel"
@@ -55,21 +55,25 @@ lib.optionalAttrs (inputs ? "home-manager") {
       hostSpec = config.hostSpec;
     };
 
-    users.${hostSpec.username}.imports = lib.flatten (
-      lib.optional (!hostSpec.isMinimal) [
-        (
-          { config, ... }:
-          import (lib.custom.relativeToRoot "hosts/profiles/${hostSpec.username}/home.nix") {
-            inherit
-              pkgs
-              inputs
-              config
-              lib
-              hostSpec
-              ;
-          }
-        )
-      ]
-    );
+    users.${hostSpec.username} = {
+      home.stateVersion = "24.11";
+
+      imports = lib.flatten (
+        lib.optional (!hostSpec.isMinimal) [
+          (
+            { config, ... }:
+            import (lib.custom.relativeToRoot "hosts/profiles/${hostSpec.username}/home.nix") {
+              inherit
+                pkgs
+                inputs
+                config
+                lib
+                  hostSpec
+                ;
+            }
+          )
+        ]
+      );
+    };
   };
 }

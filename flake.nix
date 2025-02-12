@@ -29,8 +29,6 @@
   };
 
   outputs = { self, nixpkgs, disko, ... }@inputs: let
-    home-manager = inputs.home-manager;
-
     systems = [
       { 
         name = "home"; 
@@ -50,6 +48,7 @@
         specialArgs = {
           inherit meta;
           inherit inputs;
+          lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
         };
         system = "x86_64-linux";
         modules = [

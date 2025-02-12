@@ -23,13 +23,12 @@
 
   hostSpec = {
     hostName = "iso";
-    username = "ta";
+    username = "iso";
     isProduction = lib.mkForce false;
+    isMinimal = lib.mkForce true;
 
     # Needed because we don't use hosts/common/core for iso
     inherit (inputs.nix-secrets)
-      domain
-      networking
       ;
   };
 
@@ -76,7 +75,6 @@
   services = {
     qemuGuest.enable = true;
     openssh = {
-      ports = [ config.hostSpec.networking.ports.tcp.ssh ];
       settings.PermitRootLogin = lib.mkForce "yes";
     };
   };
