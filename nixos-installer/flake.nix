@@ -43,7 +43,7 @@
               ./minimal-configuration.nix
               ../hosts/profiles/${name}/hardware-config.nix
 
-              { networking.hostname = name; }
+              { networking.hostName = name; }
             ];
           }
         );
@@ -52,7 +52,7 @@
       nixosConfigurations = {
         # host = newConfig "name" disk" "swapSize" "useLuks"
         # Swap size is in GiB
-        home = newConfig "nix" "/dev/sda" 4 true;
+        home = newConfig "home" "/dev/sda" 4 true;
       };
     };
 }

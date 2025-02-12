@@ -6,11 +6,13 @@
   ...
 }:
 {
-  imports = [
-    "../hosts/spec.nix"
-    "../system/apps/ssh.nix"
-    "../system/user.nix"
-    "./user.nix"
+  imports = lib.flatten [
+    (map lib.custom.relativeToRoot [
+      "hosts/spec.nix"
+      "system/apps/ssh.nix"
+      "system/user.nix"
+      "nixos-installer/user.nix"
+    ])
   ];
 
   hostSpec = {
