@@ -49,7 +49,7 @@
                     ];
                   };
                   "@persist" = {
-                    mountpoint = "${config.hostSpec.persistFolder}";
+                    mountpoint = "/persist";
                     mountOptions = [
                       "defaults"
                       "subvol=root"
