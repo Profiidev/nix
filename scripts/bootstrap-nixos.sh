@@ -179,7 +179,7 @@ function nixos_anywhere() {
 	fi
 
 	# --extra-files here picks up the ssh host key we generated earlier and puts it onto the target machine
-	SHELL=/bin/sh nix run github:nix-community/nixos-anywhere -- \
+	SHELL=/bin/sh sudo nix run github:nix-community/nixos-anywhere -- \
 		--ssh-port "$ssh_port" \
 		--post-kexec-ssh-port "$ssh_port" \
 		--extra-files "$temp" \
@@ -270,7 +270,7 @@ if [[ $updated_age_keys == 1 ]]; then
 	# Since we may update the sops.yaml file twice above, only rekey once at the end
 	just rekey
 	green "Updating flake input to pick up new .sops.yaml"
-	nix flake update nix-secrets
+	sudo nix flake update nix-secrets
 fi
 
 if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $target_hostname?"; then

@@ -18,7 +18,7 @@
   hostSpec = {
     isMinimal = lib.mkForce true;
     hostname = "installer";
-    username = "installer";
+    username = "profidev";
   };
 
   fileSystems."/boot".options = [ "umask=0077" ]; # Removes permissions and security warnings.
