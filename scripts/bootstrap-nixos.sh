@@ -15,7 +15,7 @@ persist_dir=""
 luks_passphrase="1234"
 luks_secondary_drive_labels=""
 git_root=$(git rev-parse --show-toplevel)
-nix_secrets_dir=${NIX_SECRETS_DIR:-"${git_root}"/../nix-secrets/}
+nix_secrets_dir=${NIX_SECRETS_DIR:-"${git_root}"/../nix-secrets}
 
 # Create a temp directory for generated host keys
 temp=$(mktemp -d)
@@ -276,6 +276,9 @@ fi
 if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $target_hostname?"; then
 	green "Adding ssh host fingerprint at $target_destination to ~/.ssh/known_hosts"
 	ssh-keyscan -p "$ssh_port" "$target_destination" 2>/dev/null | grep -v '^#' >>~/.ssh/known_hosts || true
+	green "Copying secrets ssh key"
+	$scp_cmd ~/.ssh/id_secrets $target_user@"$target_destination":~/.ssh/id_secrets
+	$ssh_cmd ssh-add ~/.ssh/id_secrets
 	green "Copying full nix-config to $target_hostname"
 	sync "$target_user" "${git_root}"/../nix-config
 	green "Copying full nix-secrets to $target_hostname"

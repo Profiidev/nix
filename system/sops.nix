@@ -1,11 +1,11 @@
-{ lib, pkgs, config, inputs, ... }:
+{ lib, config, inputs, ... }:
 
 let
   sopsFolder = builtins.toString inputs.nix-secrets + "/sops";
 in
 {
   sops = {
-    defaultSopsFile = "${sopsFolder}/secrets.yaml";
+    defaultSopsFile = "${sopsFolder}/${config.hostSpec.hostname}.yaml";
     validateSopsFiles = false;
 
     age = {
@@ -28,7 +28,7 @@ in
       };
       # extract password/username to /run/secrets-for-users/ so it can be used to create the user
       "passwords/${config.hostSpec.username}" = {
-        sopsFile = "${sopsFolder}/secrets.yaml";
+        sopsFile = "${sopsFolder}/shared.yaml";
         neededForUsers = true;
       };
     }

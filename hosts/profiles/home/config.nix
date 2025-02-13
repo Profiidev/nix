@@ -48,6 +48,6 @@
 
   hostSpec = {
     username = "profidev";
-    hostname = "nix";
+    hostname = "home";
   };
 }
