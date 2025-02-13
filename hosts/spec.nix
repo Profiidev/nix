@@ -35,5 +35,10 @@
       default = false;
       description = "Used to indicate a host that uses HDR";
     };
+    ssh_keys = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [];
+      description = "User ssh keys";
+    };
   };
 }

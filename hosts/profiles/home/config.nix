@@ -49,5 +49,8 @@
   hostSpec = {
     username = "profidev";
     hostname = "home";
+    ssh_keys = [
+      "ed25519_sk"
+    ];
   };
 }
