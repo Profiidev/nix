@@ -2,10 +2,7 @@
 
 {
   options.hostSpec = {
-    username = lib.mkOption {
-      type = lib.types.str;
-      description = "The username of the host";
-    };
+    # Host
     hostname = lib.mkOption {
       type = lib.types.str;
       description = "The hostname of the host";
@@ -19,6 +16,21 @@
       type = lib.types.bool;
       default = false;
       description = "Used to indicate a minimal host";
+    };
+    # User
+    username = lib.mkOption {
+      type = lib.types.str;
+      description = "The username of the host";
+    };
+    git_user = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "The git username";
+    };
+    git_email = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "The git email";
     };
     ssh_keys = lib.mkOption {
       type = lib.types.listOf lib.types.str;

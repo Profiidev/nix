@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostSpec, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,8 +7,8 @@
 
   programs.git = {
     enable = true;
-    userName = "ProfiiDev";
-    userEmail = "92174452+Profiidev@users.noreply.github.com";
+    userName = hostSpec.git_user;
+    userEmail = hostSpec.git_email;
     aliases = {
       a = "add";
       aa = "add -A";

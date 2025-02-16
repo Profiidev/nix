@@ -2,7 +2,7 @@
 
 let
   hostSpec = config.hostSpec;
-  pubKeys = lib.filesystem.listFilesRecursive ../keys;
+  pubKeys = lib.filesystem.listFilesRecursive ../../keys;
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 
   sopsHashedPasswordFile = lib.optionalString (

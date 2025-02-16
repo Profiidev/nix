@@ -25,8 +25,10 @@
   ];
 
   hostSpec = {
-    username = "profidev";
     hostname = "home";
+    username = "profidev";
+    git_user = "ProfiiDev";
+    git_email = "92174452+Profiidev@users.noreply.github.com";
     ssh_keys = [
       "ed25519_sk"
     ];
