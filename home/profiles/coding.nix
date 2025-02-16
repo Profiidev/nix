@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ../lang.nix
+    ../optional/lang.nix
   ];
 }

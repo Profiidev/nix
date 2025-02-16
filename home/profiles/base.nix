@@ -5,6 +5,7 @@
     ../base/browser.nix
     ../base/git.nix
     ../base/shell.nix
+    ../base/sops.nix
     ../base/terminal.nix
     ../base/zoxide.nix
   ];

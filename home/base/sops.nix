@@ -1,4 +1,4 @@
-{ inputs, hostSpec, lib, config, ... }:
+{ inputs, hostSpec, config, ... }:
 
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
