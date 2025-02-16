@@ -3,12 +3,8 @@
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
   homeDirectory = config.home.homeDirectory;
-  generalKeys = [
-    "config"
-    "secrets"
-  ];
-in 
-{
+  generalKeys = [ "config" "secrets" ];
+in {
   imports = [ inputs.sops-nix.homeManagerModules.sops ];
 
   programs.ssh = {
@@ -29,36 +25,28 @@ in
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}";
       };
-    }) hostSpec.ssh_keys)
-    //
-    builtins.listToAttrs (map (name: {
+    }) hostSpec.ssh_keys) // builtins.listToAttrs (map (name: {
       name = "ssh_keys/${hostSpec.username}/${name}_pub";
       value = {
         mode = "0600";
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}.pub";
       };
-    }) hostSpec.ssh_keys)
-    //
-    builtins.listToAttrs (map (name: {
+    }) hostSpec.ssh_keys) // builtins.listToAttrs (map (name: {
       name = "ssh_keys/general/${name}";
       value = {
         mode = "0600";
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}";
       };
-    }) generalKeys)
-    //
-    builtins.listToAttrs (map (name: {
+    }) generalKeys) // builtins.listToAttrs (map (name: {
       name = "ssh_keys/general/${name}_pub";
       value = {
         mode = "0600";
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}.pub";
       };
-    }) generalKeys)
-    //
-    {
+    }) generalKeys) // {
       "gpg_keys/${hostSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
       };

@@ -3,13 +3,12 @@
 let
   hostSpec = config.hostSpec;
   pubKeys = lib.filesystem.listFilesRecursive ../../keys;
-  ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+  ifTheyExist = groups:
+    builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 
-  sopsHashedPasswordFile = lib.optionalString (
-    !config.hostSpec.isMinimal
-  ) config.sops.secrets."passwords/${hostSpec.username}".path;
-in
-{
+  sopsHashedPasswordFile = lib.optionalString (!config.hostSpec.isMinimal)
+    config.sops.secrets."passwords/${hostSpec.username}".path;
+in {
   users.users.${hostSpec.username} = {
     isNormalUser = true;
     extraGroups = lib.flatten [
@@ -27,11 +26,10 @@ in
     ];
     hashedPasswordFile = sopsHashedPasswordFile;
 
-    openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
+    openssh.authorizedKeys.keys =
+      lib.lists.forEach pubKeys (key: builtins.readFile key);
   };
-}
-//
-lib.optionalAttrs (inputs ? "home-manager") {
+} // lib.optionalAttrs (inputs ? "home-manager") {
   home-manager = {
     extraSpecialArgs = {
       inherit pkgs inputs;
@@ -41,23 +39,12 @@ lib.optionalAttrs (inputs ? "home-manager") {
     users.${hostSpec.username} = {
       home.stateVersion = "24.11";
 
-      imports = lib.flatten (
-        lib.optional (!hostSpec.isMinimal) [
-          (
-            { config, ... }:
-            import (lib.custom.relativeToRoot "hosts/profiles/${host}/home.nix") {
-              inherit
-                pkgs
-                inputs
-                config
-                lib
-                hostSpec
-                host
-                ;
-            }
-          )
-        ]
-      );
+      imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
+        ({ config, ... }:
+          import (lib.custom.relativeToRoot "hosts/profiles/${host}/home.nix") {
+            inherit pkgs inputs config lib hostSpec host;
+          })
+      ]);
     };
   };
 }

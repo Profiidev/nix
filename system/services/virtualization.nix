@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ 
-    virt-manager 
+  environment.systemPackages = with pkgs; [
+    virt-manager
     distrobox
     libvirt
     virt-manager
@@ -24,10 +24,7 @@
     };
   };
   virtualisation.libvirtd = {
-    allowedBridges = [
-      "nm-bridge"
-      "virbr0"
-    ];
+    allowedBridges = [ "nm-bridge" "virbr0" ];
     enable = true;
     qemu.runAsRoot = false;
   };

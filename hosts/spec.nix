@@ -34,7 +34,7 @@
     };
     ssh_keys = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [];
+      default = [ ];
       description = "User ssh keys";
     };
   };

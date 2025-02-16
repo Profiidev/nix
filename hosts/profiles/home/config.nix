@@ -2,7 +2,7 @@
 
 {
   imports = lib.flatten [
-    (../../disks/btrfs-luks.nix) 
+    (../../disks/btrfs-luks.nix)
     {
       _module.args = {
         disk = "/dev/sda";
@@ -29,8 +29,6 @@
     username = "profidev";
     git_user = "ProfiiDev";
     git_email = "92174452+Profiidev@users.noreply.github.com";
-    ssh_keys = [
-      "ed25519_sk"
-    ];
+    ssh_keys = [ "ed25519_sk" ];
   };
 }

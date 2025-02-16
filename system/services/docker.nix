@@ -7,9 +7,5 @@
     autoPrune.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    docker
-    docker-compose
-    lazydocker
-  ];
+  environment.systemPackages = with pkgs; [ docker docker-compose lazydocker ];
 }

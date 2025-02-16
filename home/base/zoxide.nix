@@ -5,16 +5,10 @@
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
-    options = [
-      "--cmd cd"
-    ];
+    options = [ "--cmd cd" ];
   };
 
-  gtk = {
-    enable = true;
-  };
+  gtk = { enable = true; };
 
-  qt = {
-    enable = true;
-  };
+  qt = { enable = true; };
 }

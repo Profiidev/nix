@@ -1,12 +1,5 @@
-#NOTE: This ISO is NOT minimal. We don't want a minimal environment when using the iso for recovery purposes.
-{
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-{
+# NOTE: This ISO is NOT minimal. We don't want a minimal environment when using the iso for recovery purposes.
+{ inputs, pkgs, lib, config, ... }: {
   imports = lib.flatten [
     "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
     #"${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
@@ -38,12 +31,10 @@
   environment.etc = {
     isoBuildTime = {
       #
-      text = lib.readFile (
-        "${pkgs.runCommand "timestamp" {
-          # builtins.currentTime requires --impure
-          env.when = builtins.currentTime;
-        } "echo -n `date -d @$when  +%Y-%m-%d_%H-%M-%S` > $out"}"
-      );
+      text = lib.readFile ("${pkgs.runCommand "timestamp" {
+        # builtins.currentTime requires --impure
+        env.when = builtins.currentTime;
+      } "echo -n `date -d @$when  +%Y-%m-%d_%H-%M-%S` > $out"}");
     };
   };
 
@@ -61,31 +52,21 @@
   };
 
   nix = {
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    settings.experimental-features = [ "nix-command" "flakes" ];
     extraOptions = "experimental-features = nix-command flakes";
   };
 
   services = {
     qemuGuest.enable = true;
-    openssh = {
-      settings.PermitRootLogin = lib.mkForce "yes";
-    };
+    openssh = { settings.PermitRootLogin = lib.mkForce "yes"; };
   };
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    supportedFilesystems = lib.mkForce [
-      "btrfs"
-      "vfat"
-    ];
+    supportedFilesystems = lib.mkForce [ "btrfs" "vfat" ];
   };
 
-  networking = {
-    hostName = "iso";
-  };
+  networking = { hostName = "iso"; };
 
   systemd = {
     services.sshd.wantedBy = lib.mkForce [ "multi-user.target" ];

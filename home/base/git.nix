@@ -1,9 +1,7 @@
 { pkgs, hostSpec, ... }:
 
 {
-  home.packages = with pkgs; [
-    git
-  ];
+  home.packages = with pkgs; [ git ];
 
   programs.git = {
     enable = true;
@@ -27,9 +25,7 @@
     };
 
     extraConfig = {
-      pull = {
-        rebase = true;
-      };
+      pull = { rebase = true; };
 
       commit.gpgsign = true;
       gpg.format = "ssh";

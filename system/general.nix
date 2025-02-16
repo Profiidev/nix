@@ -9,7 +9,7 @@
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = ["root" config.hostSpec.username];
+    trusted-users = [ "root" config.hostSpec.username ];
   };
 
   nixpkgs = {
@@ -20,9 +20,8 @@
     overlays = [ inputs.rust-overlay.overlays.default ];
   };
 
-  systemd.tmpfiles.rules = [
-    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
-  ];
+  systemd.tmpfiles.rules =
+    [ "L+ /usr/local/bin - - - - /run/current-system/sw/bin/" ];
 
   system.stateVersion = "24.11";
 }

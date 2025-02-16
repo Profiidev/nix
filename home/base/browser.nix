@@ -52,8 +52,7 @@ let
     "application/vnd.jgraph.mxfile.realtime" = [ "drawio.desktop" ];
 
   };
-in
-{
+in {
   # Module installing brave as default browser
   home.packages = [ pkgs.google-chrome ];
 

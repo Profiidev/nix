@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  imports = [
-    ../../../home/profiles/base.nix
-    ../../../home/profiles/coding.nix
-  ];
+  imports =
+    [ ../../../home/profiles/base.nix ../../../home/profiles/coding.nix ];
 }

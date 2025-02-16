@@ -1,9 +1,5 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    gimp
-    vlc
-    obsidian
-  ];
+  environment.systemPackages = with pkgs; [ gimp vlc obsidian ];
 }

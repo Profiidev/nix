@@ -1,8 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ../apps/gamemode.nix
-    ../apps/steam.nix
-  ];
+  imports = [ ../apps/gamemode.nix ../apps/steam.nix ];
 }

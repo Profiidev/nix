@@ -1,13 +1,5 @@
 # NOTE: ... is needed because dikso passes diskoFile
-{
-  lib,
-  disk ? "/dev/vda",
-  withSwap ? false,
-  swapSize,
-  config,
-  ...
-}:
-{
+{ lib, disk ? "/dev/vda", withSwap ? false, swapSize, ... }: {
   disko.devices = {
     disk = {
       disk0 = {

@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ../optional/lang.nix
-  ];
+  imports = [ ../optional/lang.nix ];
 }
