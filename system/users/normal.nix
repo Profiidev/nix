@@ -2,14 +2,15 @@
 
 let
   hostSpec = config.hostSpec;
+  userSpec = config.userSpec;
   pubKeys = lib.filesystem.listFilesRecursive ../../keys;
   ifTheyExist = groups:
     builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 
-  sopsHashedPasswordFile = lib.mkIf (!config.hostSpec.isMinimal)
-    config.sops.secrets."passwords/${hostSpec.username}".path;
+  sopsHashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
+    config.sops.secrets."passwords/${userSpec.username}".path;
 in {
-  users.users.${hostSpec.username} = {
+  users.users.${userSpec.username} = {
     isNormalUser = true;
     extraGroups = lib.flatten [
       "wheel"
@@ -34,15 +35,16 @@ in {
     extraSpecialArgs = {
       inherit pkgs inputs;
       hostSpec = config.hostSpec;
+      userSpec = config.userSpec;
     };
 
-    users.${hostSpec.username} = {
+    users.${userSpec.username} = {
       home.stateVersion = "24.11";
 
       imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
         ({ config, ... }:
           import (lib.custom.relativeToRoot "hosts/profiles/${host}/home.nix") {
-            inherit pkgs inputs config lib hostSpec host;
+            inherit pkgs inputs config lib hostSpec userSpec host;
           })
       ]);
     };

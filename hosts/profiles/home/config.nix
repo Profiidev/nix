@@ -24,8 +24,8 @@
     ../../../system/media/obs.nix
   ];
 
-  hostSpec = {
-    hostname = "home";
+  hostSpec = { hostname = "home"; };
+  userSpec = {
     username = "profidev";
     git_user = "ProfiiDev";
     git_email = "92174452+Profiidev@users.noreply.github.com";

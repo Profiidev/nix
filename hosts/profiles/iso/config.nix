@@ -17,15 +17,15 @@
 
   hostSpec = {
     hostname = "iso";
-    username = "iso";
     isMinimal = lib.mkForce true;
   };
+  userSpec = { username = "iso"; };
 
   # root's ssh key are mainly used for remote deployment
   users.extraUsers.root = {
-    inherit (config.users.users.${config.hostSpec.username}) hashedPassword;
+    inherit (config.users.users.${config.userSpec.username}) hashedPassword;
     openssh.authorizedKeys.keys =
-      config.users.users.${config.hostSpec.username}.openssh.authorizedKeys.keys;
+      config.users.users.${config.userSpec.username}.openssh.authorizedKeys.keys;
   };
 
   environment.etc = {

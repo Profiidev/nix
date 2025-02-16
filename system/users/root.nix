@@ -10,6 +10,7 @@ in {
     extraSpecialArgs = {
       inherit pkgs inputs;
       hostSpec = config.hostSpec;
+      userSpec = config.userSpec;
     };
 
     users.root = {

@@ -1,4 +1,4 @@
-{ inputs, hostSpec, config, ... }:
+{ inputs, hostSpec, userSpec, config, ... }:
 
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
@@ -19,20 +19,20 @@ in {
     validateSopsFiles = false;
 
     secrets = builtins.listToAttrs (map (name: {
-      name = "ssh_keys/${hostSpec.username}/${name}";
+      name = "ssh_keys/${userSpec.username}/${name}";
       value = {
         mode = "0600";
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}";
       };
-    }) hostSpec.ssh_keys) // builtins.listToAttrs (map (name: {
-      name = "ssh_keys/${hostSpec.username}/${name}_pub";
+    }) userSpec.ssh_keys) // builtins.listToAttrs (map (name: {
+      name = "ssh_keys/${userSpec.username}/${name}_pub";
       value = {
         mode = "0600";
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}.pub";
       };
-    }) hostSpec.ssh_keys) // builtins.listToAttrs (map (name: {
+    }) userSpec.ssh_keys) // builtins.listToAttrs (map (name: {
       name = "ssh_keys/general/${name}";
       value = {
         mode = "0600";
@@ -47,7 +47,7 @@ in {
         path = "${homeDirectory}/.ssh/id_${name}.pub";
       };
     }) generalKeys) // {
-      "gpg_keys/${hostSpec.username}" = {
+      "gpg_keys/${userSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
       };
     };

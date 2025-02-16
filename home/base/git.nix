@@ -1,12 +1,12 @@
-{ pkgs, hostSpec, ... }:
+{ pkgs, userSpec, ... }:
 
 {
   home.packages = with pkgs; [ git ];
 
   programs.git = {
     enable = true;
-    userName = hostSpec.git_user;
-    userEmail = hostSpec.git_email;
+    userName = userSpec.git_user;
+    userEmail = userSpec.git_email;
 
     aliases = {
       a = "add";
@@ -29,7 +29,7 @@
 
       commit.gpgsign = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/id_${hostSpec.git_key_sign}.pub";
+      user.signingkey = "~/.ssh/id_${userSpec.git_sign_key}.pub";
     };
   };
 }

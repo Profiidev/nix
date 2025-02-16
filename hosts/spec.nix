@@ -2,25 +2,26 @@
 
 {
   options.hostSpec = {
-    # Host
     hostname = lib.mkOption {
       type = lib.types.str;
       description = "The hostname of the host";
-    };
-    home = lib.mkOption {
-      type = lib.types.str;
-      description = "The home directory of the user";
-      default = "/home/${config.hostSpec.username}";
     };
     isMinimal = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Used to indicate a minimal host";
     };
-    # User
+  };
+
+  options.userSpec = {
     username = lib.mkOption {
       type = lib.types.str;
       description = "The username of the host";
+    };
+    home = lib.mkOption {
+      type = lib.types.str;
+      description = "The home directory of the user";
+      default = "/home/${config.userSpec.username}";
     };
     git_user = lib.mkOption {
       type = lib.types.str;
