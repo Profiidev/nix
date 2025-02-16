@@ -6,7 +6,7 @@ let
   ifTheyExist = groups:
     builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 
-  sopsHashedPasswordFile = lib.optionalString (!config.hostSpec.isMinimal)
+  sopsHashedPasswordFile = lib.mkIf (!config.hostSpec.isMinimal)
     config.sops.secrets."passwords/${hostSpec.username}".path;
 in {
   users.users.${hostSpec.username} = {
