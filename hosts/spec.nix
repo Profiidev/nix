@@ -43,5 +43,10 @@
       default = [ ];
       description = "User ssh keys";
     };
+    ssh_config = lib.mkOption {
+      type = lib.types.attrs;
+      default = { };
+      description = "User ssh config";
+    };
   };
 }

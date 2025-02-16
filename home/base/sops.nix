@@ -7,11 +7,6 @@ let
 in {
   imports = [ inputs.sops-nix.homeManagerModules.sops ];
 
-  programs.ssh = {
-    enable = true;
-    addKeysToAgent = "yes";
-  };
-
   sops = {
     age.keyFile = "${homeDirectory}/.config/sops/age/keys.txt";
 

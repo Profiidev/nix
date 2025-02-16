@@ -1,7 +1,9 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 
 {
   imports = lib.flatten [
+    inputs.nix-secrets.profidev
+
     (../../disks/btrfs-luks.nix)
     {
       _module.args = {
@@ -25,11 +27,4 @@
   ];
 
   hostSpec = { hostname = "home"; };
-  userSpec = {
-    username = "profidev";
-    git_user = "ProfiiDev";
-    git_email = "92174452+Profiidev@users.noreply.github.com";
-    git_sign_key = "sign";
-    ssh_keys = [ "ed25519_sk" "sign" ];
-  };
 }
