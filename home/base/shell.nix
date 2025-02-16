@@ -31,7 +31,7 @@
     plugins = [{
       name = "nvm";
       src = pkgs.fetchFromGitHub {
-        owner = "jorgenucaran";
+        owner = "jorgebucaran";
         repo = "nvm.fish";
         rev = "abd3002b6d2d578d484a5aea94dd1517dded6d42";
         sha256 = lib.fakeSha256;
