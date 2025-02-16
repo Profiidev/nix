@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ config, inputs, ... }:
 
 {
   nix.settings = {

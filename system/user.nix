@@ -7,6 +7,9 @@ let
   sopsHashedPasswordFile = lib.optionalString (
     !config.hostSpec.isMinimal
   ) config.sops.secrets."passwords/${hostSpec.username}".path;
+  sopsHashedPasswordFileRoot = lib.optionalString (
+    !config.hostSpec.isMinimal
+  ) config.sops.secrets."passwords/root".path;
 in
 {
   users.users.${hostSpec.username} = {
@@ -27,6 +30,10 @@ in
     hashedPasswordFile = sopsHashedPasswordFile;
 
     openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
+  };
+
+  users.users.root = {
+    hashedPasswordFile = sopsHashedPasswordFileRoot;
   };
 
   # Create ssh sockets directory for controlpaths when homemanager not loaded (i.e. isMinimal)
@@ -75,6 +82,14 @@ lib.optionalAttrs (inputs ? "home-manager") {
           )
         ]
       );
+    };
+
+    users.root = {
+      home.stateVersion = "24.11";
+
+      imports = [
+
+      ];
     };
   };
 }

@@ -26,10 +26,6 @@
     username = "iso";
     isProduction = lib.mkForce false;
     isMinimal = lib.mkForce true;
-
-    # Needed because we don't use hosts/common/core for iso
-    inherit (inputs.nix-secrets)
-      ;
   };
 
   # root's ssh key are mainly used for remote deployment
