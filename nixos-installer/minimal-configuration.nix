@@ -2,8 +2,9 @@
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       "hosts/spec.nix"
-      "system/apps/ssh.nix"
-      "system/user.nix"
+      "system/users/normal.nix"
+      "system/users/minimal.nix"
+      "nixos-installer/ssh.nix"
       "nixos-installer/user.nix"
     ])
   ];

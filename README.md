@@ -1,16 +1,16 @@
 # Nix Config
 
-# Remote Install
+Inspired from https://github.com/EmergentMind/nix-config
+Home manager Options: https://rycee.gitlab.io/home-manager/options.xhtml
 
-1. Set root password on target machine (with nixos installer iso running)
-2. Run `remote.sh` with the target ip
-   ```
-   ./remote.sh <config_name> <ip>
-   ```
-
-# Installer Image
-
-Build installer image with `build.sh` result will be in `result/iso`
-```
-./build.sh <config_name>
-```
+  fontProfiles = {
+    enable = true;
+    monospace = {
+      family = "FiraCode Nerd Font Mono";
+      package = pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; };
+    };
+    regular = {
+      family = "Fira Sans";
+      package = pkgs.fira;
+    };
+  };
