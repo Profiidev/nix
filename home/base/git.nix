@@ -9,6 +9,7 @@
     enable = true;
     userName = hostSpec.git_user;
     userEmail = hostSpec.git_email;
+
     aliases = {
       a = "add";
       aa = "add -A";
@@ -24,13 +25,15 @@
       cob = "checkout -b";
       rao = "remote add origin";
     };
+
     extraConfig = {
       pull = {
         rebase = true;
       };
-      commit = {
-        gpgsign = true;
-      };
+
+      commit.gpgsign = true;
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/${builtins.elemAt hostSpec.ssh_keys 0}.pub";
     };
   };
 }

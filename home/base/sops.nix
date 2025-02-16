@@ -56,6 +56,12 @@ in
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${homeDirectory}/.ssh/id_${name}.pub";
       };
-    }) generalKeys);
+    }) generalKeys)
+    //
+    {
+      "gpg_keys/${hostSpec.username}" = {
+        sopsFile = "${sopsFolder}/shared.yaml";
+      };
+    };
   };
 }
