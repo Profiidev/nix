@@ -1,15 +1,13 @@
-{ inputs, pkgs, config, lib, host, ... }:
+{ lib, config, inputs, pkgs, host, ... }:
 
-let 
+let
   hostSpec = config.hostSpec;
   pubKeys = lib.filesystem.listFilesRecursive ../keys;
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+
   sopsHashedPasswordFile = lib.optionalString (
     !config.hostSpec.isMinimal
   ) config.sops.secrets."passwords/${hostSpec.username}".path;
-  sopsHashedPasswordFileRoot = lib.optionalString (
-    !config.hostSpec.isMinimal
-  ) config.sops.secrets."passwords/root".path;
 in
 {
   users.users.${hostSpec.username} = {
@@ -31,28 +29,6 @@ in
 
     openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
   };
-
-  users.users.root = {
-    hashedPasswordFile = sopsHashedPasswordFileRoot;
-  };
-
-  # Create ssh sockets directory for controlpaths when homemanager not loaded (i.e. isMinimal)
-  systemd.tmpfiles.rules =
-    let
-      user = config.users.users.${hostSpec.username}.name;
-      group = config.users.users.${hostSpec.username}.group;
-    in
-    # you must set the rule for .ssh separately first, otherwise it will be automatically created as root:root and .ssh/sockects will fail
-    [
-      "d /home/${hostSpec.username}/.ssh 0750 ${user} ${group} -"
-      "d /home/${hostSpec.username}/.ssh/sockets 0750 ${user} ${group} -"
-    ];
-
-  programs.git.enable = true;
-  environment.systemPackages = [
-    pkgs.just
-    pkgs.rsync
-  ];
 }
 //
 lib.optionalAttrs (inputs ? "home-manager") {
@@ -82,14 +58,6 @@ lib.optionalAttrs (inputs ? "home-manager") {
           )
         ]
       );
-    };
-
-    users.root = {
-      home.stateVersion = "24.11";
-
-      imports = [
-
-      ];
     };
   };
 }

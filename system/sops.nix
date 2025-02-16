@@ -31,6 +31,10 @@ in
         sopsFile = "${sopsFolder}/shared.yaml";
         neededForUsers = true;
       };
+      "passwords/root" = {
+        sopsFile = "${sopsFolder}/shared.yaml";
+        neededForUsers = true;
+      };
     }
   ];
 

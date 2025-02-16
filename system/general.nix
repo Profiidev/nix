@@ -1,6 +1,12 @@
-{ config, inputs, ... }:
+{ config, inputs, lib, ... }:
 
 {
+  imports = lib.flatten [
+    inputs.home-manager.nixosModules.home-manager
+    inputs.disko.nixosModules.disko
+    inputs.sops-nix.nixosModules.sops
+  ];
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     trusted-users = ["root" config.hostSpec.username];

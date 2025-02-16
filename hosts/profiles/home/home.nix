@@ -2,12 +2,7 @@
 
 {
   imports = [
-    ../../../system/apps/browser.nix
-    ../../../system/apps/git.nix
-    ../../../system/apps/lang.nix
-    ../../../system/apps/terminal.nix
-    ./sops.nix
+    ../../../home/profiles/base.nix
+    ../../../home/profiles/coding.nix
   ];
-
-  programs.home-manager.enable = true;
 }

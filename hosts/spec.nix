@@ -1,10 +1,5 @@
-# Specifications For Differentiating Hosts
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
+
 {
   options.hostSpec = {
     username = lib.mkOption {
@@ -24,16 +19,6 @@
       type = lib.types.bool;
       default = false;
       description = "Used to indicate a minimal host";
-    };
-    isProduction = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Used to indicate a production host";
-    };
-    hdr = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Used to indicate a host that uses HDR";
     };
     ssh_keys = lib.mkOption {
       type = lib.types.listOf lib.types.str;

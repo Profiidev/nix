@@ -6,10 +6,6 @@
     os-prober
     home-manager
     ripgrep
-
-
-
-    coreutils
     curl
     wget
     fd
@@ -29,11 +25,9 @@
     man-pages
     man-pages-posix
     drawio
-    blender
-    gimp
-    obs-studio
+    coreutils
     neovim
-    vlc
-    obsidian
+    just
+    rsync
   ];
 }

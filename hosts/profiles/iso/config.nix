@@ -17,14 +17,14 @@
       "hosts/spec.nix"
       # We want primary default so we get ssh authorized keys, zsh, and some basic tty tools. It also pulls in the hm spec for iso.
       # Note that we are not pulling in "hosts/common/users/primary/nixos.nix" for the iso as it's not needed.
-      "system/user.nix"
+      "system/users/minimal.nix"
+      "system/users/normal.nix"
     ])
   ];
 
   hostSpec = {
     hostname = "iso";
     username = "iso";
-    isProduction = lib.mkForce false;
     isMinimal = lib.mkForce true;
   };
 
