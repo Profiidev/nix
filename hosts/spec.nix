@@ -48,5 +48,10 @@
       default = { };
       description = "User ssh config";
     };
+    ssh_known_hosts = lib.mkOption {
+      type = lib.types.string;
+      default = "";
+      description = "User ssh known hosts";
+    };
   };
 }
