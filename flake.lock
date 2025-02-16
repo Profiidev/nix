@@ -43,10 +43,10 @@
     },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1739728875,
-        "narHash": "sha256-gbgohQcCsLER8O+xZWTmXhpcv4Ypa1558GTi0kWOidc=",
+        "lastModified": 1739729108,
+        "narHash": "sha256-ZOE/hKdyOikYXFXsQInzgftpHEOvKlx88qTzeD07iMM=",
         "ref": "master",
-        "rev": "ffadd439ae2e09fdf0ef8059e810eaad5837e788",
+        "rev": "3c07c43def87162e61515cc752a7a4195785c9d5",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"

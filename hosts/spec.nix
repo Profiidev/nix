@@ -32,6 +32,11 @@
       default = "";
       description = "The git email";
     };
+    git_sign_key = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "The git signing key";
+    };
     ssh_keys = lib.mkOption {
       type = lib.types.listOf lib.types.str;
       default = [ ];

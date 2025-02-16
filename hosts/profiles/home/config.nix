@@ -29,6 +29,7 @@
     username = "profidev";
     git_user = "ProfiiDev";
     git_email = "92174452+Profiidev@users.noreply.github.com";
-    ssh_keys = [ "ed25519_sk" ];
+    git_sign_key = "sign";
+    ssh_keys = [ "ed25519_sk" "sign" ];
   };
 }

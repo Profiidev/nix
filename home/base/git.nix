@@ -29,7 +29,7 @@
 
       commit.gpgsign = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/${builtins.elemAt hostSpec.ssh_keys 0}.pub";
+      user.signingkey = "~/.ssh/id_${hostSpec.git_key_sign}.pub";
     };
   };
 }
