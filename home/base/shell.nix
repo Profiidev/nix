@@ -34,7 +34,7 @@
         owner = "jorgebucaran";
         repo = "nvm.fish";
         rev = "abd3002b6d2d578d484a5aea94dd1517dded6d42";
-        sha256 = lib.fakeSha256;
+        sha256 = "sha256-BNnoP9gLQuZQt/0SOOsZaYOexNN2K7PKWT/paS0BJJY=";
       };
     }];
   };
