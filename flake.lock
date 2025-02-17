@@ -59,6 +59,22 @@
         "type": "github"
       }
     },
+    "keyring-unlocker-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736762887,
+        "narHash": "sha256-JWNdFC9X597HzyNKcYIp09dZFveuaj+/+MvqU8YG3z4=",
+        "owner": "recolic",
+        "repo": "gnome-keyring-yubikey-unlock",
+        "rev": "bc874e72e6f13b7385049fa4ea597dd8be6c72be",
+        "type": "github"
+      },
+      "original": {
+        "owner": "recolic",
+        "repo": "gnome-keyring-yubikey-unlock",
+        "type": "github"
+      }
+    },
     "mutter-triple-buffering-src": {
       "flake": false,
       "locked": {
@@ -80,10 +96,10 @@
     },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1739830178,
-        "narHash": "sha256-buikslhiMPY97LVqoPNaFFx7spi44yHTxAzNGMAS+cg=",
+        "lastModified": 1739831255,
+        "narHash": "sha256-ZV82SKhEquXFfwQ/wQVCFQ+DsK7eKR0tTwafnVeDWxU=",
         "ref": "master",
-        "rev": "e860f90e595ccec47b20e88fbc4c9e757397868b",
+        "rev": "cf9da835500997eda2f6847813bdc08b7aaa5111",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"
@@ -148,6 +164,7 @@
         "disko": "disko",
         "gvdb-src": "gvdb-src",
         "home-manager": "home-manager",
+        "keyring-unlocker-src": "keyring-unlocker-src",
         "mutter-triple-buffering-src": "mutter-triple-buffering-src",
         "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs",

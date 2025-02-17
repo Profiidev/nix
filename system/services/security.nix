@@ -1,6 +1,25 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
-{
+let
+  keyring-unlocker = pkgs.stdenv.mkDerivation {
+    name = "keyring-unlocker";
+    src = inputs.keyring-unlocker-src;
+    phases = [ "installPhase" ];
+
+    installPhase = ''
+      cd $src
+      git submodule update --init --recursive
+      cd src
+      make
+      make KEYRING_IMPL=standalone
+      mkdir -p $out/bin
+      cp $src/bin/unlock_keyrings $out/bin
+      cp $src/unlock_keyrings.sh $out/bin
+    '';
+  };
+in {
+  environment.systemPackages = [ keyring-unlocker ];
+
   security.pam.services = {
     login.u2fAuth = true;
     gdm-password.u2fAuth = true;

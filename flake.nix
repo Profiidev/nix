@@ -33,6 +33,11 @@
       flake = false;
     };
 
+    keyring-unlocker-src = {
+      url = "github:recolic/gnome-keyring-yubikey-unlock";
+      flake = false;
+    };
+
     nix-secrets = {
       url =
         "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=master&shallow=1";

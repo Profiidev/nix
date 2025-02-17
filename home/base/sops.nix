@@ -45,6 +45,10 @@ in {
       "gpg_keys/${userSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
       };
+
+      "yubikey_pins/${userSpec.username}" = {
+        sopsFile = "${sopsFolder}/shared.yaml";
+      };
     };
   };
 }
