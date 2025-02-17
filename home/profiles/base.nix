@@ -10,6 +10,7 @@
     ../base/ssh.nix
     ../base/starship.nix
     ../base/terminal.nix
+    ../base/wallpaper.nix
     ../base/zoxide.nix
   ];
 

@@ -23,5 +23,5 @@
   systemd.tmpfiles.rules =
     [ "L+ /usr/local/bin - - - - /run/current-system/sw/bin/" ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }

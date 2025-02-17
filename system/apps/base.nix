@@ -18,7 +18,8 @@
     unrar
     xdg-utils
     zip
-    nerdfonts
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
     discord
     gh
     nmap

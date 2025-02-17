@@ -39,7 +39,7 @@ in {
     };
 
     users.${userSpec.username} = {
-      home.stateVersion = "24.11";
+      home.stateVersion = "25.05";
 
       imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
         ({ config, ... }:
