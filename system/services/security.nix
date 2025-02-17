@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 let
   keyring-unlocker = pkgs.stdenv.mkDerivation {
@@ -13,6 +13,8 @@ let
     buildInputs = [ pkgs.git ];
 
     buildPhase = ''
+      sed -i 's|bin/unlock_keyrings|unlock_keyrings|' unlock_keyrings.sh
+      sed -i 's|/bin/bash|/usr/bin/env bash|' unlock_keyrings.sh
       cd src
       sed -i 's|#include <iostream>|#include <iostream>\n#include <cstdint>|' lib/rlib/stdio.hpp
       make KEYRING_IMPL=standalone

@@ -1,4 +1,4 @@
-{ pkgs, lib, userSpec, ... }:
+{ pkgs, lib, userSpec, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -13,4 +13,20 @@
   home.activation.createYubicoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p ~/.config/Yubico
   '';
+
+  systemd.user.services.unlock-keyring = {
+    Unit = {
+      Description = "Unlocks Keyring";
+      BindsTo = "gnome-session.target";
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.keyring-unlocker}/bin/unlock-keyring.sh ${
+          config.sops.secrets."keyring_keys/${userSpec.username}".path
+        } ${config.sops.secrets."yubikey_pins/${userSpec.username}"}";
+    };
+
+    Install = { WantedBy = [ "gnome-session.target" ]; };
+  };
 }

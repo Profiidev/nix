@@ -49,6 +49,10 @@ in {
       "yubikey_pins/${userSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
       };
+
+      "keyring_keys/${userSpec.username}" = {
+        sopsFile = "${sopsFolder}/shared.yaml";
+      };
     };
   };
 }
