@@ -12,7 +12,7 @@ let
 
   desktop = pkgs.writeTextFile {
     name = "wallpaper.desktop";
-    test = ''
+    text = ''
       [Desktop Entry]
         Type=Application
         Name=Wallpaper
