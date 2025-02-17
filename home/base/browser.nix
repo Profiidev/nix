@@ -57,6 +57,8 @@ in {
   home.packages = [ pkgs.google-chrome ];
 
   xdg = {
+    configFile."mimeapps.list".force = true;
+
     mime.enable = true;
     mimeApps = {
       enable = true;

@@ -7,6 +7,8 @@
     ../base/fastfetch.nix
     ../base/git.nix
     ../base/gnome.nix
+    ../base/gpg.nix
+    ../base/nh.nix
     ../base/shell.nix
     ../base/sops.nix
     ../base/ssh.nix

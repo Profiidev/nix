@@ -20,6 +20,25 @@
         "type": "github"
       }
     },
+    "gvdb-src": {
+      "flake": false,
+      "locked": {
+        "host": "gitlab.gnome.org",
+        "lastModified": 1726152673,
+        "narHash": "sha256-CIdEwRbtxWCwgTb5HYHrixXi+G+qeE1APRaUeka3NWk=",
+        "owner": "GNOME",
+        "repo": "gvdb",
+        "rev": "2b42fc75f09dbe1cd1057580b5782b08f2dcb400",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "gitlab.gnome.org",
+        "owner": "GNOME",
+        "ref": "main",
+        "repo": "gvdb",
+        "type": "gitlab"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -40,12 +59,31 @@
         "type": "github"
       }
     },
+    "mutter-triple-buffering-src": {
+      "flake": false,
+      "locked": {
+        "host": "gitlab.gnome.org",
+        "lastModified": 1737603888,
+        "narHash": "sha256-ajxm+EDgLYeqPBPCrgmwP+FxXab1D7y8WKDQdR95wLI=",
+        "owner": "vanvugt",
+        "repo": "mutter",
+        "rev": "17fcf9df5e39b287a65a487790ea5a4d468ee3a4",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "gitlab.gnome.org",
+        "owner": "vanvugt",
+        "ref": "triple-buffering-v4-47",
+        "repo": "mutter",
+        "type": "gitlab"
+      }
+    },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1739814375,
-        "narHash": "sha256-Lcbn6JWW82hJfww1mGrUR2f9w1ffiVCuDa7am1ynDcA=",
+        "lastModified": 1739822266,
+        "narHash": "sha256-THsXxszOyrXmo/vA3zp7EijOywU3mTuGQQayOCqcZ9c=",
         "ref": "master",
-        "rev": "63f928123c798d466d071c93e3e45bef3a0e8171",
+        "rev": "d7c161e4c8bf0e58c9216e9fc25cc738489fc249",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"
@@ -108,7 +146,9 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "gvdb-src": "gvdb-src",
         "home-manager": "home-manager",
+        "mutter-triple-buffering-src": "mutter-triple-buffering-src",
         "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",

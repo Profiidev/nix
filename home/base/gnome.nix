@@ -17,6 +17,9 @@
     orchis-theme
     kora-icon-theme
     whitesur-gtk-theme
+
+    gnome-tweaks
+    gnome-extension-manager
   ];
 
   gtk = { enable = true; };
@@ -216,7 +219,7 @@
     };
 
     "org/gnome/shell/extensions/search-light" = {
-      background-color = [ 0.0 0.0 0.0 1.0 ];
+      background-color = builtins.fromTOML "(0.0, 0.0, 0.0, 1.0)";
       blur-brightness = 0.6;
       blur-sigma = 30.0;
       border-radius = 1.8206278026905829;
