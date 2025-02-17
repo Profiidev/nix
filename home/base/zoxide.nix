@@ -8,7 +8,5 @@
     options = [ "--cmd cd" ];
   };
 
-  gtk = { enable = true; };
-
   qt = { enable = true; };
 }

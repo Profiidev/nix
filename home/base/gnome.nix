@@ -12,8 +12,16 @@
     gnomeExtensions.rounded-corners
     gnomeExtensions.search-light
     gnomeExtensions.vitals
+
+    bibata-cursors
+    orchis-theme
+    kora-icon-theme
+    whitesur-gtk-theme
   ];
 
+  gtk = { enable = true; };
+
+  dconf.enable = true;
   dconf.settings = {
     "org/gnome/calculator" = {
       accuracy = 9;
