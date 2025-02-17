@@ -53,5 +53,10 @@
       default = "";
       description = "User ssh known hosts";
     };
+    login_key = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "User public login key";
+    };
   };
 }

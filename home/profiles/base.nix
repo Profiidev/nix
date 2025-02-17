@@ -9,6 +9,7 @@
     ../base/gnome.nix
     ../base/gpg.nix
     ../base/nh.nix
+    ../base/security.nix
     ../base/shell.nix
     ../base/sops.nix
     ../base/ssh.nix

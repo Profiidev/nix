@@ -21,6 +21,7 @@
     ../services/display-manager.nix
     ../services/gpg.nix
     ../services/network.nix
+    ../services/security.nix
     ../services/sshd.nix
     ../services/time.nix
 
