@@ -5,6 +5,7 @@
     ../base/browser.nix
     ../base/fastfetch.nix
     ../base/git.nix
+    ../base/gnome.nix
     ../base/shell.nix
     ../base/sops.nix
     ../base/ssh.nix
