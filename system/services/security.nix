@@ -3,18 +3,25 @@
 let
   keyring-unlocker = pkgs.stdenv.mkDerivation {
     name = "keyring-unlocker";
-    src = inputs.keyring-unlocker-src;
-    phases = [ "installPhase" ];
+    src = (pkgs.fetchFromGitHub {
+      owner = "recolic";
+      repo = "gnome-keyring-yubikey-unlock";
+      rev = "bc874e72e6f13b7385049fa4ea597dd8be6c72be";
+      fetchSubmodules = true;
+      hash = "sha256-SnmzUy+l4WtwYcpmZyWBeGjGJhtR91PQB3nDaOlaOkM=";
+    });
+    buildInputs = [ pkgs.git ];
 
-    installPhase = ''
-      cd $src
-      git submodule update --init --recursive
+    buildPhase = ''
       cd src
-      make
+      sed -i 's|#include <iostream>|#include <iostream>\n#include <cstdint>|' lib/rlib/stdio.hpp
       make KEYRING_IMPL=standalone
+      cd ..
+    '';
+    installPhase = ''
       mkdir -p $out/bin
-      cp $src/bin/unlock_keyrings $out/bin
-      cp $src/unlock_keyrings.sh $out/bin
+      cp bin/unlock_keyrings $out/bin
+      cp unlock_keyrings.sh $out/bin
     '';
   };
 in {
