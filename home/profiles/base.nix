@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../base/apps.nix
     ../base/browser.nix
     ../base/fastfetch.nix
     ../base/git.nix
