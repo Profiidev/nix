@@ -2,7 +2,7 @@
 
 let
   script = pkgs.writeScriptBin "wallpaper.sh" ''
-    #!/bin/bash
+    #!/usr/bin/env bash
     wget https://profidev.io/backend/services/apod/random -O wallpaper.png
 
     pwd=$(pwd)
