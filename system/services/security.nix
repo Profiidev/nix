@@ -4,6 +4,7 @@
   security.pam.services = {
     login.u2fAuth = true;
     gdm-password.u2fAuth = true;
+    gdm-password.enableGnomeKeyring = true;
     sudo.u2fAuth = true;
   };
 
