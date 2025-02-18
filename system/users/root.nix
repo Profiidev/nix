@@ -4,6 +4,7 @@ let
   sopsHashedPasswordFile = lib.optionalString (!config.hostSpec.isMinimal)
     config.sops.secrets."passwords/root".path;
 in {
+  users.mutableUsers = false;
   users.users.root = { hashedPasswordFile = sopsHashedPasswordFile; };
 } // lib.optionalAttrs (inputs ? "home-manager") {
   home-manager = {
