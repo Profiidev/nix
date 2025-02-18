@@ -51,7 +51,7 @@ in {
     Service = {
       Type = "oneshot";
       ExecStart = ''
-        ${keyring-unlocker}/bin/unlock-keyring.sh ${
+        ${keyring-unlocker}/bin/unlock-keyrings.sh ${
           config.sops.secrets."keyring_keys/${userSpec.username}".path
         } "$(cat ${
           config.sops.secrets."yubikey_pins/${userSpec.username}".path
