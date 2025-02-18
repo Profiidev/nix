@@ -26,8 +26,7 @@ let
       cp unlock_keyrings.sh $out/bin
     '';
   };
-in
-{
+in {
   home.packages = with pkgs; [
     yubikey-manager
     yubikey-manager-qt
@@ -51,9 +50,12 @@ in
 
     Service = {
       Type = "oneshot";
-      ExecStart = "${keyring-unlocker}/bin/unlock-keyring.sh ${
+      ExecStart = ''
+        ${keyring-unlocker}/bin/unlock-keyring.sh ${
           config.sops.secrets."keyring_keys/${userSpec.username}".path
-        } ${config.sops.secrets."yubikey_pins/${userSpec.username}"}";
+        } "$(cat ${
+          config.sops.secrets."yubikey_pins/${userSpec.username}".path
+        })"'';
     };
 
     Install = { WantedBy = [ "gnome-session.target" ]; };
