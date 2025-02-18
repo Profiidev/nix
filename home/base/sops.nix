@@ -1,4 +1,4 @@
-{ inputs, hostSpec, userSpec, config, ... }:
+{ inputs, hostSpec, userSpec, config, lib, ... }:
 
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
@@ -46,8 +46,13 @@ in {
         sopsFile = "${sopsFolder}/shared.yaml";
       };
 
-      "yubikey_pins/${userSpec.username}" = {
+      "yubikey/pins/${userSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
+      };
+
+      "yubikey/login/${userSpec.username}" = {
+        sopsFile = "${sopsFolder}/shared.yaml";
+        path = "${homeDirectory}/.config/Yubico/u2f_keys";
       };
 
       "keyring_keys/${userSpec.username}" = {
@@ -55,4 +60,8 @@ in {
       };
     };
   };
+
+  home.activation.createYubicoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p ~/.config/Yubico
+  '';
 }

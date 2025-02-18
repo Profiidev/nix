@@ -1,4 +1,4 @@
-{ pkgs, lib, userSpec, config, ... }:
+{ pkgs, userSpec, config, ... }:
 
 let
   keyring-unlocker = pkgs.stdenv.mkDerivation {
@@ -36,12 +36,6 @@ in {
     keyring-unlocker
   ];
 
-  home.file.".config/Yubico/u2f_keys".text = userSpec.login_key;
-
-  home.activation.createYubicoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    mkdir -p ~/.config/Yubico
-  '';
-
   systemd.user.services.unlock-keyring = {
     Unit = {
       Description = "Unlocks Keyring";
@@ -54,7 +48,7 @@ in {
         ${keyring-unlocker}/bin/unlock_keyrings.sh ${
           config.sops.secrets."keyring_keys/${userSpec.username}".path
         } "$(cat ${
-          config.sops.secrets."yubikey_pins/${userSpec.username}".path
+          config.sops.secrets."yubikey/pins/${userSpec.username}".path
         })"'';
     };
 
