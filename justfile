@@ -58,6 +58,9 @@ update-nix-secrets:
   @(cd ../nix-secrets && git fetch && git rebase > /dev/null) || true
   nix flake update nix-secrets --timeout 5
 
+install-remote HOST USER IP KEY:
+  scripts/bootstrap-nixos.sh -n {{HOST}} -u {{USER}} -d {{IP}} -k {{KEY}}
+
 # Build an iso image for installing new systems and create a symlink for qemu usage
 iso:
   # If we dont remove this folder, libvirtd VM doesnt run with the new iso...
