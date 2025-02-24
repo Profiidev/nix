@@ -10,7 +10,7 @@ let
       home = lib.mkOption {
         type = lib.types.str;
         description = "The home directory of the user";
-        default = "w";
+        default = if config.userSpec != null then (if config.userSpec.username == "root" then "/root" else "/home/${config.userSpec.username}") else "";
       };
       git_user = lib.mkOption {
         type = lib.types.str;
@@ -71,5 +71,8 @@ in
   options.userSpec = lib.mkOption {
     type = userSpecType;
     description = "User info";
+    default = {
+      username = "";
+    };
   };
 }
