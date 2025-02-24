@@ -2,11 +2,8 @@
 
 {
   imports = [
-    ../base/apps.nix
-    ../base/browser.nix
     ../base/fastfetch.nix
     ../base/git.nix
-    ../base/gnome.nix
     ../base/gpg.nix
     ../base/nh.nix
     ../base/security.nix
@@ -14,8 +11,6 @@
     ../base/sops.nix
     ../base/ssh.nix
     ../base/starship.nix
-    ../base/terminal.nix
-    ../base/wallpaper.nix
     ../base/zoxide.nix
   ];
 
