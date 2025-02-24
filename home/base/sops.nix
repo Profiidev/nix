@@ -42,10 +42,6 @@ in {
         path = "${homeDirectory}/.ssh/id_${name}.pub";
       };
     }) generalKeys) // {
-      "gpg_keys/${userSpec.username}" = {
-        sopsFile = "${sopsFolder}/shared.yaml";
-      };
-
       "yubikey/pins/${userSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
       };

@@ -2,43 +2,44 @@
 
 let
   hostSpec = config.hostSpec;
-  userSpec = config.userSpec;
   pubKeys = lib.filesystem.listFilesRecursive ../../keys;
   ifTheyExist = groups:
     builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-
-  sopsHashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
-    config.sops.secrets."passwords/${userSpec.username}".path;
 in {
-  users.users.${userSpec.username} = {
-    isNormalUser = true;
-    extraGroups = lib.flatten [
-      "wheel"
-      (ifTheyExist [
-        "audio"
-        "video"
-        "docker"
-        "git"
-        "vboxusers"
-        "networkmanager"
-        "scanner" # for print/scan"
-        "lp" # for print/scan"
-      ])
-    ];
-    hashedPasswordFile = sopsHashedPasswordFile;
+  users.users = lib.foldl (acc: spec: 
+    acc // {
+    "${spec.username}" = {
+      isNormalUser = true;
+      extraGroups = lib.flatten [
+        "wheel"
+        (ifTheyExist [
+          "audio"
+          "video"
+          "docker"
+          "git"
+          "vboxusers"
+          "networkmanager"
+          "scanner" # for print/scan"
+          "lp" # for print/scan"
+        ])
+      ];
+      hashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
+    config.sops.secrets."passwords/${spec.username}".path;
 
-    openssh.authorizedKeys.keys =
-      lib.lists.forEach pubKeys (key: builtins.readFile key);
-  };
+      openssh.authorizedKeys.keys =
+        lib.lists.forEach pubKeys (key: builtins.readFile key);
+    };
+    }) {} hostSpec.users;
 } // lib.optionalAttrs (inputs ? "home-manager") {
   home-manager = {
     extraSpecialArgs = {
       inherit pkgs inputs;
       hostSpec = config.hostSpec;
-      userSpec = config.userSpec;
     };
 
-    users.${userSpec.username} = {
+    users = lib.foldl (acc: userSpec: 
+      acc // {
+      "${userSpec.username}" = {
       home.stateVersion = "25.05";
 
       imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
@@ -48,5 +49,6 @@ in {
           })
       ]);
     };
+    }) {} hostSpec.users;
   };
 }

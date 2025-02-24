@@ -18,10 +18,6 @@
       enable = true;
       enableExtensionPack = true;
     };
-    guest = {
-      enable = true;
-      dragAndDrop = true;
-    };
   };
   virtualisation.libvirtd = {
     allowedBridges = [ "nm-bridge" "virbr0" ];

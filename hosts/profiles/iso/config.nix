@@ -1,5 +1,10 @@
 # NOTE: This ISO is NOT minimal. We don't want a minimal environment when using the iso for recovery purposes.
-{ inputs, pkgs, lib, config, ... }: {
+{ inputs, pkgs, lib, config, ... }: 
+
+let
+  name = "iso";
+in
+{
   imports = lib.flatten [
     "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
     #"${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
@@ -18,14 +23,16 @@
   hostSpec = {
     hostname = "iso";
     isMinimal = lib.mkForce true;
+    users = [{
+      username = name;
+    }];
   };
-  userSpec = { username = "iso"; };
 
   # root's ssh key are mainly used for remote deployment
   users.extraUsers.root = {
-    inherit (config.users.users.${config.userSpec.username}) hashedPassword;
+    inherit (config.users.users.${name}) hashedPassword;
     openssh.authorizedKeys.keys =
-      config.users.users.${config.userSpec.username}.openssh.authorizedKeys.keys;
+      config.users.users.${name}.openssh.authorizedKeys.keys;
   };
 
   environment.etc = {

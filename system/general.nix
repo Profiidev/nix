@@ -9,7 +9,7 @@
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "root" config.userSpec.username ];
+    trusted-users = [ "root" ] ++ (map (spec: spec.username) config.hostSpec.users);
   };
 
   nixpkgs = {

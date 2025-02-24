@@ -26,6 +26,5 @@
     ../services/time.nix
 
     ../users/normal.nix
-    ../users/root.nix
   ];
 }

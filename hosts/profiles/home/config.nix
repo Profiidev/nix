@@ -2,8 +2,6 @@
 
 {
   imports = lib.flatten [
-    inputs.nix-secrets.profidev
-
     (../../disks/btrfs-luks.nix)
     {
       _module.args = {
@@ -26,5 +24,6 @@
     ../../../system/media/obs.nix
   ];
 
-  hostSpec = { hostname = "home"; };
+  hostSpec = { hostname = "home";
+  users = [ inputs.nix-secrets.users.profidev ]; };
 }
