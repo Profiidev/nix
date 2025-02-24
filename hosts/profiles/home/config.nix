@@ -24,6 +24,8 @@
     ../../../system/media/obs.nix
   ];
 
-  hostSpec = { hostname = "home";
-  users = [ inputs.nix-secrets.users.profidev ]; };
+  hostSpec = {
+    hostname = "home";
+    users = [ inputs.nix-secrets.users.profidev ];
+  };
 }

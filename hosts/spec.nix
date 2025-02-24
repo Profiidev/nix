@@ -10,7 +10,13 @@ let
       home = lib.mkOption {
         type = lib.types.str;
         description = "The home directory of the user";
-        default = if config.userSpec != null then (if config.userSpec.username == "root" then "/root" else "/home/${config.userSpec.username}") else "";
+        default = if config.userSpec != null then
+          (if config.userSpec.username == "root" then
+            "/root"
+          else
+            "/home/${config.userSpec.username}")
+        else
+          "";
       };
       git_user = lib.mkOption {
         type = lib.types.str;
@@ -49,8 +55,7 @@ let
       };
     };
   };
-in
-{
+in {
   options.hostSpec = {
     hostname = lib.mkOption {
       type = lib.types.str;
@@ -63,7 +68,7 @@ in
     };
     users = lib.mkOption {
       type = lib.types.listOf userSpecType;
-      default = [];
+      default = [ ];
       description = "Users for this host";
     };
   };
@@ -71,8 +76,6 @@ in
   options.userSpec = lib.mkOption {
     type = userSpecType;
     description = "User info";
-    default = {
-      username = "";
-    };
+    default = { username = ""; };
   };
 }

@@ -12,9 +12,7 @@
   hostSpec = {
     isMinimal = lib.mkForce true;
     hostname = "installer";
-    users = [{
-      username = "profidev";
-    }];
+    users = [{ username = "profidev"; }];
   };
 
   fileSystems."/boot".options =

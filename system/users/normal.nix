@@ -6,30 +6,30 @@ let
   ifTheyExist = groups:
     builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
-  users.users = lib.foldl (acc: spec: 
+  users.users = lib.foldl (acc: spec:
     acc // {
-    "${spec.username}" = {
-      isNormalUser = true;
-      extraGroups = lib.flatten [
-        "wheel"
-        (ifTheyExist [
-          "audio"
-          "video"
-          "docker"
-          "git"
-          "vboxusers"
-          "networkmanager"
-          "scanner" # for print/scan"
-          "lp" # for print/scan"
-        ])
-      ];
-      hashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
-    config.sops.secrets."passwords/${spec.username}".path;
+      "${spec.username}" = {
+        isNormalUser = true;
+        extraGroups = lib.flatten [
+          "wheel"
+          (ifTheyExist [
+            "audio"
+            "video"
+            "docker"
+            "git"
+            "vboxusers"
+            "networkmanager"
+            "scanner" # for print/scan"
+            "lp" # for print/scan"
+          ])
+        ];
+        hashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
+          config.sops.secrets."passwords/${spec.username}".path;
 
-      openssh.authorizedKeys.keys =
-        lib.lists.forEach pubKeys (key: builtins.readFile key);
-    };
-    }) {} hostSpec.users;
+        openssh.authorizedKeys.keys =
+          lib.lists.forEach pubKeys (key: builtins.readFile key);
+      };
+    }) { } hostSpec.users;
 } // lib.optionalAttrs (inputs ? "home-manager") {
   home-manager = {
     extraSpecialArgs = {
@@ -37,20 +37,24 @@ in {
       hostSpec = config.hostSpec;
     };
 
-    users = lib.foldl (acc: userSpec: 
+    users = lib.foldl (acc: userSpec:
       acc // {
-      "${userSpec.username}" = {
-      home.stateVersion = "25.05";
+        "${userSpec.username}" = {
+          home.stateVersion = "25.05";
 
-      imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
-        ({ config, ... }:
-        
-        {
-          config.userSpec = userSpec;
-          imports = [../../hosts/spec.nix (lib.custom.relativeToRoot "hosts/users/${userSpec.username}.nix")];
-        })
-      ]);
-    };
-    }) {} hostSpec.users;
+          imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
+            ({ config, ... }:
+
+              {
+                config.userSpec = userSpec;
+                imports = [
+                  ../../hosts/spec.nix
+                  (lib.custom.relativeToRoot
+                    "hosts/users/${userSpec.username}.nix")
+                ];
+              })
+          ]);
+        };
+      }) { } hostSpec.users;
   };
 }
