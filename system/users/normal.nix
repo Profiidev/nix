@@ -44,7 +44,7 @@ in {
 
       imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
         ({ config, ... }:
-          import (lib.custom.relativeToRoot "hosts/profiles/${host}/home.nix") {
+          import (lib.custom.relativeToRoot "hosts/users/${userSpec.username}.nix") {
             inherit pkgs inputs config lib hostSpec userSpec host;
           })
       ]);
