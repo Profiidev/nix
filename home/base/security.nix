@@ -1,4 +1,4 @@
-{ pkgs, userSpec, config, ... }:
+{ pkgs, config, ... }:
 
 let
   keyring-unlocker = pkgs.stdenv.mkDerivation {
@@ -46,9 +46,9 @@ in {
       Type = "oneshot";
       ExecStart = ''
         ${keyring-unlocker}/bin/unlock_keyrings.sh ${
-          config.sops.secrets."keyring_keys/${userSpec.username}".path
+          config.sops.secrets."keyring_keys/${config.userSpec.username}".path
         } "$(cat ${
-          config.sops.secrets."yubikey/pins/${userSpec.username}".path
+          config.sops.secrets."yubikey/pins/${config.userSpec.username}".path
         })"'';
     };
 

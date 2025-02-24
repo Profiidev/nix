@@ -14,9 +14,7 @@
     hostname = "installer";
     users = [{
       username = "profidev";
-    } {
-      username = "root";
-    }]
+    }];
   };
 
   fileSystems."/boot".options =

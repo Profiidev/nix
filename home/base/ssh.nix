@@ -1,13 +1,13 @@
-{ userSpec, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
 
-    matchBlocks = userSpec.ssh_config;
+    matchBlocks = config.userSpec.ssh_config;
 
     userKnownHostsFile =
-      toString (pkgs.writeText "known_hosts" userSpec.ssh_known_hosts);
+      toString (pkgs.writeText "known_hosts" config.userSpec.ssh_known_hosts);
   };
 }

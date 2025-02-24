@@ -18,5 +18,8 @@
     pystring
     # Rust
     rustup
+    # Nix
+    nil
+    nixfmt-rfc-style
   ];
 }

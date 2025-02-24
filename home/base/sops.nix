@@ -1,9 +1,10 @@
-{ inputs, hostSpec, userSpec, config, lib, ... }:
+{ inputs, hostSpec, config, lib, ... }:
 
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
   homeDirectory = config.home.homeDirectory;
   generalKeys = [ "config" "secrets" ];
+  userSpec = config.userSpec;
 in {
   imports = [ inputs.sops-nix.homeManagerModules.sops ];
 

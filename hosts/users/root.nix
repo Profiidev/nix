@@ -2,5 +2,5 @@
 
 {
   imports =
-    [ ../../../home/profiles/base.nix ../../../home/profiles/coding.nix ];
+    [ ../../home/profiles/base.nix ../../home/profiles/coding.nix ];
 }

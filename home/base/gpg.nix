@@ -1,11 +1,11 @@
-{ pkgs, userSpec, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.gpg = {
     enable = true;
 
     publicKeys = [{
-      text = userSpec.gpg_pub_key;
+      text = config.userSpec.gpg_pub_key;
       trust = 5;
     }];
   };
