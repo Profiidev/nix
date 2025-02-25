@@ -9,7 +9,7 @@ in {
   users.users = lib.foldl (acc: spec:
     acc // {
       "${spec.username}" = {
-        isNormalUser = true;
+        isNormalUser = spec.username != "root";
         extraGroups = lib.flatten [
           "wheel"
           (ifTheyExist [
