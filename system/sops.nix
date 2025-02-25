@@ -25,6 +25,11 @@ in {
         sopsFile = "${sopsFolder}/shared.yaml";
         neededForUsers = true;
       };
+
+      "yubikey/login/${spec.username}" = {
+        sopsFile = "${sopsFolder}/shared.yaml";
+        path = "${spec.home}/.config/Yubico/u2f_keys";
+      };
     }) { } config.hostSpec.users;
 
   system.activationScripts = lib.foldl (acc: spec:

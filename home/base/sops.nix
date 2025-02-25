@@ -47,11 +47,6 @@ in {
         sopsFile = "${sopsFolder}/shared.yaml";
       };
 
-      "yubikey/login/${userSpec.username}" = {
-        sopsFile = "${sopsFolder}/shared.yaml";
-        path = "${homeDirectory}/.config/Yubico/u2f_keys";
-      };
-
       "keyring_keys/${userSpec.username}" = {
         sopsFile = "${sopsFolder}/shared.yaml";
       };
