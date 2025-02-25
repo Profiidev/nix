@@ -27,6 +27,9 @@ in {
       };
 
       "yubikey/login/${spec.username}" = {
+        owner = config.users.users.${spec.username}.name;
+        inherit (config.users.users.${spec.username}) group;
+
         sopsFile = "${sopsFolder}/shared.yaml";
         path = "${spec.home}/.config/Yubico/u2f_keys";
       };
