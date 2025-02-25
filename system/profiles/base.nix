@@ -8,6 +8,7 @@
 
     ../apps/base.nix
     ../apps/flatpak.nix
+    ../apps/shell.nix
 
     ../hardware/bluetooth.nix
     ../hardware/boot.nix
