@@ -281,9 +281,9 @@ if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $targe
 	$scp_cmd ~/.ssh/id_secrets $target_user@"$target_destination":~/.ssh/id_secrets
 	$ssh_cmd ssh-add ~/.ssh/id_secrets
 	green "Copying full nix-config to $target_hostname"
-	sync "$target_user" "${git_root}"/../nix-config
+	sync "$target_user" /etc/nixos/nix-config
 	green "Copying full nix-secrets to $target_hostname"
-	sync "$target_user" "${nix_secrets_dir}"
+	sync "$target_user" /etc/nixos/nix-secrets
 
 	# FIXME(bootstrap): Add some sort of key access from the target to download the config (if it's a cloud system)
 	if yes_or_no "Do you want to rebuild immediately?"; then

@@ -5,7 +5,6 @@
     ../base/fastfetch.nix
     ../base/git.nix
     ../base/gpg.nix
-    ../base/nh.nix
     ../base/security.nix
     ../base/shell.nix
     ../base/sops.nix
