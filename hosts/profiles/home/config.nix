@@ -26,6 +26,6 @@
 
   hostSpec = {
     hostname = "home";
-    users = [ inputs.nix-secrets.users.profidev ];
+    users = [ inputs.nix-secrets.users.profidev { username = "root"; } ];
   };
 }

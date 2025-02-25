@@ -21,5 +21,7 @@
     # Nix
     nil
     nixfmt-rfc-style
+    # Cache
+    sccache
   ];
 }

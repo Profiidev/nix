@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ../apps/lang.nix
+
     ../media/blender.nix
 
     ../services/docker.nix

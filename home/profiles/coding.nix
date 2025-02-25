@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ../optional/lang.nix ../optional/vscode.nix ];
+  imports = [ ../optional/vscode.nix ];
 }
