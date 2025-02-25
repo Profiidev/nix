@@ -36,10 +36,12 @@ in {
     acc // {
       "sopsSetAgeKeyOwnership_${spec.username}" = let
         ageFolder = "${spec.home}/.config/sops/age";
+        keyFolder = "${spec.home}/.config/Yubico";
         user = config.users.users.${spec.username}.name;
         group = config.users.users.${spec.username}.group;
       in ''
         mkdir -p ${ageFolder} || true
+        mkdir -p ${keyFolder} || true
         chown -R ${user}:${group} ${spec.home}/.config
       '';
     }) { } config.hostSpec.users;

@@ -1,4 +1,4 @@
-{ inputs, hostSpec, config, lib, ... }:
+{ inputs, hostSpec, config, ... }:
 
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
@@ -55,9 +55,5 @@ in {
 
   sops.templates."yubikey_pin".content = ''
     PIN="${config.sops.placeholder."yubikey/pins/${userSpec.username}"}"
-  '';
-
-  home.activation.createYubicoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    mkdir -p ~/.config/Yubico
   '';
 }
