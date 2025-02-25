@@ -48,7 +48,7 @@ in {
       ExecStart = ''
         ${keyring-unlocker}/bin/unlock_keyrings.sh ${
           config.sops.secrets."keyring_keys/${config.userSpec.username}".path
-        } $\{PIN}'';
+        } ''${PIN}'';
     };
 
     Install = { WantedBy = [ "gnome-session.target" ]; };
