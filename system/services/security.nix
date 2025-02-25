@@ -8,6 +8,8 @@
     sudo.u2fAuth = true;
   };
 
+  services.pcscd.enable = true;
+
   services.udev.extraRules = ''
     ACTION=="remove",\
      ENV{ID_BUS}=="usb",\
