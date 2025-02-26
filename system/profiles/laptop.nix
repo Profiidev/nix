@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ../hardware/power.nix ];
+  imports = [ ../hardware/power.nix ../apps/laptop.nix ];
 }

@@ -34,5 +34,22 @@
     libfido2
     sops
     openssl
+    arp-scan
+    cmatrix
+    neo-cowsay
+    efitools
+    efibootmgr
+    git-cliff
+    haskellPackages.hashable
+    htop
+    inetutils
+    nettools
+    ntfs3g
+    sbctl
+    speedtest-cli
+    tealdeer
+    traceroute
+    waypipe
+    whois
   ];
 }

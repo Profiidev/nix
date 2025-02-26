@@ -17,11 +17,14 @@
 
     # Profiles
     ../../../system/profiles/base.nix
+    ../../../system/profiles/coding_graphics.nix
     ../../../system/profiles/coding.nix
     ../../../system/profiles/gaming.nix
+    ../../../system/profiles/graphics.nix
 
     # Extra
     ../../../system/media/obs.nix
+    ../../../system/media/3d_print.nix
   ];
 
   hostSpec = {

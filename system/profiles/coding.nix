@@ -3,6 +3,7 @@
 {
   imports = [
     ../apps/lang.nix
+    ../apps/coding_util.nix
 
     ../media/blender.nix
 
