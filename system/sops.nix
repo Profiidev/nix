@@ -26,7 +26,7 @@ in {
         neededForUsers = true;
       };
 
-      "yubikey/login/${spec.username}" = {
+      "yubikey/login/${spec.username}" = lib.mkIf (spec.username != "root") {
         owner = config.users.users.${spec.username}.name;
         inherit (config.users.users.${spec.username}) group;
 
