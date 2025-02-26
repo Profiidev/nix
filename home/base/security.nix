@@ -32,6 +32,7 @@ in {
     yubikey-manager-qt
     yubikey-personalization
     yubikey-personalization-gui
+    yubioath-flutter
 
     keyring-unlocker
   ];

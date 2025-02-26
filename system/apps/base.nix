@@ -33,5 +33,6 @@
     pam_u2f
     libfido2
     sops
+    openssl
   ];
 }
