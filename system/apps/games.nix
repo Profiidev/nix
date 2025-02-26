@@ -6,7 +6,7 @@
     ferium
     heroic
     lutris
-    #minecraft
+    prismlauncher
     modrinth-app
     playonlinux
     r2modman
