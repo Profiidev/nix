@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ cura freecad ];
+  environment.systemPackages = with pkgs;
+    [
+      #cura 
+      freecad
+    ];
 }

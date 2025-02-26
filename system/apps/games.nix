@@ -6,7 +6,7 @@
     ferium
     heroic
     lutris
-    minecraft
+    #minecraft
     modrinth-app
     playonlinux
     r2modman
