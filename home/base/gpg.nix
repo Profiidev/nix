@@ -10,5 +10,13 @@
     }];
   };
 
+  services.gpg-agent = {
+    enable = true;
+
+    extraConfig = ''
+      allow-loopback-pinentry
+    '';
+  };
+
   home.packages = with pkgs; [ gnupg ];
 }
