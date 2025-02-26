@@ -12,6 +12,7 @@
     gnomeExtensions.rounded-corners
     gnomeExtensions.search-light
     gnomeExtensions.vitals
+    gnomeExtensions.bluetooth-battery-meter
 
     bibata-cursors
     orchis-theme
@@ -252,6 +253,13 @@
       show-storage = false;
       show-system = false;
       show-voltage = false;
+    };
+
+    "org/gnome/shell/extensions/Bluetooth-Battery-Meter" = {
+      enable-battery-indicator-text = true;
+      enable-battery-level-text = true;
+      sort-devices-by-history = true;
+      swap-icon-text = false;
     };
 
     "org/gnome/shell/keybindings" = {
