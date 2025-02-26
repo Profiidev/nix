@@ -8,6 +8,10 @@
       text = config.userSpec.gpg_pub_key;
       trust = 5;
     }];
+
+    scdaemonSettings = {
+      disable-ccid = true;
+    };
   };
 
   services.gpg-agent = {
