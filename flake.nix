@@ -38,6 +38,11 @@
       flake = false;
     };
 
+    anzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-secrets = {
       url =
         "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=master&shallow=1";
