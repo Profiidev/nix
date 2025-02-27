@@ -38,7 +38,7 @@
       flake = false;
     };
 
-    anzaboote = {
+    lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
