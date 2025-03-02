@@ -10,7 +10,7 @@
 
   security.pam.u2f = {
     enable = true;
-    control = "sufficient";
+    settings.cue = true;
   };
 
   services.pcscd.enable = true;
