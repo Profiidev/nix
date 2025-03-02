@@ -2,12 +2,12 @@
 
 {
   imports = lib.flatten [
-    (../../disks/btrfs.nix)
+    (../../disks/btrfs-luks.nix)
     {
       _module.args = {
-        disk = "/dev/disk/by-id/nvme-eui.0025384b3140a47d";
+        disk = "/dev/disk/by-id/<id>";
         withSwap = true;
-        swapSize = 32;
+        swapSize = 16;
       };
     }
 
@@ -17,14 +17,8 @@
 
     # Profiles
     ../../../system/profiles/base.nix
-    ../../../system/profiles/coding_graphics.nix
-    ../../../system/profiles/coding.nix
-    ../../../system/profiles/gaming.nix
     ../../../system/profiles/graphics.nix
-
-    # Extra
-    ../../../system/media/obs.nix
-    ../../../system/media/3d_print.nix
+    ../../../system/profiles/laptop.nix
   ];
 
   hostSpec = {
