@@ -29,7 +29,7 @@ trap cleanup exit
 # Copy data to the target machine
 function sync() {
 	# $1 = user, $2 = source, $3 = destination
-	rsync -av --filter=':- .gitignore' -e "ssh -oControlMaster=no -l $1 -oport=${ssh_port}" "$2" "$1@${target_destination}:"
+	rsync -av --filter=':- .gitignore' -e "ssh -oControlMaster=no -l $1 -oport=${ssh_port}" "$2" "$1@${target_destination}:/etc/nixos"
 }
 
 # Usage function
@@ -281,14 +281,14 @@ if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $targe
 	$scp_cmd ~/.ssh/id_secrets $target_user@"$target_destination":~/.ssh/id_secrets
 	$ssh_cmd ssh-add ~/.ssh/id_secrets
 	green "Copying full nix-config to $target_hostname"
-	sync "$target_user" /etc/nixos/nix-config
+	sync "$target_user" "${git_root}"/../nix-config
 	green "Copying full nix-secrets to $target_hostname"
-	sync "$target_user" /etc/nixos/nix-secrets
+	sync "$target_user" "${nix_secrets_dir}"
 
 	# FIXME(bootstrap): Add some sort of key access from the target to download the config (if it's a cloud system)
 	if yes_or_no "Do you want to rebuild immediately?"; then
 		green "Rebuilding nix-config on $target_hostname"
-		$ssh_cmd "cd nix-config && sudo nixos-rebuild --impure --show-trace --flake .#$target_hostname switch"
+		$ssh_cmd "cd /etc/nixos/nix-config && sudo nixos-rebuild --impure --show-trace --flake .#$target_hostname switch"
 	fi
 else
 	echo

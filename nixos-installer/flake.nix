@@ -46,7 +46,8 @@
       nixosConfigurations = {
         # host = newConfig "name" disk" "swapSize" "useLuks"
         # Swap size is in GiB
-        home = newConfig "home" "/dev/sda" 4 true;
+        home = newConfig "home" "/dev/disk/by-id/nvme-eui.0025384b3140a47d" 32 false;
+        laptop = newConfig "laptop" "/dev/disk/by-id/nvme-PCIe-8_SSD_1TB_YMA11T0JA2133004AD" 16 true;
       };
     };
 }
