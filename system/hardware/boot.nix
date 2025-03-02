@@ -1,11 +1,12 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.enable = lib.mkForce false;
-
-  boot.lanzaboote = {
+  boot.loader.grub = {
     enable = true;
-    pkiBundle = "/var/lib/sbctl";
+    device = "nodev";
+    useOSProber = true;
+    theme = pkgs.nixos-grub2-theme;
+    efiSupport = true;
   };
 }
