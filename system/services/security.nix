@@ -8,6 +8,11 @@
     sudo.u2fAuth = true;
   };
 
+  security.pam.u2f = {
+    enable = true;
+    control = "sufficient";
+  };
+
   services.pcscd.enable = true;
 
   services.udev.extraRules = ''
