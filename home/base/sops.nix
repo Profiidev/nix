@@ -3,7 +3,7 @@
 let
   sopsFolder = (builtins.toString inputs.nix-secrets) + "/sops";
   homeDirectory = config.home.homeDirectory;
-  generalKeys = [ "config" ];
+  generalKeys = [ ];
   userSpec = config.userSpec;
 in {
   imports = [ inputs.sops-nix.homeManagerModules.sops ];
