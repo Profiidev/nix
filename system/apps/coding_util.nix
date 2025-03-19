@@ -34,5 +34,7 @@
     sea-orm-cli
     trunk
     wasm-pack
+    pkg-config
+    gobject-introspectio
   ];
 }
