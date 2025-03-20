@@ -10,6 +10,5 @@
     piper
     spotify
     wasistlos
-    ungoogled-chromium
   ];
 }
