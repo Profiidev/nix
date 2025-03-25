@@ -22,17 +22,6 @@
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
-    mutter-triple-buffering-src = {
-      url =
-        "gitlab:vanvugt/mutter?ref=triple-buffering-v4-47&host=gitlab.gnome.org";
-      flake = false;
-    };
-
-    gvdb-src = {
-      url = "gitlab:GNOME/gvdb?ref=main&host=gitlab.gnome.org";
-      flake = false;
-    };
-
     keyring-unlocker-src = {
       url = "github:recolic/gnome-keyring-yubikey-unlock";
       flake = false;

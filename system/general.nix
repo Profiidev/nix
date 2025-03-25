@@ -19,14 +19,6 @@
     };
     overlays = [
       inputs.rust-overlay.overlays.default
-      (final: prev: {
-        mutter = prev.mutter.overrideAttrs (old: {
-          src = inputs.mutter-triple-buffering-src;
-          preConfigure = ''
-            cp -a "${inputs.gvdb-src}" ./subprojects/gvdb
-          '';
-        });
-      })
     ];
   };
 
