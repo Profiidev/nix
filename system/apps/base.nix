@@ -1,5 +1,19 @@
 { pkgs, ... }:
 
+let
+  wrapped-kubernetes-helm = with pkgs; wrapHelm kubernetes-helm {
+    plugins = with pkgs.kubernetes-helmPlugins; [
+      helm-secrets
+      helm-diff
+      helm-s3
+      helm-git
+    ];
+  };
+
+  wrapped-helmfile = pkgs.helmfile-wrapped.override {
+    inherit (wrapped-kubernetes-helm) pluginsDir;
+  };
+in
 {
   environment.systemPackages = with pkgs; [
     nano
@@ -53,10 +67,9 @@
     whois
     kubectl
     kustomize
-    kubernetes-helm
     helm-ls
-    helmfile
-    kubernetes-helmPlugins.helm-diff
+    wrapped-helmfile
+    wrapped-kubernetes-helm
   ];
 
   programs.nix-ld.enable = true;
