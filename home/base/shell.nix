@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.bash = {
@@ -38,6 +38,4 @@
       };
     }];
   };
-
-  programs.man.generateCaches = false;
 }

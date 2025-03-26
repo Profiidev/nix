@@ -74,4 +74,6 @@
     webkitgtk_4_1
     openssl
   ];
+
+  documentation.man.generateCaches = false;
 }
