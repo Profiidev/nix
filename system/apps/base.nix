@@ -56,6 +56,7 @@
     kubernetes-helm
     helm-ls
     helmfile
+    kubernetes-helmPlugins.helm-diff
   ];
 
   programs.nix-ld.enable = true;
