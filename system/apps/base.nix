@@ -51,6 +51,11 @@
     traceroute
     waypipe
     whois
+    kubectl
+    kustomize
+    kubernetes-helm
+    helm-ls
+    helmfile
   ];
 
   programs.nix-ld.enable = true;

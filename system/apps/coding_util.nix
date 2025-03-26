@@ -7,12 +7,7 @@
     docker
     docker-buildx
     docker-compose
-    kubernetes-helm
-    helm-ls
-    helmfile
     kdePackages.kcachegrind
-    kubectl
-    kustomize
     maven
     nvidia-container-toolkit
     ollama
