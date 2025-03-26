@@ -38,4 +38,6 @@
       };
     }];
   };
+
+  programs.man.generateCaches = false;
 }
