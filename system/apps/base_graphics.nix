@@ -12,6 +12,5 @@
     wasistlos
     dbeaver-bin
 #    chromium
-    pkgs.callPackage ./custom/shanocast.nix
   ];
 }
