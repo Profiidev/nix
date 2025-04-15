@@ -70,6 +70,9 @@ in
     helm-ls
     wrapped-helmfile
     wrapped-kubernetes-helm
+    # Nix
+    nil
+    nixfmt-rfc-style
   ];
 
   programs.nix-ld.enable = true;
