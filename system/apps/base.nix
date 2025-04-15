@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   wrapped-kubernetes-helm = with pkgs; wrapHelm kubernetes-helm {
@@ -16,6 +16,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    inputs.shanocast.packages.x86_64-linux.shanocast
     nano
     os-prober
     home-manager
