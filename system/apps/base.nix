@@ -16,7 +16,6 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    inputs.shanocast.packages.x86_64-linux.shanocast
     nano
     os-prober
     home-manager

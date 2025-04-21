@@ -32,11 +32,6 @@
         "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=master&shallow=1";
       inputs = { };
     };
-
-    shanocast = {
-      url = "github:rgerganov/shanocast";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
