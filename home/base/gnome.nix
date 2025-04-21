@@ -13,6 +13,7 @@
     gnomeExtensions.search-light
     gnomeExtensions.vitals
     gnomeExtensions.bluetooth-battery-meter
+    gnomeExtensions.hibernate-status-button
 
     bibata-cursors
     orchis-theme
@@ -68,6 +69,7 @@
         "forge@jmmaranan.com"
         "search-light@icedman.github.com"
         "appindicatorsupport@rgcjonas.gmail.com"
+        "hibernate-status@dromi"
       ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
@@ -260,6 +262,11 @@
       enable-battery-level-text = true;
       sort-devices-by-history = true;
       swap-icon-text = false;
+    };
+
+    "org/gnome/shell/extensions/hibernate-status-button" = {
+      show-hybrid-sleep = false;
+      show-suspend-then-hibernate = false;
     };
 
     "org/gnome/shell/keybindings" = {
