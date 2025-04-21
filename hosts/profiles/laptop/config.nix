@@ -19,6 +19,7 @@
     ../../../system/profiles/base.nix
     ../../../system/profiles/graphics.nix
     ../../../system/profiles/laptop.nix
+    ../../../system/profiles/office.nix
   ];
 
   hostSpec = {

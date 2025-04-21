@@ -21,6 +21,7 @@
     ../../../system/profiles/coding.nix
     ../../../system/profiles/gaming.nix
     ../../../system/profiles/graphics.nix
+    ../../../system/profiles/office.nix
 
     # Extra
     ../../../system/media/obs.nix
