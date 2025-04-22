@@ -265,6 +265,7 @@
     };
 
     "org/gnome/shell/extensions/hibernate-status-button" = {
+      show-suspend = false;
       show-hybrid-sleep = false;
       show-suspend-then-hibernate = false;
     };

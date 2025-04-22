@@ -7,4 +7,10 @@
   boot.initrd = {
     systemd.enable = true;
   };
+
+  services.logind = {
+    lidSwitch = "hibernate";
+    lidSwitchDocked = "hibernate";
+    lidSwitchExternalPower = "hibernate";
+  };
 }
