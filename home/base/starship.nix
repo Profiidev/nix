@@ -32,7 +32,9 @@
 
       # Fourth param
       [sudo]
-      disabled = false
+      #disabled = false
+      disabled = true
+      format = "[$symbol]($style)"
 
       # Before all the version info (python, nodejs, php, etc.)
       [git_status]
