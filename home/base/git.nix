@@ -30,6 +30,15 @@
       commit.gpgsign = true;
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/id_${config.userSpec.git_sign_key}.pub";
+
+      push = {
+        autoSetupRemote = true;
+        followTags = true;
+      };
+
+      rebase = {
+        autoStash = true;
+      };
     };
   };
 }
