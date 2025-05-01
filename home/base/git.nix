@@ -12,7 +12,7 @@
       a = "add";
       aa = "add -A";
       cm = "commit -m";
-      com = "checkout master";
+      com = "checkout main";
       b = "branch";
       bd = "branch -d";
       bdd = "branch -D";
@@ -38,6 +38,10 @@
 
       rebase = {
         autoStash = true;
+      };
+
+      init = {
+        defaultBranch = "main";
       };
     };
   };
