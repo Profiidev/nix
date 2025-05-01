@@ -29,7 +29,7 @@
 
     nix-secrets = {
       url =
-        "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=master&shallow=1";
+        "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
       inputs = { };
     };
   };
