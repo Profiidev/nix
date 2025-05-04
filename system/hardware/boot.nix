@@ -9,4 +9,6 @@
     theme = pkgs.nixos-grub2-theme;
     efiSupport = true;
   };
+
+  boot.plymouth.enable = true;
 }

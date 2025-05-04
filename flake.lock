@@ -60,14 +60,14 @@
       "locked": {
         "lastModified": 1742368213,
         "narHash": "sha256-GCXEYBm/GH/b6iNhZy7jx8wb+w6wrtpNV+Y5hTbmssM=",
-        "ref": "master",
+        "ref": "main",
         "rev": "e9a98a87b647698a66f873bb10fd3cec14cb592d",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"
       },
       "original": {
-        "ref": "master",
+        "ref": "main",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"
