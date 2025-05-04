@@ -8,6 +8,7 @@
     useOSProber = true;
     theme = pkgs.nixos-grub2-theme;
     efiSupport = true;
+    font = "${pkgs.nixos-grub2-theme}/dejavu.pf2";
   };
 
   boot.plymouth.enable = true;
