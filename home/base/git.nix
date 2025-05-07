@@ -34,6 +34,7 @@
       push = {
         autoSetupRemote = true;
         followTags = true;
+        recurseSubmodules = "on-demand";
       };
 
       rebase = {
@@ -42,6 +43,10 @@
 
       init = {
         defaultBranch = "main";
+      };
+
+      submodule = {
+        recurse = true;
       };
     };
   };
