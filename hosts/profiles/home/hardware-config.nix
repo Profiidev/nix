@@ -24,7 +24,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
-  networking.interfaces.enp6s0.wakeOnLan = lib.mkDefault true;
+  networking.interfaces.enp6s0.wakeOnLan.enable = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
