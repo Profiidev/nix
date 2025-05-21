@@ -14,6 +14,7 @@
     gnomeExtensions.vitals
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.hibernate-status-button
+    gnomeExtensions.user-themes
 
     bibata-cursors
     orchis-theme
