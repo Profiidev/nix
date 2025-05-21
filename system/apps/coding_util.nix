@@ -29,6 +29,6 @@
     trunk
     wasm-pack
     pkg-config
-    gobject-introspectio
+    gobject-introspection
   ];
 }

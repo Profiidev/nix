@@ -280,6 +280,7 @@ if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $targe
 	green "Copying secrets ssh key"
 	$scp_cmd ~/.ssh/id_ed25519 $target_user@"$target_destination":~/.ssh/id_ed25519
 	$ssh_cmd ssh-add ~/.ssh/id_ed25519
+	$ssh_cmd "sudo chown -R $target_user /etc/nixos"
 	green "Copying full nix-config to $target_hostname"
 	sync "$target_user" "${git_root}"/../nix-config
 	green "Copying full nix-secrets to $target_hostname"
