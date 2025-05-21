@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 let
   wrapped-kubernetes-helm = with pkgs; wrapHelm kubernetes-helm {
@@ -73,6 +73,9 @@ in
     # Nix
     nil
     nixfmt-rfc-style
+    ssh-to-age
+    yq-go
+    age
   ];
 
   programs.nix-ld.enable = true;

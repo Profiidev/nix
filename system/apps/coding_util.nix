@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     act
-    age
     docker
     docker-buildx
     docker-compose
