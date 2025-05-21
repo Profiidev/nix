@@ -271,15 +271,15 @@ if [[ $updated_age_keys == 1 ]]; then
 	# Since we may update the sops.yaml file twice above, only rekey once at the end
 	just rekey
 	green "Updating flake input to pick up new .sops.yaml"
-	sudo nix flake update nix-secrets --extra-experimental-features "nix-command flakes"
+	nix flake update nix-secrets --extra-experimental-features "nix-command flakes"
 fi
 
 if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $target_hostname?"; then
 	green "Adding ssh host fingerprint at $target_destination to ~/.ssh/known_hosts"
 	ssh-keyscan -p "$ssh_port" "$target_destination" 2>/dev/null | grep -v '^#' >>~/.ssh/known_hosts || true
 	green "Copying secrets ssh key"
-	$scp_cmd ~/.ssh/id_secrets $target_user@"$target_destination":~/.ssh/id_secrets
-	$ssh_cmd ssh-add ~/.ssh/id_secrets
+	$scp_cmd ~/.ssh/id_ed25519 $target_user@"$target_destination":~/.ssh/id_ed25519
+	$ssh_cmd ssh-add ~/.ssh/id_ed25519
 	green "Copying full nix-config to $target_hostname"
 	sync "$target_user" "${git_root}"/../nix-config
 	green "Copying full nix-secrets to $target_hostname"
