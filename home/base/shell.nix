@@ -16,6 +16,7 @@
 
     shellInit = ''
       set fish_greeting
+      set -U fish_color_command blue
       export WEBKIT_DISABLE_COMPOSITING_MODE=1
       export RUSTC_WRAPPER=sccache
       export SCCACHE_CACHE_SIZE="50G"
