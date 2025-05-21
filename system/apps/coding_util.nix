@@ -30,5 +30,7 @@
     wasm-pack
     pkg-config
     gobject-introspection
+    terraform
+    minikube
   ];
 }
