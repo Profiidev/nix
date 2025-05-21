@@ -37,6 +37,7 @@ in {
     keyring-unlocker
   ];
 
+  /*
   systemd.user.services.unlock-keyring = {
     Unit = {
       Description = "Unlocks Keyring";
@@ -52,5 +53,5 @@ in {
     };
 
     Install = { WantedBy = [ "gnome-session.target" ]; };
-  };
+  };*/
 }

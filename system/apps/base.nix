@@ -96,4 +96,9 @@ in
   ];
 
   documentation.man.generateCaches = false;
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
+  ];
 }
