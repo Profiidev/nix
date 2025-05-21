@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ../apps/gamemode.nix ../apps/steam.nix ../apps/games.nix ];
+  imports = [ ../apps/gamemode.nix ../apps/games.nix ../hardware/nvidia.nix ];
 }

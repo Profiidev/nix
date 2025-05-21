@@ -76,6 +76,7 @@ in
     ssh-to-age
     yq-go
     age
+    pciutils
   ];
 
   programs.nix-ld.enable = true;
