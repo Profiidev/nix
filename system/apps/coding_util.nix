@@ -34,5 +34,6 @@
     minikube
     uv
     devenv
+    direnv
   ];
 }
