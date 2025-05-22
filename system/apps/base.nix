@@ -77,7 +77,6 @@ in
     yq-go
     age
     pciutils
-    libstdcxx5
   ];
 
   programs.nix-ld.enable = true;
@@ -94,7 +93,6 @@ in
     pango
     webkitgtk_4_1
     openssl
-    libstdcxx5
   ];
 
   documentation.man.generateCaches = false;
