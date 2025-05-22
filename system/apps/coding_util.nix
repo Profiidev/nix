@@ -33,5 +33,12 @@
     terraform
     minikube
     uv
+
+    # Libs
+    eudev
+  ];
+
+  programs.nix-ld.libraries = with pkgs; [
+    eudev
   ];
 }

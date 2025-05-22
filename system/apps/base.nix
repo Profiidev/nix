@@ -80,6 +80,7 @@ in
     nix-index
     nss
     libcef
+    openssl
   ];
 
   programs.nix-ld.enable = true;
