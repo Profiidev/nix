@@ -32,5 +32,6 @@
     gobject-introspection
     terraform
     minikube
+    uv
   ];
 }
