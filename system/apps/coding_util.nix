@@ -35,6 +35,7 @@
     uv
     devenv
     jdk23
+    azure-cli
   ];
 
   programs.direnv = {
