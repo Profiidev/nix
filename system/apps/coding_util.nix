@@ -34,6 +34,7 @@
     minikube
     uv
     devenv
+    jdk23
   ];
 
   programs.direnv = {

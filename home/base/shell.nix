@@ -27,16 +27,23 @@
       fastfetch
     '';
 
-    shellAliases = { k = "kubectl"; };
+    shellAliases = {
+      k = "kubectl";
+      tf = "terraform";
+      l = "eza -l -a --icons --group-directories-first";
+      ls = "eza";
+    };
 
-    plugins = [{
-      name = "nvm";
-      src = pkgs.fetchFromGitHub {
-        owner = "jorgebucaran";
-        repo = "nvm.fish";
-        rev = "abd3002b6d2d578d484a5aea94dd1517dded6d42";
-        sha256 = "sha256-BNnoP9gLQuZQt/0SOOsZaYOexNN2K7PKWT/paS0BJJY=";
-      };
-    }];
+    plugins = [
+      {
+        name = "nvm";
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "nvm.fish";
+          rev = "abd3002b6d2d578d484a5aea94dd1517dded6d42";
+          sha256 = "sha256-BNnoP9gLQuZQt/0SOOsZaYOexNN2K7PKWT/paS0BJJY=";
+        };
+      }
+    ];
   };
 }

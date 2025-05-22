@@ -81,6 +81,11 @@ in
     nss
     libcef
     openssl
+    bat
+    eza
+    xh
+    hyperfine
+    tokei
   ];
 
   programs.nix-ld.enable = true;
