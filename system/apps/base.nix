@@ -77,6 +77,9 @@ in
     yq-go
     age
     pciutils
+    nix-index
+    nss
+    libcef
   ];
 
   programs.nix-ld.enable = true;
@@ -93,6 +96,9 @@ in
     pango
     webkitgtk_4_1
     openssl
+    stdenv.cc.cc.lib
+    nss
+    libcef
   ];
 
   documentation.man.generateCaches = false;
