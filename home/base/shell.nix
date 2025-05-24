@@ -1,6 +1,13 @@
 { pkgs, ... }:
 
+let
+  azure-cli = pkgs.azure-cli.withExtensions (
+    [pkgs.azure-cli-extensions.account]
+  );
+in
 {
+  home.packages = [azure-cli];
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
