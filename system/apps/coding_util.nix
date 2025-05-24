@@ -23,6 +23,7 @@
     cargo-semver-checks
     cargo-tauri
     cargo-watch
+    cargo-bootimage
     espflash
     release-plz
     sea-orm-cli
