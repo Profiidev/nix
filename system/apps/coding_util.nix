@@ -37,6 +37,7 @@
     devenv
     jdk23
     azure-cli
+    go
   ];
 
   programs.direnv = {
