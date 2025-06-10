@@ -11,6 +11,7 @@
     spotify
     wasistlos
     dbeaver-bin
+    rpi-imager
 #    chromium
   ];
 }
