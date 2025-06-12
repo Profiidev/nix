@@ -22,6 +22,7 @@
     ../../../system/profiles/gaming.nix
     ../../../system/profiles/graphics.nix
     ../../../system/profiles/office.nix
+    ../../../system/profiles/pc.nix
 
     # Extra
     ../../../system/media/obs.nix
@@ -30,6 +31,9 @@
 
   hostSpec = {
     hostname = "home";
-    users = [ inputs.nix-secrets.users.profidev { username = "root"; } ];
+    users = [
+      inputs.nix-secrets.users.profidev
+      { username = "root"; }
+    ];
   };
 }
