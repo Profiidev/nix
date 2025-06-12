@@ -12,6 +12,8 @@
     wasistlos
     dbeaver-bin
     rpi-imager
-#    chromium
+    #    chromium
   ];
+
+  services.ratbagd.enable = true;
 }
