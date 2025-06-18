@@ -5,6 +5,7 @@
     libnvidia-container
     egl-wayland
     cudaPackages.cuda_nvrtc
+    nvidia-docker
   ];
 
   hardware.nvidia-container-toolkit.enable = true;
