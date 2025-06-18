@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     cudatoolkit
     libnvidia-container
+    egl-wayland
   ];
 
   virtualisation.docker = {
