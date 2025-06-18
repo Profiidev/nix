@@ -4,6 +4,9 @@
     cudatoolkit
     libnvidia-container
     egl-wayland
+    cudaPackages.nvidia_driver
+    cudaPackages.cudnn
+    cudaPackages.cuda_nvrtc
   ];
 
   virtualisation.docker = {
