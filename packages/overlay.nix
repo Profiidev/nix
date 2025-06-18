@@ -1,3 +1,3 @@
 (final: prev: {
-  moondeck-buddy = prev.callPackage ./moondeck-buddy { };
+  moondeck-buddy = prev.callPackage ./moondeck-buddy.nix { };
 })

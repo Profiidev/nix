@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  imports = [ ../optional/sunshine.nix ];
+}
