@@ -4,7 +4,6 @@
     cudatoolkit
     libnvidia-container
     egl-wayland
-    cudaPackages.cudnn
     cudaPackages.cuda_nvrtc
   ];
 
