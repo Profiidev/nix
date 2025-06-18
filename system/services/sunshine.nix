@@ -11,4 +11,8 @@
     openFirewall = true;
     package = pkgs.sunshine.override { cudaSupport = true; };
   };
+
+  networking.firewall = {
+    allowedUDPPorts = [ 47998 48000 ];
+  };
 }
