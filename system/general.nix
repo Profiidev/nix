@@ -19,6 +19,7 @@
     };
     overlays = [
       inputs.rust-overlay.overlays.default
+      (import ../packages/overlay.nix)
     ];
   };
 

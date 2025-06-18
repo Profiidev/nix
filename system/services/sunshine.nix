@@ -3,10 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     moonlight-qt
+    moondeck-buddy
   ];
 
   services.sunshine = {
-    enable = false;
+    enable = true;
     capSysAdmin = true;
     openFirewall = true;
     package = pkgs.sunshine.override { cudaSupport = true; };
