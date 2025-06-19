@@ -1,4 +1,9 @@
-{ config, inputs, lib, ... }:
+{
+  config,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   imports = lib.flatten [
@@ -8,7 +13,10 @@
   ];
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     trusted-users = (map (spec: spec.username) config.hostSpec.users);
   };
 
@@ -16,6 +24,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
+      cudaSupport = true;
     };
     overlays = [
       inputs.rust-overlay.overlays.default
@@ -23,8 +32,7 @@
     ];
   };
 
-  systemd.tmpfiles.rules =
-    [ "L+ /usr/local/bin - - - - /run/current-system/sw/bin/" ];
+  systemd.tmpfiles.rules = [ "L+ /usr/local/bin - - - - /run/current-system/sw/bin/" ];
 
   system.stateVersion = "25.05";
 }

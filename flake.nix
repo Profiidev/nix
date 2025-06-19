@@ -1,6 +1,15 @@
 {
   description = "Nixos config flake";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -28,28 +37,33 @@
     };
 
     nix-secrets = {
-      url =
-        "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
+      url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
       inputs = { };
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       inherit (nixpkgs) lib;
-    in {
-      nixosConfigurations = builtins.listToAttrs (map (host: {
-        name = host;
-        value = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs host;
-            lib = nixpkgs.lib.extend (self: super: {
-              custom = import ./lib { inherit (nixpkgs) lib; };
-            });
+    in
+    {
+      nixosConfigurations = builtins.listToAttrs (
+        map (host: {
+          name = host;
+          value = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs outputs host;
+              lib = nixpkgs.lib.extend (
+                self: super: {
+                  custom = import ./lib { inherit (nixpkgs) lib; };
+                }
+              );
+            };
+            modules = [ ./hosts/profiles/${host}/config.nix ];
           };
-          modules = [ ./hosts/profiles/${host}/config.nix ];
-        };
-      }) (lib.attrNames (builtins.readDir ./hosts/profiles)));
+        }) (lib.attrNames (builtins.readDir ./hosts/profiles))
+      );
     };
 }
