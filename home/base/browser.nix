@@ -52,9 +52,13 @@ let
     "application/vnd.jgraph.mxfile.realtime" = [ "drawio.desktop" ];
 
   };
-in {
+in
+{
   # Module installing brave as default browser
-  home.packages = [ pkgs.google-chrome ];
+  home.packages = with pkgs; [
+    google-chrome
+    firefox
+  ];
 
   xdg = {
     configFile."mimeapps.list".force = true;
