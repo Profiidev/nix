@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.cloudflare-warp = {
+  services.tailscale = {
     enable = true;
   };
 }

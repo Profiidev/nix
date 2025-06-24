@@ -10,6 +10,7 @@
     ../apps/flatpak.nix
     ../apps/nh.nix
     ../apps/shell.nix
+    ../apps/tailscale.nix
 
     ../hardware/bluetooth.nix
     ../hardware/boot.nix
