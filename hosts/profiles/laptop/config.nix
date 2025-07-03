@@ -18,6 +18,7 @@
     # Profiles
     ../../../system/profiles/base.nix
     ../../../system/profiles/graphics.nix
+    ../../../system/profiles/coding_graphics.nix
     ../../../system/profiles/laptop.nix
     ../../../system/profiles/office.nix
   ];
