@@ -25,7 +25,9 @@
     gnome-extension-manager
   ];
 
-  gtk = { enable = true; };
+  gtk = {
+    enable = true;
+  };
 
   dconf.enable = true;
   dconf.settings = {
@@ -35,7 +37,9 @@
       button-mode = "programming";
     };
 
-    "org/gnome/desktop/peripherals/keyboard" = { numlock-state = true; };
+    "org/gnome/desktop/peripherals/keyboard" = {
+      numlock-state = true;
+    };
 
     "org/gnome/desktop/wm/keybindings" = {
       activate-window-menu = [ "<Control><Alt>space" ];
@@ -74,7 +78,7 @@
       ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
-        "google-chrome.desktop"
+        "firefox.desktop"
         "Alacritty.desktop"
         "code.desktop"
       ];
@@ -120,99 +124,98 @@
       name = "arch";
     };
 
-    "org/gnome/shell/extensions/gsconnect/device/30219ccb_da45_454c_9fd8_2676dde041f5" =
-      {
-        certificate-pem = ''
-          -----BEGIN CERTIFICATE-----
-          MIIBkzCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCQzMDIxOWNj
-          Yl9kYTQ1XzQ1NGNfOWZkOF8yNjc2ZGRlMDQxZjUxFDASBgNVBAsMC0tERSBDb25u
-          ZWN0MQwwCgYDVQQKDANLREUwHhcNMjMwNzE2MjIwMDAwWhcNMzMwNzE2MjIwMDAw
-          WjBTMS0wKwYDVQQDDCQzMDIxOWNjYl9kYTQ1XzQ1NGNfOWZkOF8yNjc2ZGRlMDQx
-          ZjUxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO
-          PQIBBggqhkjOPQMBBwNCAATYdx79uWSOkw4zU0Y5H2azj+N65NRFnGmaf9sT9IEb
-          /zlaq+jc6jij6bQU5TuSLd3dW7UQZfpljhtiw7jlKrKnMAoGCCqGSM49BAMEA0gA
-          MEUCIFHecxeUPJenmTXSjTpygD071fzxmc1XTP707WXpMjONAiEAyO2x3TXdPAwD
-          rePto0+JNwlJOnbAQPtFUiFwWgD/R4I=
-          -----END CERTIFICATE-----
-        '';
-        incoming-capabilities = [
-          "kdeconnect.battery"
-          "kdeconnect.bigscreen.stt"
-          "kdeconnect.clipboard"
-          "kdeconnect.clipboard.connect"
-          "kdeconnect.contacts.request_all_uids_timestamps"
-          "kdeconnect.contacts.request_vcards_by_uid"
-          "kdeconnect.findmyphone.request"
-          "kdeconnect.mousepad.keyboardstate"
-          "kdeconnect.mousepad.request"
-          "kdeconnect.mpris"
-          "kdeconnect.mpris.request"
-          "kdeconnect.notification"
-          "kdeconnect.notification.action"
-          "kdeconnect.notification.reply"
-          "kdeconnect.notification.request"
-          "kdeconnect.ping"
-          "kdeconnect.runcommand"
-          "kdeconnect.sftp.request"
-          "kdeconnect.share.request"
-          "kdeconnect.share.request.update"
-          "kdeconnect.sms.request"
-          "kdeconnect.sms.request_attachment"
-          "kdeconnect.sms.request_conversation"
-          "kdeconnect.sms.request_conversations"
-          "kdeconnect.systemvolume"
-          "kdeconnect.telephony.request"
-          "kdeconnect.telephony.request_mute"
-        ];
-        last-connection = "lan://192.168.178.75:1716";
-        name = "Pixel 8";
-        outgoing-capabilities = [
-          "kdeconnect.battery"
-          "kdeconnect.bigscreen.stt"
-          "kdeconnect.clipboard"
-          "kdeconnect.clipboard.connect"
-          "kdeconnect.connectivity_report"
-          "kdeconnect.contacts.response_uids_timestamps"
-          "kdeconnect.contacts.response_vcards"
-          "kdeconnect.findmyphone.request"
-          "kdeconnect.mousepad.echo"
-          "kdeconnect.mousepad.keyboardstate"
-          "kdeconnect.mousepad.request"
-          "kdeconnect.mpris"
-          "kdeconnect.mpris.request"
-          "kdeconnect.notification"
-          "kdeconnect.notification.request"
-          "kdeconnect.ping"
-          "kdeconnect.presenter"
-          "kdeconnect.runcommand.request"
-          "kdeconnect.sftp"
-          "kdeconnect.share.request"
-          "kdeconnect.sms.attachment_file"
-          "kdeconnect.sms.messages"
-          "kdeconnect.systemvolume.request"
-          "kdeconnect.telephony"
-        ];
-        paired = true;
-        supported-plugins = [
-          "battery"
-          "clipboard"
-          "connectivity_report"
-          "contacts"
-          "findmyphone"
-          "mousepad"
-          "mpris"
-          "notification"
-          "ping"
-          "presenter"
-          "runcommand"
-          "sftp"
-          "share"
-          "sms"
-          "systemvolume"
-          "telephony"
-        ];
-        type = "phone";
-      };
+    "org/gnome/shell/extensions/gsconnect/device/30219ccb_da45_454c_9fd8_2676dde041f5" = {
+      certificate-pem = ''
+        -----BEGIN CERTIFICATE-----
+        MIIBkzCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCQzMDIxOWNj
+        Yl9kYTQ1XzQ1NGNfOWZkOF8yNjc2ZGRlMDQxZjUxFDASBgNVBAsMC0tERSBDb25u
+        ZWN0MQwwCgYDVQQKDANLREUwHhcNMjMwNzE2MjIwMDAwWhcNMzMwNzE2MjIwMDAw
+        WjBTMS0wKwYDVQQDDCQzMDIxOWNjYl9kYTQ1XzQ1NGNfOWZkOF8yNjc2ZGRlMDQx
+        ZjUxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO
+        PQIBBggqhkjOPQMBBwNCAATYdx79uWSOkw4zU0Y5H2azj+N65NRFnGmaf9sT9IEb
+        /zlaq+jc6jij6bQU5TuSLd3dW7UQZfpljhtiw7jlKrKnMAoGCCqGSM49BAMEA0gA
+        MEUCIFHecxeUPJenmTXSjTpygD071fzxmc1XTP707WXpMjONAiEAyO2x3TXdPAwD
+        rePto0+JNwlJOnbAQPtFUiFwWgD/R4I=
+        -----END CERTIFICATE-----
+      '';
+      incoming-capabilities = [
+        "kdeconnect.battery"
+        "kdeconnect.bigscreen.stt"
+        "kdeconnect.clipboard"
+        "kdeconnect.clipboard.connect"
+        "kdeconnect.contacts.request_all_uids_timestamps"
+        "kdeconnect.contacts.request_vcards_by_uid"
+        "kdeconnect.findmyphone.request"
+        "kdeconnect.mousepad.keyboardstate"
+        "kdeconnect.mousepad.request"
+        "kdeconnect.mpris"
+        "kdeconnect.mpris.request"
+        "kdeconnect.notification"
+        "kdeconnect.notification.action"
+        "kdeconnect.notification.reply"
+        "kdeconnect.notification.request"
+        "kdeconnect.ping"
+        "kdeconnect.runcommand"
+        "kdeconnect.sftp.request"
+        "kdeconnect.share.request"
+        "kdeconnect.share.request.update"
+        "kdeconnect.sms.request"
+        "kdeconnect.sms.request_attachment"
+        "kdeconnect.sms.request_conversation"
+        "kdeconnect.sms.request_conversations"
+        "kdeconnect.systemvolume"
+        "kdeconnect.telephony.request"
+        "kdeconnect.telephony.request_mute"
+      ];
+      last-connection = "lan://192.168.178.75:1716";
+      name = "Pixel 8";
+      outgoing-capabilities = [
+        "kdeconnect.battery"
+        "kdeconnect.bigscreen.stt"
+        "kdeconnect.clipboard"
+        "kdeconnect.clipboard.connect"
+        "kdeconnect.connectivity_report"
+        "kdeconnect.contacts.response_uids_timestamps"
+        "kdeconnect.contacts.response_vcards"
+        "kdeconnect.findmyphone.request"
+        "kdeconnect.mousepad.echo"
+        "kdeconnect.mousepad.keyboardstate"
+        "kdeconnect.mousepad.request"
+        "kdeconnect.mpris"
+        "kdeconnect.mpris.request"
+        "kdeconnect.notification"
+        "kdeconnect.notification.request"
+        "kdeconnect.ping"
+        "kdeconnect.presenter"
+        "kdeconnect.runcommand.request"
+        "kdeconnect.sftp"
+        "kdeconnect.share.request"
+        "kdeconnect.sms.attachment_file"
+        "kdeconnect.sms.messages"
+        "kdeconnect.systemvolume.request"
+        "kdeconnect.telephony"
+      ];
+      paired = true;
+      supported-plugins = [
+        "battery"
+        "clipboard"
+        "connectivity_report"
+        "contacts"
+        "findmyphone"
+        "mousepad"
+        "mpris"
+        "notification"
+        "ping"
+        "presenter"
+        "runcommand"
+        "sftp"
+        "share"
+        "sms"
+        "systemvolume"
+        "telephony"
+      ];
+      type = "phone";
+    };
 
     "org/gnome/shell/extensions/just-perfection" = {
 
@@ -223,7 +226,12 @@
     };
 
     "org/gnome/shell/extensions/search-light" = {
-      background-color = lib.hm.gvariant.mkTuple [ 0.0 0.0 0.0 1.0 ];
+      background-color = lib.hm.gvariant.mkTuple [
+        0.0
+        0.0
+        0.0
+        1.0
+      ];
       blur-brightness = 0.6;
       blur-sigma = 30.0;
       border-radius = 1.8206278026905829;
@@ -238,7 +246,9 @@
       unit-converter = true;
     };
 
-    "org/gnome/shell/extensions/user-theme" = { name = "WhiteSur-Dark"; };
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "WhiteSur-Dark";
+    };
 
     "org/gnome/shell/extensions/vitals" = {
       fixed-widths = true;
@@ -275,6 +285,8 @@
       toggle-message-tray = [ "<Shift><Super>v" ];
     };
 
-    "org/gnome/tweaks" = { show-extensions-notice = false; };
+    "org/gnome/tweaks" = {
+      show-extensions-notice = false;
+    };
   };
 }

@@ -20,9 +20,16 @@
     };
   };
   virtualisation.libvirtd = {
-    allowedBridges = [ "nm-bridge" "virbr0" ];
+    allowedBridges = [
+      "nm-bridge"
+      "virbr0"
+    ];
     enable = true;
     qemu.runAsRoot = false;
   };
   virtualisation.waydroid.enable = true;
+
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+  ];
 }

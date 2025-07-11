@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  browser = [ "google-chrome.desktop" ];
+  browser = [ "firefox.desktop" ];
   editor = [ "nvim.desktop" ];
   media = [ "vlc.desktop" ];
 
@@ -72,6 +72,6 @@ in
   };
 
   home.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/google-chrome";
+    DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/firefox";
   };
 }
