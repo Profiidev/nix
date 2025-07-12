@@ -4,9 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
+      "https://nix-citizen.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
     ];
   };
 
@@ -39,6 +41,18 @@
     nix-secrets = {
       url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
       inputs = { };
+    };
+
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-citizen = {
+      url = "github:LovingMelody/nix-citizen";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nix-gaming.follows = "nix-gaming";
+      };
     };
   };
 
