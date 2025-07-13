@@ -1,12 +1,10 @@
 { pkgs, ... }:
 
 let
-  azure-cli = pkgs.azure-cli.withExtensions (
-    [pkgs.azure-cli-extensions.account]
-  );
+  azure-cli = pkgs.azure-cli.withExtensions ([ pkgs.azure-cli-extensions.account ]);
 in
 {
-  home.packages = [azure-cli];
+  home.packages = [ azure-cli ];
 
   programs.bash = {
     enable = true;
@@ -39,6 +37,7 @@ in
       tf = "terraform";
       l = "eza -l -a --icons --group-directories-first";
       ls = "eza";
+      nix-shell = "nix-shell --run fish";
     };
 
     plugins = [
