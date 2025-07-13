@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  azure-cli = pkgs.azure-cli.withExtensions ([ pkgs.azure-cli-extensions.account ]);
+  azure-cli = pkgs.azure-cli.withExtensions [ pkgs.azure-cli-extensions.account ];
 in
 {
   home.packages = [ azure-cli ];
@@ -38,6 +38,7 @@ in
       l = "eza -l -a --icons --group-directories-first";
       ls = "eza";
       nix-shell = "nix-shell --run fish";
+      z = "zeditor";
     };
 
     plugins = [

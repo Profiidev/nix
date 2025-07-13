@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     jetbrains-toolbox
+    zed-editor
     massif-visualizer
     postman
     renderdoc
