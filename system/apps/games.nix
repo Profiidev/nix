@@ -7,6 +7,7 @@
     badlion-client
     ferium
     lutris
+    r2modman
     prismlauncher
     modrinth-app
     playonlinux

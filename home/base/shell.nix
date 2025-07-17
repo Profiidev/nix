@@ -11,7 +11,9 @@ in
     enableCompletion = true;
 
     initExtra = ''
-      exec fish
+      if [[ $- == *i* ]]; then
+        exec fish
+      fi
     '';
   };
 
