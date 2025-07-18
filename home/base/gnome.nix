@@ -80,6 +80,7 @@
         "org.gnome.Nautilus.desktop"
         "firefox.desktop"
         "Alacritty.desktop"
+        "dev.zed.Zed.desktop"
         "code.desktop"
       ];
       remember-mount-password = true;
