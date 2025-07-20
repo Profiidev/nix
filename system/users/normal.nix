@@ -1,4 +1,4 @@
-{ lib, config, inputs, pkgs, host, ... }:
+{ lib, config, inputs, pkgs, ... }:
 
 let
   hostSpec = config.hostSpec;
@@ -23,6 +23,7 @@ in {
             "networkmanager"
             "scanner" # for print/scan"
             "lp" # for print/scan"
+            "gamemode"
           ])
         ];
         hashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
@@ -45,7 +46,7 @@ in {
           home.stateVersion = "25.05";
 
           imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
-            ({ config, ... }:
+            ({ ... }:
 
               {
                 config.userSpec = userSpec;
