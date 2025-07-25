@@ -1,14 +1,16 @@
 { pkgs, ... }:
 
 let
-  wrapped-kubernetes-helm = with pkgs; wrapHelm kubernetes-helm {
-    plugins = with pkgs.kubernetes-helmPlugins; [
-      helm-secrets
-      helm-diff
-      helm-s3
-      helm-git
-    ];
-  };
+  wrapped-kubernetes-helm =
+    with pkgs;
+    wrapHelm kubernetes-helm {
+      plugins = with pkgs.kubernetes-helmPlugins; [
+        helm-secrets
+        helm-diff
+        helm-s3
+        helm-git
+      ];
+    };
 
   wrapped-helmfile = pkgs.helmfile-wrapped.override {
     inherit (wrapped-kubernetes-helm) pluginsDir;
@@ -114,4 +116,9 @@ in
     nerd-fonts.fira-mono
     nerd-fonts.fira-code
   ];
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 }
