@@ -19,6 +19,7 @@
       enableExtensionPack = true;
     };
   };
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
   virtualisation.libvirtd = {
     allowedBridges = [
       "nm-bridge"
