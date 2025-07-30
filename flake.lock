@@ -274,16 +274,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1753821260,
-        "narHash": "sha256-r01FuE9a+dPYYP+w7v62vhSn0vX3dHmoXixoHpEAoYs=",
+        "lastModified": 1753875537,
+        "narHash": "sha256-CzHxxnSARvHqu4k1CyfGfVQJU4WFEAJmPA36BO04InQ=",
         "owner": "profiidev",
         "repo": "proton",
-        "rev": "221032af6d791c762fdcaf6627867f13f603f327",
+        "rev": "6810da19d52c0d925e81ff7dceb8bc55f24c977f",
         "type": "github"
       },
       "original": {
         "owner": "profiidev",
-        "ref": "v0.1.9",
+        "ref": "latest",
         "repo": "proton",
         "type": "github"
       }

@@ -60,7 +60,7 @@
     };
 
     proton = {
-      url = "github:profiidev/proton/v0.1.9";
+      url = "github:profiidev/proton/latest";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         rust-overlay.follows = "rust-overlay";
