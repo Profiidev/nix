@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ ../apps/pc.nix ];
+  imports = [
+    ../apps/pc.nix
+    ../services/nix-serve.nix
+  ];
 }

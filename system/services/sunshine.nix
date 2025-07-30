@@ -48,12 +48,14 @@ in
 
   networking.firewall = {
     allowedUDPPorts = [
+      5000
       47998
       48000
       59999
     ];
 
     allowedTCPPorts = [
+      5000
       47998
       48000
       59999
