@@ -17,6 +17,7 @@
     winetricks
 
     inputs.nix-citizen.packages.${system}.star-citizen-umu
+    inputs.proton.packages.${system}.default
   ];
 
   boot.kernel.sysctl = {

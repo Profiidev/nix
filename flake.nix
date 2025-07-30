@@ -5,10 +5,12 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://nix-citizen.cachix.org"
+      "https://profidev.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
+      "profidev.cachix.org-1:xdwadal2vlCD50JtDTy8NwjOJvkOtjdjy1y91ElU9GE="
     ];
   };
 
@@ -52,6 +54,14 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nix-gaming.follows = "nix-gaming";
+      };
+    };
+
+    proton = {
+      url = "github:profiidev/proton/v0.1.9";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "rust-overlay";
       };
     };
   };
