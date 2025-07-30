@@ -1,8 +1,8 @@
-{ ... }:
+{ config, ... }:
 
 {
   services.nix-serve = {
     enable = true;
-    secretKeyFile = "/etc/nix/key.private";
+    secretKeyFile = config.sops.secrets."store_key/private".path;
   };
 }
