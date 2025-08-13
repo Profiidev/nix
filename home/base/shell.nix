@@ -30,18 +30,39 @@ in
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/go/bin:$PATH"
     '';
-    
+
     interactiveShellInit = ''
       fastfetch
     '';
 
-    shellAliases = {
+    shellAbbrs = {
       k = "kubectl";
       tf = "terraform";
       l = "eza -l -a --icons --group-directories-first";
       ls = "eza";
       nix-shell = "nix-shell --run fish";
       z = "zeditor";
+      g = "git";
+      gco = "git checkout";
+      gcom = "git checkout main";
+      gcob = "git checkout -b";
+      gb = "git branch";
+      gbd = "git branch -d";
+      gbD = "git branch -D";
+      gcm = "git commit -m";
+      gca = "git commit --amend";
+      gpl = "git pull";
+      gps = "git push";
+      gpsu = "git push --set-upstream origin";
+      ga = "git add";
+      gaa = "git add -A";
+      grao = "git remote add origin";
+      c = "cargo";
+      cb = "cargo build";
+      cr = "cargo run";
+      cbr = "cargo build --release";
+      crr = "cargo run --release";
+      rmf = "rm -rf";
     };
 
     plugins = [
