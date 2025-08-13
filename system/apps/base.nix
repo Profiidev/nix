@@ -74,6 +74,7 @@ in
     wrapped-kubernetes-helm
     # Nix
     nil
+    nurl
     nixd
     nixfmt-rfc-style
     ssh-to-age

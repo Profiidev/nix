@@ -81,7 +81,7 @@ in
           owner = "jorgebucaran";
           repo = "autopair.fish";
           rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
-          sha256 = "sha256-BNnoP9gLQuZQt/0SOOsZaYOexNN2K7PKWT/paS0BJJY=";
+          sha256 = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
         };
       }
       {
@@ -90,7 +90,7 @@ in
           owner = "gazorby";
           repo = "fish-abbreviation-tips";
           rev = "8ed76a62bb044ba4ad8e3e6832640178880df485";
-          sha256 = "sha256-BNnoP9gLQuZQt/0SOOsZaYOexNN2K7PKWT/paS0BJJY=";
+          sha256 = "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=";
         };
       }
     ];
