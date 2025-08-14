@@ -63,6 +63,8 @@ in
       cbr = "cargo build --release";
       crr = "cargo run --release";
       rmf = "rm -rf";
+      dco = "docker compose up";
+      clr = "clear";
     };
 
     plugins = [
