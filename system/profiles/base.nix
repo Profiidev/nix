@@ -7,6 +7,7 @@
     ../sops.nix
 
     ../apps/base.nix
+    ../apps/betaflight.nix
     ../apps/flatpak.nix
     ../apps/nh.nix
     ../apps/shell.nix

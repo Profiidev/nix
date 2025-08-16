@@ -1,15 +1,23 @@
-{ lib, config, inputs, pkgs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 let
   hostSpec = config.hostSpec;
   pubKeys = lib.filesystem.listFilesRecursive ../../keys;
-  ifTheyExist = groups:
-    builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-in {
+  ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+in
+{
   users.mutableUsers = false;
 
-  users.users = lib.foldl (acc: spec:
-    acc // {
+  users.users = lib.foldl (
+    acc: spec:
+    acc
+    // {
       "${spec.username}" = {
         isNormalUser = spec.username != "root";
         extraGroups = lib.flatten [
@@ -24,40 +32,49 @@ in {
             "scanner" # for print/scan"
             "lp" # for print/scan"
             "gamemode"
+            "dialout" # for betaflight
           ])
         ];
-        hashedPasswordFile = lib.mkIf (!hostSpec.isMinimal)
-          config.sops.secrets."passwords/${spec.username}".path;
+        hashedPasswordFile = lib.mkIf (
+          !hostSpec.isMinimal
+        ) config.sops.secrets."passwords/${spec.username}".path;
 
-        openssh.authorizedKeys.keys =
-          lib.lists.forEach pubKeys (key: builtins.readFile key);
+        openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
       };
-    }) { } hostSpec.users;
-} // lib.optionalAttrs (inputs ? "home-manager") {
+    }
+  ) { } hostSpec.users;
+}
+// lib.optionalAttrs (inputs ? "home-manager") {
   home-manager = {
     extraSpecialArgs = {
       inherit pkgs inputs;
       hostSpec = config.hostSpec;
     };
 
-    users = lib.foldl (acc: userSpec:
-      acc // {
+    users = lib.foldl (
+      acc: userSpec:
+      acc
+      // {
         "${userSpec.username}" = {
           home.stateVersion = "25.05";
 
-          imports = lib.flatten (lib.optional (!hostSpec.isMinimal) [
-            ({ ... }:
+          imports = lib.flatten (
+            lib.optional (!hostSpec.isMinimal) [
+              (
+                { ... }:
 
-              {
-                config.userSpec = userSpec;
-                imports = [
-                  ../../hosts/spec.nix
-                  (lib.custom.relativeToRoot
-                    "hosts/users/${userSpec.username}.nix")
-                ];
-              })
-          ]);
+                {
+                  config.userSpec = userSpec;
+                  imports = [
+                    ../../hosts/spec.nix
+                    (lib.custom.relativeToRoot "hosts/users/${userSpec.username}.nix")
+                  ];
+                }
+              )
+            ]
+          );
         };
-      }) { } hostSpec.users;
+      }
+    ) { } hostSpec.users;
   };
 }
