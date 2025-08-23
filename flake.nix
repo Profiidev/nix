@@ -35,7 +35,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     keyring-unlocker-src = {
       url = "github:recolic/gnome-keyring-yubikey-unlock";
@@ -61,10 +64,6 @@
 
     proton = {
       url = "github:profiidev/proton/latest";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-      };
     };
   };
 

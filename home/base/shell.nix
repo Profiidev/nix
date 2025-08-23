@@ -35,14 +35,17 @@ in
       fastfetch
     '';
 
-    shellAbbrs = {
+    shellAliases = {
+      nix-shell = "nix-shell --run fish";
       k = "kubectl";
       tf = "terraform";
-      l = "eza -l -a --icons --group-directories-first";
       ls = "eza";
-      nix-shell = "nix-shell --run fish";
       z = "zeditor";
       g = "git";
+    };
+
+    shellAbbrs = {
+      l = "eza -l -a --icons --group-directories-first";
       gco = "git checkout";
       gcom = "git checkout main";
       gcob = "git checkout -b";
@@ -50,7 +53,8 @@ in
       gbd = "git branch -d";
       gbD = "git branch -D";
       gcm = "git commit -m";
-      gca = "git commit --amend";
+      gca = "git commit --amend --no-edit";
+      gcae = "git commit --amend";
       gpl = "git pull";
       gps = "git push";
       gpsu = "git push --set-upstream origin";
