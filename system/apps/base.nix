@@ -90,6 +90,9 @@ in
     xh
     hyperfine
     tokei
+    devenv
+    # Cache
+    sccache
   ];
 
   programs.nix-ld.enable = true;
@@ -121,5 +124,13 @@ in
   programs.appimage = {
     enable = true;
     binfmt = true;
+  };
+
+  programs.direnv = {
+    silent = true;
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
+    loadInNixShell = true;
   };
 }

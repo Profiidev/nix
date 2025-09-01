@@ -18,7 +18,5 @@
     pystring
     # Rust
     rustup
-    # Cache
-    sccache
   ];
 }

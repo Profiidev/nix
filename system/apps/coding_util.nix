@@ -34,17 +34,8 @@
     terraform
     minikube
     uv
-    devenv
     jdk23
     azure-cli
     go
   ];
-
-  programs.direnv = {
-    silent = true;
-    enable = true;
-    enableFishIntegration = true;
-    nix-direnv.enable = true;
-    loadInNixShell = true;
-  };
 }
