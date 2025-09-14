@@ -286,11 +286,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1756242372,
-        "narHash": "sha256-Ypv9OM4X3u/Xzu7ZrFmC9SG7Bwoi71nBXDbyslQAE20=",
+        "lastModified": 1757783446,
+        "narHash": "sha256-80S9cs5zX6fhr/MnT6S2D+z+wc8+GUuX7gRQsTRrQLw=",
         "owner": "profiidev",
         "repo": "proton",
-        "rev": "d48089554e23b6d86370480ce790786828a896a3",
+        "rev": "9fd801eec64f4b1ba84787777b4caed411505e48",
         "type": "github"
       },
       "original": {
