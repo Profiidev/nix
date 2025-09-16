@@ -3,6 +3,8 @@
   config,
   inputs,
   pkgs,
+  pkgsUnstable,
+  pkgsUnstableCuda,
   ...
 }:
 
@@ -47,7 +49,12 @@ in
 // lib.optionalAttrs (inputs ? "home-manager") {
   home-manager = {
     extraSpecialArgs = {
-      inherit pkgs inputs;
+      inherit
+        pkgs
+        inputs
+        pkgsUnstable
+        pkgsUnstableCuda
+        ;
       hostSpec = config.hostSpec;
     };
 

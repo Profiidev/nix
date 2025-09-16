@@ -68,7 +68,12 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       inherit (nixpkgs) lib;
@@ -78,14 +83,33 @@
         map (host: {
           name = host;
           value = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs outputs host;
-              lib = nixpkgs.lib.extend (
-                self: super: {
-                  custom = import ./lib { inherit (nixpkgs) lib; };
-                }
-              );
-            };
+            specialArgs =
+              let
+                system = "x86_64-linux";
+              in
+              {
+                inherit inputs outputs host;
+                lib = nixpkgs.lib.extend (
+                  self: super: {
+                    custom = import ./lib { inherit (nixpkgs) lib; };
+                  }
+                );
+                pkgsUnstable = import nixpkgs-unstable {
+                  inherit system;
+                  config = {
+                    allowUnfree = true;
+                    allowUnfreePredicate = _: true;
+                  };
+                };
+                pkgsUnstableCuda = import nixpkgs-unstable {
+                  inherit system;
+                  config = {
+                    allowUnfree = true;
+                    allowUnfreePredicate = _: true;
+                    cudaSupport = true;
+                  };
+                };
+              };
             modules = [ ./hosts/profiles/${host}/config.nix ];
           };
         }) (lib.attrNames (builtins.readDir ./hosts/profiles))

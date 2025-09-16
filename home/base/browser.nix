@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgsUnstable, ... }:
 
 let
   browser = [ "firefox.desktop" ];
@@ -57,7 +57,7 @@ in
   # Module installing brave as default browser
   home.packages = with pkgs; [
     google-chrome
-    firefox
+    pkgsUnstable.firefox
   ];
 
   xdg = {
@@ -72,6 +72,6 @@ in
   };
 
   home.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/firefox";
+    DEFAULT_BROWSER = "${pkgsUnstable.firefox}/bin/firefox";
   };
 }

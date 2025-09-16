@@ -16,7 +16,6 @@
   virtualisation.virtualbox = {
     host = {
       enable = true;
-      enableExtensionPack = true;
     };
   };
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
