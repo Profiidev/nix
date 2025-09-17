@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, pkgsUnstable, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     jetbrains-toolbox
-    zed-editor
+    pkgsUnstable.zed-editor
     massif-visualizer
     postman
     renderdoc
