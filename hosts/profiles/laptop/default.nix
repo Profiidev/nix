@@ -7,11 +7,17 @@
     ../../spec.nix
 
     # Profiles
-    ../../../system/profiles/base.nix
-    ../../../system/profiles/graphics.nix
-    ../../../system/profiles/coding_graphics.nix
-    ../../../system/profiles/laptop.nix
-    ../../../system/profiles/office.nix
+    ../../../modules/profiles/system/base.nix
+    ../../../modules/profiles/system/coding.nix
+    ../../../modules/profiles/system/laptop.nix
+
+    ../../../modules/profiles/apps/base.nix
+    ../../../modules/profiles/apps/graphics.nix
+    ../../../modules/profiles/apps/office.nix
+
+    # Extra
+    ../../../modules/apps/tailscale.nix
+    ../../../modules/apps/cloudflare.nix
   ];
 
   hostSpec = {

@@ -66,6 +66,11 @@ in
       default = [ ];
       description = "Users for this host";
     };
+    configPath = lib.mkOption {
+      type = lib.types.str;
+      default = "/etc/nixos/nix-config";
+      description = "Path to the nix-config directory";
+    };
   };
 
   # Used for home-manager configuration and is automatically set in user profiles. DO NOT set manually.

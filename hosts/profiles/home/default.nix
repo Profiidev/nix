@@ -7,17 +7,18 @@
     ../../spec.nix
 
     # Profiles
-    ../../../system/profiles/base.nix
-    ../../../system/profiles/coding_graphics.nix
-    ../../../system/profiles/coding.nix
-    ../../../system/profiles/gaming.nix
-    ../../../system/profiles/graphics.nix
-    ../../../system/profiles/office.nix
-    ../../../system/profiles/pc.nix
+    ../../../modules/profiles/system/base.nix
+    ../../../modules/profiles/system/coding.nix
+    ../../../modules/profiles/system/gaming.nix
+    ../../../modules/profiles/system/pc.nix
+
+    ../../../modules/profiles/apps/base.nix
+    ../../../modules/profiles/apps/gaming.nix
+    ../../../modules/profiles/apps/graphics.nix
+    ../../../modules/profiles/apps/office.nix
 
     # Extra
-    ../../../system/media/obs.nix
-    ../../../system/media/3d_print.nix
+    ../../../modules/apps/tailscale.nix
   ];
 
   hostSpec = {

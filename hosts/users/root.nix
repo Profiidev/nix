@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../home/base/fastfetch.nix
-    ../../home/base/shell.nix
-    ../../home/base/starship.nix
-    ../../home/base/zoxide.nix
+    ../../modules/home/fastfetch.nix
+    ../../modules/home/shell.nix
+    ../../modules/home/starship.nix
+    ../../modules/home/zoxide.nix
   ];
 }

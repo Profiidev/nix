@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../home/profiles/base.nix
-    ../../home/profiles/coding.nix
-    ../../home/profiles/graphics.nix
-    ../../home/profiles/gaming.nix
+    ../../modules/profiles/home/base.nix
+    ../../modules/profiles/home/coding.nix
+    ../../modules/profiles/home/gaming.nix
+    ../../modules/profiles/home/gui.nix
   ];
 }

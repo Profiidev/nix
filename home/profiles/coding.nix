@@ -1,5 +1,0 @@
-{ ... }:
-
-{
-  imports = [ ../optional/vscode.nix ];
-}
