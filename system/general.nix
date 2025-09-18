@@ -1,17 +1,10 @@
 {
   config,
   inputs,
-  lib,
   ...
 }:
 
 {
-  imports = lib.flatten [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.disko.nixosModules.disko
-    inputs.sops-nix.nixosModules.sops
-  ];
-
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -21,8 +14,8 @@
   };
 
   nix.extraOptions = ''
-    extra-substituters = https://nix-community.cachix.org
-    extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+    extra-substituters = https://nix-community.cachix.org https://nix-citizen.cachix.org http://192.168.178.22:5000
+    extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo= profidev.cachix.org:tg4xEn64UMdvA5jJYT8omo/CQHk8+spLyeGT2YAku70=
   '';
 
   nixpkgs = {
@@ -34,16 +27,6 @@
     overlays = [
       inputs.rust-overlay.overlays.default
       (import ../packages/overlay.nix)
-      # required for betaflight
-      (final: prev: {
-        nwjs = prev.nwjs.overrideAttrs {
-          version = "0.84.0";
-          src = prev.fetchurl {
-            url = "https://dl.nwjs.io/v0.84.0/nwjs-v0.84.0-linux-x64.tar.gz";
-            hash = "sha256-VIygMzCPTKzLr47bG1DYy/zj0OxsjGcms0G1BkI/TEI=";
-          };
-        };
-      })
     ];
   };
 

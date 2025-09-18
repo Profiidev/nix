@@ -7,8 +7,14 @@
 
 let
   sopsFolder = builtins.toString inputs.nix-secrets + "/sops";
+
+  home = user: if user.username == "root" then "/root" else "/home/${user.username}";
 in
 {
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
+
   sops = {
     defaultSopsFile = "${sopsFolder}/${config.hostSpec.hostname}.yaml";
     validateSopsFiles = false;
@@ -30,7 +36,7 @@ in
             owner = config.users.users.${spec.username}.name;
             inherit (config.users.users.${spec.username}) group;
             # We need to ensure the entire directory structure is that of the user...
-            path = "${spec.home}/.config/sops/age/keys.txt";
+            path = "${home spec}/.config/sops/age/keys.txt";
             key = "keys/age";
           };
           # extract password/username to /run/secrets-for-users/ so it can be used to create the user
@@ -39,12 +45,12 @@ in
             neededForUsers = true;
           };
 
-          "yubikey/login/${config.hostSpec.hostname}/${spec.username}" = lib.mkIf (spec.username != "root") {
+          "yubikey/login/${config.hostSpec.hostname}/${spec.username}" = lib.mkIf (spec.use_yubikey) {
             owner = config.users.users.${spec.username}.name;
             inherit (config.users.users.${spec.username}) group;
 
             sopsFile = "${sopsFolder}/shared.yaml";
-            path = "${spec.home}/.config/Yubico/u2f_keys";
+            path = "${home spec}/.config/Yubico/u2f_keys";
           };
         }
       )
@@ -69,15 +75,15 @@ in
     // {
       "sopsSetAgeKeyOwnership_${spec.username}" =
         let
-          ageFolder = "${spec.home}/.config/sops/age";
-          keyFolder = "${spec.home}/.config/Yubico";
+          ageFolder = "${home spec}/.config/sops/age";
+          keyFolder = "${home spec}/.config/Yubico";
           user = config.users.users.${spec.username}.name;
           group = config.users.users.${spec.username}.group;
         in
         ''
           mkdir -p ${ageFolder} || true
           mkdir -p ${keyFolder} || true
-          chown -R ${user}:${group} ${spec.home}/.config
+          chown -R ${user}:${group} ${home spec}/.config
         '';
     }
   ) { } config.hostSpec.users;

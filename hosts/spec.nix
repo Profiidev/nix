@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 let
   userSpecType = lib.types.submodule {
@@ -6,17 +6,6 @@ let
       username = lib.mkOption {
         type = lib.types.str;
         description = "The username of the host";
-      };
-      home = lib.mkOption {
-        type = lib.types.str;
-        description = "The home directory of the user";
-        default = if config.userSpec != null then
-          (if config.userSpec.username == "root" then
-            "/root"
-          else
-            "/home/${config.userSpec.username}")
-        else
-          "";
       };
       git_user = lib.mkOption {
         type = lib.types.str;
@@ -53,9 +42,15 @@ let
         default = "";
         description = "Public GPG Key for the user";
       };
+      use_yubikey = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Whether to use a YubiKey for authentication";
+      };
     };
   };
-in {
+in
+{
   options.hostSpec = {
     hostname = lib.mkOption {
       type = lib.types.str;
@@ -73,6 +68,7 @@ in {
     };
   };
 
+  # Used for home-manager configuration and is automatically set in user profiles. DO NOT set manually.
   options.userSpec = lib.mkOption {
     type = userSpecType;
     description = "User info";

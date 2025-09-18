@@ -1,6 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
   imports = [
+    inputs.disko.nixosModules.disko
     ../../disks/btrfs.nix
     {
       _module.args = {
