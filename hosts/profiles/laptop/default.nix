@@ -1,16 +1,7 @@
-{ lib, inputs, ... }:
+{ inputs, ... }:
 
 {
-  imports = lib.flatten [
-    (../../disks/btrfs-luks.nix)
-    {
-      _module.args = {
-        disk = "/dev/disk/by-id/nvme-PCIe-8_SSD_1TB_YMA11T0JA2133004AD";
-        withSwap = true;
-        swapSize = 16;
-      };
-    }
-
+  imports = [
     ./hardware-config.nix
 
     ../../spec.nix
@@ -25,6 +16,9 @@
 
   hostSpec = {
     hostname = "laptop";
-    users = [ inputs.nix-secrets.users.profidev { username = "root"; } ];
+    users = [
+      inputs.nix-secrets.users.profidev
+      { username = "root"; }
+    ];
   };
 }

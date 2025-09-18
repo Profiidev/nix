@@ -1,7 +1,10 @@
 { lib, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    ./disk-config.nix
+  ];
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"

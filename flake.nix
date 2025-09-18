@@ -5,13 +5,11 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://nix-citizen.cachix.org"
-      "https://profidev.cachix.org"
       "http://192.168.178.22:5000"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
-      "profidev.cachix.org-1:xdwadal2vlCD50JtDTy8NwjOJvkOtjdjy1y91ElU9GE="
       "profidev.cachix.org:tg4xEn64UMdvA5jJYT8omo/CQHk8+spLyeGT2YAku70="
     ];
   };
@@ -40,6 +38,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     keyring-unlocker-src = {
       url = "github:recolic/gnome-keyring-yubikey-unlock";
       flake = false;
@@ -52,30 +53,37 @@
 
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
     nix-citizen = {
       url = "github:LovingMelody/nix-citizen";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nix-gaming.follows = "nix-gaming";
+        flake-parts.follows = "flake-parts";
       };
     };
 
     proton = {
       url = "github:profiidev/proton/latest";
+      inputs = {
+        nixpkgs.follows = "nixpkgs-unstable";
+        rust-overlay.follows = "rust-overlay";
+        flake-utils.follows = "flake-utils";
+      };
     };
   };
 
   outputs =
-    {
-      self,
+    inputs@{
       nixpkgs,
       nixpkgs-unstable,
       ...
-    }@inputs:
+    }:
     let
-      inherit (self) outputs;
       inherit (nixpkgs) lib;
     in
     {
@@ -83,34 +91,28 @@
         map (host: {
           name = host;
           value = nixpkgs.lib.nixosSystem {
-            specialArgs =
-              let
-                system = "x86_64-linux";
-              in
-              {
-                inherit inputs outputs host;
-                lib = nixpkgs.lib.extend (
-                  self: super: {
-                    custom = import ./lib { inherit (nixpkgs) lib; };
-                  }
-                );
-                pkgsUnstable = import nixpkgs-unstable {
-                  inherit system;
-                  config = {
-                    allowUnfree = true;
-                    allowUnfreePredicate = _: true;
-                  };
-                };
-                pkgsUnstableCuda = import nixpkgs-unstable {
-                  inherit system;
-                  config = {
-                    allowUnfree = true;
-                    allowUnfreePredicate = _: true;
-                    cudaSupport = true;
-                  };
+            specialArgs = {
+              inherit inputs host;
+              lib = nixpkgs.lib.extend (
+                self: super: {
+                  custom = import ./lib { inherit (nixpkgs) lib; };
+                }
+              );
+              pkgsUnstable = import nixpkgs-unstable {
+                config = {
+                  allowUnfree = true;
+                  allowUnfreePredicate = _: true;
                 };
               };
-            modules = [ ./hosts/profiles/${host}/config.nix ];
+              pkgsUnstableCuda = import nixpkgs-unstable {
+                config = {
+                  allowUnfree = true;
+                  allowUnfreePredicate = _: true;
+                  cudaSupport = true;
+                };
+              };
+            };
+            modules = [ ./hosts/profiles/${host} ];
           };
         }) (lib.attrNames (builtins.readDir ./hosts/profiles))
       );
