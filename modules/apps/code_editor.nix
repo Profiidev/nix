@@ -4,5 +4,6 @@
   environment.systemPackages = with pkgs; [
     jetbrains-toolbox
     pkgsUnstable.zed-editor
+    vscode
   ];
 }
