@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  programs.vscode = {
+    enable = true;
+  };
+
   programs.alacritty = {
     enable = true;
     settings = {
