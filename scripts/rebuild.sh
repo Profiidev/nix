@@ -73,7 +73,7 @@ if [ "$os" == "Darwin" ]; then
 		./result/sw/bin/darwin-rebuild $switch_args
 	else
 		echo $switch_args
-		darwin-rebuild $switch_args
+		sudo darwin-rebuild $switch_args
 	fi
 else
 	green "====== REBUILD ======"

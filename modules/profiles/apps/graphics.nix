@@ -9,5 +9,6 @@
     ../../apps/gui_media.nix
     ../../apps/gui_tools.nix
     ../../apps/profiling.nix
+    ../../apps/terminal.nix
   ];
 }

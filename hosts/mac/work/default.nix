@@ -13,6 +13,7 @@
 
     ../../../modules/profiles/apps/base.nix
     ../../../modules/apps/code_editor.nix
+    ../../../modules/apps/terminal.nix
   ];
 
   hostSpec = {

@@ -20,9 +20,9 @@ check ARGS="":
 	cd nixos-installer && NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --impure --keep-going --show-trace {{ARGS}}
 
 # Rebuild the system
-rebuild: rebuild-pre && rebuild-post
+rebuild HOST="": rebuild-pre && rebuild-post
   # NOTE: Add --option eval-cache false if you end up caching a failure you can't get around
-  scripts/rebuild.sh
+  scripts/rebuild.sh {{HOST}}
 
 # Rebuild the system and run a flake check
 rebuild-full: rebuild-pre && rebuild-post
