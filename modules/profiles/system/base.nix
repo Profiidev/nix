@@ -16,6 +16,7 @@
 
     ../../system/services/btrfs.nix
     ../../system/services/display-manager.nix
+    ../../system/services/font.nix
     ../../system/services/gpg.nix
     ../../system/services/security.nix
     ../../system/services/sshd.nix

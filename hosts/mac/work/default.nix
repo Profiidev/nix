@@ -14,6 +14,7 @@
     ../../../modules/profiles/apps/base.nix
     ../../../modules/apps/code_editor.nix
     ../../../modules/apps/terminal.nix
+    ../../../modules/system/services/font.nix
   ];
 
   hostSpec = {
