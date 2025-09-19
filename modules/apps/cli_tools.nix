@@ -1,8 +1,5 @@
-{ pkgs, lib, ... }:
+{ pkgs, isLinux, ... }:
 
-let
-  isLinux = pkgs.stdenv.isLinux;
-in
 {
   environment.systemPackages =
     with pkgs;
@@ -70,7 +67,7 @@ in
     ++ (
       if isLinux then
         (with pkgs; [
-          cargo.llvm-cov
+          cargo-llvm-cov
           os-prober
           traceroute
           waypipe

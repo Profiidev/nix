@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, isLinux, ... }:
 
 let
   wrapped-kubernetes-helm =
@@ -17,8 +17,6 @@ let
   };
 
   wrapped-azure-cli = pkgs.azure-cli.withExtensions [ pkgs.azure-cli-extensions.account ];
-
-  isLinux = pkgs.stdenv.isLinux;
 in
 {
   environment.systemPackages =

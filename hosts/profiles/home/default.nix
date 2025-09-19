@@ -25,7 +25,10 @@
     hostname = "home";
     users = [
       inputs.nix-secrets.users.profidev
-      { username = "root"; }
+      {
+        username = "root";
+        secrets_user = "root";
+      }
     ];
   };
 }

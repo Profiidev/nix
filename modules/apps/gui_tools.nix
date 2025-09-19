@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, isLinux, ... }:
 
-let
-  isLinux = pkgs.stdenv.isLinux;
-in
 {
   environment.systemPackages = with pkgs; [
     dbeaver-bin

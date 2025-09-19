@@ -125,7 +125,7 @@
           value = nixpkgs.lib.nixosSystem {
             specialArgs = specialArgs nixpkgs // {
               inherit host;
-              isDarwin = false;
+              isLinux = true;
             };
             modules = [ ./hosts/profiles/${host} ];
           };
@@ -139,7 +139,7 @@
           value = nix-darwin.lib.darwinSystem {
             specialArgs = specialArgs nixpkgs-darwin // {
               inherit host;
-              isDarwin = true;
+              isLinux = false;
             };
             modules = [ ./hosts/mac/${host} ];
           };

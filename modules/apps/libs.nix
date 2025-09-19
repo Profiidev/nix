@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, isLinux, ... }:
 
-let
-  isLinux = pkgs.stdenv.isLinux;
-in
 {
   programs = (
     if isLinux then

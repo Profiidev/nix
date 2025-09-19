@@ -1,24 +1,22 @@
 {
-  pkgs,
   lib,
   config,
   inputs,
-  isDarwin,
+  isLinux,
   ...
 }:
 
 let
   sopsFolder = builtins.toString inputs.nix-secrets + "/sops";
-  platform = if isDarwin then "darwin" else "nixos";
+  platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
-  isLinux = pkgs.stdenv.isLinux;
 
   home =
     user:
-    if isDarwin then
-      "/Users/${user.username}"
+    if isLinux then
+      (if user.username == "root" then "/root" else "/home/${user.username}")
     else
-      (if user.username == "root" then "/root" else "/home/${user.username}");
+      "/Users/${user.username}";
 in
 {
   imports = [

@@ -5,7 +5,7 @@
   pkgs,
   pkgsUnstable,
   pkgsUnstableCuda,
-  isDarwin,
+  isLinux,
   ...
 }:
 
@@ -14,9 +14,8 @@ let
   pubKeys = lib.filesystem.listFilesRecursive ../../keys;
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 
-  platform = if isDarwin then "darwin" else "nixos";
+  platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
-  isLinux = pkgs.stdenv.isLinux;
 in
 {
   imports = [
@@ -78,6 +77,7 @@ in
         inputs
         pkgsUnstable
         pkgsUnstableCuda
+        isLinux
         ;
       hostSpec = config.hostSpec;
     };

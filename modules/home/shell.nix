@@ -18,7 +18,7 @@ in
     enable = true;
     enableCompletion = true;
 
-    initExtra = ''
+    initContent = ''
       if [[ $- == *i* ]]; then
         exec fish
       fi
