@@ -7,6 +7,10 @@ let
         type = lib.types.str;
         description = "The username of the host";
       };
+      secrets_user = lib.mkOption {
+        type = lib.types.str;
+        description = "User to find secrets";
+      };
       git_user = lib.mkOption {
         type = lib.types.str;
         default = "";
@@ -77,6 +81,8 @@ in
   options.userSpec = lib.mkOption {
     type = userSpecType;
     description = "User info";
-    default = { username = ""; };
+    default = {
+      username = "";
+    };
   };
 }

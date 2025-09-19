@@ -1,82 +1,106 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
+let
+  isLinux = pkgs.stdenv.isLinux;
+in
 {
-  environment.systemPackages = with pkgs; [
-    cargo-binstall
-    cargo-dist
-    cargo-expand
-    cargo-generate
-    cargo-llvm-cov
-    cargo-make
-    cargo-nextest
-    cargo-release
-    cargo-semver-checks
-    cargo-tauri
-    cargo-watch
-    cargo-bootimage
-    trunk
-    nano
-    os-prober
-    home-manager
-    ripgrep
-    curl
-    wget
-    fd
-    dust
-    fzf
-    jq
-    neofetch
-    tree
-    unzip
-    unrar
-    zip
-    coreutils
-    just
-    rsync
-    cmatrix
-    neo-cowsay
-    git-cliff
-    htop
-    inetutils
-    nettools
-    speedtest-cli
-    tealdeer
-    traceroute
-    waypipe
-    whois
-    ssh-to-age
-    yq-go
-    age
-    pciutils
-    nss
-    libcef
-    openssl
-    bat
-    eza
-    xh
-    hyperfine
-    tokei
-    dig
-    nmap
-    neovim
-    openssl
-    arp-scan
-    man-pages
-    man-pages-posix
-    ollama
-    sops
-    pam_u2f
-    libfido2
-    haskellPackages.hashable
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      cargo-binstall
+      cargo-dist
+      cargo-expand
+      cargo-generate
+      cargo-make
+      cargo-nextest
+      cargo-release
+      cargo-semver-checks
+      cargo-tauri
+      cargo-watch
+      cargo-bootimage
+      trunk
+      nano
+      home-manager
+      ripgrep
+      curl
+      wget
+      fd
+      dust
+      fzf
+      jq
+      neofetch
+      tree
+      unzip
+      zip
+      coreutils
+      just
+      rsync
+      cmatrix
+      neo-cowsay
+      git-cliff
+      htop
+      inetutils
+      nettools
+      speedtest-cli
+      tealdeer
+      whois
+      ssh-to-age
+      yq-go
+      age
+      pciutils
+      nss
+      openssl
+      bat
+      eza
+      xh
+      hyperfine
+      tokei
+      dig
+      nmap
+      neovim
+      openssl
+      arp-scan
+      man-pages
+      man-pages-posix
+      sops
+      pam_u2f
+      libfido2
+      haskellPackages.hashable
+    ]
+    ++ (
+      if isLinux then
+        (with pkgs; [
+          cargo.llvm-cov
+          os-prober
+          traceroute
+          waypipe
+          libcef
+        ])
+      else
+        [ ]
+    );
 
   programs.direnv = {
     silent = true;
     enable = true;
-    enableFishIntegration = true;
     nix-direnv.enable = true;
     loadInNixShell = true;
-  };
+  }
+  // (
+    if isLinux then
+      {
+        enableFishIntegration = true;
+      }
+    else
+      { }
+  );
 
-  documentation.man.generateCaches = false;
+  documentation = (
+    if isLinux then
+      {
+        man.generateCaches = false;
+      }
+    else
+      { }
+  );
 }

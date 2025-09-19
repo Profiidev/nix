@@ -16,11 +16,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     disko = {
@@ -58,6 +59,7 @@
         flake-parts.follows = "flake-parts";
       };
     };
+
     nix-citizen = {
       url = "github:LovingMelody/nix-citizen";
       inputs = {
@@ -75,46 +77,73 @@
         flake-utils.follows = "flake-utils";
       };
     };
+
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+      inputs = {
+        nixpkgs.follows = "nixpkgs-darwin";
+      };
+    };
   };
 
   outputs =
     inputs@{
+      self,
       nixpkgs,
+      nixpkgs-darwin,
       nixpkgs-unstable,
+      nix-darwin,
       ...
     }:
     let
-      inherit (nixpkgs) lib;
+      specialArgs = pkgs: {
+        inherit inputs self;
+        lib = pkgs.lib.extend (
+          self: super: {
+            custom = import ./lib { inherit (pkgs) lib; };
+          }
+        );
+        pkgsUnstable = import nixpkgs-unstable {
+          config = {
+            allowUnfree = true;
+            allowUnfreePredicate = _: true;
+          };
+        };
+        pkgsUnstableCuda = import nixpkgs-unstable {
+          config = {
+            allowUnfree = true;
+            allowUnfreePredicate = _: true;
+            cudaSupport = true;
+          };
+        };
+      };
     in
     {
       nixosConfigurations = builtins.listToAttrs (
         map (host: {
           name = host;
           value = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs host;
-              lib = nixpkgs.lib.extend (
-                self: super: {
-                  custom = import ./lib { inherit (nixpkgs) lib; };
-                }
-              );
-              pkgsUnstable = import nixpkgs-unstable {
-                config = {
-                  allowUnfree = true;
-                  allowUnfreePredicate = _: true;
-                };
-              };
-              pkgsUnstableCuda = import nixpkgs-unstable {
-                config = {
-                  allowUnfree = true;
-                  allowUnfreePredicate = _: true;
-                  cudaSupport = true;
-                };
-              };
+            specialArgs = specialArgs nixpkgs // {
+              inherit host;
+              isDarwin = false;
             };
             modules = [ ./hosts/profiles/${host} ];
           };
-        }) (lib.attrNames (builtins.readDir ./hosts/profiles))
+        }) (nixpkgs.lib.attrNames (builtins.readDir ./hosts/profiles))
+      );
+
+      # https://nix-darwin.github.io/nix-darwin/manual/index.html
+      darwinConfigurations = builtins.listToAttrs (
+        map (host: {
+          name = host;
+          value = nix-darwin.lib.darwinSystem {
+            specialArgs = specialArgs nixpkgs-darwin // {
+              inherit host;
+              isDarwin = true;
+            };
+            modules = [ ./hosts/mac/${host} ];
+          };
+        }) (nixpkgs.lib.attrNames (builtins.readDir ./hosts/mac))
       );
     };
 }

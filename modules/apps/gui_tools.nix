@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  isLinux = pkgs.stdenv.isLinux;
+in
 {
   environment.systemPackages = with pkgs; [
     dbeaver-bin
@@ -16,5 +19,5 @@
     bitwarden-desktop
   ];
 
-  services.ratbagd.enable = true;
+  services = (if isLinux then { ratbagd.enable = true; } else { });
 }

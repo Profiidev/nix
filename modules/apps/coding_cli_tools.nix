@@ -17,30 +17,41 @@ let
   };
 
   wrapped-azure-cli = pkgs.azure-cli.withExtensions [ pkgs.azure-cli-extensions.account ];
+
+  isLinux = pkgs.stdenv.isLinux;
 in
 {
-  environment.systemPackages = with pkgs; [
-    act
-    docker
-    docker-buildx
-    docker-compose
-    maven
-    release-plz
-    sea-orm-cli
-    wasm-pack
-    pkg-config
-    gobject-introspection
-    terraform
-    minikube
-    wrapped-azure-cli
-    wrapped-helmfile
-    wrapped-kubernetes-helm
-    kubectl
-    kustomize
-    helm-ls
-    devenv
-    sccache
-    gh
-    espflash
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      act
+      docker
+      docker-buildx
+      docker-compose
+      maven
+      sea-orm-cli
+      wasm-pack
+      pkg-config
+      gobject-introspection
+      terraform
+      minikube
+      wrapped-azure-cli
+      wrapped-helmfile
+      wrapped-kubernetes-helm
+      kubectl
+      kustomize
+      helm-ls
+      devenv
+      sccache
+      gh
+      espflash
+    ]
+    ++ (
+      if isLinux then
+        (with pkgs; [
+          release-plz
+        ])
+      else
+        [ ]
+    );
 }

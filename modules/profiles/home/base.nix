@@ -5,7 +5,6 @@
     ../../home/fastfetch.nix
     ../../home/git.nix
     ../../home/gpg.nix
-    ../../home/security.nix
     ../../home/shell.nix
     ../../home/sops.nix
     ../../home/ssh.nix

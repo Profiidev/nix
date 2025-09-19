@@ -24,7 +24,7 @@ in
     secrets =
       builtins.listToAttrs (
         map (name: {
-          name = "ssh_keys/${userSpec.username}/${name}";
+          name = "ssh_keys/${userSpec.secrets_user}/${name}";
           value = {
             mode = "0600";
             sopsFile = "${sopsFolder}/shared.yaml";
@@ -34,7 +34,7 @@ in
       )
       // builtins.listToAttrs (
         map (name: {
-          name = "ssh_keys/${userSpec.username}/${name}_pub";
+          name = "ssh_keys/${userSpec.secrets_user}/${name}_pub";
           value = {
             mode = "0600";
             sopsFile = "${sopsFolder}/shared.yaml";
@@ -63,17 +63,17 @@ in
         }) generalKeys
       )
       // {
-        "yubikey/pins/${userSpec.username}" = lib.mkIf (userSpec.use_yubikey) {
+        "yubikey/pins/${userSpec.secrets_user}" = lib.mkIf (userSpec.use_yubikey) {
           sopsFile = "${sopsFolder}/shared.yaml";
         };
 
-        "keyring_keys/${userSpec.username}" = lib.mkIf (userSpec.use_yubikey) {
+        "keyring_keys/${userSpec.secrets_user}" = lib.mkIf (userSpec.use_yubikey) {
           sopsFile = "${sopsFolder}/shared.yaml";
         };
       };
   };
 
   sops.templates."yubikey_pin".content = ''
-    PIN="${config.sops.placeholder."yubikey/pins/${userSpec.username}"}"
+    PIN="${config.sops.placeholder."yubikey/pins/${userSpec.secrets_user}"}"
   '';
 }
