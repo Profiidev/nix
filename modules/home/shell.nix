@@ -14,6 +14,17 @@ in
     '';
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+
+    initExtra = ''
+      if [[ $- == *i* ]]; then
+        exec fish
+      fi
+    '';
+  };
+
   programs.fish = {
     enable = true;
     generateCompletions = true;
