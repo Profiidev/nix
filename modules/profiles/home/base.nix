@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../home/direnv.nix
     ../../home/fastfetch.nix
     ../../home/git.nix
     ../../home/gpg.nix
