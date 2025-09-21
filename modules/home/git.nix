@@ -22,6 +22,8 @@
       co = "checkout";
       cob = "checkout -b";
       rao = "remote add origin";
+      mm = "merge main --no-edit";
+      mme = "merge main";
     };
 
     extraConfig = {

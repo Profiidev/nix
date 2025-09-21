@@ -69,6 +69,8 @@ in
       ga = "git add";
       gaa = "git add -A";
       grao = "git remote add origin";
+      gmm = "git merge main --no-edit";
+      gmme = "git merge main";
       c = "cargo";
       cb = "cargo build";
       cr = "cargo run";
