@@ -22,5 +22,6 @@
     users = [
       inputs.nix-secrets.users.work
     ];
+    configPath = "/etc/nix-darwin/nix-config";
   };
 }
