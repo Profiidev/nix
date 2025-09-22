@@ -72,8 +72,12 @@ if [ "$os" == "Darwin" ]; then
 		nix build --show-trace .#darwinConfigurations."$HOST".system
 		./result/sw/bin/darwin-rebuild $switch_args
 	else
-		echo $switch_args
-		sudo darwin-rebuild $switch_args
+		if command -v nh &>/dev/null; then
+			nh darwin switch . -H $HOST -- --impure --show-trace
+		else
+			echo $switch_args
+			sudo darwin-rebuild $switch_args
+		fi
 	fi
 else
 	green "====== REBUILD ======"
@@ -82,6 +86,7 @@ else
 		export REPO_PATH
 		nh os switch . -- --impure --show-trace
 	else
+		echo $switch_args
 		sudo nixos-rebuild $switch_args
 	fi
 fi
@@ -94,11 +99,20 @@ if [ $? -eq 0 ]; then
 	# Check if there are any pending changes that would affect the build succeeding.
 	if git diff --exit-code >/dev/null && git diff --staged --exit-code >/dev/null; then
 		# Check if the current commit has a buildable tag
-		if git tag --points-at HEAD | grep -q buildable; then
-			yellow "Current commit is already tagged as buildable"
+		if [ "$os" == "Darwin" ]; then
+			if git tag --points-at HEAD | grep -q buildable-darwin; then
+				yellow "Current commit is already tagged as buildable for darwin"
+			else
+				git tag buildable-darwin-"$(date +%Y%m%d%H%M%S)" -m ''
+				green "Tagged current commit as buildable for darwin"
+			fi
 		else
-			git tag buildable-"$(date +%Y%m%d%H%M%S)" -m ''
-			green "Tagged current commit as buildable"
+			if git tag --points-at HEAD | grep -q buildable-nixos; then
+				yellow "Current commit is already tagged as buildable for nixos"
+			else
+				git tag buildable-nixos-"$(date +%Y%m%d%H%M%S)" -m ''
+				green "Tagged current commit as buildable for nixos"
+			fi
 		fi
 	else
 		yellow "WARN: There are pending changes that would affect the build succeeding. Commit them before tagging"

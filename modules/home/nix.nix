@@ -1,4 +1,4 @@
-{ config, ... }:
+{ hostSpec, ... }:
 
 # only for macos because there is no nh in nix-darwin and only in home-manager
 {
@@ -7,6 +7,6 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 1d --keep 10";
     clean.dates = "daily";
-    flake = config.hostSpec.configPath;
+    flake = hostSpec.configPath;
   };
 }
