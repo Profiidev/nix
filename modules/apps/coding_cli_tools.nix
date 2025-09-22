@@ -43,6 +43,7 @@ in
       sccache
       gh
       espflash
+      pre-commit
     ]
     ++ (
       if isLinux then
