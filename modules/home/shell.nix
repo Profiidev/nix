@@ -37,6 +37,7 @@ in
       export SCCACHE_CACHE_SIZE="50G"
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/go/bin:$PATH"
+      export LIBVIRT_DEFAULT_URI="qemu:///system"
     '';
 
     interactiveShellInit = ''

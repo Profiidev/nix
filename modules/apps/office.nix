@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,5 +7,7 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.de_DE
+    inputs.winapps.packages."${pkgs.system}".winapps
+    inputs.winapps.packages."${pkgs.system}".winapps-launcher
   ];
 }

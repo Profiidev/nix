@@ -42,6 +42,8 @@ in
                   "docker"
                   "git"
                   "vboxusers"
+                  "libvirtd"
+                  "kvm"
                   "networkmanager"
                   "scanner" # for print/scan"
                   "lp" # for print/scan"

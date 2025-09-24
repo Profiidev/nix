@@ -14,6 +14,7 @@
     vlc
     obsidian
     bitwarden-desktop
+    xorg.xkill
   ];
 
   services = (if isLinux then { ratbagd.enable = true; } else { });

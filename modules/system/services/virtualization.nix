@@ -19,14 +19,33 @@
     };
   };
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
+
   virtualisation.libvirtd = {
     allowedBridges = [
       "nm-bridge"
       "virbr0"
     ];
     enable = true;
-    qemu.runAsRoot = false;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      vhostUserPackages = [ pkgs.virtiofsd ];
+      ovmf = {
+        enable = true;
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd
+        ];
+      };
+    };
   };
+  environment.variables = {
+    LIBVIRT_DEFAULT_URI = "qemu:///system";
+  };
+
   virtualisation.waydroid.enable = true;
 
   boot.binfmt.emulatedSystems = [

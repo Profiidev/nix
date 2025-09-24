@@ -69,6 +69,11 @@
       };
     };
 
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     proton = {
       url = "github:profiidev/proton/latest";
       inputs = {
