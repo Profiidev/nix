@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     massif-visualizer
     renderdoc
-    linuxKernel.packages.linux_zen.perf
+    perf
     valgrind
     kdePackages.kcachegrind
   ];

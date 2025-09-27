@@ -1,8 +1,8 @@
-{ pkgs, pkgsUnstable, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     cura-appimage
-    pkgsUnstable.freecad
+    freecad
   ];
 }

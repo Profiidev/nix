@@ -3,10 +3,10 @@
 {
   boot.kernelPackages = pkgs.linuxPackages_6_16;
 
-  services.logind = {
-    lidSwitch = "hibernate";
-    lidSwitchDocked = "hibernate";
-    lidSwitchExternalPower = "hibernate";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "hibernate";
+    HandleLidSwitchDocked = "hibernate";
+    HandleLidSwitchExternalPower = "hibernate";
   };
 
   boot = {

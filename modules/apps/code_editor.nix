@@ -1,8 +1,8 @@
-{ pkgs, pkgsUnstable, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     jetbrains-toolbox
-    pkgsUnstable.zed-editor
+    zed-editor
   ];
 }

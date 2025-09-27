@@ -20,7 +20,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
@@ -108,7 +108,7 @@
             custom = import ./lib { inherit (pkgs) lib; };
           }
         );
-        pkgsUnstable = import nixpkgs-unstable {
+        pkgsStable = import nixpkgs {
           config = {
             allowUnfree = true;
             allowUnfreePredicate = _: true;
@@ -127,14 +127,14 @@
       nixosConfigurations = builtins.listToAttrs (
         map (host: {
           name = host;
-          value = nixpkgs.lib.nixosSystem {
-            specialArgs = specialArgs nixpkgs // {
+          value = nixpkgs-unstable.lib.nixosSystem {
+            specialArgs = specialArgs nixpkgs-unstable // {
               inherit host;
               isLinux = true;
             };
             modules = [ ./hosts/profiles/${host} ];
           };
-        }) (nixpkgs.lib.attrNames (builtins.readDir ./hosts/profiles))
+        }) (nixpkgs-unstable.lib.attrNames (builtins.readDir ./hosts/profiles))
       );
 
       # https://nix-darwin.github.io/nix-darwin/manual/index.html

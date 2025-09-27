@@ -3,7 +3,7 @@
   config,
   inputs,
   pkgs,
-  pkgsUnstable,
+  pkgsStable,
   pkgsUnstableCuda,
   isLinux,
   ...
@@ -77,7 +77,7 @@ in
       inherit
         pkgs
         inputs
-        pkgsUnstable
+        pkgsStable
         pkgsUnstableCuda
         isLinux
         ;
@@ -89,7 +89,7 @@ in
       acc
       // {
         "${userSpec.username}" = {
-          home.stateVersion = "25.05";
+          home.stateVersion = "25.11";
 
           imports = lib.flatten (
             lib.optional (!hostSpec.isMinimal) [

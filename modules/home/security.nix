@@ -34,7 +34,6 @@ in
     yubikey-manager
     yubioath-flutter
     yubikey-personalization
-    yubikey-personalization-gui
     yubioath-flutter
 
     keyring-unlocker

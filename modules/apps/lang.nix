@@ -12,7 +12,7 @@
       automake
       libtool
       # Python setup
-      python3Full
+      python313
       imath
       pystring
       uv
