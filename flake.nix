@@ -114,11 +114,10 @@
             allowUnfreePredicate = _: true;
           };
         };
-        pkgsUnstableCuda = import nixpkgs-unstable {
+        pkgsUnstableNoCuda = import nixpkgs-unstable {
           config = {
             allowUnfree = true;
             allowUnfreePredicate = _: true;
-            cudaSupport = true;
           };
         };
       };

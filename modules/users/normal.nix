@@ -4,7 +4,7 @@
   inputs,
   pkgs,
   pkgsStable,
-  pkgsUnstableCuda,
+  pkgsUnstableNoCuda,
   isLinux,
   ...
 }:
@@ -78,7 +78,7 @@ in
         pkgs
         inputs
         pkgsStable
-        pkgsUnstableCuda
+        pkgsUnstableNoCuda
         isLinux
         ;
       hostSpec = config.hostSpec;
