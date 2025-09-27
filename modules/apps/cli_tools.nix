@@ -63,6 +63,7 @@
       pam_u2f
       libfido2
       haskellPackages.hashable
+      cachix
     ]
     ++ (
       if isLinux then
