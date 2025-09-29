@@ -4,6 +4,9 @@
     prev.callPackage ./cosmic-ext-applet-clipboard-manager.nix
       { };
   cosmic-ext-tweaks = prev.callPackage ./cosmic-ext-tweaks.nix { };
+  cosmic-ext-applet-external-monitor-brightness =
+    prev.callPackage ./cosmic-ext-applet-external-monitor-brigthness.nix
+      { };
 
   # required for betaflight
   nwjs = prev.nwjs.overrideAttrs {
