@@ -7,6 +7,7 @@
   cosmic-ext-applet-external-monitor-brightness =
     prev.callPackage ./cosmic-ext-applet-external-monitor-brigthness.nix
       { };
+  cosmic-ext-applet-emoji-selector = prev.callPackage ./cosmic-ext-applet-emoji-selector.nix { };
 
   # required for betaflight
   nwjs = prev.nwjs.overrideAttrs {

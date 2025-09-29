@@ -15,6 +15,7 @@
     cosmic-ext-applet-clipboard-manager
     cosmic-ext-tweaks
     cosmic-ext-applet-external-monitor-brightness
+    cosmic-ext-applet-emoji-selector
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
