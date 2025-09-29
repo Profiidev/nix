@@ -10,6 +10,11 @@
   cosmic-ext-applet-emoji-selector = prev.callPackage ./cosmic-ext-applet-emoji-selector.nix { };
   andromeda = prev.callPackage ./andromeda.nix { };
   minimon-applet = prev.callPackage ./minimon-applet.nix { };
+  cosmic-ext-applet-privacy-indicator =
+    prev.callPackage ./cosmic-ext-applet-privacy-indicator.nix
+      { };
+  cosmic-ext-applet-ollama = prev.callPackage ./cosmic-ext-applet-ollama.nix { };
+  cosmic-ext-color-picker = prev.callPackage ./cosmic-ext-color-picker.nix { };
 
   # required for betaflight
   nwjs = prev.nwjs.overrideAttrs {

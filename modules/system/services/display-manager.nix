@@ -18,6 +18,9 @@
     cosmic-ext-applet-emoji-selector
     andromeda
     minimon-applet
+    cosmic-ext-applet-ollama
+    cosmic-ext-color-picker
+    cosmic-ext-applet-privacy-indicator
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
