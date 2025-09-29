@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.xserver.enable = true;
@@ -10,6 +10,12 @@
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
   services.desktopManager.cosmic.xwayland.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    cosmic-clipboard-manager
+  ];
+
+  environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
 
   # Configure keymap in X11
   services.xserver.xkb = {
