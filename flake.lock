@@ -174,20 +174,20 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-darwin"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {
-        "lastModified": 1757432263,
-        "narHash": "sha256-qHn+/0+IOz5cG68BZUwL9BV3EO/e9eNKCjH3+N7wMdI=",
+        "lastModified": 1758805352,
+        "narHash": "sha256-BHdc43Lkayd+72W/NXRKHzX5AZ+28F3xaUs3a88/Uew=",
         "owner": "nix-darwin",
         "repo": "nix-darwin",
-        "rev": "1fef4404de4d1596aa5ab2bd68078370e1b9dcdb",
+        "rev": "c48e963a5558eb1c3827d59d21c5193622a1477c",
         "type": "github"
       },
       "original": {
         "owner": "nix-darwin",
-        "ref": "nix-darwin-25.05",
+        "ref": "master",
         "repo": "nix-darwin",
         "type": "github"
       }
@@ -268,10 +268,10 @@
     },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1758526053,
-        "narHash": "sha256-EtxgUB2GxquMkBKXQcIhhIUVF73ZHXHfWgfnQeopRHY=",
+        "lastModified": 1759129924,
+        "narHash": "sha256-KZTl6i6KzBo9oWreaLDV+1HpKLDNljuKviBsS1WMJSY=",
         "ref": "main",
-        "rev": "f0f4c288fef67c0de67217040e9cf1286d814734",
+        "rev": "dff651f0bf27ec67362f53369eb499a44b850ef3",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ProfiiDev/nix-secrets.git"
@@ -295,22 +295,6 @@
       "original": {
         "owner": "nixos",
         "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-darwin": {
-      "locked": {
-        "lastModified": 1758952591,
-        "narHash": "sha256-LBewTiqEEIslXle4BrkAUlEG7uGvN9mS6G7hY0l04w4=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "bd1e762364c6d657a67a05b44a6c04646947e739",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-25.05-darwin",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -412,7 +396,6 @@
         "nix-gaming": "nix-gaming",
         "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "proton": "proton",
         "rust-overlay": "rust-overlay_2",

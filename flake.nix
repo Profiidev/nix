@@ -18,7 +18,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -81,9 +80,9 @@
     };
 
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs = {
-        nixpkgs.follows = "nixpkgs-darwin";
+        nixpkgs.follows = "nixpkgs-unstable";
       };
     };
   };
@@ -92,7 +91,6 @@
     inputs@{
       self,
       nixpkgs,
-      nixpkgs-darwin,
       nixpkgs-unstable,
       nix-darwin,
       ...
@@ -138,7 +136,7 @@
         map (host: {
           name = host;
           value = nix-darwin.lib.darwinSystem {
-            specialArgs = specialArgs nixpkgs-darwin // {
+            specialArgs = specialArgs nixpkgs-unstable // {
               inherit host;
               isLinux = false;
             };
