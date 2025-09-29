@@ -9,6 +9,7 @@
       { };
   cosmic-ext-applet-emoji-selector = prev.callPackage ./cosmic-ext-applet-emoji-selector.nix { };
   andromeda = prev.callPackage ./andromeda.nix { };
+  minimon-applet = prev.callPackage ./minimon-applet.nix { };
 
   # required for betaflight
   nwjs = prev.nwjs.overrideAttrs {
