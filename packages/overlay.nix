@@ -3,6 +3,8 @@
   cosmic-ext-applet-clipboard-manager =
     prev.callPackage ./cosmic-ext-applet-clipboard-manager.nix
       { };
+  cosmic-ext-tweaks = prev.callPackage ./cosmic-ext-tweaks.nix { };
+
   # required for betaflight
   nwjs = prev.nwjs.overrideAttrs {
     version = "0.84.0";

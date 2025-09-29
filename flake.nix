@@ -125,11 +125,15 @@
       ];
 
       forAllSystems =
-        f: nixpkgs.lib.genAttrs supportedSystems (system: f nixpkgs.legacyPackages.${system});
+        f: nixpkgs-unstable.lib.genAttrs supportedSystems (system: f nixpkgs.legacyPackages.${system});
     in
     {
       packages = forAllSystems (pkgs: rec {
         callPackage = name: pkgs.callPackage ./packages/${name}.nix { };
+
+        cosmic-ext-applet-clipboard-manager =
+          pkgs.callPackage ./packages/cosmic-ext-applet-clipboard-manager.nix
+            { };
       });
 
       nixosConfigurations = builtins.listToAttrs (

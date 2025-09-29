@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     cosmic-ext-applet-clipboard-manager
+    cosmic-ext-tweaks
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
