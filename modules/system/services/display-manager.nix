@@ -16,6 +16,7 @@
     cosmic-ext-tweaks
     cosmic-ext-applet-external-monitor-brightness
     cosmic-ext-applet-emoji-selector
+    andromeda
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
