@@ -116,8 +116,22 @@
           };
         };
       };
+
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+
+      forAllSystems =
+        f: nixpkgs.lib.genAttrs supportedSystems (system: f nixpkgs.legacyPackages.${system});
     in
     {
+      packages = forAllSystems (pkgs: rec {
+        callPackage = name: pkgs.callPackage ./packages/${name}.nix { };
+      });
+
       nixosConfigurations = builtins.listToAttrs (
         map (host: {
           name = host;

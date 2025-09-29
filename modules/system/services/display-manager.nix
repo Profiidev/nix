@@ -12,7 +12,7 @@
   services.desktopManager.cosmic.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
-    cosmic-clipboard-manager
+    cosmic-ext-applet-clipboard-manager
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";

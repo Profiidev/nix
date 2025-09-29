@@ -1,6 +1,8 @@
 (final: prev: {
   moondeck-buddy = prev.callPackage ./moondeck-buddy.nix { };
-  cosmic-clipboard-manager = prev.callPackage ./cosmic-clipboard-manager.nix { };
+  cosmic-ext-applet-clipboard-manager =
+    prev.callPackage ./cosmic-ext-applet-clipboard-manager.nix
+      { };
   # required for betaflight
   nwjs = prev.nwjs.overrideAttrs {
     version = "0.84.0";
