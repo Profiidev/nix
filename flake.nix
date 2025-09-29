@@ -128,13 +128,21 @@
         f: nixpkgs-unstable.lib.genAttrs supportedSystems (system: f nixpkgs.legacyPackages.${system});
     in
     {
-      packages = forAllSystems (pkgs: rec {
-        callPackage = name: pkgs.callPackage ./packages/${name}.nix { };
-
-        cosmic-ext-applet-clipboard-manager =
-          pkgs.callPackage ./packages/cosmic-ext-applet-clipboard-manager.nix
-            { };
-      });
+      packages = forAllSystems (
+        pkgs:
+        builtins.listToAttrs (
+          map
+            (pkg: {
+              name = pkg;
+              value = pkgs.callPackage ./packages/${pkg}.nix { };
+            })
+            (
+              builtins.filter (pkg: pkg != "overlay") (
+                map (pkg: pkgs.lib.removeSuffix ".nix" pkg) (builtins.attrNames (builtins.readDir ./packages))
+              )
+            )
+        )
+      );
 
       nixosConfigurations = builtins.listToAttrs (
         map (host: {

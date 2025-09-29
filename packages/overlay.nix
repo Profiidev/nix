@@ -1,27 +1,25 @@
-(final: prev: {
-  moondeck-buddy = prev.callPackage ./moondeck-buddy.nix { };
-  cosmic-ext-applet-clipboard-manager =
-    prev.callPackage ./cosmic-ext-applet-clipboard-manager.nix
-      { };
-  cosmic-ext-tweaks = prev.callPackage ./cosmic-ext-tweaks.nix { };
-  cosmic-ext-applet-external-monitor-brightness =
-    prev.callPackage ./cosmic-ext-applet-external-monitor-brigthness.nix
-      { };
-  cosmic-ext-applet-emoji-selector = prev.callPackage ./cosmic-ext-applet-emoji-selector.nix { };
-  andromeda = prev.callPackage ./andromeda.nix { };
-  minimon-applet = prev.callPackage ./minimon-applet.nix { };
-  cosmic-ext-applet-privacy-indicator =
-    prev.callPackage ./cosmic-ext-applet-privacy-indicator.nix
-      { };
-  cosmic-ext-applet-ollama = prev.callPackage ./cosmic-ext-applet-ollama.nix { };
-  cosmic-ext-color-picker = prev.callPackage ./cosmic-ext-color-picker.nix { };
-
-  # required for betaflight
-  nwjs = prev.nwjs.overrideAttrs {
-    version = "0.84.0";
-    src = prev.fetchurl {
-      url = "https://dl.nwjs.io/v0.84.0/nwjs-v0.84.0-linux-x64.tar.gz";
-      hash = "sha256-VIygMzCPTKzLr47bG1DYy/zj0OxsjGcms0G1BkI/TEI=";
+(
+  final: prev:
+  {
+    # required for betaflight
+    nwjs = prev.nwjs.overrideAttrs {
+      version = "0.84.0";
+      src = prev.fetchurl {
+        url = "https://dl.nwjs.io/v0.84.0/nwjs-v0.84.0-linux-x64.tar.gz";
+        hash = "sha256-VIygMzCPTKzLr47bG1DYy/zj0OxsjGcms0G1BkI/TEI=";
+      };
     };
-  };
-})
+  }
+  // builtins.listToAttrs (
+    map
+      (pkg: {
+        name = pkg;
+        value = final.callPackage ./${pkg}.nix { };
+      })
+      (
+        builtins.filter (pkg: pkg != "overlay") (
+          map (pkg: prev.lib.removeSuffix ".nix" pkg) (builtins.attrNames (builtins.readDir ./.))
+        )
+      )
+  )
+)

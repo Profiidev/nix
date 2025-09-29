@@ -15,10 +15,10 @@ rustPlatform.buildRustPackage {
     owner = "cosmic-utils";
     repo = "cosmic-ext-applet-ollama";
     rev = "3f83ad0a1b4d3a1e113c68229030d7aa25e54185";
-    hash = "sha256-3bXlzszo1cVVh1wODsz5wHGUynFfCRjNDXgdmHW5aB0=";
+    hash = "sha256-4TqlZdzWhZNCpwZmCLlzsdsJxG+JSxnffUg4GUG0C1g=";
   };
 
-  cargoHash = "sha256-yIqgqsNOlhNhOa0eiJwZT+0plX2bs0HV3RFc0rcSIAg=";
+  cargoHash = "sha256-NKDUZSo/qq1rSta1d6SNAKNefkbSbzJTo9QPvnjiHXY=";
 
   nativeBuildInputs = [
     libcosmicAppHook
