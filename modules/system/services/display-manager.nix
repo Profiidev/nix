@@ -20,6 +20,7 @@
     minimon-applet
     #cosmic-ext-applet-ollama
     cosmic-ext-applet-privacy-indicator
+    #gui-scale-applet
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
