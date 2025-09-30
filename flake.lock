@@ -544,7 +544,8 @@
         "proton": "proton",
         "rust-overlay": "rust-overlay_3",
         "sops-nix": "sops-nix",
-        "winapps": "winapps"
+        "winapps": "winapps",
+        "winboat": "winboat"
       }
     },
     "rust-overlay": {
@@ -727,6 +728,27 @@
       "original": {
         "owner": "winapps-org",
         "repo": "winapps",
+        "type": "github"
+      }
+    },
+    "winboat": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1759183461,
+        "narHash": "sha256-IhEKIxSE4pSw4HsMT4n6dxaAl5nyA0eNf8oBgIJFM4w=",
+        "owner": "TibixDev",
+        "repo": "winboat",
+        "rev": "403a46adb41fccd5eefeda2f155b6d6e61f1ac44",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TibixDev",
+        "ref": "main",
+        "repo": "winboat",
         "type": "github"
       }
     }

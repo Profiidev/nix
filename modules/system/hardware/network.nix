@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 {
   networking.hostName = config.hostSpec.hostname;
@@ -6,4 +6,5 @@
 
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
+  networking.firewall.package = pkgs.iptables-legacy;
 }

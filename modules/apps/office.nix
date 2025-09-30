@@ -7,7 +7,9 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.de_DE
+    freerdp
     inputs.winapps.packages."${pkgs.system}".winapps
     inputs.winapps.packages."${pkgs.system}".winapps-launcher
+    inputs.winboat.packages."${pkgs.system}".winboat
   ];
 }
