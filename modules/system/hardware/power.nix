@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     power-profiles-daemon
+    system76-power
   ];
 
   services.power-profiles-daemon.enable = false;
