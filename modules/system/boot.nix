@@ -1,14 +1,20 @@
-{ pkgs, ... }:
+{
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
+
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
     enable = true;
-    device = "nodev";
-    useOSProber = true;
-    theme = pkgs.nixos-grub2-theme;
-    efiSupport = true;
-    font = "${pkgs.nixos-grub2-theme}/dejavu.pf2";
+    pkiBundle = "/var/lib/sbctl";
   };
 
   boot.plymouth.enable = true;

@@ -1,4 +1,11 @@
-{ inputs, config, lib, pkgs, ... }: {
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       "hosts/spec.nix"
@@ -12,11 +19,10 @@
   hostSpec = {
     isMinimal = lib.mkForce true;
     hostname = "installer";
-    users = [{ username = "profidev"; }];
+    users = [ { username = "profidev"; } ];
   };
 
-  fileSystems."/boot".options =
-    [ "umask=0077" ]; # Removes permissions and security warnings.
+  fileSystems."/boot".options = [ "umask=0077" ]; # Removes permissions and security warnings.
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot = {
     enable = true;
@@ -27,8 +33,7 @@
   };
   boot.initrd = {
     systemd.enable = true;
-    systemd.emergencyAccess =
-      true; # Don't need to enter password in emergency mode
+    systemd.emergencyAccess = true; # Don't need to enter password in emergency mode
     luks.forceLuksSupportInInitrd = true;
   };
   boot.kernelParams = [
@@ -48,10 +53,19 @@
     };
   };
 
-  environment.systemPackages =
-    builtins.attrValues { inherit (pkgs) wget curl rsync git; };
+  environment.systemPackages = builtins.attrValues {
+    inherit (pkgs)
+      wget
+      curl
+      rsync
+      git
+      sbctl
+      ;
+  };
 
-  networking = { networkmanager.enable = true; };
+  networking = {
+    networkmanager.enable = true;
+  };
 
   services = {
     qemuGuest.enable = true;
@@ -66,11 +80,13 @@
   nix = {
     #FIXME(installer): registry and nixPath shouldn't be required here because flakes but removal results in warning spam on build
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
-      config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };
