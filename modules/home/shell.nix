@@ -80,6 +80,7 @@ in
       rmf = "rm -rf";
       dco = "docker compose up";
       clr = "clear";
+      k9s = "k9s -c ctx";
     };
 
     plugins = [

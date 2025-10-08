@@ -44,6 +44,7 @@ in
       sccache
       gh
       espflash
+      stackit-cli
       pre-commit
     ]
     ++ (
