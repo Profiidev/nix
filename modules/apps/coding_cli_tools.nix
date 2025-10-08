@@ -33,6 +33,7 @@ in
       gobject-introspection
       terraform
       minikube
+      k9s
       wrapped-azure-cli
       wrapped-helmfile
       wrapped-kubernetes-helm
