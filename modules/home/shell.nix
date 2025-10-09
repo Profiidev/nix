@@ -79,6 +79,8 @@
       dco = "docker compose up";
       clr = "clear";
       k9s = "k9s -c ctx";
+      pcr = "pre-commit run --all-files";
+      pcu = "pre-commit authupdate";
     };
 
     functions = {
