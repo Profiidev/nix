@@ -6,21 +6,35 @@
   ...
 }:
 
+let
+  platform = if isLinux then "nixos" else "darwin";
+  platformModules = "${platform}Modules";
+in
 {
-  programs = (
-    if isLinux then
-      {
-        nh = {
-          enable = true;
-          clean.enable = true;
-          clean.extraArgs = "--keep-since 1d --keep 10";
-          clean.dates = "daily";
-          flake = config.hostSpec.configPath;
-        };
-      }
-    else
-      { }
-  );
+  imports = [
+    inputs.nix-index-database.${platformModules}.nix-index
+  ];
+
+  programs =
+    (
+      if isLinux then
+        {
+          nh = {
+            enable = true;
+            clean.enable = true;
+            clean.extraArgs = "--keep-since 1d --keep 10";
+            clean.dates = "daily";
+            flake = config.hostSpec.configPath;
+          };
+        }
+      else
+        { }
+    )
+    // {
+      nix-index-database = {
+        comma.enable = true;
+      };
+    };
 
   environment.systemPackages = with pkgs; [
     nix-index

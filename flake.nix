@@ -27,7 +27,7 @@
 
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     lanzaboote = {
@@ -42,12 +42,12 @@
 
     sops-nix = {
       url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     flake-utils.url = "github:numtide/flake-utils";
@@ -66,7 +66,7 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs-unstable";
         flake-parts.follows = "flake-parts";
       };
     };
@@ -74,7 +74,7 @@
     nix-citizen = {
       url = "github:LovingMelody/nix-citizen";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs-unstable";
         nix-gaming.follows = "nix-gaming";
         flake-parts.follows = "flake-parts";
       };
@@ -82,7 +82,7 @@
 
     winapps = {
       url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     proton = {
@@ -94,6 +94,11 @@
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable";
       };
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 

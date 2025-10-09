@@ -1,4 +1,8 @@
-{ pkgs, isLinux, ... }:
+{
+  pkgs,
+  isLinux,
+  ...
+}:
 
 {
   environment.systemPackages =
