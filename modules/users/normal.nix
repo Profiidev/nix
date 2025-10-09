@@ -58,6 +58,7 @@ in
           else
             {
               home = "/Users/${spec.username}";
+              shell = pkgs.fish;
             }
         );
       }
