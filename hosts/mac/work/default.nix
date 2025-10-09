@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -15,6 +15,10 @@
     ../../../modules/apps/code_editor.nix
     ../../../modules/apps/terminal.nix
     ../../../modules/system/services/font.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    gemini-cli
   ];
 
   hostSpec = {
