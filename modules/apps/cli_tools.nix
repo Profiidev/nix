@@ -65,6 +65,7 @@
       haskellPackages.hashable
       cachix
       fish
+      dioxus-cli
     ]
     ++ (
       if isLinux then
