@@ -64,6 +64,7 @@
       libfido2
       haskellPackages.hashable
       cachix
+      fish
     ]
     ++ (
       if isLinux then
