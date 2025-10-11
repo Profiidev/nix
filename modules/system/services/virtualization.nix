@@ -13,11 +13,6 @@
     bottles
   ];
 
-  virtualisation.virtualbox = {
-    host = {
-      enable = true;
-    };
-  };
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
 
   virtualisation.libvirtd = {
@@ -31,15 +26,6 @@
       runAsRoot = true;
       swtpm.enable = true;
       vhostUserPackages = [ pkgs.virtiofsd ];
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
-      };
     };
   };
   environment.variables = {

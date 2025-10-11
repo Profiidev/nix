@@ -18,10 +18,10 @@ rustPlatform.buildRustPackage {
     owner = "cosmic-utils";
     repo = "tweaks";
     rev = "4ce0650fba453cb89f0cb113349de262bab25ed1";
-    hash = "sha256-nhKLEBpInE6kXoGzSej3LW4IEB+QUj7BlpuIbcbVkHw=";
+    hash = "sha256-zbNvUnIzVZ3v+ThGOLGm0FU/+EPa6h/q/IhkUmo32Aw=";
   };
 
-  cargoHash = "sha256-Rn2+t5SFXK8FmM0Uy5+N8uUNiSUKzpufE2loDCvIezs=";
+  cargoHash = "sha256-Zl7c/3q5J+9y1vRJdR77NJ6y62bV1bxaVMuiyxDbLX4=";
 
   nativeBuildInputs = [
     libcosmicAppHook
