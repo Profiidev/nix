@@ -17,5 +17,9 @@
     xorg.xkill
   ];
 
-  services = (if isLinux then { ratbagd.enable = true; } else { });
+  services = (if isLinux then {
+    ratbagd.enable = true;
+
+    ringboard.wayland.enable = true;
+  } else { });
 }
