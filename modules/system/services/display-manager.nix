@@ -29,6 +29,8 @@
     variant = "";
   };
 
+  services.ringboard.wayland.enable = true;
+
   programs.appimage = {
     enable = true;
     binfmt = true;
