@@ -16,8 +16,8 @@ rebuild-post: check-sops
 
 # Run a flake check on the config and installer
 check ARGS="":
-	NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --impure --keep-going --show-trace {{ARGS}}
-	cd nixos-installer && NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --impure --keep-going --show-trace {{ARGS}}
+	NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --keep-going --show-trace {{ARGS}}
+	cd nixos-installer && NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --keep-going --show-trace {{ARGS}}
 
 # Rebuild the system
 rebuild HOST="": rebuild-pre && rebuild-post
@@ -87,7 +87,7 @@ sync USER HOST PATH:
 
 # Run nixos-rebuild on the remote host
 build-host HOST:
-	NIX_SSHOPTS="-p22" nixos-rebuild --target-host {{HOST}} --use-remote-sudo --show-trace --impure --flake .#"{{HOST}}" switch
+	NIX_SSHOPTS="-p22" nixos-rebuild --target-host {{HOST}} --use-remote-sudo --show-trace --flake .#"{{HOST}}" switch
 
 # Called by the rekey recipe
 sops-rekey:

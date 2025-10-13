@@ -25,7 +25,7 @@ function yellow() {
 	fi
 }
 
-switch_args="--show-trace --impure --flake "
+switch_args="--show-trace --flake "
 if [[ -n $1 && $1 == "trace" ]]; then
 	switch_args="$switch_args --show-trace "
 elif [[ -n $1 ]]; then
@@ -73,7 +73,7 @@ if [ "$os" == "Darwin" ]; then
 		./result/sw/bin/darwin-rebuild $switch_args
 	else
 		if command -v nh &>/dev/null; then
-			nh darwin switch . -H $HOST -- --impure --show-trace
+			nh darwin switch . -H $HOST -- --show-trace
 		else
 			echo $switch_args
 			sudo darwin-rebuild $switch_args
@@ -84,7 +84,7 @@ else
 	if command -v nh &>/dev/null; then
 		REPO_PATH=$(pwd)
 		export REPO_PATH
-		nh os switch . -- --impure --show-trace
+		nh os switch . -- --show-trace
 	else
 		echo $switch_args
 		sudo nixos-rebuild $switch_args
