@@ -140,7 +140,7 @@
       ];
 
       forAllSystems =
-        f: nixpkgs-unstable.lib.genAttrs supportedSystems (system: f nixpkgs.legacyPackages.${system});
+        f: nixpkgs-unstable.lib.genAttrs supportedSystems (system: f nixpkgs-unstable.legacyPackages.${system});
     in
     {
       packages = forAllSystems (
