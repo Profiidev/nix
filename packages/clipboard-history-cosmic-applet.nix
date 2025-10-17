@@ -15,11 +15,17 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "ProfiiDev";
     repo = "clipboard-history";
-    rev = "58a2417e278217532bf1e09a7f76bd0ab30e571a";
-    hash = "sha256-498mquN+aCLq+lo2FRuXq532lzJYm7R2czbqIaKyu+8=";
+    rev = "3c7e67ebc77daa02d7e7a8ffb2b131b95a3f1d83";
+    hash = "sha256-zTqQUx6K/yKMgD0A4WybrniDHM4OHE2STCNtW+rYFBI=";
+    #hash = lib.fakeHash;
   };
 
-  cargoHash = "sha256-anDpXQhKv15DRvXJP7fDqNqV4t0sbZ55wdRs9UdS++U=";
+  cargoHash = "sha256-SRkvBsb86HmDjRB3rU2Ya6A8FJS59OSIoyor97MpT9M=";
+  #cargoHash = lib.fakeHash;
+
+  postPatch = ''
+    substituteInPlace cosmic-applet/justfile --replace 'clipboard-history-cosmic-applet' 'ringboard-cosmic-applet'
+  '';
 
   nativeBuildInputs = [
     libcosmicAppHook

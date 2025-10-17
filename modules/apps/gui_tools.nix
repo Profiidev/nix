@@ -15,9 +15,15 @@
     obsidian
     bitwarden-desktop
     xorg.xkill
+    qjournalctl
   ];
 
-  services = (if isLinux then {
-    ratbagd.enable = true;
-  } else { });
+  services = (
+    if isLinux then
+      {
+        ratbagd.enable = true;
+      }
+    else
+      { }
+  );
 }
