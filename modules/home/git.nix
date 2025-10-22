@@ -5,28 +5,31 @@
 
   programs.git = {
     enable = true;
-    userName = config.userSpec.git_user;
-    userEmail = config.userSpec.git_email;
 
-    aliases = {
-      a = "add";
-      aa = "add -A";
-      cm = "commit -m";
-      com = "checkout main";
-      b = "branch";
-      bd = "branch -d";
-      bdd = "branch -D";
-      pl = "pull";
-      ps = "push";
-      psu = "push --set-upstream origin";
-      co = "checkout";
-      cob = "checkout -b";
-      rao = "remote add origin";
-      mm = "merge main --no-edit";
-      mme = "merge main";
-    };
+    settings = {
+      user = {
+        name = config.userSpec.git_user;
+        email = config.userSpec.git_email;
+      };
 
-    extraConfig = {
+      alias = {
+        a = "add";
+        aa = "add -A";
+        cm = "commit -m";
+        com = "checkout main";
+        b = "branch";
+        bd = "branch -d";
+        bdd = "branch -D";
+        pl = "pull";
+        ps = "push";
+        psu = "push --set-upstream origin";
+        co = "checkout";
+        cob = "checkout -b";
+        rao = "remote add origin";
+        mm = "merge main --no-edit";
+        mme = "merge main";
+      };
+
       pull = {
         rebase = true;
       };
