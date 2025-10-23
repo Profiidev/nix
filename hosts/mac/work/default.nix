@@ -19,6 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     gemini-cli
+    libiconv
   ];
 
   hostSpec = {
