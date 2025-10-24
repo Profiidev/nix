@@ -40,6 +40,7 @@
       neo-cowsay
       git-cliff
       htop
+      btop
       inetutils
       nettools
       speedtest-cli
