@@ -31,6 +31,7 @@
   environment.variables = {
     LIBVIRT_DEFAULT_URI = "qemu:///system";
   };
+  networking.firewall.trustedInterfaces = [ "virbr0" ];
 
   virtualisation.waydroid.enable = true;
 
