@@ -36,6 +36,7 @@
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/go/bin:$PATH"
       export LIBVIRT_DEFAULT_URI="qemu:///system"
+      export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
     '';
 
     interactiveShellInit = ''

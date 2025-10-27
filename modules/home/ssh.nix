@@ -14,4 +14,8 @@
     }
     // config.userSpec.ssh_config;
   };
+
+  services.ssh-agent = {
+    enable = true;
+  };
 }
