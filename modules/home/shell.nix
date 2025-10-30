@@ -37,6 +37,8 @@
       export PATH="$HOME/go/bin:$PATH"
       export LIBVIRT_DEFAULT_URI="qemu:///system"
       export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+      export CPATH="${pkgs.glibc.dev}/include:$CPATH"
+      export LIBCLANG_PATH="/run/current-system/sw/share/nix-ld/lib"
     '';
 
     interactiveShellInit = ''
