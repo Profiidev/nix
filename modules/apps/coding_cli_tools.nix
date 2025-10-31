@@ -46,6 +46,7 @@ in
       espflash
       stackit-cli
       pre-commit
+      nodejs_24
     ]
     ++ (
       if isLinux then
