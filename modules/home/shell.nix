@@ -23,6 +23,15 @@
     '';
   };
 
+  home.sessionVariables = {
+    RUSTC_WRAPPER = "sccache";
+    SCCACHE_CACHE_SIZE = "50G";
+    LIBVIRT_DEFAULT_URI = "qemu:///system";
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
+    CPATH = "${pkgs.glibc.dev}/include:$CPATH";
+    LIBCLANG_PATH = "/run/current-system/sw/share/nix-ld/lib";
+  };
+
   programs.fish = {
     enable = true;
     generateCompletions = true;
@@ -30,15 +39,9 @@
     shellInit = ''
       set fish_greeting
       set -U fish_color_command blue
-      export WEBKIT_DISABLE_COMPOSITING_MODE=1
-      export RUSTC_WRAPPER=sccache
-      export SCCACHE_CACHE_SIZE="50G"
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/go/bin:$PATH"
-      export LIBVIRT_DEFAULT_URI="qemu:///system"
       export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
-      export CPATH="${pkgs.glibc.dev}/include:$CPATH"
-      export LIBCLANG_PATH="/run/current-system/sw/share/nix-ld/lib"
     '';
 
     interactiveShellInit = ''
