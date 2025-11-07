@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  isLinux,
+  ...
+}:
 
 {
   programs.ssh = {
@@ -15,7 +20,14 @@
     // config.userSpec.ssh_config;
   };
 
-  services.ssh-agent = {
-    enable = true;
-  };
+  services = (
+    if isLinux then
+      {
+        ssh-agent = {
+          enable = true;
+        };
+      }
+    else
+      { }
+  );
 }

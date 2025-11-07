@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, isLinux, ... }:
 
 {
   programs.bash = {
@@ -28,9 +28,16 @@
     SCCACHE_CACHE_SIZE = "50G";
     LIBVIRT_DEFAULT_URI = "qemu:///system";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
-    CPATH = "${pkgs.glibc.dev}/include:$CPATH";
     LIBCLANG_PATH = "/run/current-system/sw/share/nix-ld/lib";
-  };
+  }
+  // (
+    if isLinux then
+      {
+        CPATH = "${pkgs.glibc.dev}/include:$CPATH";
+      }
+    else
+      { }
+  );
 
   programs.fish = {
     enable = true;
