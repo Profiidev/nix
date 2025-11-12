@@ -61,8 +61,15 @@ in
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      cudaSupport = true;
-    };
+    }
+    // (
+      if isLinux then
+        {
+          cudaSupport = true;
+        }
+      else
+        { }
+    );
     overlays = [
       inputs.rust-overlay.overlays.default
       (import ../../packages/overlay.nix)
