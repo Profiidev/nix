@@ -21,14 +21,13 @@
       # Go
       go
       # Java
-      jdk23
+      jdk25
     ]
     ++ (
       if isLinux then
         (with pkgs; [
           # Android
           android-tools
-          android-udev-rules
         ])
       else
         [ ]

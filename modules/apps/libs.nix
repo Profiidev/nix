@@ -21,7 +21,6 @@
             openssl
             stdenv.cc.cc.lib
             nss
-            libcef
             libclang.lib
           ];
         };

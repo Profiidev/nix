@@ -79,7 +79,6 @@
           os-prober
           traceroute
           waypipe
-          libcef
         ])
       else
         [ ]

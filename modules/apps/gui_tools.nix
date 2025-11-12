@@ -10,7 +10,6 @@
     filezilla
     geary
     piper
-    rpi-imager
     gimp
     vlc
     obsidian
