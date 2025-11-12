@@ -6,6 +6,7 @@
     ../../home/fastfetch.nix
     ../../home/git.nix
     ../../home/gpg.nix
+    ../../home/nvim.nix
     ../../home/shell.nix
     ../../home/sops.nix
     ../../home/ssh.nix

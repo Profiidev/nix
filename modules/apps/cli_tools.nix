@@ -59,7 +59,6 @@
       tokei
       dig
       nmap
-      neovim
       openssl
       arp-scan
       man-pages
