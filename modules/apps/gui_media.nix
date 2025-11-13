@@ -5,6 +5,6 @@
     discord
     spotify
     wasistlos
-    #chromium
+    chromium
   ];
 }
