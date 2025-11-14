@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, isLinux, ... }:
 
 {
   home.packages = with pkgs; [
@@ -10,7 +10,6 @@
     asm-lsp
     basedpyright
     cmake-language-server
-    csharp-ls
     docker-compose-language-service
     docker-language-server
     eslint
@@ -32,5 +31,7 @@
     nixfmt
     gh-actions-language-server
     cspell-lsp
-  ];
+  ] ++ (if isLinux then [
+    csharp-ls
+  ] else []);
 }
