@@ -10,6 +10,7 @@
   pkg-config,
   glib,
   libclang,
+  ...
 }:
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-privacy-indicator";

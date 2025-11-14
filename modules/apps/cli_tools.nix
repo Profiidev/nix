@@ -1,6 +1,7 @@
 {
   pkgs,
   isLinux,
+  inputs,
   ...
 }:
 
@@ -70,6 +71,7 @@
       cachix
       fish
       dioxus-cli
+      inputs.bun2nix.packages.${pkgs.system}.default
     ]
     ++ (
       if isLinux then

@@ -7,6 +7,7 @@
   stdenv,
   nix-update-script,
   pkg-config,
+  ...
 }:
 rustPlatform.buildRustPackage {
   pname = "clipboard-history-cosmic-applet";

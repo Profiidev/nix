@@ -3,12 +3,14 @@
 
   nixConfig = {
     extra-substituters = [
+      "https://cache.garnix.io"
       "https://nix-community.cachix.org"
       "https://nix-citizen.cachix.org"
       "https://profidev.cachix.org"
       "http://192.168.178.22:5000"
     ];
     extra-trusted-public-keys = [
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
       "profidev.cachix.org-1:xdwadal2vlCD50JtDTy8NwjOJvkOtjdjy1y91ElU9GE="
@@ -95,6 +97,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    bun2nix = {
+      url = "github:baileylutcd/bun2nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -103,6 +110,7 @@
       nixpkgs,
       nixpkgs-unstable,
       nix-darwin,
+      bun2nix,
       ...
     }:
     let
@@ -144,7 +152,9 @@
           map
             (pkg: {
               name = pkg;
-              value = pkgs.callPackage ./packages/${pkg}.nix { };
+              value = pkgs.callPackage ./packages/${pkg}.nix {
+                mkBunDerivation = bun2nix.lib.${pkgs.system}.mkBunDerivation;
+              };
             })
             (
               builtins.filter (pkg: pkg != "overlay") (

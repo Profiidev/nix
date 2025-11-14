@@ -8,6 +8,7 @@
   pkg-config,
   stdenv,
   nix-update-script,
+  ...
 }:
 
 rustPlatform.buildRustPackage {

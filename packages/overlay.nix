@@ -1,5 +1,5 @@
-(
-  final: prev:
+{ final, prev, mkBunDerivation, ... }:
+
   {
     # required for betaflight
     nwjs = prev.nwjs.overrideAttrs {
@@ -14,7 +14,9 @@
     map
       (pkg: {
         name = pkg;
-        value = final.callPackage ./${pkg}.nix { };
+        value = final.callPackage ./${pkg}.nix {
+          inherit mkBunDerivation;
+        };
       })
       (
         builtins.filter (pkg: pkg != "overlay") (
@@ -22,4 +24,3 @@
         )
       )
   )
-)

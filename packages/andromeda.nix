@@ -6,6 +6,7 @@
   just,
   stdenv,
   nix-update-script,
+  ...
 }:
 
 rustPlatform.buildRustPackage {

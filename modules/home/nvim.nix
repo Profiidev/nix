@@ -29,5 +29,7 @@
     typescript-language-server
     wgsl-analyzer
     yaml-language-server
+    nixfmt
+    gh-actions-language-server
   ];
 }

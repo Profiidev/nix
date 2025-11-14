@@ -11,6 +11,7 @@
   xorg,
   steam,
   useNixSteam ? true,
+  ...
 }:
 
 let
