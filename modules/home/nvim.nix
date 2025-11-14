@@ -31,5 +31,6 @@
     yaml-language-server
     nixfmt
     gh-actions-language-server
+    cspell-lsp
   ];
 }
