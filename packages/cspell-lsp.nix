@@ -11,11 +11,11 @@ buildNpmPackage rec {
   version = "1.1.5";
 
   src = fetchFromGitHub {
-      owner = "vlabo";
-      repo = "cspell-lsp";
-      rev = "v${version}";
-      hash = "sha256-ZLZMVw0uvr4rQ9SKMVj1Sjoj+QeK2UL3RWsnzNRdPwI=";
-    };
+    owner = "vlabo";
+    repo = "cspell-lsp";
+    rev = "v${version}";
+    hash = "sha256-ZLZMVw0uvr4rQ9SKMVj1Sjoj+QeK2UL3RWsnzNRdPwI=";
+  };
 
   nativeBuildInputs = [ bun ];
 
