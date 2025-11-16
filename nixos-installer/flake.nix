@@ -27,7 +27,7 @@
       newConfig =
         name:
         (nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          stdenv.hostPlatform.system = "x86_64-linux";
           specialArgs = minimalSpecialArgs;
           modules = [
             ./minimal-configuration.nix

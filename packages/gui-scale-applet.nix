@@ -15,13 +15,11 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "gui-scale-applet";
-    rev = "067a856b25be71c3dd22e859d8ee578f03799811";
+    rev = "4e4074738626fafeee26d9cb38c8587899242f0a";
     hash = "sha256-dhJxrWApSpEbq2onsg/fb5j6i5/7+pBytOUcOgFKlZA=";
   };
 
-  postUnpack = ''
-    rm -f Cargo.lock
-  '';
+  cargoHash = lib.fakeHash;
 
   nativeBuildInputs = [
     libcosmicAppHook
