@@ -18,6 +18,7 @@
     ../../../modules/profiles/apps/office.nix
 
     # Extra
+    ../../../modules/apps/ai.nix
     ../../../modules/apps/tailscale.nix
   ];
 
