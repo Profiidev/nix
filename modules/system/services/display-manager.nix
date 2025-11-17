@@ -16,9 +16,9 @@
     cosmic-ext-applet-emoji-selector
     andromeda
     minimon-applet
-    #cosmic-ext-applet-ollama
+    cosmic-ext-applet-ollama
     cosmic-ext-applet-privacy-indicator
-    #gui-scale-applet
+    gui-scale-applet
     clipboard-history-cosmic-applet
   ];
 

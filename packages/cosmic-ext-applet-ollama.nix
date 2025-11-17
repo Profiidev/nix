@@ -6,6 +6,7 @@
   just,
   stdenv,
   nix-update-script,
+  openssl,
   ...
 }:
 rustPlatform.buildRustPackage {
@@ -15,15 +16,19 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "cosmic-ext-applet-ollama";
-    rev = "3f83ad0a1b4d3a1e113c68229030d7aa25e54185";
-    hash = "sha256-4TqlZdzWhZNCpwZmCLlzsdsJxG+JSxnffUg4GUG0C1g=";
+    rev = "227df9d4b3d505d23ec5a3d3eef1197c24c96fb0";
+    hash = "sha256-lnQFFLbvc4O5zhQHDfE7Yb7jXhc39rvfYrw6ChJhxog=";
   };
 
-  cargoHash = "sha256-NKDUZSo/qq1rSta1d6SNAKNefkbSbzJTo9QPvnjiHXY=";
+  cargoHash = "sha256-SZst8AYvgdOFt2qpWSSv5f6B6XwmGtnZc3eKi6PkO9Y=";
 
   nativeBuildInputs = [
     libcosmicAppHook
     just
+  ];
+
+  buildInputs = [
+    openssl
   ];
 
   dontUseJustBuild = true;
@@ -34,8 +39,8 @@ rustPlatform.buildRustPackage {
     "prefix"
     (placeholder "out")
     "--set"
-    "bin-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-applet-ollama"
+    "target"
+    "${stdenv.hostPlatform.rust.cargoShortTarget}/release"
   ];
 
   passthru.updateScript = nix-update-script { };
