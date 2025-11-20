@@ -12,6 +12,8 @@
   services.desktopManager.cosmic.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
+    cosmic-reader
+    cosmic-ext-ctl
     cosmic-ext-tweaks
     cosmic-ext-applet-emoji-selector
     andromeda
