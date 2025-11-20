@@ -1,8 +1,12 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
-    inputs.proton.packages.${system}.default
+    inputs.proton.packages.${stdenv.hostPlatform.system}.default
     prismlauncher
     badlion-client
   ];

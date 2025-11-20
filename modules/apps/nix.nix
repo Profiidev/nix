@@ -75,7 +75,7 @@ in
       (final: prev:
       import ../../packages/overlay.nix {
         inherit final prev;
-        mkBunDerivation = inputs.bun2nix.lib.${pkgs.system}.mkBunDerivation;
+        mkBunDerivation = inputs.bun2nix.lib.${pkgs.stdenv.hostPlatform.system}.mkBunDerivation;
       }
       )
     ];

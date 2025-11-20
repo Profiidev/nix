@@ -72,7 +72,7 @@
       cachix
       fish
       dioxus-cli
-      inputs.bun2nix.packages.${pkgs.system}.default
+      inputs.bun2nix.packages.${stdenv.hostPlatform.system}.default
     ]
     ++ (
       if isLinux then

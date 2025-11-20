@@ -153,7 +153,7 @@
             (pkg: {
               name = pkg;
               value = pkgs.callPackage ./packages/${pkg}.nix {
-                mkBunDerivation = bun2nix.lib.${pkgs.system}.mkBunDerivation;
+                mkBunDerivation = bun2nix.lib.${pkgs.stdenv.hostPlatform.system}.mkBunDerivation;
               };
             })
             (

@@ -17,8 +17,8 @@
     winetricks
     gamemode
 
-    inputs.nix-citizen.packages.${system}.star-citizen-umu
-    inputs.proton.packages.${system}.default
+    inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.star-citizen-umu
+    inputs.proton.packages.${stdenv.hostPlatform.system}.default
   ];
 
   boot.kernel.sysctl = {
