@@ -2,6 +2,7 @@
   pkgs,
   isLinux,
   inputs,
+  lib,
   ...
 }:
 
@@ -103,7 +104,7 @@
   documentation = (
     if isLinux then
       {
-        man.generateCaches = false;
+        man.generateCaches = lib.mkForce false;
       }
     else
       { }

@@ -1,4 +1,4 @@
-{ pkgs, isLinux, ... }:
+{ pkgs, isLinux, lib, ... }:
 
 {
   programs.bash = {
@@ -146,4 +146,6 @@
       }
     ];
   };
+
+  programs.man.generateCaches = lib.mkForce false;
 }
