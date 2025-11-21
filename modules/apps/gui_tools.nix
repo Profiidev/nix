@@ -13,7 +13,6 @@
     gimp
     vlc
     obsidian
-    bitwarden-desktop
     xorg.xkill
     qjournalctl
   ];
