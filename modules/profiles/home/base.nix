@@ -8,6 +8,7 @@
     ../../home/gpg.nix
     ../../home/nvim.nix
     ../../home/shell.nix
+    ../../home/fish.nix
     ../../home/sops.nix
     ../../home/ssh.nix
     ../../home/starship.nix
