@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  browser = [ "firefox.desktop" ];
+  browser = [ "brave.desktop" ];
   editor = [ "nvim.desktop" ];
   media = [ "vlc.desktop" ];
 
@@ -58,6 +58,7 @@ in
   home.packages = with pkgs; [
     google-chrome
     firefox
+    brave
   ];
 
   xdg = {
@@ -72,6 +73,6 @@ in
   };
 
   home.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
+    DEFAULT_BROWSER = "${pkgs.brave}/bin/brave";
   };
 }

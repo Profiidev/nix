@@ -78,7 +78,7 @@
       ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
-        "firefox.desktop"
+        "brave.desktop"
         "Alacritty.desktop"
         "dev.zed.Zed.desktop"
         "code.desktop"
