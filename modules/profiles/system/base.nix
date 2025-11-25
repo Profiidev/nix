@@ -3,6 +3,7 @@
 {
   imports = [
     ../../general.nix
+    ../../inputs.nix
     ../../locale.nix
     ../../sops.nix
 

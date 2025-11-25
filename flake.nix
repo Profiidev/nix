@@ -121,18 +121,6 @@
             custom = import ./lib { inherit (pkgs) lib; };
           }
         );
-        pkgsStable = import nixpkgs {
-          config = {
-            allowUnfree = true;
-            allowUnfreePredicate = _: true;
-          };
-        };
-        pkgsUnstableNoCuda = import nixpkgs-unstable {
-          config = {
-            allowUnfree = true;
-            allowUnfreePredicate = _: true;
-          };
-        };
       };
 
       supportedSystems = [

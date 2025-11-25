@@ -7,6 +7,7 @@
     ../../spec.nix
 
     # Base
+    ../../../modules/inputs.nix
     ../../../modules/sops.nix
     ../../../modules/users/normal.nix
     # Profiles
