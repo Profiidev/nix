@@ -10,6 +10,6 @@
     freerdp
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps-launcher
-    winboat
+    #winboat
   ];
 }

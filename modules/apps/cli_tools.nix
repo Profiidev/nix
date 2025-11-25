@@ -77,7 +77,6 @@
     ++ (
       if isLinux then
         (with pkgs; [
-          cargo-llvm-cov
           os-prober
           traceroute
           waypipe

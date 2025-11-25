@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgsUnstableNoCuda, ... }:
 
 let
   browser = [ "brave-browser.desktop" ];

@@ -16,10 +16,10 @@
     cosmic-ext-ctl
     cosmic-ext-tweaks
     cosmic-ext-applet-emoji-selector
-    andromeda
-    minimon-applet
-    cosmic-ext-applet-ollama
     cosmic-ext-applet-privacy-indicator
+    cosmic-ext-applet-minimon
+    andromeda
+    cosmic-ext-applet-ollama
     gui-scale-applet
     clipboard-history-cosmic-applet
   ];
