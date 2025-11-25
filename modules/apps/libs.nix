@@ -22,6 +22,7 @@
             stdenv.cc.cc.lib
             nss
             libclang.lib
+            xorg.libX11
           ];
         };
       }

@@ -10,6 +10,7 @@
       set -U fish_color_command blue
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/go/bin:$PATH"
+      export PATH="$HOME/.pub-cache/bin:$PATH"
       export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
     '';
 
