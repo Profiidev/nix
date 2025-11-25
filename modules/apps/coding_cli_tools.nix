@@ -47,6 +47,7 @@ in
       stackit-cli
       pre-commit
       nodejs_24
+      pnpm
     ]
     ++ (
       if isLinux then
