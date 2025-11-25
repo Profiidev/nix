@@ -49,6 +49,7 @@ in
                   "lp" # for print/scan"
                   "gamemode"
                   "dialout" # for betaflight
+                  "adbusers" # for android adb
                 ])
               ];
               hashedPasswordFile = lib.mkIf (

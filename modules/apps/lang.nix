@@ -1,4 +1,8 @@
-{ pkgs, isLinux, ... }:
+{
+  pkgs,
+  isLinux,
+  ...
+}:
 
 {
   environment.systemPackages =
@@ -25,14 +29,24 @@
       # Dart
       dart
       flutter
+      gradle
     ]
     ++ (
       if isLinux then
         (with pkgs; [
           # Android
           android-tools
+          sdkmanager
         ])
       else
         [ ]
     );
 }
+// (
+  if isLinux then
+    {
+      programs.adb.enable = true;
+    }
+  else
+    { }
+)
