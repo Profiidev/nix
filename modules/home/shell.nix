@@ -34,6 +34,7 @@
     if isLinux then
       {
         CPATH = "${pkgs.glibc.dev}/include:$CPATH";
+        CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
       }
     else
       { }

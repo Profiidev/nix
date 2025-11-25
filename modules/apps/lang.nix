@@ -37,6 +37,7 @@
           # Android
           android-tools
           sdkmanager
+          virtualgl
         ])
       else
         [ ]
