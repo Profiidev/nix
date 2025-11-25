@@ -22,6 +22,9 @@
       go
       # Java
       jdk25
+      # Dart
+      dart
+      flutter
     ]
     ++ (
       if isLinux then
