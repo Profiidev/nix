@@ -1,13 +1,14 @@
 { pkgs, ... }:
 
 let
-  browser = [ "brave.desktop" ];
+  browser = [ "brave-browser.desktop" ];
   editor = [ "nvim.desktop" ];
   media = [ "vlc.desktop" ];
 
   associations = {
     "text/*" = editor;
     "text/plain" = editor;
+    "text/html" = browser;
 
     # "text/html" = browser;
     "application/x-zerosize" = editor; # empty files
