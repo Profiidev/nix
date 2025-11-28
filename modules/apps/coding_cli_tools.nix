@@ -1,4 +1,9 @@
-{ pkgs, isLinux, ... }:
+{
+  pkgs,
+  pkgsUnstableNoCuda,
+  isLinux,
+  ...
+}:
 
 let
   wrapped-kubernetes-helm =
@@ -40,7 +45,7 @@ in
       kubectl
       kustomize
       helm-ls
-      devenv
+      pkgsUnstableNoCuda.devenv
       sccache
       gh
       espflash
