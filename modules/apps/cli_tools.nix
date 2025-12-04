@@ -17,7 +17,6 @@
       cargo-make
       cargo-nextest
       cargo-release
-      cargo-semver-checks
       cargo-tauri
       cargo-watch
       cargo-bootimage
