@@ -22,7 +22,18 @@
             stdenv.cc.cc.lib
             nss
             libclang.lib
+
+            # bevy
+            alsa-lib-with-plugins
+            vulkan-loader
             xorg.libX11
+            xorg.libXcursor
+            xorg.libXrandr
+            xorg.libXi
+            libxkbcommon
+            libudev-zero
+            udev
+            wayland.dev
           ];
         };
       }
