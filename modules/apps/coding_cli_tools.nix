@@ -54,6 +54,7 @@ in
       nodejs_24
       bun
       pnpm
+      llvmPackages.lld
     ]
     ++ (
       if isLinux then
