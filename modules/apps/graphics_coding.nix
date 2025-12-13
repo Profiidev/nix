@@ -7,5 +7,6 @@
     vulkan-utility-libraries
     vulkan-validation-layers
     vulkan-extension-layer
+    renderdoc
   ];
 }
