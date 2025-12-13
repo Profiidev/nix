@@ -50,6 +50,7 @@ in
                   "gamemode"
                   "dialout" # for betaflight
                   "adbusers" # for android adb
+                  "jellyfin"
                 ])
               ];
               hashedPasswordFile = lib.mkIf (
