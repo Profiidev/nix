@@ -1,4 +1,4 @@
-{ pkgsUnstableNoCuda, ... }:
+{ pkgsUnstableNoCuda, pkgs, ... }:
 
 {
   services.jellyfin = {
@@ -6,11 +6,10 @@
     package = pkgsUnstableNoCuda.jellyfin;
   };
 
-  environment.systemPackages = with pkgsUnstableNoCuda; [
+  environment.systemPackages = with pkgs; [
     makemkv
     mkvtoolnix
-    handbrake
     hdr10plus_tool
-    ffmpeg
+    ffmpeg-full
   ];
 }

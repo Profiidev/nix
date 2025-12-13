@@ -22,6 +22,7 @@
             stdenv.cc.cc.lib
             nss
             libclang.lib
+            linuxKernel.packages.linux_6_17.nvidia_x11.lib32
 
             # bevy
             alsa-lib-with-plugins
