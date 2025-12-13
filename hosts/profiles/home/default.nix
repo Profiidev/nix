@@ -19,6 +19,7 @@
 
     # Extra
     ../../../modules/apps/ai.nix
+    ../../../modules/apps/jellyfin.nix
     ../../../modules/apps/tailscale.nix
   ];
 
