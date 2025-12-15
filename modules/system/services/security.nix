@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   security.pam.services = {
@@ -33,12 +33,48 @@
     isNormalUser = true;
     createHome = lib.mkForce false;
     group = "ha_power";
+    home = "/var/empty";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKFTMajOlMBaHKWMnYsSyHRO0gC2BczCsIhlzwH3EFdP root@a0d7b954-ssh"
     ];
   };
 
   users.groups.ha_power = { };
+
+  security.sudo.extraRules = [
+    # Allow execution of cosmic-randr as cosmic-greeter by ha_power without sudo password
+    {
+      users = [ "ha_power" ];
+      runAs = "cosmic-greeter";
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/cosmic-randr";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+      ];
+    }
+    # Allow execution of wlopm as cosmic-greeter by ha_power without sudo password
+    {
+      users = [ "ha_power" ];
+      runAs = "cosmic-greeter";
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/wlopm";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+      ];
+    }
+  ];
+
+  environment.systemPackages = with pkgs; [
+    wlopm
+  ];
   /*
     services.udev.extraRules = ''
       ACTION=="remove",\
