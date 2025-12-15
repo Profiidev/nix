@@ -6,5 +6,6 @@
     spotify
     wasistlos
     chromium
+    rpi-imager
   ];
 }

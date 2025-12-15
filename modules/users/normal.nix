@@ -51,6 +51,7 @@ in
                   "dialout" # for betaflight
                   "adbusers" # for android adb
                   "jellyfin"
+                  "disk" # rpi-imager
                 ])
               ];
               hashedPasswordFile = lib.mkIf (
