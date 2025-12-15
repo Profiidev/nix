@@ -18,7 +18,10 @@
     "sr_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "sg" ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "sg"
+  ];
   boot.extraModulePackages = [ ];
   hardware.cpu.intel.updateMicrocode = true;
 
@@ -32,67 +35,11 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  fileSystems =
-    builtins.listToAttrs (
-      map
-        (subvol: {
-          name = "/mnt/arch${subvol.path}";
-          value = {
-            device = "/dev/disk/by-id/nvme-eui.00000000000000000026b7686223c485-part3";
-            fsType = "btrfs";
-            mountPoint = "/mnt/arch${subvol.path}";
-            options = [
-              "noatime"
-              "compress=zstd"
-              "space_cache=v2"
-              "subvol=${subvol.name}"
-            ];
-          };
-        })
-        [
-          {
-            name = "/@";
-            path = "";
-          }
-          {
-            name = "/@home";
-            path = "/home";
-          }
-          {
-            name = "/@root";
-            path = "/root";
-          }
-          {
-            name = "/@srv";
-            path = "/srv";
-          }
-          {
-            name = "/@tmp";
-            path = "/tmp";
-          }
-          {
-            name = "/@cache";
-            path = "/var/cache";
-          }
-          {
-            name = "/@log";
-            path = "/var/log";
-          }
-        ]
-    )
-    // {
-      "/mnt/arch/boot/efi" = {
-        device = "/dev/disk/by-id/nvme-eui.00000000000000000026b7686223c485-part1";
-        fsType = "vfat";
-        options = [ "relatime" ];
-        mountPoint = "/mnt/arch/boot/efi";
-      };
-    }
-    // {
-      "/mnt/windows" = {
-        device = "/dev/disk/by-id/nvme-KINGSTON_SKC2500M81000G_50026B768523BA97-part3";
-        fsType = "ntfs";
-        mountPoint = "/mnt/windows";
-      };
+  fileSystems = {
+    "/mnt/windows" = {
+      device = "/dev/disk/by-id/nvme-KINGSTON_SKC2500M81000G_50026B768523BA97-part3";
+      fsType = "ntfs";
+      mountPoint = "/mnt/windows";
     };
+  };
 }
