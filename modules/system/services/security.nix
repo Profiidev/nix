@@ -45,7 +45,7 @@
     # Allow execution of cosmic-randr as cosmic-greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "cosmic-greeter";
+      runAs = "cosmic-greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/cosmic-randr";
@@ -59,7 +59,7 @@
     # Allow execution of wlopm as cosmic-greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "cosmic-greeter";
+      runAs = "cosmic-greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/wlopm";
