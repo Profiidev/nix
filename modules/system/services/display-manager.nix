@@ -7,9 +7,24 @@
   #services.displayManager.gdm.enable = true;
   #services.desktopManager.gnome.enable = true;
 
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
-  services.desktopManager.cosmic.xwayland.enable = true;
+  # Cosmic
+  #services.displayManager.cosmic-greeter.enable = true;
+  #services.desktopManager.cosmic.enable = true;
+  #services.desktopManager.cosmic.xwayland.enable = true;
+
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "${pkgs.sddm-theme}/share/sddm/themes/clean";
+    extraPackages = with pkgs; [
+      kdePackages.qt5compat
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     cosmic-reader
