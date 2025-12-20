@@ -32,4 +32,11 @@
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  services.xserver = {
+    displayManager.setupCommands = ''
+      # DP-1 as primary
+      /run/current-system/sw/bin/xrandr --output DP-0 --auto --primary
+    '';
+  };
 }

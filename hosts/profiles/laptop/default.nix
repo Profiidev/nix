@@ -10,6 +10,7 @@
     ../../../modules/profiles/system/base.nix
     ../../../modules/profiles/system/coding.nix
     ../../../modules/profiles/system/laptop.nix
+    ../../../modules/system/services/hyprland.nix
 
     ../../../modules/profiles/apps/base.nix
     ../../../modules/profiles/apps/graphics.nix

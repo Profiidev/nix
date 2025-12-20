@@ -7,6 +7,20 @@
 
   gtk = {
     enable = true;
+
+    theme = {
+      package = pkgs.orchis-theme;
+      name = "Orchis-Dark";
+    };
+
+    iconTheme = {
+      package = pkgs.kora-icon-theme;
+      name = "kora";
+    };
+
+    font = {
+      name = "FiraCode Nerd Font Mono";
+    };
   };
 
   dconf.enable = true;
@@ -38,5 +52,13 @@
       icon-theme = "kora";
       monospace-font-name = "FiraCode Nerd Font Mono 10";
     };
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 16;
   };
 }
