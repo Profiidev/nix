@@ -1,7 +1,7 @@
 {
   stdenv,
   fetchFromGitHub,
-  kdePackages,
+  bibata-cursors,
   ...
 }:
 
@@ -15,13 +15,12 @@ stdenv.mkDerivation {
     cp -aR $src $out/share/sddm/themes/clean
   '';
 
-  buildInputs = [
-    kdePackages.qt5compat
-    kdePackages.qtdeclarative
-    kdePackages.qtsvg
-    kdePackages.sddm
-  ];
-  dontWrapQtApps = true;
+  buildInputs = [ bibata-cursors ];
+
+  postInstall = ''
+    # set cursor theme to bibata-cursors
+    echo "CursorTheme=Bibata-Modern-Ice" >> $out/share/sddm/themes/clean/theme.conf
+  '';
 
   src = fetchFromGitHub {
     owner = "saatvik333";

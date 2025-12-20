@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
   #services.displayManager.gdm.enable = true;
   #services.desktopManager.gnome.enable = true;
@@ -19,11 +17,18 @@
   };
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true;
     theme = "${pkgs.sddm-theme}/share/sddm/themes/clean";
     extraPackages = with pkgs; [
       kdePackages.qt5compat
     ];
+  };
+  services.xserver = {
+    enable = true;
+    displayManager.setupCommands = ''
+      # DP-1 as primary and HDMI-A-1 as secondary display (to the right) off
+      /run/current-system/sw/bin/xrandr --output DP-0 --auto --primary
+      /run/current-system/sw/bin/xrandr --output HDMI-0 --off
+    '';
   };
 
   environment.systemPackages = with pkgs; [
@@ -37,6 +42,7 @@
     cosmic-ext-applet-ollama
     gui-scale-applet
     clipboard-history-cosmic-applet
+    bibata-cursors
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
