@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgsUnstableNoCuda, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -32,6 +32,14 @@
     LIBVIRT_DEFAULT_URI = "qemu:///system";
   };
   networking.firewall.trustedInterfaces = [ "virbr0" ];
+
+  virtualisation.virtualbox = {
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+      package = pkgsUnstableNoCuda.virtualbox;
+    };
+  };
 
   virtualisation.waydroid.enable = true;
 
