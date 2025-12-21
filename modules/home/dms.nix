@@ -177,6 +177,8 @@
       input = {
         kb_layout = "de";
         numlock_by_default = true;
+        accel_profile = "flat";
+        sensitivity = 0.4;
       };
 
       monitorv2 = [

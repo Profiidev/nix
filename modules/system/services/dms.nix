@@ -18,6 +18,7 @@
         input {
           kb_layout=de
           numlock_by_default=true
+          accel_profile=flat
         }
 
         env = DMS_RUN_GREETER,1
