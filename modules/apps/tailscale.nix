@@ -10,4 +10,6 @@ in
       "--operator=${(builtins.elemAt users 0).username}"
     ];
   };
+
+  systemd.services.tailscaled.serviceConfig.Type = "simple";
 }

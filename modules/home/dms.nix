@@ -425,7 +425,9 @@
       "updaterCustomCommand": "",
       "updaterTerminalAdditionalParams": "",
       "displayNameMode": "system",
-      "screenPreferences": {},
+      "screenPreferences": {
+        "wallpaper": []
+      },
       "showOnLastDisplay": {},
       "barConfigs": [
         {
