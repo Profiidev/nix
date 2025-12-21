@@ -99,4 +99,10 @@
       "hyprland-session.target"
     ];
   };
+
+  networking.networkmanager = {
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
 }
