@@ -86,10 +86,67 @@
         "$mod, comma, exec, dms ipc call settings focusOrToggle"
         "$mod, N, exec, dms ipc call notifications toggle"
         "$mod, Y, exec, dms ipc call dankdash wallpaper"
+        "$mod SHIFT, S, exec, dms screenshot"
         "$mod, TAB, exec, dms ipc call hypr toggleOverview"
+        "$mod, T, exec, alacritty"
+        "$mod, Q, killactive"
+        "$mod, F, togglefloating"
+        "ALT, F, fullscreen, 1"
+        "$mod, I, togglesplit"
+
+        # Move Focus
+        "ALT, H, movefocus, l"
+        "ALT, J, movefocus, d"
+        "ALT, K, movefocus, u"
+        "ALT, L, movefocus, r"
+        "ALT, left, movefocus, l"
+        "ALT, down, movefocus, d"
+        "ALT, up, movefocus, u"
+        "ALT, right, movefocus, r"
+
+        # Move Window
+        "$mod, H, movewindow, l"
+        "$mod, J, movewindow, d"
+        "$mod, K, movewindow, u"
+        "$mod, L, movewindow, r"
+        "$mod, left, movewindow, l"
+        "$mod, down, movewindow, d"
+        "$mod, up, movewindow, u"
+        "$mod, right, movewindow, r"
+
+        # Switch Workspace
+        "ALT, 1, workspace, 1"
+        "ALT, 2, workspace, 2"
+        "ALT, 3, workspace, 3"
+        "ALT, 4, workspace, 4"
+        "ALT, 5, workspace, 5"
+        "ALT, 6, workspace, 6"
+        "ALT, 7, workspace, 7"
+        "ALT, 8, workspace, 8"
+        "ALT, 9, workspace, 9"
+        "ALT, 0, workspace, 10"
+
+        # move active window to workspace
+        "ALT SHIFT, 1, movetoworkspace, 1"
+        "ALT SHIFT, 2, movetoworkspace, 2"
+        "ALT SHIFT, 3, movetoworkspace, 3"
+        "ALT SHIFT, 4, movetoworkspace, 4"
+        "ALT SHIFT, 5, movetoworkspace, 5"
+        "ALT SHIFT, 6, movetoworkspace, 6"
+        "ALT SHIFT, 7, movetoworkspace, 7"
+        "ALT SHIFT, 8, movetoworkspace, 8"
+        "ALT SHIFT, 9, movetoworkspace, 9"
+        "ALT SHIFT, 0, movetoworkspace, 10"
+
+        # scroll through workspaces
+        "ALT, mouse_down, workspace, e+1"
+        "ALT, mouse_up, workspace, e-1"
+        # special workspaces
+        "ALT, E, togglespecialworkspace, magic"
+        "ALT SHIFT, E, movetoworkspace, special:magic"
 
         # Security
-        "$mod, L, exec, dms ipc call lock lock"
+        "CONTROL, L, exec, dms ipc call lock lock"
       ];
 
       # Repeatable and Locked binds
@@ -102,6 +159,16 @@
 
       bindl = [
         ", XF86AudioMute, exec, dms ipc call audio mute"
+        ", XF86AudioMicMute, exec, dms ipc call audio micmute"
+        ", XF86AudioNext, exec, dms ipc call mpris next"
+        ", XF86AudioPrev, exec, dms ipc call mpris previous"
+        ", XF86AudioPlay, exec, dms ipc call mpris playPause"
+        ", XF86AudioPause, exec, dms ipc call mpris pause"
+      ];
+
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
 
       input = {
