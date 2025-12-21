@@ -75,6 +75,16 @@ in
       default = "/etc/nixos/nix-config";
       description = "Path to the nix-config directory";
     };
+    hyprlandMonitorConfig = lib.mkOption {
+      type = lib.types.listOf lib.types.attrs;
+      default = [ ];
+      description = "Hyprland monitor configuration";
+    };
+    hyprlandGreeterMonitorConfig = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "Hyprland greeter monitor configuration";
+    };
   };
 
   # Used for home-manager configuration and is automatically set in user profiles. DO NOT set manually.

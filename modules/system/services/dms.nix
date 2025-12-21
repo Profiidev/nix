@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
@@ -19,6 +19,13 @@
           kb_layout=de
           numlock_by_default=true
           accel_profile=flat
+
+          touchpad {
+            natural_scroll = true
+            tap-to-click = true
+            disable_while_typing = true
+            clickfinger_behavior = true
+          }
         }
 
         env = DMS_RUN_GREETER,1
@@ -29,19 +36,8 @@
           disable_hyprland_logo = true
           disable_splash_rendering = true
         }
-
-        monitorv2 {
-          output=DP-1
-          mode=2560x1440@165Hz
-          position=0x0
-        }
-
-        monitorv2 {
-          output=HDMI-A-1
-          mode=1920x1080@60Hz
-          position=2560x0
-        }
-      '';
+      ''
+      + config.hostSpec.hyprlandGreeterMonitorConfig;
     };
 
     configFiles = [

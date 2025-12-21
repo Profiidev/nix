@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -179,20 +179,16 @@
         numlock_by_default = true;
         accel_profile = "flat";
         sensitivity = 0.4;
+
+        touchpad = {
+          natural_scroll = true;
+          tap-to-click = true;
+          disable_while_typing = true;
+          clickfinger_behavior = true;
+        };
       };
 
-      monitorv2 = [
-        {
-          output = "DP-1";
-          mode = "2560x1440@165Hz";
-          position = "0x0";
-        }
-        {
-          output = "HDMI-A-1";
-          mode = "1920x1080@60Hz";
-          position = "2560x0";
-        }
-      ];
+      monitorv2 = config.hostSpec.hyprlandMonitorConfig;
     };
   };
 

@@ -50,4 +50,31 @@
       /run/current-system/sw/bin/xrandr --output HDMI-0 --off
     '';
   };
+
+  hostSpec.hyprlandGreeterMonitorConfig = ''
+    monitorv2 {
+      output=DP-1
+      mode=2560x1440@165Hz
+      position=0x0
+    }
+
+    monitorv2 {
+      output=HDMI-A-1
+      mode=1920x1080@60Hz
+      position=2560x0
+    }
+  '';
+
+  hostSpec.hyprlandMonitorConfig = [
+    {
+      output = "DP-1";
+      mode = "2560x1440@165Hz";
+      position = "0x0";
+    }
+    {
+      output = "HDMI-A-1";
+      mode = "1920x1080@60Hz";
+      position = "2560x0";
+    }
+  ];
 }
