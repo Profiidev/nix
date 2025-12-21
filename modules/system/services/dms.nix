@@ -17,6 +17,7 @@
       customConfig = ''
         input {
           kb_layout=de
+          numlock_by_default=true
         }
 
         env = DMS_RUN_GREETER,1

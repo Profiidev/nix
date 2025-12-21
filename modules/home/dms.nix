@@ -176,6 +176,7 @@
 
       input = {
         kb_layout = "de";
+        numlock_by_default = true;
       };
 
       monitorv2 = [
