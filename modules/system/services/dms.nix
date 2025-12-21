@@ -5,6 +5,10 @@
     ./hyprland.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    cosmic-files
+  ];
+
   services.displayManager.dms-greeter = {
     enable = true;
     compositor = {
