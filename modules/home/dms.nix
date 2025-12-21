@@ -43,7 +43,7 @@
       decoration = {
         rounding = 12;
         active_opacity = 1.0;
-        inactive_opacity = 0.9;
+        inactive_opacity = 1.0;
 
         shadow = {
           enabled = true;
@@ -88,7 +88,7 @@
         "$mod, Y, exec, dms ipc call dankdash wallpaper"
         "$mod SHIFT, S, exec, dms screenshot"
         "$mod, TAB, exec, dms ipc call hypr toggleOverview"
-        "$mod, T, exec, alacritty"
+        "ALT, T, exec, alacritty"
         "$mod, Q, killactive"
         "$mod, F, togglefloating"
         "ALT, F, fullscreen, 1"
