@@ -52,6 +52,7 @@ in
                   "adbusers" # for android adb
                   "jellyfin"
                   "disk" # rpi-imager
+                  "greeter" # dms greeter
                 ])
               ];
               hashedPasswordFile = lib.mkIf (

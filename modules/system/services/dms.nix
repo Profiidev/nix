@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -13,6 +13,14 @@
         input {
           kb_layout=de
         }
+
+        env = DMS_RUN_GREETER,1
+
+        misc {
+          disable_hyprland_logo = true
+        }
+
+        exec-once = hyprctl setcursor Bibata-Modern-Ice 24
 
         monitorv2 {
           output=DP-1
@@ -50,6 +58,19 @@
     enableClipboard = true;
     enableCalendarEvents = true;
     enableAudioWavelength = true;
+
+    plugins = {
+      DankBatteryAlerts = {
+        src = "${
+          pkgs.fetchFromGitHub {
+            owner = "AvengeMedia";
+            repo = "dms-plugins";
+            rev = "8fa7c5286171c66a209dd74e9a47d6e72ccfdad6";
+            sha256 = "sha256-0RXRgUXXoX+C0q+drsShjx2rCTdmqFzOCR/1rGB/W2E=";
+          }
+        }/DankBatteryAlerts";
+      };
+    };
   };
 
   programs.dsearch = {

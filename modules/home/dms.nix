@@ -122,4 +122,8 @@
       ];
     };
   };
+
+  # write dms config to .config/DankMaterialShell/settings.json
+  #home.file.".config/DankMaterialShell/settings.json".text = ''
+  #'';
 }
