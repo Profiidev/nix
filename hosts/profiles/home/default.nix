@@ -11,7 +11,7 @@
     ../../../modules/profiles/system/coding.nix
     ../../../modules/profiles/system/gaming.nix
     ../../../modules/profiles/system/pc.nix
-    ../../../modules/system/services/hyprland.nix
+    ../../../modules/system/services/dms.nix
 
     ../../../modules/profiles/apps/base.nix
     ../../../modules/profiles/apps/gaming.nix
