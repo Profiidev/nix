@@ -7,6 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     cosmic-files
+    greetd
   ];
 
   services.displayManager.dms-greeter = {
@@ -19,13 +20,13 @@
         }
 
         env = DMS_RUN_GREETER,1
+        env = XCURSOR_SIZE,24
+        env = XCURSOR_THEME,Bibata-Modern-Ice
 
         misc {
           disable_hyprland_logo = true
           disable_splash_rendering = true
         }
-
-        exec-once = hyprctl setcursor Bibata-Modern-Ice 24
 
         monitorv2 {
           output=DP-1
@@ -41,7 +42,9 @@
       '';
     };
 
-    configHome = "/home/profidev";
+    configFiles = [
+      ../../home/dms.json
+    ];
 
     logs = {
       save = true;
