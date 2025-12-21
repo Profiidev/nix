@@ -80,7 +80,7 @@
 
       bind = [
         # Application Launchers
-        "$mod, space, exec, dms ipc call spotlight toggle"
+        "ALT, space, exec, dms ipc call spotlight toggle"
         "$mod, V, exec, dms ipc call clipboard toggle"
         "$mod, M, exec, dms ipc call processlist focusOrToggle"
         "$mod, comma, exec, dms ipc call settings focusOrToggle"
@@ -89,7 +89,7 @@
         "$mod, TAB, exec, dms ipc call hypr toggleOverview"
 
         # Security
-        "$mod ALT, L, exec, dms ipc call lock lock"
+        "$mod, L, exec, dms ipc call lock lock"
       ];
 
       # Repeatable and Locked binds
@@ -107,6 +107,19 @@
       input = {
         kb_layout = "de";
       };
+
+      monitorv2 = [
+        {
+          output = "DP-1";
+          mode = "2560x1440@165Hz";
+          position = "0x0";
+        }
+        {
+          output = "HDMI-A-1";
+          mode = "1920x1080@60Hz";
+          position = "2560x0";
+        }
+      ];
     };
   };
 }
