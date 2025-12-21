@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   virtualisation.docker = {
@@ -13,4 +13,6 @@
     lazydocker
     nvidia-container-toolkit
   ];
+
+  systemd.services.docker.serviceConfig.Type = lib.mkForce "simple";
 }

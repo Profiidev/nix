@@ -22,6 +22,7 @@
 
         misc {
           disable_hyprland_logo = true
+          disable_splash_rendering = true
         }
 
         exec-once = hyprctl setcursor Bibata-Modern-Ice 24

@@ -141,9 +141,12 @@
         # scroll through workspaces
         "ALT, mouse_down, workspace, e+1"
         "ALT, mouse_up, workspace, e-1"
+
         # special workspaces
-        "ALT, E, togglespecialworkspace, magic"
-        "ALT SHIFT, E, movetoworkspace, special:magic"
+        "ALT, E, togglespecialworkspace, magic-e"
+        "ALT SHIFT, E, movetoworkspace, special:magic-e"
+        "ALT, D, togglespecialworkspace, magic-d"
+        "ALT SHIFT, D, movetoworkspace, special:magic-d"
 
         # Security
         "CONTROL, L, exec, dms ipc call lock lock"
