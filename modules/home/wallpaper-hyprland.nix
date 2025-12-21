@@ -13,14 +13,18 @@ in
 {
   systemd.user.services.auto-wallpaper = {
     Unit = {
+      Type = "simple";
       Description = "Auto Wallpaper Changer";
-      After = [ "swww.service" ];
     };
 
     Service = {
       ExecStart = "${script}/bin/wallpaper.sh";
       Restart = "on-failure";
       RestartSec = "10s";
+    };
+
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 
