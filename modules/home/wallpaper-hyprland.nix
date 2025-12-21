@@ -9,25 +9,19 @@ let
 
     swww img $pwd/wallpaper.png --transition-type fade --transition-duration 0 --resize crop
   '';
-
-  desktop = pkgs.writeTextFile {
-    name = "wallpaper.desktop";
-    text = ''
-      [Desktop Entry]
-        Type=Application
-        Name=Wallpaper
-        Exec=${script}/bin/wallpaper.sh
-        Terminal=false
-        NoDisplay=true
-        X-GNOME-Autostart-enabled=true
-    '';
-  };
 in
 {
-  xdg.autostart = {
-    enable = true;
+  systemd.user.services.auto-wallpaper = {
+    Unit = {
+      Description = "Auto Wallpaper Changer";
+      After = [ "swww.service" ];
+    };
 
-    entries = [ desktop ];
+    Service = {
+      ExecStart = "${script}/bin/wallpaper.sh";
+      Restart = "on-failure";
+      RestartSec = "10s";
+    };
   };
 
   services.swww.enable = true;
