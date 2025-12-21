@@ -17,10 +17,6 @@
       package = pkgs.kora-icon-theme;
       name = "kora";
     };
-
-    font = {
-      name = "FiraCode Nerd Font Mono";
-    };
   };
 
   dconf.enable = true;
