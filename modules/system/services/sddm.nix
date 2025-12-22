@@ -1,11 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
+  imports = [ inputs.silentSDDM.nixosModules.default ];
+
+  programs.silentSDDM = {
+    enable = true;
+    theme = "catppuccin-mocha";
+    profileIcons = {
+      profidev = ../../../assets/profidev.jpeg;
+    };
+  };
+
   services.displayManager.sddm = {
     enable = true;
-    theme = "${pkgs.sddm-theme}/share/sddm/themes/clean";
+    wayland.enable = lib.mkForce true;
+    enableHidpi = true;
     extraPackages = with pkgs; [
-      kdePackages.qt5compat
       bibata-cursors
     ];
     settings = {
@@ -16,7 +26,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    bibata-cursors
-  ];
+  environment.variables = {
+    XCURSOR_SIZE = "24";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+  };
 }

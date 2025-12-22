@@ -1058,6 +1058,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "proton": "proton",
         "rust-overlay": "rust-overlay_3",
+        "silentSDDM": "silentSDDM",
         "sops-nix": "sops-nix",
         "winapps": "winapps"
       }
@@ -1118,6 +1119,26 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "silentSDDM": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766331405,
+        "narHash": "sha256-wQS3amjsmZz+8khaF1ricXBFqcUtbA4lWQPgkpHyO68=",
+        "owner": "uiriansan",
+        "repo": "SilentSDDM",
+        "rev": "e73e1a22bf755703f14668bdecfe5481886aef0c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "uiriansan",
+        "repo": "SilentSDDM",
         "type": "github"
       }
     },

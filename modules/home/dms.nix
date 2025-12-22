@@ -87,6 +87,7 @@
         "$mod SHIFT, S, exec, dms screenshot"
         "$mod, TAB, exec, dms ipc call hypr toggleOverview"
         "$mod, T, exec, alacritty"
+        "$mod, B, exec, brave"
         "$mod, Q, killactive"
         "ALT, F, togglefloating"
         "$mod, F, fullscreen, 1"
