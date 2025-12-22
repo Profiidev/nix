@@ -12,6 +12,7 @@
     ../../../modules/profiles/system/gaming.nix
     ../../../modules/profiles/system/pc.nix
     ../../../modules/system/services/dms.nix
+    ../../../modules/system/services/sddm.nix
 
     ../../../modules/profiles/apps/base.nix
     ../../../modules/profiles/apps/gaming.nix
