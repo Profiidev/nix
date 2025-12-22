@@ -43,14 +43,6 @@
     };
   };
 
-  services.xserver = {
-    displayManager.setupCommands = ''
-      # DP-1 as primary and HDMI-A-1 as secondary display (to the right) off
-      /run/current-system/sw/bin/xrandr --output DP-0 --auto --primary
-      /run/current-system/sw/bin/xrandr --output HDMI-0 --off
-    '';
-  };
-
   hostSpec.hyprlandGreeterMonitorConfig = ''
     monitorv2 {
       output=DP-1

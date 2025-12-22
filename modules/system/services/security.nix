@@ -42,10 +42,10 @@
   users.groups.ha_power = { };
 
   security.sudo.extraRules = [
-    # Allow execution of cosmic-randr as cosmic-greeter by ha_power without sudo password
+    # Allow execution of cosmic-randr as dms-greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "cosmic-greeter,profidev";
+      runAs = "dms-greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/cosmic-randr";
@@ -56,10 +56,24 @@
         }
       ];
     }
-    # Allow execution of wlopm as cosmic-greeter by ha_power without sudo password
+    # Allow execution of wlr-randr as dms-greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "cosmic-greeter,profidev";
+      runAs = "dms-greeter,profidev";
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/wlr-randr";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+      ];
+    }
+    # Allow execution of wlopm as dms-greeter by ha_power without sudo password
+    {
+      users = [ "ha_power" ];
+      runAs = "dms-greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/wlopm";

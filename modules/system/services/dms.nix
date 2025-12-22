@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     cosmic-files
     greetd
+    bibata-cursors
   ];
 
   services.displayManager.dms-greeter = {
@@ -29,6 +30,7 @@
         }
 
         env = DMS_RUN_GREETER,1
+        env = XCURSOR_PATH,/run/current-system/sw/share/icons
         env = XCURSOR_SIZE,24
         env = XCURSOR_THEME,Bibata-Modern-Ice
 
@@ -41,7 +43,7 @@
     };
 
     configFiles = [
-      ../../home/dms.json
+      "${pkgs.writeTextDir "settings.json" (builtins.readFile ../../home/dms.json)}/settings.json"
     ];
 
     logs = {

@@ -3,9 +3,10 @@
 let
   script = pkgs.writeScriptBin "wallpaper.sh" ''
     #!/usr/bin/env bash
-    wget https://profidev.io/backend/services/apod/random -O wallpaper.png
-
+    set -e
     pwd=$(pwd)
+
+    wget https://profidev.io/backend/services/apod/random -O wallpaper.png
 
     swww img $pwd/wallpaper.png --transition-type fade --transition-duration 0 --resize crop
   '';

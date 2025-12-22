@@ -1,4 +1,4 @@
-{ config, ... }:
+{ hostSpec, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -188,7 +188,7 @@
         };
       };
 
-      monitorv2 = config.hostSpec.hyprlandMonitorConfig;
+      monitorv2 = hostSpec.hyprlandMonitorConfig;
     };
   };
 
