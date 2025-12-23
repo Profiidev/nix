@@ -11,8 +11,8 @@
     ../../../modules/profiles/system/coding.nix
     ../../../modules/profiles/system/gaming.nix
     ../../../modules/profiles/system/pc.nix
-    ../../../modules/system/services/dms.nix
-    ../../../modules/system/services/dms-greeter.nix
+    ../../../modules/system/gui/dms.nix
+    ../../../modules/system/gui/dms-greeter.nix
 
     ../../../modules/profiles/apps/base.nix
     ../../../modules/profiles/apps/gaming.nix
