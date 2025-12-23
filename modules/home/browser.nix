@@ -4,6 +4,7 @@ let
   browser = [ "brave-browser.desktop" ];
   editor = [ "nvim.desktop" ];
   media = [ "vlc.desktop" ];
+  terminal = [ "alacritty.desktop" ];
 
   associations = {
     "text/*" = editor;
@@ -44,6 +45,7 @@ let
 
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
+    "x-scheme-handler/terminal" = terminal;
 
     "audio/*" = media;
     "video/*" = media;

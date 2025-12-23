@@ -42,7 +42,7 @@
     };
 
     configFiles = [
-      "${pkgs.writeTextDir "settings.json" (builtins.readFile ../../home/dms.json)}/settings.json"
+      "${pkgs.writeTextDir "settings.json" (builtins.readFile ../../../assets/dms.json)}/settings.json"
     ];
 
     logs = {

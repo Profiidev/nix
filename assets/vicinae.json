@@ -1,0 +1,44 @@
+{
+  "close_on_focus_loss": true,
+  "pop_to_root_on_close": true,
+  "theme": {
+    "dark": {
+      "name": "ayu-dark"
+    },
+    "light": {
+      "name": "ayu-light"
+    }
+  },
+  "providers": {
+    "@mattisssa/spotify-player-vicinae-extension-0": {
+      "entrypoints": {
+        "findLyrics": {
+          "enabled": false
+        },
+        "generatePlaylist": {
+          "enabled": false
+        }
+      }
+    },
+    "@knoopx/nix-0": {
+      "entrypoints": {
+        "home-manager-options": {
+          "alias": "h"
+        },
+        "options": {
+          "alias": "o"
+        },
+        "packages": {
+          "alias": "p"
+        }
+      }
+    },
+    "@mblode/google-vicinae-extension-0": {
+      "entrypoints": {
+        "index": {
+          "alias": "g"
+        }
+      }
+    }
+  }
+}

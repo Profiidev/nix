@@ -82,7 +82,7 @@
         # Application Launchers
         "ALT, space, exec, vicinae toggle"
         "$mod, space, exec, vicinae toggle"
-        "$mod, V, exec, dms ipc call clipboard toggle"
+        "$mod, V, exec, vicinae deeplink vicinae://extensions/vicinae/clipboard/history"
         "$mod, M, exec, dms ipc call processlist focusOrToggle"
         "$mod, comma, exec, dms ipc call settings focusOrToggle"
         "$mod SHIFT, S, exec, dms screenshot"
@@ -192,5 +192,5 @@
     };
   };
 
-  home.file.".config/DankMaterialShell/settings.json".source = ./dms.json;
+  home.file.".config/DankMaterialShell/settings.json".source = ../../assets/dms.json;
 }
