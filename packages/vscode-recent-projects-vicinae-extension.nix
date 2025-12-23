@@ -13,7 +13,7 @@ mkVicinaeExtension {
       owner = "raycast";
       repo = "extensions";
       rev = "3745b33cbc5ae69d99eb0ded423eab1b494272a0";
-      hash = "sha256-nWG2KumFe8X8c898F95fIZKxGerp6PRlTaoL+AtSZAQ=";
+      hash = "sha256-/Wi5zSqFXiWFmuQu1dYkx1B85XXcI+dpsjqMirUKt9g=";
 
       sparseCheckout = [
         "extensions/visual-studio-code-recent-projects"
