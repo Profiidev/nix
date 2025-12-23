@@ -38,4 +38,6 @@
       ];
     };
   };
+
+  services.hyprpolkitagent.enable = true;
 }
