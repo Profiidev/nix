@@ -22,9 +22,6 @@ in
       power-profile
       it-tools
       port-killer
-      vicinaeSpotify
-      vicinaeVsCode
-      vicinaeGoogle
       pkgs.google-vicinae-extension
       pkgs.spotify-player-vicinae-extension
       pkgs.vscode-recent-projects-vicinae-extension

@@ -19,7 +19,7 @@ mkVicinaeExtension {
 
   buildPhase = "npm run build -- -o=$out";
   patches = [
-    ../../../patches/vscode-vicinae-extension.patch
+    ../patches/vscode-vicinae-extension.patch
   ];
 
   runtimeDependencies = [

@@ -2,6 +2,7 @@
   final,
   prev,
   mkBunDerivation,
+  mkVicinaeExtension,
   ...
 }:
 
@@ -20,7 +21,7 @@
     (pkg: {
       name = pkg;
       value = final.callPackage ./${pkg}.nix {
-        inherit mkBunDerivation;
+        inherit mkBunDerivation mkVicinaeExtension;
       };
     })
     (

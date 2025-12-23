@@ -9,6 +9,7 @@
 let
   platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
+  system = pkgs.stdenv.hostPlatform.system;
 in
 {
   imports = [
@@ -92,7 +93,8 @@ in
         final: prev:
         import ../../packages/overlay.nix {
           inherit final prev;
-          mkBunDerivation = inputs.bun2nix.lib.${pkgs.stdenv.hostPlatform.system}.mkBunDerivation;
+          mkBunDerivation = inputs.bun2nix.lib.${system}.mkBunDerivation;
+          mkVicinaeExtension = inputs.vicinae.packages.${system}.mkVicinaeExtension;
         }
       )
     ];
