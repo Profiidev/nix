@@ -80,7 +80,8 @@
 
       bind = [
         # Application Launchers
-        "ALT, space, exec, dms ipc call spotlight toggle"
+        "ALT, space, exec, vicinae toggle"
+        "$mod, space, exec, vicinae toggle"
         "$mod, V, exec, dms ipc call clipboard toggle"
         "$mod, M, exec, dms ipc call processlist focusOrToggle"
         "$mod, comma, exec, dms ipc call settings focusOrToggle"
