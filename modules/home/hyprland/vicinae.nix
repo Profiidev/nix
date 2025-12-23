@@ -22,7 +22,7 @@ let
 
     buildPhase = "npm run build -- -o=$out";
     patches = [
-      ../../patches/vscode-vicinae-extension.patch
+      ../../../patches/vscode-vicinae-extension.patch
     ];
 
     runtimeDependencies = with pkgs; [
@@ -81,7 +81,7 @@ in
     ];
   };
 
-  home.file.".config/vicinae/settings.json".source = ../../assets/vicinae.json;
+  home.file.".config/vicinae/settings.json".source = ../../../assets/vicinae.json;
 
   home.packages = with pkgs; [
     sqlite
