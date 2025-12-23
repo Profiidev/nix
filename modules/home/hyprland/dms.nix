@@ -2,6 +2,11 @@
 
 {
   wayland.windowManager.hyprland.settings = {
+    # Layer Rules
+    layerrule = [
+      "no_anim on, match:namespace ^(dms)$"
+    ];
+
     bind = [
       # Application Launchers
       "$mod, M, exec, dms ipc call processlist focusOrToggle"

@@ -86,5 +86,11 @@ in
   home.packages = with pkgs; [
     sqlite
   ];
+
+  wayland.windowManager.hyprland.settings = {
+    # Layer Rules
+    layerrule = [
+      "no_anim on, match:namespace ^(vicinae)$"
+    ];
+  };
 }
-# layer config + file structure
