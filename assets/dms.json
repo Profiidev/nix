@@ -270,22 +270,6 @@
           "enabled": true
         },
         {
-          "id": "vpn",
-          "enabled": true
-        },
-        {
-          "id": "idleInhibitor",
-          "enabled": true
-        },
-        {
-          "id": "notepadButton",
-          "enabled": true
-        },
-        {
-          "id": "colorPicker",
-          "enabled": true
-        },
-        {
           "id": "notificationButton",
           "enabled": true
         },

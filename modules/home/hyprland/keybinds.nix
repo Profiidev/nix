@@ -1,6 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    hyprpicker
+  ];
+
   wayland.windowManager.hyprland.settings = {
     # Keybindings
     "$mod" = "SUPER";
@@ -16,6 +20,7 @@
       "ALT, F, togglefloating"
       "$mod, F, fullscreen, 1"
       "$mod, I, togglesplit"
+      "$mod, C, exec, hyprpicker -a"
 
       # Move Focus
       "ALT, H, movefocus, l"
