@@ -69,4 +69,10 @@
       position = "2560x0";
     }
   ];
+
+  home-manager.users.sddm = {
+    home.stateVersion = "25.11";
+
+    home.file.".config/kwinoutputconfig.json".source = ./kwinoutputconfig.json;
+  };
 }

@@ -38,6 +38,8 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = lib.mkForce true;
+    wayland.compositor = lib.mkForce "kwin";
+
     enableHidpi = true;
     extraPackages = with pkgs; [
       bibata-cursors
