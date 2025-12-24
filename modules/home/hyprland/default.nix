@@ -3,6 +3,7 @@
 {
   imports = [
     ./dms.nix
+    ./hyprlock.nix
     ./io.nix
     ./keybinds.nix
     ./layers.nix
