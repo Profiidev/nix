@@ -11,6 +11,8 @@
     ../../system/kernel.nix
 
     ../../system/gui/display-manager.nix
+    ../../system/gui/dms.nix
+    ../../system/gui/sddm.nix
 
     ../../system/hardware/audio.nix
     ../../system/hardware/bluetooth.nix

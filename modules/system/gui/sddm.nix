@@ -1,11 +1,35 @@
-{ pkgs, inputs, lib, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
-  imports = [ inputs.silentSDDM.nixosModules.default ];
+  imports = [
+    inputs.silentSDDM.nixosModules.default
+  ];
 
   programs.silentSDDM = {
     enable = true;
-    theme = "catppuccin-mocha";
+    theme = "default";
+
+    settings = {
+      LockScreen = {
+        display = false;
+      };
+      LoginScreen = {
+        use-background-color = true;
+        background-color = "#0A0E14";
+      };
+      "LoginScreen.MenuArea.Layout" = {
+        display = false;
+      };
+      "LoginScreen.MenuArea.Keyboard" = {
+        display = false;
+      };
+    };
+
     profileIcons = {
       profidev = ../../../assets/profidev.jpeg;
     };

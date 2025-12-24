@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 
+let
+  hypr = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   imports = [ inputs.hyprland.nixosModules.default ];
 
@@ -7,6 +10,9 @@
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
+
+    package = hypr.hyprland;
+    portalPackage = hypr.xdg-desktop-portal-hyprland;
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
