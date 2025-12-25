@@ -56,4 +56,12 @@
     XCURSOR_SIZE = "24";
     XCURSOR_THEME = "Bibata-Modern-Ice";
   };
+
+  home-manager.users.sddm = {
+    home.stateVersion = "25.11";
+
+    home.packages = with pkgs; [
+      bibata-cursors
+    ];
+  };
 }

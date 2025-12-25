@@ -1,4 +1,8 @@
-{ lib, modulesPath, ... }:
+{
+  lib,
+  modulesPath,
+  ...
+}:
 
 {
   imports = [
@@ -71,8 +75,6 @@
   ];
 
   home-manager.users.sddm = {
-    home.stateVersion = "25.11";
-
     home.file.".config/kwinoutputconfig.json".source = ./kwinoutputconfig.json;
   };
 }
