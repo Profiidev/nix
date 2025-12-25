@@ -129,6 +129,17 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.vicinae.follows = "vicinae";
     };
+
+    astal = {
+      url = "github:Aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.astal.follows = "astal";
+    };
   };
 
   outputs =
