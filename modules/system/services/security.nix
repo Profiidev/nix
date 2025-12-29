@@ -5,6 +5,8 @@
     login.u2fAuth = true;
     gdm-password.u2fAuth = true;
     gdm-password.enableGnomeKeyring = true;
+    sddm.u2fAuth = true;
+    sddm-greeter.u2fAuth = true;
     sudo.u2fAuth = true;
   };
 
