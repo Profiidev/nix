@@ -21,7 +21,6 @@
   boot.plymouth.enable = true;
 
   environment.systemPackages = with pkgs; [
-    efitools
     efibootmgr
     ntfs3g
     sbctl

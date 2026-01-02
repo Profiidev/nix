@@ -14,7 +14,11 @@ in
 
   services.vicinae = {
     enable = true;
-    autoStart = true;
+
+    systemd = {
+      enable = true;
+      autoStart = true;
+    };
 
     extensions = with inputs.vicinae-extensions.packages.${system}; [
       bluetooth
