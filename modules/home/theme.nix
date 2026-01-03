@@ -9,8 +9,8 @@
     enable = true;
 
     theme = {
-      package = pkgs.orchis-theme;
-      name = "Orchis-Dark";
+      package = pkgs.ayu-theme-gtk;
+      name = "Ayu-Dark";
     };
 
     iconTheme = {
@@ -44,7 +44,6 @@
       cursor-theme = "Bibata-Modern-Ice";
       enable-animations = true;
       enable-hot-corners = false;
-      gtk-theme = "Orchis-Dark";
       icon-theme = "kora";
       monospace-font-name = "FiraCode Nerd Font Mono 10";
     };
