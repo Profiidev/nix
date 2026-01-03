@@ -9,7 +9,7 @@
     enable = true;
 
     theme = {
-      package = pkgs.ayu-theme-gtk;
+      package = pkgs.ayu-dark-gtk;
       name = "Ayu-Dark";
     };
 
@@ -17,6 +17,9 @@
       package = pkgs.kora-icon-theme;
       name = "kora";
     };
+
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
   dconf.enable = true;
