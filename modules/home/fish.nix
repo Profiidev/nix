@@ -58,6 +58,7 @@
       pcr = "pre-commit run --all-files";
       pcu = "pre-commit authupdate";
       n = "nvim";
+      ff = "fastfetch --config ~/.config/fastfetch/fastfetch.jsonc";
     };
 
     functions = {
