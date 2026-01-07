@@ -3,19 +3,18 @@
 {
   wayland.windowManager.hyprland.settings = {
     # Window Rules
-    windowrulev2 = [
-      "opacity 0.9 0.9, floating:0, focus:0"
-      "rounding 12, class:^(org\.gnome\.)"
-      "noborder, class:^(org\.gnome\.)"
-      "noborder, class:^(org\.wezfurlong\.wezterm)$"
-      "noborder, class:^(Alacritty)$"
-      "noborder, class:^(zen)$"
-      "noborder, class:^(com\.mitchellh\.ghostty)$"
-      "noborder, class:^(kitty)$"
-      "float, class:^(gnome-calculator)$"
-      "float, class:^(blueman-manager)$"
-      "float, class:^(org\.gnome\.Nautilus)$"
-      "float, class:^(org.quickshell)$"
+    windowrule = [
+      "opacity 0.9 0.9, match:float 0, match:focus 0"
+      "rounding 12, border_size 0, match:class ^(org.gnome.)"
+      "border_size 0, match:class ^(org.wezfurlong.wezterm)$"
+      "border_size 0, match:class ^(Alacritty)$"
+      "border_size 0, match:class ^(zen)$"
+      "border_size 0, match:class ^(com.mitchellh.ghostty)$"
+      "border_size 0, match:class ^(kitty)$"
+      "float on, match:class ^(gnome-calculator)$"
+      "float on, match:class ^(blueman-manager)$"
+      "float on, match:class ^(org.gnome.Nautilus)$"
+      "float on, match:class ^(org.quickshell)$"
     ];
   };
 }
