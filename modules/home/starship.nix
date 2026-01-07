@@ -6,7 +6,7 @@
     enableBashIntegration = true;
     enableFishIntegration = true;
 
-    settings = builtins.fromTOML ''
+    settings = fromTOML ''
       ## FIRST LINE/ROW: Info & Status
       # First param ─┌
       [username]
@@ -51,38 +51,9 @@
       min_time = 1
 
       ## SECOND LINE/ROW: Prompt
-      # Somethere at the beginning
-      [battery]
-      charging_symbol = ""
-      disabled = true
-      discharging_symbol = ""
-      full_symbol = ""
-
-      [[battery.display]] # "bold red" style when capacity is between 0% and 15%
-      disabled = false
-      style = "bold red"
-      threshold = 15
-
-      [[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
-      disabled = true
-      style = "bold yellow"
-      threshold = 50
-
-      [[battery.display]] # "bold green" style when capacity is between 50% and 80%
-      disabled = true
-      style = "bold green"
-      threshold = 80
-
-      # Prompt: optional param 1
-      [time]
-      disabled = true
-      format = " 🕙 $time($style)\n"
-      style = "bright-white"
-      time_format = "%T"
-
       # Prompt: param 2
       [character]
-      error_symbol = " [×](bold red)"
+      error_symbol = " [╰─λ](bold red)"
       success_symbol = " [╰─λ](bold red)"
 
       # SYMBOLS
@@ -127,7 +98,7 @@
       symbol = " "
 
       [nim]
-      symbol = " "
+      symbol = "👑 "
 
       [nix_shell]
       symbol = " "
@@ -136,7 +107,7 @@
       symbol = " "
 
       [package]
-      symbol = " "
+      symbol = "📦 "
 
       [perl]
       symbol = " "
