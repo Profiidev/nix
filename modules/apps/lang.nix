@@ -43,11 +43,3 @@
         [ ]
     );
 }
-// (
-  if isLinux then
-    {
-      programs.adb.enable = true;
-    }
-  else
-    { }
-)
