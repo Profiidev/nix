@@ -1,6 +1,23 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    autoraise
+  ];
+
+  launchd.agents.autoraise = {
+    enable = true;
+    config = {
+      RunAtLoad = true;
+      KeepAlive = true;
+      ProgramArguments = [
+        "${pkgs.autoraise}/bin/AutoRaise"
+        "-delay=0"
+        "-focusDelay=1"
+      ];
+    };
+  };
+
   programs.aerospace = {
     enable = true;
     launchd.enable = true;
@@ -22,7 +39,7 @@
       };
 
       mode.main.binding = {
-        cmd-t = "exec-and-forget open -n \"~/Applications/Home Manager Apps/Alacritty.app\"";
+        cmd-t = "exec-and-forget open -n -a alacritty";
         ctrl-f = "fullscreen";
         alt-f = "layout floating tiling";
 
