@@ -6,11 +6,11 @@
     [
       jetbrains-toolbox
       zed-editor
-      antigravity
     ]
     ++ (
       if isLinux then
         [
+          antigravity
           android-studio
         ]
       else

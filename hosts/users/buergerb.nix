@@ -9,6 +9,7 @@
 
   imports = [
     ../../modules/profiles/home/base.nix
+    ../../modules/home/aerospace.nix
     ../../modules/home/terminal.nix
     ../../modules/home/nix.nix
   ];

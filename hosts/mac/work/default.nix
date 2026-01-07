@@ -22,6 +22,8 @@
     libiconv
   ];
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   hostSpec = {
     hostname = "work";
     users = [
