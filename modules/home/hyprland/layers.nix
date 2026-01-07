@@ -4,7 +4,6 @@
   wayland.windowManager.hyprland.settings = {
     # Window Rules
     windowrule = [
-      "opacity 0.9 0.9, match:float 0, match:focus 0"
       "rounding 12, border_size 0, match:class ^(org.gnome.)"
       "border_size 0, match:class ^(org.wezfurlong.wezterm)$"
       "border_size 0, match:class ^(Alacritty)$"
