@@ -73,11 +73,11 @@
       dioxus-cli
       postgresql
       inputs.bun2nix.packages.${stdenv.hostPlatform.system}.default
-      inotify-tools
     ]
     ++ (
       if isLinux then
         (with pkgs; [
+      	  inotify-tools
           os-prober
           traceroute
           waypipe
