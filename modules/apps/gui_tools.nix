@@ -29,6 +29,8 @@ in
     ]
     ++ lib.optionals isLinux [
       inputs.ags.packages.${system}.agsFull
+      deskflow
+      wl-clipboard
     ];
 
   services = (
