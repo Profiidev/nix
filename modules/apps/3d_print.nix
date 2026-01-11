@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstableNoCuda, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [

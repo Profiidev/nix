@@ -7,7 +7,7 @@
 }:
 
 let
-  sopsFolder = builtins.toString inputs.nix-secrets + "/sops";
+  sopsFolder = toString inputs.nix-secrets + "/sops";
   platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
 
@@ -91,7 +91,6 @@ in
         let
           ageFolder = "${home spec}/.config/sops/age";
           keyFolder = "${home spec}/.config/Yubico";
-          user = config.users.users.${spec.username}.name;
         in
         ''
           mkdir -p ${ageFolder} || true

@@ -2,7 +2,7 @@
 
 let
   users = config.hostSpec.users;
-  userPaths = builtins.map (user: "/etc/profiles/per-user/${user.username}/bin") users;
+  userPaths = map (user: "/etc/profiles/per-user/${user.username}/bin") users;
   userPath = builtins.concatStringsSep ":" userPaths;
 in
 {
