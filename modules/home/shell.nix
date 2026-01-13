@@ -27,7 +27,6 @@
     RUSTC_WRAPPER = "sccache";
     SCCACHE_CACHE_SIZE = "50G";
     LIBVIRT_DEFAULT_URI = "qemu:///system";
-    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
     LIBCLANG_PATH = "/run/current-system/sw/share/nix-ld/lib";
   }
   // (
