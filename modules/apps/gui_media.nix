@@ -7,5 +7,7 @@
     wasistlos
     chromium
     rpi-imager
+    teamspeak6-client
+    blockbench
   ];
 }
