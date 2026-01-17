@@ -23,6 +23,10 @@ in
     kitty
   ];
 
+  environment.sessionVariables = {
+    "_JAVA_AWT_WM_NONREPARENTING" = "1";
+  };
+
   xdg.portal = {
     enable = true;
 
