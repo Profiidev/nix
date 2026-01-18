@@ -35,6 +35,7 @@
       gbd = "git branch -d";
       gbD = "git branch -D";
       gcm = "git commit -m";
+      gacm = "git add -A && git commit -m";
       gca = "git commit --amend --no-edit";
       gcae = "git commit --amend";
       gpl = "git pull";
