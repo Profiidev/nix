@@ -76,7 +76,6 @@
       url = "github:LovingMelody/nix-citizen";
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable";
-        nix-gaming.follows = "nix-gaming";
         flake-parts.follows = "flake-parts";
       };
     };

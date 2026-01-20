@@ -4,7 +4,8 @@
   ...
 }:
 
-mkVicinaeExtension {
+(mkVicinaeExtension {
+  version = "0.1.0";
   pname = "spotify-player-vicinae-extension";
 
   src = "${
@@ -19,6 +20,7 @@ mkVicinaeExtension {
       ];
     }
   }/extensions/spotify-player";
-
-  buildPhase = "npm run build -- -o=$out";
-}
+}).overrideAttrs
+  (oldAttrs: {
+    buildPhase = "npm run build -- -o=$out";
+  })

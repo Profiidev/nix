@@ -5,7 +5,8 @@
   ...
 }:
 
-mkVicinaeExtension {
+(mkVicinaeExtension {
+  version = "0.1.0";
   pname = "vscode-recent-projects-vicinae-extension";
 
   src = "${
@@ -20,13 +21,14 @@ mkVicinaeExtension {
       ];
     }
   }/extensions/visual-studio-code-recent-projects";
+}).overrideAttrs
+  (old: {
+    buildPhase = "npm run build -- -o=$out";
+    patches = [
+      ../patches/vscode-vicinae-extension.patch
+    ];
 
-  buildPhase = "npm run build -- -o=$out";
-  patches = [
-    ../patches/vscode-vicinae-extension.patch
-  ];
-
-  runtimeDependencies = [
-    sqlite
-  ];
-}
+    runtimeDependencies = [
+      sqlite
+    ];
+  })

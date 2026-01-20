@@ -42,7 +42,7 @@ in
     nil
     nurl
     nixd
-    nixfmt-rfc-style
+    nixfmt
   ];
 
   nix.settings = {

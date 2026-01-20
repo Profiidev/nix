@@ -4,7 +4,8 @@
   ...
 }:
 
-mkVicinaeExtension {
+(mkVicinaeExtension {
+  version = "0.1.0";
   pname = "google-vicinae-extension";
 
   src = "${
@@ -20,5 +21,7 @@ mkVicinaeExtension {
     }
   }/extensions/google-search";
 
-  buildPhase = "npm run build -- -o=$out";
-}
+}).overrideAttrs
+  (oldAttrs: {
+    buildPhase = "npm run build -- -o=$out";
+  })
