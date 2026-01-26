@@ -11,6 +11,7 @@
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps-launcher
     texliveMedium
+    tex-fmt
     #winboat
   ];
 }
