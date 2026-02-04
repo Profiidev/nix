@@ -46,6 +46,10 @@
       grao = "git remote add origin";
       gmm = "git merge main --no-edit";
       gmme = "git merge main";
+      gbss = "git bisect start";
+      gbsg = "git bisect good";
+      gbsb = "git bisect bad";
+      gbsr = "git bisect reset";
       c = "cargo";
       cb = "cargo build";
       cr = "cargo run";
