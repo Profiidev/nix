@@ -82,6 +82,7 @@ in
       "btrfs"
       "vfat"
     ];
+    loader.grub.memtest86.enable = lib.mkForce false;
   };
 
   networking = {
