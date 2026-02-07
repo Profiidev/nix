@@ -81,6 +81,7 @@
           os-prober
           traceroute
           waypipe
+          tpm2-tss
         ])
       else
         [ ]
