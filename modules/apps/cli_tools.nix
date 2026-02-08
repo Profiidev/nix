@@ -82,6 +82,7 @@
           traceroute
           waypipe
           tpm2-tss
+          tpm2-tools
         ])
       else
         [ ]

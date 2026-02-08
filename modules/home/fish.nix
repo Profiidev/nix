@@ -64,7 +64,7 @@
       n = "nvim";
       ff = "fastfetch --config ~/.config/fastfetch/fastfetch.jsonc";
       stc = "sudo systemd-cryptenroll --wipe-slot=tpm2";
-      ste = "sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+3+7+8+12+13+14+15 --tpm2-with-pin=yes";
+      ste = "sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+3+7+15 --tpm2-with-pin=yes";
     };
 
     functions = {
