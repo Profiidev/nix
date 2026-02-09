@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -10,6 +10,6 @@
     freerdp
     texliveFull
     tex-fmt
-    #winboat
+    inputs.affinity-nix.packages.${stdenv.hostPlatform.system}.v3
   ];
 }

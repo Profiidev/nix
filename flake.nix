@@ -134,6 +134,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.astal.follows = "astal";
     };
+
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs =
