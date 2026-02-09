@@ -10,6 +10,9 @@ let
   platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
   system = pkgs.stdenv.hostPlatform.system;
+  collectFlakeInputs =
+    input:
+    [ input ] ++ builtins.concatMap collectFlakeInputs (builtins.attrValues (input.inputs or { }));
 in
 {
   imports = [
@@ -44,6 +47,8 @@ in
     nixd
     nixfmt
   ];
+
+  system.extraDependencies = builtins.concatMap collectFlakeInputs (builtins.attrValues inputs);
 
   nix.settings = {
     experimental-features = [
