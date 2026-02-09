@@ -19,7 +19,6 @@ in
       wireshark
       drawio
       filezilla
-      geary
       piper
       gimp
       vlc

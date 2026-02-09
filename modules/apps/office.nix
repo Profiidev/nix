@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -8,8 +8,6 @@
     hunspellDicts.en_US
     hunspellDicts.de_DE
     freerdp
-    inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
-    inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps-launcher
     texliveFull
     tex-fmt
     #winboat

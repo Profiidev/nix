@@ -8,7 +8,6 @@
 
     # Profiles
     ../../../modules/profiles/system/base.nix
-    ../../../modules/profiles/system/coding.nix
     ../../../modules/profiles/system/laptop.nix
 
     ../../../modules/profiles/apps/base.nix
@@ -16,6 +15,7 @@
     ../../../modules/profiles/apps/office.nix
 
     # Extra
+    ../../../modules/system/services/docker.nix
     ../../../modules/apps/tailscale.nix
     ../../../modules/apps/cloudflare.nix
   ];
