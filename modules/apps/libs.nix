@@ -35,6 +35,18 @@
             libudev-zero
             udev
             wayland.dev
+            libgcc.lib
+            zlib
+            zstd
+            curl
+            stdenv.cc.cc
+            bzip2
+            libxml2
+            acl
+            libsodium
+            util-linux
+            xz
+            systemd
           ];
         };
       }
