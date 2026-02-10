@@ -27,10 +27,10 @@
             # bevy
             alsa-lib-with-plugins
             vulkan-loader
-            xorg.libX11
-            xorg.libXcursor
-            xorg.libXrandr
-            xorg.libXi
+            libx11
+            libxcursor
+            libxi
+            libxrandr
             libxkbcommon
             libudev-zero
             udev

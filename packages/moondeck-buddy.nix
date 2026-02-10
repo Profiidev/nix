@@ -8,7 +8,7 @@
   ninja,
   qt6,
   procps,
-  xorg,
+  libxrandr,
   steam,
   useNixSteam ? true,
   ...
@@ -37,7 +37,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs = [
     procps
-    xorg.libXrandr
+    libxrandr
     qtbase
     qtEnv
   ];

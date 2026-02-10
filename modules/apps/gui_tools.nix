@@ -23,7 +23,7 @@ in
       gimp
       vlc
       obsidian
-      xorg.xkill
+      xkill
       qjournalctl
     ]
     ++ lib.optionals isLinux [
