@@ -15,6 +15,12 @@
       hash = "sha256-VIygMzCPTKzLr47bG1DYy/zj0OxsjGcms0G1BkI/TEI=";
     };
   };
+
+  libfprint-tod = prev.libfprint-tod.overrideAttrs {
+    patches = [
+      ../patches/libfprint-tod.patch
+    ];
+  };
 }
 // builtins.listToAttrs (
   map
