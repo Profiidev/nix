@@ -289,7 +289,7 @@ if yes_or_no "Do you want to copy your full nix-config and nix-secrets to $targe
 	# FIXME(bootstrap): Add some sort of key access from the target to download the config (if it's a cloud system)
 	if yes_or_no "Do you want to rebuild immediately?"; then
 		green "Rebuilding nix-config on $target_hostname"
-		$ssh_cmd "cd /etc/nixos/nix-config && sudo nixos-rebuild --show-trace --flake .#$target_hostname switch"
+		$ssh_cmd "cd /etc/nixos/nix-config && sudo nixos-rebuild --show-trace --flake .#$target_hostname boot"
 	fi
 else
 	echo
