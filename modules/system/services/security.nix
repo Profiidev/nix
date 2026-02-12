@@ -3,11 +3,15 @@
 {
   security.pam.services = {
     login.u2fAuth = true;
+    login.fprintAuth = true;
     gdm-password.u2fAuth = true;
     gdm-password.enableGnomeKeyring = true;
     sddm.u2fAuth = true;
+    sddm.fprintAuth = true;
     sddm-greeter.u2fAuth = true;
+    sddm-greeter.fprintAuth = true;
     sudo.u2fAuth = true;
+    sudo.fprintAuth = true;
   };
 
   security.pam.u2f = {
@@ -16,6 +20,15 @@
   };
 
   services.pcscd.enable = true;
+  services.fwupd.enable = true;
+
+  services.fprintd = {
+    enable = true;
+    tod = {
+      enable = true;
+      driver = pkgs.libfprint-2-tod1-goodix;
+    };
+  };
 
   security.polkit.extraConfig = ''
     polkit.addRule(function (action, subject) {

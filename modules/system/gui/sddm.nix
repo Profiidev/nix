@@ -20,7 +20,7 @@
       };
       LoginScreen = {
         use-background-color = true;
-        background-color = "#0A0E14";
+        background-color = "#000000";
       };
       "LoginScreen.MenuArea.Layout" = {
         display = false;
