@@ -20,8 +20,8 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  #boot.resumeDevice = "/dev/disk/by-uuid/bcd05679-815e-4c95-bc12-a20a8195c7b6";
-  #boot.kernelParams = [ "resume_offset=533760" ];
+  boot.resumeDevice = "/dev/disk/by-uuid/c922b484-d6aa-4973-bc09-0c4ba3884d2f";
+  boot.kernelParams = [ "resume_offset=533760" ];
   hardware.cpu.intel.updateMicrocode = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
