@@ -20,7 +20,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.resumeDevice = "/dev/disk/by-uuid/ec4c0a0d-d511-4d1f-b25b-1f0f0f0d5d55";
+  boot.resumeDevice = "/dev/disk/by-uuid/bcd05679-815e-4c95-bc12-a20a8195c7b6";
   boot.kernelParams = [ "resume_offset=533760" ];
   hardware.cpu.intel.updateMicrocode = true;
 

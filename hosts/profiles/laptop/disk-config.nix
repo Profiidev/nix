@@ -5,9 +5,9 @@
     ../../disks/btrfs-luks.nix
     {
       _module.args = {
-        disk = "/dev/disk/by-id/nvme-PCIe-8_SSD_1TB_YMA11T0JA2133004AD";
+        disk = "/dev/disk/by-id/nvme-eui.6479a7b36ad0045f";
         withSwap = true;
-        swapSize = 16;
+        swapSize = "32";
       };
     }
   ];

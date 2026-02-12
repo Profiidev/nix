@@ -91,5 +91,13 @@
     };
   };
 
+  users.users.sddm = {
+    isSystemUser = true;
+    group = "sddm";
+  };
+  users.groups.sddm = { };
+
   system.stateVersion = "25.11";
+  home-manager.users.sddm.home.stateVersion = "25.11";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

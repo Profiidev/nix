@@ -2,7 +2,7 @@
   description = "Minimal NixOS configuration for bootstrapping systems";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +27,6 @@
       newConfig =
         name:
         (nixpkgs.lib.nixosSystem {
-          stdenv.hostPlatform.system = "x86_64-linux";
           specialArgs = minimalSpecialArgs;
           modules = [
             ./minimal-configuration.nix
