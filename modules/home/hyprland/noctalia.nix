@@ -19,6 +19,8 @@
     adw-gtk3
     nwg-look
     glib
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
   ];
 
   gtk = {
@@ -27,6 +29,16 @@
       name = lib.mkForce "adw-gtk3";
       package = lib.mkForce pkgs.adw-gtk3;
     };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "qtct";
+  };
+
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
+    GTK_THEME = "adw-gtk3";
   };
 
   dconf.settings = {
@@ -731,6 +743,10 @@
           {
             enabled = true;
             id = "gtk";
+          }
+          {
+            enabled = true;
+            id = "qt";
           }
         ];
         enableUserTheming = false;
