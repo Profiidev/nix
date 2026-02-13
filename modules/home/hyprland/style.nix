@@ -5,7 +5,7 @@
     # General
     general = {
       gaps_in = 5;
-      gaps_out = 5;
+      gaps_out = 10;
       border_size = 0;
       "col.active_border" = "rgba(707070ff)";
       "col.inactive_border" = "rgba(d0d0d0ff)";
@@ -14,16 +14,16 @@
 
     # Decoration
     decoration = {
-      rounding = 12;
+      rounding = 20;
+      rounding_power = 2;
       active_opacity = 1.0;
       inactive_opacity = 1.0;
 
       shadow = {
         enabled = true;
-        range = 30;
-        render_power = 5;
-        offset = "0 5";
-        color = "rgba(00000070)";
+        range = 4;
+        render_power = 3;
+        color = "rgba(1a1a1aee)";
       };
     };
   };

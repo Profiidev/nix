@@ -8,6 +8,34 @@
   xdg.configFile."noctalia/colorschemes/GitHub Dark/GitHub Dark.json".source =
     ../../../assets/github-dark-noctalia.json;
 
+  wayland.windowManager.hyprland.settings = {
+    "$ipc" = "noctalia-shell ipc call";
+
+    bind = [
+      "$mod, Super_L, exec, $ipc controlCenter toggle"
+      "$mod SHIFT, S, exec, $ipc screenshot"
+
+      "ALT, L, exec, $ipc sessionsMenu lockAndSuspend"
+    ];
+
+    # Repeatable and Locked binds
+    bindel = [
+      ", XF86AudioRaiseVolume, exec, $ipc volume increase"
+      ", XF86AudioLowerVolume, exec, $ipc volume decrease"
+      ", XF86MonBrightnessUp, exec, $ipc brightness increase"
+      ", XF86MonBrightnessDown, exec, $ipc brightness decrease"
+    ];
+
+    bindl = [
+      ", XF86AudioMute, exec, $ipc volume muteOutput"
+      ", XF86AudioMicMute, exec, $ipc volume muteInput"
+      ", XF86AudioNext, exec, $ipc media next"
+      ", XF86AudioPrev, exec, $ipc media previous"
+      ", XF86AudioPlay, exec, $ipc media playPause"
+      ", XF86AudioPause, exec, $pic media pause"
+    ];
+  };
+
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
