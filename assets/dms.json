@@ -30,6 +30,8 @@
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
   "wallpaperPath": "/etc/wallpapers/black.png",
+  "wallpaperPathDark": "/etc/wallpapers/black.png",
+  "wallpaperPathLight": "/etc/wallpapers/black.png",
   "showLauncherButton": true,
   "showWorkspaceSwitcher": true,
   "showFocusedWindow": true,
