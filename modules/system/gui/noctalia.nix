@@ -1,10 +1,11 @@
 { inputs, pkgs, ... }:
 
 {
-  environment.systemPackages = [
-    (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+  environment.systemPackages = with pkgs; [
+    (inputs.noctalia.packages.${stdenv.hostPlatform.system}.default.override {
       calendarSupport = true;
     })
+    gpu-screen-recorder
   ];
 
   imports = [
