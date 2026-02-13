@@ -1,4 +1,9 @@
-{ lib, modulesPath, ... }:
+{
+  lib,
+  modulesPath,
+  config,
+  ...
+}:
 
 {
   imports = [
@@ -18,8 +23,13 @@
     "sr_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "msi-ec"
+  ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    msi-ec
+  ];
   boot.resumeDevice = "/dev/disk/by-uuid/c922b484-d6aa-4973-bc09-0c4ba3884d2f";
   boot.kernelParams = [ "resume_offset=533760" ];
   hardware.cpu.intel.updateMicrocode = true;
