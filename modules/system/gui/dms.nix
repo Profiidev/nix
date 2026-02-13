@@ -9,6 +9,8 @@
     cosmic-files
   ];
 
+  environment.etc."wallpapers/black.png".source = ../../../assets/black.png;
+
   programs.dms-shell = {
     enable = true;
 
