@@ -136,6 +136,11 @@
     };
 
     affinity-nix.url = "github:mrshmllow/affinity-nix";
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =

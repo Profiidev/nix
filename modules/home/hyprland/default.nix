@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./dms.nix
-    ./hyprlock.nix
+    ./noctalia.nix
     ./io.nix
     ./keybinds.nix
     ./layers.nix
