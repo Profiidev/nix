@@ -6,6 +6,7 @@
       calendarSupport = true;
     })
     gpu-screen-recorder
+    nemo-with-extensions
   ];
 
   imports = [
