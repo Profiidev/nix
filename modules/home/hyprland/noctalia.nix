@@ -8,12 +8,16 @@
   xdg.configFile."noctalia/colorschemes/GitHub Dark/GitHub Dark.json".source =
     ../../../assets/github-dark-noctalia.json;
 
+  home.packages = with pkgs; [
+    hyprshot
+  ];
+
   wayland.windowManager.hyprland.settings = {
     "$ipc" = "noctalia-shell ipc call";
 
     bind = [
       "$mod, Super_L, exec, $ipc controlCenter toggle"
-      "$mod SHIFT, S, exec, $ipc screenshot"
+      "$mod SHIFT, S, exec, hyprshot -m region"
 
       "ALT, L, exec, $ipc sessionsMenu lockAndSuspend"
     ];
