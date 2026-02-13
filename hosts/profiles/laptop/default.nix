@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -30,4 +30,8 @@
       }
     ];
   };
+  
+  environment.systemPackages = with pkgs; [
+    mcontrolcenter
+  ];
 }
