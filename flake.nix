@@ -103,11 +103,6 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -124,21 +119,15 @@
       inputs.vicinae.follows = "vicinae";
     };
 
-    astal = {
-      url = "github:Aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.astal.follows = "astal";
-    };
-
     affinity-nix.url = "github:mrshmllow/affinity-nix";
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    hypr-quick-frame = {
+      url = "github:Ronin-CK/HyprQuickFrame";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };

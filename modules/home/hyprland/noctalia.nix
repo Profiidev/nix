@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -10,7 +15,26 @@
 
   home.packages = with pkgs; [
     hyprshot
+    #inputs.hypr-quick-frame.packages.${stdenv.hostPlatform.system}.default.overrideAttrs
+    adw-gtk3
+    nwg-look
+    glib
   ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = lib.mkForce "adw-gtk3";
+      package = lib.mkForce pkgs.adw-gtk3;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "adw-gtk3";
+      color-scheme = "prefer-dark";
+    };
+  };
 
   wayland.windowManager.hyprland.settings = {
     "$ipc" = "noctalia-shell ipc call";
@@ -77,10 +101,6 @@
         }
       ];
       states = {
-        battery-threshold = {
-          enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        };
         privacy-indicator = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
@@ -261,12 +281,6 @@
               textColor = "none";
               useMonospaceFont = true;
               usePadding = true;
-            }
-            {
-              id = "plugin:battery-threshold";
-              defaultSettings = {
-                chargeThreshold = 80;
-              };
             }
             {
               id = "Battery";
@@ -654,7 +668,7 @@
         backgroundOpacity = 1;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
-        normalUrgencyDuration = 8;
+        normalUrgencyDuration = 5;
         criticalUrgencyDuration = 15;
         saveToHistory = {
           low = true;
@@ -713,7 +727,12 @@
         monitorForColors = "";
       };
       templates = {
-        activeTemplates = [ ];
+        activeTemplates = [
+          {
+            enabled = true;
+            id = "gtk";
+          }
+        ];
         enableUserTheming = false;
       };
       nightLight = {
