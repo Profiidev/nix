@@ -58,7 +58,7 @@
       "$mod, Super_L, exec, $ipc controlCenter toggle"
       "$mod SHIFT, S, exec, hyprshot -m region"
 
-      "ALT, L, exec, $ipc sessionsMenu lockAndSuspend"
+      "ALT, L, exec, $ipc lockScreen lock"
     ];
 
     # Repeatable and Locked binds
