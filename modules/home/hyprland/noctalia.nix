@@ -29,6 +29,9 @@
       name = lib.mkForce "adw-gtk3";
       package = lib.mkForce pkgs.adw-gtk3;
     };
+    gtk4.extraCss = ''
+      @import url("noctalia.css");
+    '';
   };
 
   qt = {
