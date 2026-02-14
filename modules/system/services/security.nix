@@ -4,6 +4,7 @@
   security.pam.services = {
     login.u2fAuth = true;
     login.fprintAuth = true;
+    login.rules.auth.fprintd.settings.timeout = 1;
     gdm-password.u2fAuth = true;
     gdm-password.enableGnomeKeyring = true;
     sddm.u2fAuth = true;
