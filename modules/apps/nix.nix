@@ -57,6 +57,7 @@ in
     ];
     trusted-users = (map (spec: spec.username) config.hostSpec.users);
     tarball-ttl = 2678400; # 31 days
+    fallback = true;
   };
 
   nix.settings = {
