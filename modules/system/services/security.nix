@@ -4,7 +4,7 @@
   security.pam.services = {
     login.u2fAuth = true;
     login.fprintAuth = true;
-    login.rules.auth.fprintd.settings.timeout = 1;
+    login.rules.auth.fprintd.settings.timeout = 100000;
     gdm-password.u2fAuth = true;
     gdm-password.enableGnomeKeyring = true;
     sddm.u2fAuth = true;
@@ -13,6 +13,8 @@
     sddm-greeter.fprintAuth = true;
     sudo.u2fAuth = true;
     sudo.fprintAuth = true;
+    polkit-1.fprintAuth = true;
+    polkit-1.u2fAuth = true;
   };
 
   security.pam.u2f = {
