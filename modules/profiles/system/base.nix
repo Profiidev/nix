@@ -16,6 +16,7 @@
 
     ../../system/hardware/audio.nix
     ../../system/hardware/bluetooth.nix
+    ../../system/hardware/firmware.nix
     ../../system/hardware/network.nix
     ../../system/hardware/printing.nix
 

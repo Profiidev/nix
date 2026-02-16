@@ -23,7 +23,6 @@
   };
 
   services.pcscd.enable = true;
-  services.fwupd.enable = true;
 
   services.fprintd = {
     enable = true;
