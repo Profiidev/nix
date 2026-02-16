@@ -16,6 +16,13 @@
       };
     };
 
-    monitorv2 = hostSpec.hyprlandMonitorConfig;
+    monitorv2 = hostSpec.hyprlandMonitorConfig ++ [
+      {
+        output = "";
+        mode = "preferred";
+        position = "auto";
+        scale = "1";
+      }
+    ];
   };
 }
