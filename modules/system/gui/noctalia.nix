@@ -7,6 +7,7 @@
     })
     gpu-screen-recorder
     nemo-with-extensions
+    kdePackages.qttools
   ];
 
   imports = [
