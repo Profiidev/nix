@@ -51,6 +51,8 @@
     };
   };
 
+  services.hyprpolkitagent.enable = lib.mkForce false;
+
   wayland.windowManager.hyprland.settings = {
     "$ipc" = "noctalia-shell ipc call";
 
@@ -125,6 +127,18 @@
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         tailscale = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        kde-connect = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        polkit-agent = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        assistant-panel = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
