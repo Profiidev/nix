@@ -52,6 +52,7 @@
   };
 
   services.hyprpolkitagent.enable = lib.mkForce false;
+  services.kdeconnect.enable = true;
 
   wayland.windowManager.hyprland.settings = {
     "$ipc" = "noctalia-shell ipc call";
@@ -340,15 +341,6 @@
               usePadding = true;
             }
             {
-              id = "Battery";
-              deviceNativePath = "__default__";
-              displayMode = "graphic";
-              hideIfIdle = false;
-              hideIfNotDetected = true;
-              showNoctaliaPerformance = false;
-              showPowerProfiles = true;
-            }
-            {
               id = "plugin:kde-connect";
             }
             {
@@ -364,11 +356,26 @@
               textColor = "none";
             }
             {
+              id = "Network";
+              displayMode = "alwaysHide";
+              iconColor = "none";
+              textColor = "none";
+            }
+            {
               id = "Volume";
               displayMode = "alwaysHide";
               iconColor = "none";
               middleClickCommand = "pwvucontrol || pavucontrol";
               textColor = "none";
+            }
+            {
+              id = "Battery";
+              deviceNativePath = "__default__";
+              displayMode = "graphic";
+              hideIfIdle = false;
+              hideIfNotDetected = true;
+              showNoctaliaPerformance = false;
+              showPowerProfiles = true;
             }
             {
               id = "NotificationHistory";

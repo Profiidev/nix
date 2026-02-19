@@ -13,7 +13,17 @@
     ./hyprland.nix
   ];
 
-  programs.kdeconnect.enable = true;
+  # kde connect
+  networking.firewall = rec {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
+
   programs.gpu-screen-recorder.enable = true;
 
   services.power-profiles-daemon.enable = true;
