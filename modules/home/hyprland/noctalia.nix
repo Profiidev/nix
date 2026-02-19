@@ -180,6 +180,34 @@
         activeColor = "primary";
         inactiveColor = "none";
       };
+      assistant-panel = {
+        ai = {
+          provider = "openai_compatible";
+          models = {
+            openai_compatible = "gpt-oss:latest";
+          };
+          apiKeys = {
+            openai_compatible = "";
+          };
+          temperature = 0.7;
+          systemPrompt = "You are a helpful assistant integrated into a Linux desktop shell. Be concise and helpful.";
+          openaiLocal = true;
+          openaiBaseUrl = "http://192.168.178.22:11434/v1/chat/completions";
+          model = "gpt-oss:latest";
+        };
+        translator = {
+          backend = "google";
+          deeplApiKey = "";
+          realTimeTranslation = true;
+        };
+        maxHistoryLength = 100;
+        panelDetached = false;
+        panelPosition = "right";
+        panelHeightRatio = 0.85;
+        panelWidth = 520;
+        attachmentStyle = "connected";
+        scale = 1;
+      };
     };
 
     settings = {
