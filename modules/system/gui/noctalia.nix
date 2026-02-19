@@ -13,7 +13,9 @@
     ./hyprland.nix
   ];
 
+  programs.kdeconnect.enable = true;
   programs.gpu-screen-recorder.enable = true;
+
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
   services.gnome.evolution-data-server.enable = true;

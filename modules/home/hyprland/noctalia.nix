@@ -321,7 +321,13 @@
               showPowerProfiles = true;
             }
             {
+              id = "plugin:kde-connect";
+            }
+            {
               id = "plugin:tailscale";
+            }
+            {
+              id = "plugin:assistant-panel";
             }
             {
               id = "Bluetooth";
