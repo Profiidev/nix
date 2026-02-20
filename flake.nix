@@ -174,6 +174,7 @@
               name = pkg;
               value = pkgs.callPackage ./packages/${pkg}.nix {
                 mkBunDerivation = bun2nix.lib.${pkgs.stdenv.hostPlatform.system}.mkBunDerivation;
+                mkVicinaeExtension = inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.mkVicinaeExtension;
               };
             })
             (

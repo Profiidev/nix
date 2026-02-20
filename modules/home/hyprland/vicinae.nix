@@ -29,6 +29,7 @@ in
       pkgs.google-vicinae-extension
       pkgs.spotify-player-vicinae-extension
       pkgs.vscode-recent-projects-vicinae-extension
+      pkgs.zed-recent-projects-vicinae-extension
     ];
   };
 
