@@ -9,5 +9,6 @@
     rpi-imager
     teamspeak6-client
     blockbench
+    zathura
   ];
 }
