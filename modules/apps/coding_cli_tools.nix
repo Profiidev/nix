@@ -60,6 +60,7 @@ in
       if isLinux then
         (with pkgs; [
           release-plz
+          kdePackages.qtdeclarative
         ])
       else
         [ ]
