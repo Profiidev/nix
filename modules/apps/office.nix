@@ -10,6 +10,7 @@
     freerdp
     texliveFull
     tex-fmt
+    beamerpresenter
     inputs.affinity-nix.packages.${stdenv.hostPlatform.system}.v3
   ];
 }
