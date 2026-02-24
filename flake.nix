@@ -67,17 +67,12 @@
 
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
-        flake-parts.follows = "flake-parts";
-      };
     };
 
     nix-citizen = {
-      url = "github:LovingMelody/nix-citizen";
+      url = "github:LovingMelody/nix-citizen?rev=cb5c54868dfca5377f0fea5c983aef833acdd4b5";
       inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
-        flake-parts.follows = "flake-parts";
+        nix-gaming.follows = "nix-gaming";
       };
     };
 

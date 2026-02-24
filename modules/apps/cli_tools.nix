@@ -16,7 +16,7 @@
       cargo-generate
       cargo-make
       cargo-nextest
-      cargo-release
+      #cargo-release
       cargo-tauri
       cargo-watch
       cargo-bootimage
@@ -77,7 +77,7 @@
     ++ (
       if isLinux then
         (with pkgs; [
-      	  inotify-tools
+          inotify-tools
           os-prober
           traceroute
           waypipe
@@ -106,7 +106,7 @@
   documentation = (
     if isLinux then
       {
-        man.generateCaches = lib.mkForce false;
+        man.cache.enable = lib.mkForce false;
       }
     else
       { }

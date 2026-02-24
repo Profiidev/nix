@@ -1,4 +1,4 @@
-{ pkgs, isLinux, ... }:
+{ pkgs, config, isLinux, ... }:
 
 {
   programs = (
@@ -22,7 +22,7 @@
             stdenv.cc.cc.lib
             nss
             libclang.lib
-            linuxKernel.packages.linux_6_18.nvidia_x11.lib32
+            config.boot.kernelPackages.nvidia_x11.lib32
 
             # bevy
             alsa-lib-with-plugins
