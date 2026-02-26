@@ -9,7 +9,6 @@
 let
   platform = if isLinux then "nixos" else "darwin";
   platformModules = "${platform}Modules";
-  system = pkgs.stdenv.hostPlatform.system;
   collectFlakeInputs =
     input:
     [ input ] ++ builtins.concatMap collectFlakeInputs (builtins.attrValues (input.inputs or { }));
@@ -96,14 +95,7 @@ in
     );
     overlays = [
       inputs.rust-overlay.overlays.default
-      (
-        final: prev:
-        import ../../packages/overlay.nix {
-          inherit final prev;
-          mkBunDerivation = inputs.bun2nix.lib.${system}.mkBunDerivation;
-          mkVicinaeExtension = inputs.vicinae.packages.${system}.mkVicinaeExtension;
-        }
-      )
+      inputs.custom-nixpkgs.overlays.default
     ];
   };
 }

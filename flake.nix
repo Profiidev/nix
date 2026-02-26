@@ -27,6 +27,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -133,7 +135,6 @@
       nixpkgs,
       nixpkgs-unstable,
       nix-darwin,
-      bun2nix,
       ...
     }:
     let
@@ -145,40 +146,8 @@
           }
         );
       };
-
-      supportedSystems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-
-      forAllSystems =
-        f:
-        nixpkgs-unstable.lib.genAttrs supportedSystems (
-          system: f nixpkgs-unstable.legacyPackages.${system}
-        );
     in
     {
-      packages = forAllSystems (
-        pkgs:
-        builtins.listToAttrs (
-          map
-            (pkg: {
-              name = pkg;
-              value = pkgs.callPackage ./packages/${pkg}.nix {
-                mkBunDerivation = bun2nix.lib.${pkgs.stdenv.hostPlatform.system}.mkBunDerivation;
-                mkVicinaeExtension = inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.mkVicinaeExtension;
-              };
-            })
-            (
-              builtins.filter (pkg: pkg != "overlay") (
-                map (pkg: pkgs.lib.removeSuffix ".nix" pkg) (builtins.attrNames (builtins.readDir ./packages))
-              )
-            )
-        )
-      );
-
       nixosConfigurations = builtins.listToAttrs (
         map (host: {
           name = host;
