@@ -9,7 +9,7 @@ let
 in
 {
   imports = [
-    inputs.vicinae.homeManagerModules.default
+    inputs.custom-nixpkgs.vicinae.homeManagerModules.default
   ];
 
   services.vicinae = {
@@ -20,7 +20,7 @@ in
       autoStart = true;
     };
 
-    extensions = with inputs.vicinae-extensions.packages.${system}; [
+    extensions = with inputs.custom-nixpkgs.vicinae-extensions.packages.${system}; [
       bluetooth
       nix
       power-profile
