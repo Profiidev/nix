@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     hyprpicker
+    wtype
   ];
 
   wayland.windowManager.hyprland.settings = {

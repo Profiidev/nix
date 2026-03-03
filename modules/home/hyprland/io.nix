@@ -24,5 +24,16 @@
         scale = "1";
       }
     ];
+
+    device = [
+      {
+        name = "norwii-norwii-wireless-presenter-keyboard";
+        enabled = true;
+      }
+      {
+        name = "norwii-norwii-wireless-presenter-consumer-control";
+        enabled = true;
+      }
+    ];
   };
 }
