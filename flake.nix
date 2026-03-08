@@ -112,11 +112,6 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
-    hypr-quick-frame = {
-      url = "github:Ronin-CK/HyprQuickFrame";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs =

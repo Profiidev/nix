@@ -30,7 +30,6 @@
       dust
       fzf
       jq
-      neofetch
       tree
       unzip
       zip
