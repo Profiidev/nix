@@ -19,7 +19,7 @@
       "$mod, Q, killactive"
       "ALT, F, togglefloating"
       "$mod, F, fullscreen, 1"
-      "$mod, I, togglesplit"
+      "$mod, I, layoutmsg, togglesplit"
       "$mod, C, exec, hyprpicker -a"
 
       # Move Focus
