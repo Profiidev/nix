@@ -184,11 +184,11 @@
         "vicinae-extensions": "vicinae-extensions"
       },
       "locked": {
-        "lastModified": 1773024198,
-        "narHash": "sha256-R7OPCRCFZlvbi1tJJzZSrdH3PkRFg14FeWaKC3kYaHs=",
+        "lastModified": 1773166164,
+        "narHash": "sha256-qeey9k86G/i6S9SuWoc66SXdOPMbO5dgNzymI8fobTg=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "9891e922ee1f334aefba33d3e8375fe9f5296d44",
+        "rev": "a849e64ada0e96db75a71112c719f441f5734964",
         "type": "github"
       },
       "original": {

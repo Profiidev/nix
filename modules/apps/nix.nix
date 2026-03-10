@@ -47,7 +47,9 @@ in
     nixfmt
   ];
 
-  system.extraDependencies = builtins.concatMap collectFlakeInputs (builtins.attrValues inputs);
+  system.extraDependencies =
+    (builtins.concatMap collectFlakeInputs (builtins.attrValues inputs))
+    ++ (builtins.attrValues inputs.custom-nixpkgs.sources.${pkgs.stdenv.hostPlatform.system});
 
   nix.settings = {
     experimental-features = [
