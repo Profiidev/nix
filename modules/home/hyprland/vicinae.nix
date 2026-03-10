@@ -21,7 +21,6 @@ in
     };
 
     extensions = with inputs.custom-nixpkgs.vicinae-extensions.packages.${system}; [
-      bluetooth
       nix
       power-profile
       it-tools
