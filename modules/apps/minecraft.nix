@@ -8,6 +8,6 @@
   environment.systemPackages = with pkgs; [
     inputs.proton.packages.${stdenv.hostPlatform.system}.default
     prismlauncher
-    badlion-client
+    lunar-client
   ];
 }
