@@ -25,6 +25,7 @@
     ++ lib.optionals isLinux [
       deskflow
       wl-clipboard
+      networkmanagerapplet
     ];
 
   services = (
