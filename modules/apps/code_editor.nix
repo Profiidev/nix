@@ -6,6 +6,8 @@
     [
       jetbrains-toolbox
       zed-editor
+      jetbrains.rider
+      jetbrains.idea
     ]
     ++ (
       if isLinux then
