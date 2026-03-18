@@ -30,6 +30,9 @@
       dart
       flutter
       gradle
+      # c#
+      dotnetCorePackages.sdk_11_0
+      mono
     ]
     ++ (
       if isLinux then
