@@ -1,4 +1,9 @@
-{ pkgs, config, isLinux, ... }:
+{
+  pkgs,
+  config,
+  isLinux,
+  ...
+}:
 
 {
   programs = (
@@ -15,6 +20,7 @@
             gtk3
             harfbuzz
             librsvg
+            librsvg.dev
             libsoup_3
             pango
             webkitgtk_4_1
@@ -27,6 +33,8 @@
             # bevy
             alsa-lib-with-plugins
             vulkan-loader
+            openxr-loader
+            libGL
             libx11
             libxcursor
             libxi
