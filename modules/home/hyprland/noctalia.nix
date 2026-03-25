@@ -23,7 +23,7 @@
     libsForQt5.qt5ct
   ];
 
-  gtk = {
+  gtk = rec {
     enable = true;
     theme = {
       name = lib.mkForce "adw-gtk3";
@@ -32,6 +32,7 @@
     gtk4.extraCss = ''
       @import url("noctalia.css");
     '';
+    gtk4.theme = theme;
   };
 
   qt = {

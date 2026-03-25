@@ -97,7 +97,7 @@
   };
   users.groups.sddm = { };
 
-  system.stateVersion = "25.11";
-  home-manager.users.sddm.home.stateVersion = "25.11";
+  system.stateVersion = "26.05";
+  home-manager.users.sddm.home.stateVersion = "26.05";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
