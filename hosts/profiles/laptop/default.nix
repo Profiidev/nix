@@ -19,6 +19,7 @@
     ../../../modules/system/services/docker.nix
     ../../../modules/apps/tailscale.nix
     ../../../modules/apps/cloudflare.nix
+    ../../../modules/apps/steam.nix
   ];
 
   hostSpec = {
