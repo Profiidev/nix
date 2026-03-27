@@ -29,6 +29,15 @@
 
     custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
 
+    proton.url = "github:profiidev/proton/latest";
+    hibernation.url = "github:profiidev/hibernation/latest";
+    hyprland.url = "github:hyprwm/Hyprland";
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-secrets.url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
+    flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -54,21 +63,9 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    flake-utils.url = "github:numtide/flake-utils";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
     keyring-unlocker-src = {
       url = "github:recolic/gnome-keyring-yubikey-unlock";
       flake = false;
-    };
-
-    nix-secrets = {
-      url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
-      inputs = { };
-    };
-
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
     };
 
     nix-citizen = {
@@ -76,10 +73,6 @@
       inputs = {
         nix-gaming.follows = "nix-gaming";
       };
-    };
-
-    proton = {
-      url = "github:profiidev/proton/latest";
     };
 
     nix-darwin = {
@@ -99,14 +92,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
-    affinity-nix.url = "github:mrshmllow/affinity-nix";
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

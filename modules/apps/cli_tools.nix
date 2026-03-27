@@ -72,6 +72,7 @@
       dioxus-cli
       postgresql
       inputs.bun2nix.packages.${stdenv.hostPlatform.system}.default
+      inputs.hibernation.packages.${stdenv.hostPlatform.system}.default
     ]
     ++ (
       if isLinux then
