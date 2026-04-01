@@ -67,7 +67,7 @@ in
       "https://cache.garnix.io"
       "https://nix-community.cachix.org"
       "https://nix-citizen.cachix.org"
-      "https://profidev.cachix.org"
+      "https://projects.cache.profidev.io"
       "https://hyprland.cachix.org"
       "http://192.168.178.22:5000"
     ];
@@ -76,7 +76,6 @@ in
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
-      "profidev.cachix.org-1:xdwadal2vlCD50JtDTy8NwjOJvkOtjdjy1y91ElU9GE="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "profidev.cachix.org:tg4xEn64UMdvA5jJYT8omo/CQHk8+spLyeGT2YAku70="
     ];
