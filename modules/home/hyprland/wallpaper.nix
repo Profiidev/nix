@@ -8,7 +8,7 @@ let
 
     wget https://profidev.io/backend/services/apod/random -O wallpaper.png
 
-    swww img $pwd/wallpaper.png --transition-type fade --transition-duration 0 --resize crop
+    awww img $pwd/wallpaper.png --transition-type fade --transition-duration 0 --resize crop
   '';
 in
 {
