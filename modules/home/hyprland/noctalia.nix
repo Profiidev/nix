@@ -21,18 +21,28 @@
     glib
     kdePackages.qt6ct
     libsForQt5.qt5ct
+
+    # plugins dependencies
+    wl-mirror
+    grim
+    slurp
+    wl-clipboard
+    tesseract
+    imagemagick
+    zbar
+    curl
+    translate-shell
+    wl-screenrec
+    gifski
   ];
 
-  gtk = rec {
+  gtk = {
     enable = true;
     theme = {
       name = lib.mkForce "adw-gtk3";
       package = lib.mkForce pkgs.adw-gtk3;
     };
-    gtk4.extraCss = ''
-      @import url("noctalia.css");
-    '';
-    gtk4.theme = theme;
+    gtk4.theme = null;
   };
 
   qt = {
@@ -137,6 +147,14 @@
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         assistant-panel = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        screen-toolkit = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        mirror-mirror = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
@@ -336,6 +354,9 @@
               textColor = "none";
               useMonospaceFont = true;
               usePadding = true;
+            }
+            {
+              id = "plugin:mirror-mirror";
             }
             {
               id = "plugin:kde-connect";
@@ -557,6 +578,9 @@
             }
             {
               id = "NoctaliaPerformance";
+            }
+            {
+              id = "plugin:screen-toolkit";
             }
           ];
           right = [
