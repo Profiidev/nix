@@ -1,10 +1,8 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-    (inputs.noctalia.packages.${stdenv.hostPlatform.system}.default.override {
-      calendarSupport = true;
-    })
+    noctalia-shell
     gpu-screen-recorder
     nemo-with-extensions
     kdePackages.qttools

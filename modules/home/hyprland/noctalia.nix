@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.noctalia.homeModules.default
+    inputs.custom-nixpkgs.noctalia.homeModules.default
   ];
 
   xdg.configFile."noctalia/colorschemes/GitHub Dark/GitHub Dark.json".source =
@@ -86,11 +86,7 @@
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
-    package = (
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-        calendarSupport = true;
-      }
-    );
+    package = pkgs.noctalia-shell;
 
     colors = {
       mError = "#f85149";

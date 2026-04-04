@@ -71,7 +71,7 @@
       fish
       dioxus-cli
       postgresql
-      inputs.bun2nix.packages.${stdenv.hostPlatform.system}.default
+      bun2nix
       inputs.hibernation.packages.${stdenv.hostPlatform.system}.default
     ]
     ++ (
