@@ -14,6 +14,10 @@
       "float on, match:class ^(blueman-manager)$"
       "float on, match:class ^(org.gnome.Nautilus)$"
       "float on, match:class ^(org.quickshell)$"
+      # unreal engine editor
+      "group unset, match:class ^(UnrealEditor)$, match:title ^\w*$"
+      "no_initial_focus on, match:class ^(UnrealEditor)$, match:title ^\w*$"
+      "suppress_event activate, match:class ^(UnrealEditor)$, match:title ^\w*$"
     ];
   };
 }
