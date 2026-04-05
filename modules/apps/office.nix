@@ -13,5 +13,7 @@
     beamerpresenter
     inputs.affinity-nix.packages.${stdenv.hostPlatform.system}.v3
     rnote
+    wayscriber
+    wayscriber-configurator
   ];
 }

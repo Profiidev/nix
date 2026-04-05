@@ -76,6 +76,9 @@
       "$mod SHIFT, E, movetoworkspace, special:magic-e"
       "$mod, D, togglespecialworkspace, magic-d"
       "$mod SHIFT, D, movetoworkspace, special:magic-d"
+
+      # Wayscriber
+      "$mod, W, exec, pkill -SIGUSR1 wayscriber"
     ];
 
     bindm = [
