@@ -53,6 +53,7 @@
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
     GTK_THEME = "adw-gtk3";
+    HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
   };
 
   dconf.settings = {
