@@ -201,7 +201,7 @@
         ai = {
           provider = "openai_compatible";
           models = {
-            openai_compatible = "gpt-oss:latest";
+            openai_compatible = "gemma4:latest";
           };
           apiKeys = {
             openai_compatible = "";
@@ -210,7 +210,7 @@
           systemPrompt = "You are a helpful assistant integrated into a Linux desktop shell. Be concise and helpful.";
           openaiLocal = true;
           openaiBaseUrl = "http://192.168.178.22:11434/v1/chat/completions";
-          model = "gpt-oss:latest";
+          model = "gemma4:latest";
         };
         translator = {
           backend = "google";
