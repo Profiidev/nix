@@ -55,6 +55,7 @@ in
       bun
       pnpm
       llvmPackages.lld
+      wasm-bindgen-cli
     ]
     ++ (
       if isLinux then
