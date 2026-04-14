@@ -56,6 +56,7 @@ in
       pnpm
       llvmPackages.lld
       wasm-bindgen-cli
+      clang.cc
     ]
     ++ (
       if isLinux then
