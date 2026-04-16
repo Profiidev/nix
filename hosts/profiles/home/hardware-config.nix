@@ -89,4 +89,11 @@
   home-manager.users.sddm = {
     home.file.".config/kwinoutputconfig.json".source = ./kwinoutputconfig.json;
   };
+
+  services.tailscale = {
+    useRoutingFeatures = "both";
+    extraSetFlags = [
+      "--advertise-routes=192.168.178.0/24"
+    ];
+  };
 }
