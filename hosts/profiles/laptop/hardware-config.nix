@@ -31,8 +31,12 @@
   boot.extraModulePackages = with config.boot.kernelPackages; [
     msi-ec
   ];
-  boot.resumeDevice = "/dev/disk/by-uuid/c922b484-d6aa-4973-bc09-0c4ba3884d2f";
-  boot.kernelParams = [ "resume_offset=533760" ];
+  boot.resumeDevice = "/dev/disk/by-uuid/1e6ed03a-1bc4-4199-993f-8c23e5d9a0dd";
+  boot.kernelParams = [
+    "mem_sleep_default=deep" 
+    "acpi_sleep=nonvs" 
+    "resume_offset=533760"
+  ];
   hardware.cpu.intel.updateMicrocode = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
