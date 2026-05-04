@@ -10,7 +10,7 @@
     uefi-run
     lxc
     swtpm
-    bottles
+    #bottles
   ];
 
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];

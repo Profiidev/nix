@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [
     heroic
     ferium
-    lutris
+    #lutris
     r2modman
     playonlinux
     r2modman

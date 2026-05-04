@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     discord
     spotify
-    wasistlos
+    karere
     chromium
     rpi-imager
     teamspeak6-client

@@ -12,7 +12,7 @@
       dbeaver-bin
       postman
       insomnia
-      wireshark
+      #wireshark
       drawio
       filezilla
       piper
