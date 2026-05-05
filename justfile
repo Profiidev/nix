@@ -1,3 +1,4 @@
+pwd := source_dir()
 SOPS_FILE := "../nix-secrets/.sops.yaml"
 
 # Define path to helpers
@@ -131,3 +132,6 @@ sops-add-shared-creation-rules USER HOST:
 sops-add-creation-rules USER HOST:
     just sops-add-host-creation-rules {{USER}} {{HOST}} && \
     just sops-add-shared-creation-rules {{USER}} {{HOST}}
+
+noctalia:
+  noctalia-shell ipc call state all | jq .settings > {{pwd}}/assets/shells/noctalia-settings.json

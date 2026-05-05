@@ -40,11 +40,6 @@
       xwayland = {
         force_zero_scaling = hostSpec.hyprlandHiDpiFix;
       };
-
-      gesture = [
-        "3, horizontal, workspace"
-        "3, vertical, fullscreen"
-      ];
     };
   };
 

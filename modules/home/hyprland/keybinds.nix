@@ -85,5 +85,10 @@
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
     ];
+
+    gesture = [
+      "3, horizontal, workspace"
+      "3, vertical, fullscreen"
+    ];
   };
 }
