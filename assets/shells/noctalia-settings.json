@@ -576,6 +576,20 @@
         "countdownEnabled": true,
         "enabled": true,
         "keybind": "6"
+      },
+      {
+        "action": "userspaceReboot",
+        "command": "",
+        "countdownEnabled": true,
+        "enabled": false,
+        "keybind": ""
+      },
+      {
+        "action": "rebootToUefi",
+        "command": "",
+        "countdownEnabled": true,
+        "enabled": true,
+        "keybind": "7"
       }
     ]
   },
@@ -691,10 +705,10 @@
     "notifyUpdates": true
   },
   "idle": {
-    "enabled": false,
+    "enabled": true,
     "screenOffTimeout": 600,
     "lockTimeout": 660,
-    "suspendTimeout": 1800,
+    "suspendTimeout": 86400,
     "fadeDuration": 5,
     "screenOffCommand": "",
     "lockCommand": "",

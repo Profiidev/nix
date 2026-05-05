@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -22,6 +22,8 @@
     ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
+
+  services.hypridle.enable = lib.mkForce false;
 
   programs.gpu-screen-recorder.enable = true;
 
