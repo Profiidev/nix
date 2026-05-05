@@ -14,7 +14,7 @@
       # Application Launchers
       "ALT, space, exec, vicinae toggle"
       "$mod, space, exec, vicinae toggle"
-      "$mod, V, exec, vicinae deeplink vicinae://extensions/vicinae/clipboard/history"
+      "$mod, V, exec, vicinae deeplink vicinae://launch/clipboard/history"
       "$mod, T, exec, alacritty"
       "$mod, B, exec, brave"
       "$mod, Q, killactive"
