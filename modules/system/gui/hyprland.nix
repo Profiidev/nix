@@ -16,6 +16,10 @@
 
   services.hypridle.enable = true;
 
+  environment.pathsToLink = [
+    "/share/hypr"
+  ];
+
   environment.systemPackages = with pkgs; [
     kitty
   ];

@@ -36,6 +36,6 @@
     ];
   };
 
-  home.file.".config/DankMaterialShell/settings.json".source = ../../../assets/dms.json;
-  home.file.".local/state/DankMaterialShell/session.json".source = ../../../assets/dms-session.json;
+  home.file.".config/DankMaterialShell/settings.json".source = ../../../assets/shells/dms.json;
+  home.file.".local/state/DankMaterialShell/session.json".source = ../../../assets/shells/dms-session.json;
 }

@@ -36,7 +36,7 @@
         }
         # Input icon
         {
-          path = "${../../../assets/key.png}";
+          path = "${../../../assets/images/key.png}";
           size = 20;
           border_size = 0;
           rounding = -1;

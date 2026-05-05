@@ -31,7 +31,7 @@
     };
 
     profileIcons = {
-      profidev = ../../../assets/profidev.jpeg;
+      profidev = ../../../assets/images/profidev.jpeg;
     };
   };
 

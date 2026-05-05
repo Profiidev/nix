@@ -11,7 +11,7 @@
   ];
 
   xdg.configFile."noctalia/colorschemes/GitHub Dark/GitHub Dark.json".source =
-    ../../../assets/github-dark-noctalia.json;
+    ../../../assets/shells/github-dark-noctalia.json;
 
   home.packages = with pkgs; [
     hyprshot
@@ -421,7 +421,7 @@
         screenOverrides = [ ];
       };
       general = {
-        avatarImage = ../../../assets/profidev.jpeg;
+        avatarImage = ../../../assets/images/profidev.jpeg;
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
