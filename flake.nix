@@ -31,7 +31,6 @@
 
     proton.url = "github:profiidev/proton/latest";
     hibernation.url = "github:profiidev/hibernation/latest";
-    hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-secrets.url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
     flake-utils.url = "github:numtide/flake-utils";
