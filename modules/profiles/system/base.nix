@@ -23,6 +23,7 @@
     ../../system/services/btrfs.nix
     ../../system/services/font.nix
     ../../system/services/gpg.nix
+    ../../system/services/media.nix
     ../../system/services/security.nix
     ../../system/services/sshd.nix
     ../../system/services/time.nix
