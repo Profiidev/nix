@@ -5,4 +5,6 @@
     enable = true;
     mountOnMedia = true;
   };
+
+  services.gvfs.enable = true;
 }
