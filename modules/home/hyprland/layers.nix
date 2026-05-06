@@ -12,7 +12,7 @@
       "border_size 0, match:class ^(kitty)$"
       "float on, match:class ^(gnome-calculator)$"
       "float on, match:class ^(blueman-manager)$"
-      "float on, match:class ^(org.gnome.Nautilus)$"
+      #"float on, match:class ^(org.gnome.Nautilus)$"
       "float on, match:class ^(org.quickshell)$"
       # unreal engine editor
       "group unset, match:class ^(UnrealEditor)$, match:title ^\w*$"
