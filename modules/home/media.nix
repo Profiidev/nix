@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       program_options = {
-        file_manager = "${pkgs.nemo-with-extensions}/bin/nemo";
+        file_manager = "${pkgs.nautilus}/bin/nautilus";
       };
     };
   };
