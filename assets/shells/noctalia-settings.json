@@ -101,7 +101,9 @@
           "blacklist": [
             "nm-applet",
             "Bluetooth Enabled",
-            "Bluetooth Disabled"
+            "Bluetooth Disabled",
+            "udiskie",
+            "Wayscriber*"
           ],
           "chevronColor": "none",
           "colorizeIcons": false,
@@ -449,11 +451,11 @@
         "id": "brightness-card"
       },
       {
-        "enabled": true,
+        "enabled": false,
         "id": "weather-card"
       },
       {
-        "enabled": true,
+        "enabled": false,
         "id": "media-sysmon-card"
       }
     ]

@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ../../system/services/sunshine.nix
+    #../../system/services/sunshine.nix
   ];
 }
