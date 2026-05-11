@@ -43,6 +43,7 @@ in
       wrapped-helmfile
       wrapped-kubernetes-helm
       kubectl
+      kubevirt
       kustomize
       helm-ls
       pkgsUnstableNoCuda.devenv
