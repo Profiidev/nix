@@ -8,7 +8,7 @@
   ];
 
   services.wivrn = {
-    enable = true;
+    enable = false;
     openFirewall = true;
     autoStart = true;
     steam.importOXRRuntimes = true;
