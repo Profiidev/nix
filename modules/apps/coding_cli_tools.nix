@@ -65,6 +65,7 @@ in
           release-plz
           esp-generate
           espup
+          probe-rs-tools
           kdePackages.qtdeclarative
         ])
       else
