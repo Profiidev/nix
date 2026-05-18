@@ -33,6 +33,8 @@
       # c#
       dotnetCorePackages.sdk_11_0
       mono
+      # Protobuf
+      protobuf
     ]
     ++ (
       if isLinux then
