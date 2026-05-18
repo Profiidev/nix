@@ -53,6 +53,7 @@ in
                   "jellyfin"
                   "disk" # rpi-imager
                   "greeter" # dms greeter
+                  "plugdev" # for udev rules
                 ])
               ];
               hashedPasswordFile = lib.mkIf (

@@ -71,4 +71,10 @@ in
       else
         [ ]
     );
+
+  services.udev.packages = with pkgs; [
+    probe-rs-tools
+  ];
+
+  users.groups.plugdev = { };
 }
