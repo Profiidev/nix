@@ -17,6 +17,8 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
+
+    configType = "hyprlang";
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

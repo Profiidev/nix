@@ -17,7 +17,7 @@
     winetricks
     gamemode
 
-    inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
+    #inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
     inputs.proton.packages.${stdenv.hostPlatform.system}.default
   ];
 }
