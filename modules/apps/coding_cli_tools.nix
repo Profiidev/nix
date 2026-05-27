@@ -51,6 +51,7 @@ in
       gh
       espflash
       stackit-cli
+      awscli2
       pre-commit
       nodejs_24
       bun
