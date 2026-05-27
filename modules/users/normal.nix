@@ -90,6 +90,8 @@ in
       hostSpec = config.hostSpec;
     };
 
+    backupFileExtension = "bak";
+
     users = lib.foldl (
       acc: userSpec:
       acc

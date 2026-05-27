@@ -47,44 +47,7 @@
     };
   };
 
-  hostSpec.hyprlandGreeterMonitorConfig = ''
-    monitorv2 {
-      output=DP-1
-      mode=2560x1440@165Hz
-      position=0x0
-      #cm=hdr
-      #bitdepth=10
-      #supports_wide_color=1
-      #supports_hdr=1
-      #sdr_min_luminance = 0.005
-      #sdr_max_luminance = 250
-    }
-
-    monitorv2 {
-      output=HDMI-A-1
-      mode=1920x1080@60Hz
-      position=2560x0
-    }
-  '';
-
-  hostSpec.hyprlandMonitorConfig = [
-    {
-      output = "DP-1";
-      mode = "2560x1440@165Hz";
-      position = "0x0";
-      #cm = "hdr";
-      #bitdepth = 10;
-      #supports_wide_color = 1;
-      #supports_hdr = 1;
-      #sdr_min_luminance = 0.005;
-      #sdr_max_luminance = 250;
-    }
-    {
-      output = "HDMI-A-1";
-      mode = "1920x1080@60Hz";
-      position = "2560x0";
-    }
-  ];
+  hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
 
   home-manager.users.sddm = {
     home.file.".config/kwinoutputconfig.json".source = ./kwinoutputconfig.json;

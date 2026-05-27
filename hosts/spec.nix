@@ -76,14 +76,9 @@ in
       description = "Path to the nix-config directory";
     };
     hyprlandMonitorConfig = lib.mkOption {
-      type = lib.types.listOf lib.types.attrs;
-      default = [ ];
-      description = "Hyprland monitor configuration";
-    };
-    hyprlandGreeterMonitorConfig = lib.mkOption {
       type = lib.types.str;
       default = "";
-      description = "Hyprland greeter monitor configuration";
+      description = "Hyprland monitor configuration";
     };
     hyprlandHiDpiFix = lib.mkOption {
       type = lib.types.bool;

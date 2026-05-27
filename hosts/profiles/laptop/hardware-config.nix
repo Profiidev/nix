@@ -48,14 +48,7 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  hostSpec.hyprlandMonitorConfig = [
-    {
-      output = "eDP-1";
-      mode = "1920x1200@60Hz";
-      position = "0x0";
-      scale = "1.2";
-    }
-  ];
+  hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
 
   hostSpec.hyprlandHiDpiFix = true;
 }

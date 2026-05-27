@@ -38,10 +38,5 @@ in
     sqlite
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    # Layer Rules
-    layerrule = [
-      "no_anim on, match:namespace ^(vicinae)$"
-    ];
-  };
+  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/vicinae.lua;
 }

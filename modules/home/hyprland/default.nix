@@ -1,14 +1,37 @@
-{ hostSpec, ... }:
+{
+  hostSpec,
+  lib,
+  pkgs,
+  ...
+}:
 
+let
+  base = builtins.readFile ../../../assets/hyprland/config.lua;
+  io = builtins.readFile ../../../assets/hyprland/io.lua;
+  keybinds = builtins.readFile ../../../assets/hyprland/keybinds.lua;
+  layers = builtins.readFile ../../../assets/hyprland/layers.lua;
+  style = builtins.readFile ../../../assets/hyprland/style.lua;
+
+  highDpiFix = (
+    lib.optionalString hostSpec.hyprlandHiDpiFix ''
+      hl.config({
+          xwayland = {
+              force_zero_scaling = true;
+          };
+      })
+    ''
+  );
+in
 {
   imports = [
     ./noctalia.nix
-    ./io.nix
-    ./keybinds.nix
-    ./layers.nix
-    ./style.nix
     ./vicinae.nix
     ./wallpaper.nix
+  ];
+
+  home.packages = with pkgs; [
+    hyprpicker
+    wtype
   ];
 
   wayland.windowManager.hyprland = {
@@ -18,31 +41,15 @@
     package = null;
     portalPackage = null;
 
-    configType = "hyprlang";
-    settings = {
-      exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "systemctl --user start hyprland-session.target"
-      ];
-
-      # Miscellaneous
-      misc = {
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-      };
-
-      # Environment
-      env = [
-        "QT_QPA_PLATFORM,wayland"
-        "ELECTRON_OYONE_PLATFORM_HINT,auto"
-        "QT_QPA_PLATFORMTHEME,gtk3"
-        "QT_QPA_PLATFORMTHEME_QT6,gtk3"
-      ];
-
-      xwayland = {
-        force_zero_scaling = hostSpec.hyprlandHiDpiFix;
-      };
-    };
+    extraConfig = builtins.concatStringsSep "\n" [
+      base
+      hostSpec.hyprlandMonitorConfig
+      io
+      keybinds
+      layers
+      style
+      highDpiFix
+    ];
   };
 
   services.hyprpolkitagent.enable = true;

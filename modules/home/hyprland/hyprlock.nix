@@ -112,9 +112,5 @@
     };
   };
 
-  wayland.windowManager.hyprland.settings = {
-    bind = [
-      "ALT, L, exec, hyprlock"
-    ];
-  };
+  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/hyprlock.lua;
 }
