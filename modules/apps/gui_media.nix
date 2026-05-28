@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     discord
     spotify
+    pear-desktop
     karere
     chromium
     rpi-imager
