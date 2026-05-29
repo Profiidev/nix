@@ -3,7 +3,7 @@
 let
   script = pkgs.writeScriptBin "wallpaper.sh" ''
     #!/usr/bin/env bash
-    wget https://profidev.io/backend/services/apod/random -O wallpaper.png
+    wget https://profidev.io/api/services/apod/random -O wallpaper.png
 
     pwd=$(pwd)
 

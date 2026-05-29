@@ -6,7 +6,7 @@ let
     set -e
     pwd=$(pwd)
 
-    wget https://profidev.io/backend/services/apod/random -O wallpaper.png
+    wget https://profidev.io/api/services/apod/random -O wallpaper.png
 
     awww img $pwd/wallpaper.png --transition-type fade --transition-duration 0 --resize crop
   '';
