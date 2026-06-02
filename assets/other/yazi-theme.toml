@@ -21,7 +21,11 @@ count_selected = { fg = "#0a0e14", bg = "#c2a05c" }
 count_copied = { fg = "#0a0e14", bg = "#7e9350" }
 count_cut = { fg = "#5c6773", bg = "#a85361" }
 
-border_symbol = " "
+border_symbol = "│"
+border_style = { fg = "#5c6773" } # Matches your theme text color
+
+# Enable the full exterior bounding box frame
+layout = [{ type = "border", style = { fg = "#5c6773" } }]
 # : }}}
 
 

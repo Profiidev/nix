@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -11,6 +11,16 @@
     enable = true;
     enableFishIntegration = true;
     shellWrapperName = "y";
+
+    plugins = {
+      chmod = "${inputs.yazi-plugins}/chmod.yazi";
+      full-border = "${inputs.yazi-plugins}/full-border.yazi";
+      mount = "${inputs.yazi-plugins}/mount.yazi";
+      # TODO activate
+      vcs-files = "${inputs.yazi-plugins}/vcs-files.yazi";
+      smart-enter = "${inputs.yazi-plugins}/smart-enter.yazi";
+      starship = "${inputs.yazi-starship}";
+    };
 
     theme = (builtins.fromTOML (builtins.readFile ../../assets/other/yazi-theme.toml)) // {
       mgr = {
@@ -32,9 +42,43 @@
       };
     };
 
+    keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = [
+            "<Enter>"
+          ];
+          run = "plugin smart-enter";
+          desc = "Enter directories, open files";
+        }
+        {
+          on = [
+            "l"
+          ];
+          run = "plugin smart-enter";
+          desc = "Enter directories, open files";
+        }
+        {
+          on = [
+            "m"
+          ];
+          run = "plugin mount";
+          desc = "Manage mounts";
+        }
+        {
+          on = [
+            "c"
+            "m"
+          ];
+          run = "plugin chmod";
+          desc = "Chmod on selected files";
+        }
+      ];
+    };
+
     initLua = ''
-      -- require("full-border"):setup()
-      -- require("starship"):setup()
+      require("full-border"):setup()
+      require("starship"):setup()
     '';
   };
 }
