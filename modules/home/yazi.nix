@@ -1,6 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    ueberzugpp
+  ];
+
+  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../assets/hyprland/yazi.lua;
+
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
