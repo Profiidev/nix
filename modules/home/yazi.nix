@@ -12,6 +12,12 @@
     enableFishIntegration = true;
     shellWrapperName = "y";
 
+    theme = (builtins.fromTOML (builtins.readFile ../../assets/other/yazi-theme.toml)) // {
+      mgr = {
+        syntect_theme = ../../assets/ayu-dark-tmtheme.xml;
+      };
+    };
+
     settings = {
       mgr = {
         sort_by = "natural";
