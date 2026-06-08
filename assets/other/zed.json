@@ -268,60 +268,6 @@
     ],
     "GitHub Actions": [".github/workflows/*.yml", ".github/workflows/*.yaml"]
   },
-  "ssh_connections": [
-    {
-      "host": "own",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home"]
-        },
-        {
-          "paths": ["/home/profidev/Coding"]
-        },
-        {
-          "paths": ["/root"]
-        },
-        {
-          "paths": ["/srv"]
-        }
-      ]
-    },
-    {
-      "host": "bay",
-      "args": [],
-      "projects": []
-    },
-    {
-      "host": "home",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home/profidev/Coding/AI/testing/./"]
-        },
-        {
-          "paths": ["/home/profidev/Coding/Rust/centaurus/./"]
-        },
-        {
-          "paths": ["/home/profidev/Coding/games/smaug/./"]
-        },
-        {
-          "paths": ["/home/profidev/Coding/hyprland/extensions/./"]
-        },
-        {
-          "paths": ["/home/profidev/Coding/hyprland/extensions/extensions/zed-recent-projects/./"]
-        },
-        {
-          "paths": ["/home/profidev/Documents/Uni/parktikum/praktikums-bericht/./"]
-        }
-      ]
-    },
-    {
-      "host": "server",
-      "args": [],
-      "projects": []
-    }
-  ],
   "icon_theme": "Material Icon Theme",
   "agent": {
     "dock": "right",
