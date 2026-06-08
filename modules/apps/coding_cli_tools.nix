@@ -78,4 +78,11 @@ in
   ];
 
   users.groups.plugdev = { };
+
+  networking.firewall = {
+    allowedTCPPorts = [
+      1420
+      1421
+    ];
+  };
 }
