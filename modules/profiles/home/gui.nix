@@ -3,6 +3,7 @@
 {
   imports = [
     ../../home/hyprland
+    ../../home/code_editor.nix
     ../../home/browser.nix
     #../../home/gnome.nix
     ../../home/theme.nix
