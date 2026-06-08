@@ -8,6 +8,5 @@
 
   environment.systemPackages = with pkgs; [
     btrfs-assistant
-    btrfs-heatmap
   ];
 }

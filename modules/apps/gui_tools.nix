@@ -18,14 +18,10 @@
       piper
       gimp
       vlc
-      obsidian
       xkill
-      qjournalctl
     ]
     ++ lib.optionals isLinux [
-      deskflow
       wl-clipboard
-      networkmanagerapplet
     ];
 
   services = (

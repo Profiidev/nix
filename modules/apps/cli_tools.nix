@@ -10,16 +10,11 @@
   environment.systemPackages =
     with pkgs;
     [
-      cargo-binstall
-      cargo-dist
       cargo-expand
       cargo-generate
-      cargo-make
       cargo-nextest
-      #cargo-release
       cargo-tauri
       cargo-watch
-      cargo-bootimage
       trunk
       nano
       home-manager

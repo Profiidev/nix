@@ -3,14 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     virt-manager
-    distrobox
     libvirt
     virt-manager
     qemu
     uefi-run
-    lxc
     swtpm
-    #bottles
   ];
 
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];

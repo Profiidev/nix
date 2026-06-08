@@ -3,7 +3,6 @@
   config,
   inputs,
   pkgs,
-  pkgsStable,
   pkgsUnstableNoCuda,
   isLinux,
   ...
@@ -84,7 +83,6 @@ in
       inherit
         pkgs
         inputs
-        pkgsStable
         pkgsUnstableNoCuda
         isLinux
         ;

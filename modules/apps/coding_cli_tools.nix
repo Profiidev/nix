@@ -53,7 +53,7 @@ in
       stackit-cli
       awscli2
       pre-commit
-      nodejs_24
+      nodejs_26
       bun
       pnpm
       llvmPackages.lld

@@ -11,7 +11,6 @@
     ../../../modules/profiles/system/laptop.nix
 
     ../../../modules/profiles/apps/base.nix
-    ../../../modules/profiles/apps/gamedev.nix
     ../../../modules/profiles/apps/graphics.nix
     ../../../modules/profiles/apps/office.nix
 
