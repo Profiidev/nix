@@ -13,6 +13,7 @@
       cargo-expand
       cargo-generate
       cargo-nextest
+      cargo-llvm-cov
       cargo-tauri
       cargo-watch
       trunk
