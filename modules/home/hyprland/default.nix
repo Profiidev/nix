@@ -24,7 +24,7 @@ let
 in
 {
   imports = [
-    ./noctalia.nix
+    ./noctalia-legacy.nix
     ./vicinae.nix
     ./wallpaper.nix
   ];

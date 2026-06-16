@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.custom-nixpkgs.noctalia.homeModules.default
+    inputs.custom-nixpkgs.noctalia-leagcy.homeModules.default
   ];
 
   xdg.configFile."noctalia/colorschemes/GitHub Dark/GitHub Dark.json".source =
@@ -66,7 +66,7 @@
   services.hyprpolkitagent.enable = lib.mkForce false;
   services.kdeconnect.enable = true;
 
-  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/noctalia.lua;
+  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/noctalia-legacy.lua;
 
   programs.noctalia-shell = {
     enable = true;
