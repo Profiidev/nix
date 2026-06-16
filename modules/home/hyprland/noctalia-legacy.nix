@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.custom-nixpkgs.noctalia-leagcy.homeModules.default
+    inputs.custom-nixpkgs.noctalia-legacy.homeModules.default
   ];
 
   xdg.configFile."noctalia/colorschemes/GitHub Dark/GitHub Dark.json".source =

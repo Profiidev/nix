@@ -40,7 +40,7 @@ in
       minikube
       k9s
       #wrapped-azure-cli
-      wrapped-helmfile
+      #wrapped-helmfile
       wrapped-kubernetes-helm
       kubectl
       kubevirt
