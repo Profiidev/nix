@@ -34,7 +34,6 @@
     host = {
       enable = true;
       enableExtensionPack = true;
-      package = pkgsUnstableNoCuda.virtualbox;
     };
   };
 

@@ -15,7 +15,7 @@ let
 in
 {
   imports = [
-    inputs.nix-index-database.${platformModules}.nix-index
+    inputs.nix-index-database.${platformModules}.default
   ];
 
   programs =
@@ -40,11 +40,11 @@ in
     };
 
   environment.systemPackages = with pkgs; [
-    nix-index
     nil
     nurl
     nixd
     nixfmt
+    mcp-nixos
   ];
 
   system.extraDependencies =

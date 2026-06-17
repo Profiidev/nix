@@ -31,6 +31,14 @@
   "relative_line_numbers": "disabled",
   "hover_popover_delay": 300,
   "auto_update": false,
+  "context_servers": {
+    "nixos": {
+      "enabled": true,
+      "remote": false,
+      "command": "mcp-nixos",
+      "args": []
+    }
+  },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
