@@ -25,6 +25,7 @@ in
 {
   imports = [
     ./noctalia-legacy.nix
+    #./noctalia.nix
     ./vicinae.nix
     ./wallpaper.nix
   ];
