@@ -1,0 +1,152 @@
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    center = [ "clock", "media" ]
+    end = [ "tray", "sysmon", "bluetooth", "network", "volume", "battery", "notifications", "control-center" ]
+    margin_edge = 0
+    margin_ends = 0
+    padding = 4
+    radius = 0
+    start = [ "launcher", "workspaces", "active_window" ]
+
+[calendar]
+enabled = true
+
+[desktop_widgets]
+enabled = false
+
+[dock]
+auto_hide = true
+background_opacity = 0.99999997764825821
+enabled = true
+icon_size = 40
+reserve_space = false
+show_dots = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 660
+
+[location]
+address = "Bad Aibling, Germany"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 800.0
+    cy = 877.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[notification]
+layer = "overlay"
+
+[osd]
+background_opacity = 0.99999997764825821
+position = "bottom_center"
+
+    [osd.kinds]
+    media = false
+
+[shell]
+polkit_agent = true
+settings_show_advanced = true
+
+    [shell.panel]
+    open_near_click_control_center = true
+    open_near_click_session = true
+
+[theme]
+builtin = "Ayu"
+
+[wallpaper]
+enabled = false
+
+[widget.active_window]
+capsule = true
+max_length = 145
+
+[widget.battery]
+capsule = true
+capsule_padding = 5.0
+
+[widget.bluetooth]
+capsule = true
+capsule_padding = 5.0
+
+[widget.clock]
+capsule = true
+format = "{:%H:%M %a, %b %d}"
+tooltip_format = "{:%H:%M %a, %b %d}"
+vertical_format = "{:%H %M - %d %b}"
+
+[widget.control-center]
+capsule = true
+capsule_padding = 5.0
+
+[widget.launcher]
+capsule = true
+capsule_padding = 5.0
+
+[widget.media]
+capsule = true
+hide_when_no_media = true
+
+[widget.network]
+capsule = true
+capsule_padding = 5.0
+show_label = false
+
+[widget.notifications]
+capsule = true
+capsule_padding = 5.0
+
+[widget.sysmon]
+capsule = true
+show_label = false
+
+[widget.tray]
+capsule = true
+
+[widget.volume]
+capsule = true
+capsule_padding = 5.0
+show_label = false
+
+[widget.workspaces]
+capsule = true
+labels_only_when_occupied = true
