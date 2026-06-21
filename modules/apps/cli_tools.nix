@@ -15,6 +15,7 @@
       cargo-nextest
       cargo-llvm-cov
       cargo-tauri
+      tauri-driver
       cargo-watch
       trunk
       nano
