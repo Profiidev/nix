@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstableNoCuda, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -32,7 +32,7 @@
 
   virtualisation.virtualbox = {
     host = {
-      enable = true;
+      enable = false;
       enableExtensionPack = true;
     };
   };
