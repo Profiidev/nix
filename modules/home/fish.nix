@@ -65,6 +65,7 @@
       ff = "fastfetch --config ~/.config/fastfetch/fastfetch.jsonc";
       stc = "sudo systemd-cryptenroll --wipe-slot=tpm2";
       ste = "sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=\"0+2+3+7+15:sha256=0000000000000000000000000000000000000000000000000000000000000000\" --tpm2-with-pin=yes";
+      stm = "sudo systemd-cryptenroll --tpm2-device=auto --tpm2-with-pin=true --tpm2-pcrlock=/var/lib/systemd/pcrlock.json";
     };
 
     functions = {

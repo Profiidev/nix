@@ -19,6 +19,18 @@
     autoGenerateKeys.enable = true;
     autoEnrollKeys.enable = true;
     autoEnrollKeys.autoReboot = true;
+
+    configurationLimit = 8;
+    measuredBoot = {
+      enable = true;
+      pcrs = [
+        0
+        2
+        3
+        4
+        7
+      ];
+    };
   };
 
   boot.plymouth.enable = true;
