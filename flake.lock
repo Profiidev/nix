@@ -1021,22 +1021,6 @@
         "type": "github"
       }
     },
-    "keyring-unlocker-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1766193683,
-        "narHash": "sha256-JWNdFC9X597HzyNKcYIp09dZFveuaj+/+MvqU8YG3z4=",
-        "owner": "recolic",
-        "repo": "gnome-keyring-yubikey-unlock",
-        "rev": "8e357e7bbeed779c1776b89ccc32c27acd654907",
-        "type": "github"
-      },
-      "original": {
-        "owner": "recolic",
-        "repo": "gnome-keyring-yubikey-unlock",
-        "type": "github"
-      }
-    },
     "lanzaboote": {
       "inputs": {
         "crane": "crane_2",
@@ -1669,7 +1653,6 @@
         "flake-utils": "flake-utils_3",
         "hibernation": "hibernation",
         "home-manager": "home-manager",
-        "keyring-unlocker-src": "keyring-unlocker-src",
         "lanzaboote": "lanzaboote",
         "nix-citizen": "nix-citizen",
         "nix-darwin": "nix-darwin",
@@ -1681,9 +1664,7 @@
         "proton": "proton",
         "rust-overlay": "rust-overlay_4",
         "silentSDDM": "silentSDDM",
-        "sops-nix": "sops-nix",
-        "yazi-plugins": "yazi-plugins",
-        "yazi-starship": "yazi-starship"
+        "sops-nix": "sops-nix"
       }
     },
     "rust-analyzer-src": {
@@ -2187,38 +2168,6 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
-        "type": "github"
-      }
-    },
-    "yazi-plugins": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1781931525,
-        "narHash": "sha256-rgelX8Aj6iPYzk3NZN5NLMiJ/dQKJD2BKXsrK6xXdkc=",
-        "owner": "yazi-rs",
-        "repo": "plugins",
-        "rev": "38efe09c270162f1b0dfb6020e021a5b64bdc735",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yazi-rs",
-        "repo": "plugins",
-        "type": "github"
-      }
-    },
-    "yazi-starship": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1781463098,
-        "narHash": "sha256-I21to4cxlszRpsb58cvsmwX7VglQBSJC0rrsFIltzC8=",
-        "owner": "Rolv-Apneseth",
-        "repo": "starship.yazi",
-        "rev": "159eaba5b5052bf78ff6cfbfe4e527b946818c82",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Rolv-Apneseth",
-        "repo": "starship.yazi",
         "type": "github"
       }
     }

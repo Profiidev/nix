@@ -62,11 +62,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    keyring-unlocker-src = {
-      url = "github:recolic/gnome-keyring-yubikey-unlock";
-      flake = false;
-    };
-
     nix-citizen = {
       url = "github:LovingMelody/nix-citizen?rev=cb5c54868dfca5377f0fea5c983aef833acdd4b5";
       inputs = {
@@ -89,16 +84,6 @@
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    yazi-plugins = {
-      url = "github:yazi-rs/plugins";
-      flake = false;
-    };
-
-    yazi-starship = {
-      url = "github:Rolv-Apneseth/starship.yazi";
-      flake = false;
     };
   };
 

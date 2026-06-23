@@ -13,7 +13,6 @@
     ../../home/sops.nix
     ../../home/ssh.nix
     ../../home/starship.nix
-    ../../home/yazi.nix
     ../../home/zoxide.nix
   ];
 
