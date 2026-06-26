@@ -26,4 +26,8 @@ in
     capabilities = "cap_setuid+ep";
     source = lib.getExe' uiPackage "gsr-global-hotkeys";
   };
+
+  environment.etc."xdg/autostart/gpu-screen-recorder.desktop" = {
+    source = "${pkgs.gpu-screen-recorder-ui}/share/applications/gpu-screen-recorder.desktop";
+  };
 }
