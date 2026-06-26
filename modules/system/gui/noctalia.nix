@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     noctalia
-    gpu-screen-recorder
     nautilus
     kdePackages.qttools
   ];
@@ -24,8 +23,6 @@
   };
 
   services.hypridle.enable = lib.mkForce false;
-
-  programs.gpu-screen-recorder.enable = true;
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
