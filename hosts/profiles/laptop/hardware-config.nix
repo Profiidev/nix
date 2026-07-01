@@ -38,6 +38,7 @@
     "resume_offset=533760"
   ];
   hardware.cpu.intel.updateMicrocode = true;
+  boot.lanzaboote.measuredBoot.enable = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

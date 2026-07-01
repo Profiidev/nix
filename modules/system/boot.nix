@@ -22,7 +22,6 @@
 
     configurationLimit = 8;
     measuredBoot = {
-      enable = true;
       pcrs = [
         0
         2
