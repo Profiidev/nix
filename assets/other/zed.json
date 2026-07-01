@@ -12,7 +12,8 @@
     "tree_view": false
   },
   "edit_predictions": {
-    "provider": "zed"
+    "mode": "eager",
+    "provider": "copilot"
   },
   "completions": {
     "words_min_length": 1
