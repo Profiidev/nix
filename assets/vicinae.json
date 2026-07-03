@@ -44,6 +44,11 @@
           "alias": "g"
         }
       }
+    },
+    "@tonka3000/home-assistant-vicinae-extension": {
+      "preferences": {
+        "instance": "https://ha.profidev.io"
+      }
     }
   }
 }

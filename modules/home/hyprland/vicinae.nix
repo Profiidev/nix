@@ -6,7 +6,6 @@
 }:
 
 let
-  system = pkgs.stdenv.hostPlatform.system;
   vicinaeChromiumHost = pkgs.writeText "com.vicinae.vicinae.json" (
     builtins.toJSON {
       name = "com.vicinae.vicinae";
@@ -32,24 +31,30 @@ in
       autoStart = true;
     };
 
-    extensions = with inputs.custom-nixpkgs.vicinae-extensions.packages.${system}; [
-      nix
-      power-profile
-      it-tools
-      port-killer
-      bluetooth
+    extensions = with pkgs; [
+      vicinae-nix
+      vicinae-power-profile
+      vicinae-it-tools
+      vicinae-port-killer
+      vicinae-bluetooth
       #systemd
-      hypr-keybinds
-      vscode-recents
-      zed-recents
-      protondb-search
-      jetbrains-recent-projects
-      hyprland-monitors
-      hypr
-      timer
-      npm
-      pkgs.google-vicinae-extension
-      pkgs.spotify-player-vicinae-extension
+      vicinae-hypr-keybinds
+      vicinae-vscode-recents
+      vicinae-zed-recents
+      vicinae-protondb-search
+      vicinae-jetbrains-recent-projects
+      vicinae-hyprland-monitors
+      vicinae-hypr
+      vicinae-timer
+      vicinae-npm
+      google-vicinae-extension
+      spotify-player-vicinae-extension
+      whois-vicinae-extension
+      random-data-generator
+      qrcode-generator
+      home-assistant-vicinae-extension
+      can-i-use
+      lucide-icons-search
     ];
   };
 
