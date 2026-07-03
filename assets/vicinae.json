@@ -1,25 +1,20 @@
 {
+  "$schema": "https://vicinae.com/schemas/config.json",
   "close_on_focus_loss": true,
   "pop_to_root_on_close": true,
+  "font": {
+    "rendering": "qt",
+    "normal": {}
+  },
   "theme": {
-    "dark": {
-      "name": "ayu-dark"
-    },
     "light": {
       "name": "ayu-light"
+    },
+    "dark": {
+      "name": "ayu-dark"
     }
   },
   "providers": {
-    "@mattisssa/spotify-player-vicinae-extension-0": {
-      "entrypoints": {
-        "findLyrics": {
-          "enabled": false
-        },
-        "generatePlaylist": {
-          "enabled": false
-        }
-      }
-    },
     "@knoopx/nix-0": {
       "entrypoints": {
         "home-manager-options": {
@@ -30,6 +25,16 @@
         },
         "packages": {
           "alias": "p"
+        }
+      }
+    },
+    "@mattisssa/spotify-player-vicinae-extension-0": {
+      "entrypoints": {
+        "findLyrics": {
+          "enabled": false
+        },
+        "generatePlaylist": {
+          "enabled": false
         }
       }
     },
