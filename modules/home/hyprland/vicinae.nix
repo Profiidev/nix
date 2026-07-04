@@ -55,6 +55,7 @@ in
       home-assistant-vicinae-extension
       can-i-use
       lucide-icons-search
+      search-mdn
     ];
   };
 
