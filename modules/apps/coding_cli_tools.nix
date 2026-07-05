@@ -47,7 +47,6 @@ in
       kustomize
       helm-ls
       pkgsUnstableNoCuda.devenv
-      sccache
       gh
       espflash
       stackit-cli
