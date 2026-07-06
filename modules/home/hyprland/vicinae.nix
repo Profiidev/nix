@@ -36,7 +36,6 @@ in
       vicinae-power-profile
       vicinae-it-tools
       vicinae-port-killer
-      vicinae-bluetooth
       #systemd
       vicinae-hypr-keybinds
       vicinae-vscode-recents
