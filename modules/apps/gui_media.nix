@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     discord
+    cinny-desktop
     spotify
     karere
     chromium
