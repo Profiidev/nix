@@ -22,6 +22,7 @@
     ]
     ++ lib.optionals isLinux [
       wl-clipboard
+      claude-desktop
     ];
 
   services = (
