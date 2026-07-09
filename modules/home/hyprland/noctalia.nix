@@ -11,7 +11,6 @@
   ];
 
   home.packages = with pkgs; [
-    #hyprshot
     adw-gtk3
     nwg-look
     glib
@@ -34,7 +33,6 @@
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
     GTK_THEME = "adw-gtk3";
-    HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
   };
 
   dconf.settings = {
@@ -54,7 +52,13 @@
     package = pkgs.noctalia;
     systemd.enable = true;
 
-    settings = fromTOML (builtins.readFile ../../../assets/shells/noctalia-settings.toml);
+    settings =
+      lib.recursiveUpdate (fromTOML (builtins.readFile ../../../assets/shells/noctalia-settings.toml))
+        {
+          shell = {
+            avatar_path = ../../../assets/images/profidev.jpeg;
+          };
+        };
   };
 
   home.activation = {

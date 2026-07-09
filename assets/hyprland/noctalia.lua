@@ -1,4 +1,4 @@
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
 hl.bind("ALT + L", hl.dsp.exec_cmd("noctalia-shell ipc call lockScreen lock"))
 
 -- Repeatable and Locked Binds (e = repeat, l = works when locked)
