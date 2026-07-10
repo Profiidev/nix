@@ -29,6 +29,10 @@
       gradle
       # Protobuf
       protobuf
+      # Odin
+      odin
+      # Gleam
+      gleam
     ]
     ++ (
       if isLinux then
