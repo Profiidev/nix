@@ -33,6 +33,8 @@
       odin
       # Gleam
       gleam
+      erlang
+      rebar
     ]
     ++ (
       if isLinux then
