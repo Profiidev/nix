@@ -164,7 +164,7 @@ position_vertical = "bottom_center"
     media = false
 
 [shell]
-avatar_path = "/home/profidev/Downloads/7eb702cee63aeac020a755ac694b7ed1.jpeg"
+avatar_path = "/nix/store/d1ys2ri119q9pw4nl4gc8iv9ayx2y209-profidev.jpeg"
 clipboard_enabled = false
 launch_apps_as_systemd_services = true
 polkit_agent = true
@@ -298,6 +298,7 @@ show_label = false
 
 [widget.tray]
 capsule = true
+hidden = [ "nm-applet", "udiskie", "wayscriber" ]
 
 [widget.volume]
 capsule = true

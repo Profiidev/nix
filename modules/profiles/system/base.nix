@@ -14,6 +14,7 @@
     ../../system/gui/noctalia-legacy.nix
     #../../system/gui/noctalia.nix
     ../../system/gui/sddm.nix
+    #../../system/gui/noctalia-greeter.nix
 
     ../../system/hardware/audio.nix
     ../../system/hardware/bluetooth.nix
