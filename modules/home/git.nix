@@ -1,7 +1,10 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [ git ];
+  home.packages = with pkgs; [
+    git
+    delta
+  ];
 
   programs.git = {
     enable = true;
@@ -54,6 +57,23 @@
 
       submodule = {
         recurse = true;
+      };
+
+      core = {
+        pager = "delta";
+      };
+
+      interactive = {
+        diffFilter = "delta --color-only";
+      };
+
+      delta = {
+        navigate = true;
+        dark = true;
+      };
+
+      merge = {
+        conflictstyle = "zdiff3";
       };
     };
   };
