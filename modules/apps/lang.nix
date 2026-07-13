@@ -33,7 +33,7 @@
       odin
       # Gleam
       gleam
-      erlang
+      beamPackages.erlang
       rebar
     ]
     ++ (

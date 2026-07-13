@@ -3,7 +3,6 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://cache.garnix.io"
       "https://nix-community.cachix.org"
       "https://nix-citizen.cachix.org"
       "https://projects.cache.profidev.io"
@@ -12,7 +11,6 @@
       "http://192.168.178.22:5000"
     ];
     extra-trusted-public-keys = [
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
       "profidev.cachix.org:tg4xEn64UMdvA5jJYT8omo/CQHk8+spLyeGT2YAku70="
