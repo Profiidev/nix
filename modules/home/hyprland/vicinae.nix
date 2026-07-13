@@ -25,6 +25,7 @@ in
 
   programs.vicinae = {
     enable = true;
+    package = pkgs.vicinae-with-soulver;
 
     systemd = {
       enable = true;

@@ -49,6 +49,12 @@
       "preferences": {
         "instance": "https://ha.profidev.io"
       }
+    },
+    "calculator": {
+      "preferences": {
+        "backend": "soulver-core",
+        "refreshRatesOnStartup": true
+      }
     }
   }
 }
