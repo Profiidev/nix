@@ -44,6 +44,13 @@
       device = "/dev/disk/by-id/nvme-KINGSTON_SKC2500M81000G_50026B768523BA97-part3";
       fsType = "ntfs";
       mountPoint = "/mnt/windows";
+      options = [
+        "nofail"
+        "noauto"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=60"
+        "x-systemd.device-timeout=5s"
+      ];
     };
   };
 
