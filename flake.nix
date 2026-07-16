@@ -8,7 +8,7 @@
       "https://projects.cache.profidev.io"
       "https://hyprland.cachix.org"
       "https://vicinae.cachix.org"
-      "http://192.168.178.22:5000"
+      "http://192.168.178.22:80"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
