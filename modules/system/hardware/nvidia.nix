@@ -6,6 +6,11 @@
     egl-wayland
     cudaPackages.cuda_nvrtc
     nvidia-docker
+    nvidia-container-toolkit
+  ];
+
+  programs.nix-ld.libraries = [
+    config.boot.kernelPackages.nvidia_x11.lib32
   ];
 
   #hardware.nvidia-container-toolkit.enable = true;
