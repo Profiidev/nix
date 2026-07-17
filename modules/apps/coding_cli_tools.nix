@@ -34,6 +34,7 @@ in
       maven
       sea-orm-cli
       wasm-pack
+      ldproxy
       pkg-config
       gobject-introspection
       terraform
