@@ -12,7 +12,7 @@ order = [ "default" ]
     margin_ends = 0
     padding = 4
     radius = 0
-    start = [ "launcher", "workspaces", "active_window" ]
+    start = [ "launcher", "taskbar", "active_window" ]
     thickness = 29
 
         [[bar.default.capsule_group]]
@@ -21,7 +21,7 @@ order = [ "default" ]
         id = "g1"
         members = [ "cpu", "temp", "ram", "network_rx", "network_tx", "sysmon" ]
         opacity = 1.0
-        padding = 6.0
+        padding = 8.0
 
 [brightness]
 sync_all_monitors = true
@@ -186,40 +186,57 @@ settings_show_advanced = true
     [shell.screen_corners]
     enabled = true
 
-    [[shell.session.actions]]
-    action = "lock"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "1"
-    variant = "default"
+    [shell.session]
+    grid = true
+    grid_columns = 1
 
-    [[shell.session.actions]]
-    action = "logout"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "2"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "lock_and_suspend"
-    countdown_seconds = 0.0
-    enabled = false
-    shortcut = "3"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "reboot"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "4"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = false
+        shortcut = "3"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "shutdown"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "5"
-    variant = "destructive"
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
+
+[system.monitor]
+cpu_temp_activity_threshold = 80
+cpu_temp_critical_threshold = 90
+cpu_usage_activity_threshold = 80
+gpu_temp_activity_threshold = 75
+gpu_usage_activity_threshold = 80
+gpu_usage_critical_threshold = 90
+gpu_vram_activity_threshold = 80
+net_rx_activity_threshold = 100.0
+net_rx_critical_threshold = 100.0
+net_tx_activity_threshold = 100.0
+net_tx_critical_threshold = 100.0
 
 [theme]
 builtin = "Ayu"
@@ -231,16 +248,19 @@ enabled = false
 
 [widget.active_window]
 capsule = true
+icon_size = 18
 max_length = 145
 title_scroll = "on_hover"
 
 [widget.battery]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
+scale = 1.05
 
 [widget.bluetooth]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
+scale = 1.05
 
 [widget.clock]
 capsule = true
@@ -250,15 +270,17 @@ vertical_format = "{:%H %M - %d %b}"
 
 [widget.control-center]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
+scale = 1.05
 
 [widget.cpu]
 show_label = false
 
 [widget.launcher]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
 glyph = "rocket"
+scale = 1.05
 
 [widget.media]
 capsule = true
@@ -268,7 +290,8 @@ title_scroll = "on_hover"
 
 [widget.network]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
+scale = 1.05
 show_label = false
 
 [widget.network_rx]
@@ -279,11 +302,14 @@ show_label = false
 
 [widget.notifications]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
+scale = 1.05
 
 [widget.privacy]
 capsule = true
+capsule_padding = 4
 hide_inactive = true
+scale = 1.05
 
 [widget.ram]
 show_label = false
@@ -293,16 +319,26 @@ capsule = true
 show_label = false
 stat = "disk_pct"
 
+[widget.taskbar]
+capsule_radius = "auto"
+focused_output_only = true
+font_weight = 700
+group_by_workspace = true
+hide_empty_workspaces = true
+
 [widget.temp]
 show_label = false
 
 [widget.tray]
 capsule = true
+capsule_padding = 4
 hidden = [ "nm-applet", "udiskie", "wayscriber" ]
+scale = 1.05
 
 [widget.volume]
 capsule = true
-capsule_padding = 5.0
+capsule_padding = 4
+scale = 1.05
 show_label = false
 
 [widget.workspaces]
