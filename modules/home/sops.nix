@@ -2,7 +2,6 @@
   inputs,
   hostSpec,
   config,
-  lib,
   ...
 }:
 
@@ -63,17 +62,9 @@ in
         }) generalKeys
       )
       // {
-        "yubikey/pins/${userSpec.secrets_user}" = lib.mkIf (userSpec.use_yubikey) {
-          sopsFile = "${sopsFolder}/shared.yaml";
-        };
-
-        "keyring_keys/${userSpec.secrets_user}" = lib.mkIf (userSpec.use_yubikey) {
+        ha_token = {
           sopsFile = "${sopsFolder}/shared.yaml";
         };
       };
   };
-
-  sops.templates."yubikey_pin".content = ''
-    PIN="${config.sops.placeholder."yubikey/pins/${userSpec.secrets_user}"}"
-  '';
 }

@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   lib,
+  config,
   ...
 }:
 
@@ -46,6 +47,19 @@
   services.kdeconnect.enable = true;
 
   wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/noctalia.lua;
+
+  sops.templates."noctalia-settings" = {
+    content = ''
+      [plugin_settings."pozzoo/hassio"]
+      ha_token = "${config.sops.placeholder.ha_token}"
+    '';
+
+    path = "${config.home.homeDirectory}/.config/noctalia/settings.toml";
+  };
+
+  systemd.user.services.noctalia.Unit.X-Restart-Triggers = [
+    config.sops.templates."noctalia-settings".path
+  ];
 
   programs.noctalia = {
     enable = true;
