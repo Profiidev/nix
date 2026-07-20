@@ -42,6 +42,7 @@
           # Android
           android-tools
           scrcpy
+          escrcpy
           sdkmanager
           virtualgl
         ])
