@@ -5,6 +5,7 @@
     noctalia
     nautilus
     kdePackages.qttools
+    socat
   ];
 
   imports = [

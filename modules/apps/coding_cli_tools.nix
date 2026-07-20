@@ -59,6 +59,7 @@ in
       llvmPackages.lld
       wasm-bindgen-cli
       clang.cc
+      socat
     ]
     ++ (
       if isLinux then
