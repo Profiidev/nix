@@ -41,6 +41,7 @@
         (with pkgs; [
           # Android
           android-tools
+          scrcpy
           sdkmanager
           virtualgl
         ])
