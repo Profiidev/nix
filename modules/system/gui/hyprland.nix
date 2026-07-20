@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   imports = [ inputs.custom-nixpkgs.hyprland.nixosModules.default ];
@@ -30,10 +35,34 @@
 
   xdg.portal = {
     enable = true;
+    extraPortals = with pkgs; [
+      config.programs.hyprland.portalPackage
+      xdg-desktop-portal-gtk
+      hypr-kdeconnect-fix
+    ];
 
     config = {
+      Hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+        "org.freedesktop.impl.portal.ScreenCast" = [
+          "hyprland"
+        ];
+        "org.freedesktop.impl.portal.Screenshot" = [
+          "hyprland"
+        ];
+        "org.freedesktop.impl.portal.GlobalShortcuts" = [
+          "hyprland"
+        ];
+        "org.freedesktop.impl.portal.RemoteDesktop" = [
+          "hypr-kdeconnect"
+        ];
+      };
+
       common = {
-        default = [ "hyprland" ];
+        default = [ "gtk" ];
       };
     };
   };
