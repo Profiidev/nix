@@ -11,6 +11,7 @@ order = [ "default" ]
         "privacy",
         "tray",
         "group:g1",
+        "widget",
         "nix-monitor",
         "status",
         "bluetooth",
@@ -186,8 +187,12 @@ ha_url = "https://ha.profidev.io"
 shortcut_entity_1 = "button.wake_on_lan_a8_a1_59_ad_3b_3b"
 shortcut_entity_2 = "input_button.benjamin_pc_aus"
 
+[plugin_settings."profidev/hypr-screen-mirror"]
+panel_open_near_click = true
+panel_placement = "attached"
+
 [plugins]
-enabled = [ "pozzoo/hassio", "avivbintangaringga/nix-monitor" ]
+enabled = [ "pozzoo/hassio", "avivbintangaringga/nix-monitor", "profidev/hypr-screen-mirror" ]
 
 [shell]
 avatar_path = "/nix/store/d1ys2ri119q9pw4nl4gc8iv9ayx2y209-profidev.jpeg"
@@ -382,6 +387,12 @@ capsule = true
 capsule_padding = 4
 scale = 1.05
 show_label = false
+
+[widget.widget]
+capsule = true
+capsule_padding = 4
+scale = 1.05
+type = "profidev/hypr-screen-mirror:widget"
 
 [widget.workspaces]
 capsule = true
