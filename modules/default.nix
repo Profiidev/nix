@@ -12,7 +12,7 @@ let
           name = lib.removeSuffix ".nix" rawName;
           fullPath = path + "/${rawName}";
         in
-        if (builtins.elem rawName skipPaths == false) then
+        if (builtins.elem fullPath skipPaths == false) then
           {
             "${name}" = if value != "directory" then import fullPath else constructModules fullPath;
           }

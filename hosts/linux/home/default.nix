@@ -4,32 +4,30 @@
   imports = [
     ./hardware-config.nix
     ../../spec.nix
-    
-    self.modules.system.boot
 
-    self.modules.system.boot
-    self.modules.system.firmware
-    self.modules.system.font
-    self.modules.system.general
-    self.modules.system.kernel
-    self.modules.system.locale
-    self.modules.system.sops
+    self.modules.system.no-sleep
 
-    # Profiles
-    ../../../modules/profiles/system/base.nix
-    ../../../modules/profiles/system/coding.nix
-    ../../../modules/profiles/system/pc.nix
+    self.modules.services.gui.nvidia
+    self.modules.services.gui.flatpak
+    self.modules.services.core.cooling
+    self.modules.services.network.nix-serve
+    self.modules.services.media.gpu-screen-recorder
+    self.modules.services.media.jellyfin
+    self.modules.services.media.ollama
+    self.modules.services.coding.virtualization
 
-    ../../../modules/profiles/apps/base.nix
-    ../../../modules/profiles/apps/gaming.nix
-    ../../../modules/profiles/apps/graphics.nix
-    ../../../modules/profiles/apps/office.nix
+    self.modules.apps.coding.gamedev
+    self.modules.apps.coding.graphics_coding
+    self.modules.apps.creative."3d"
+    self.modules.apps.creative."3d_print"
+    self.modules.apps.gaming.games
+    self.modules.apps.tools.betaflight
+    self.modules.apps.tools.profiling
 
-    # Extra
-    ../../../modules/apps/ai.nix
-    ../../../modules/apps/gamedev.nix
-    ../../../modules/apps/jellyfin.nix
-    ../../../modules/apps/tailscale.nix
+    ../../profiles/general.nix
+    ../../profiles/system.nix
+    ../../profiles/services.nix
+    ../../profiles/system.nix
   ];
 
   hostSpec = {

@@ -1,11 +1,11 @@
-{ ... }:
+{ self, ... }:
 
 {
   imports = [
-    ../../modules/home/fastfetch.nix
-    ../../modules/home/shell.nix
-    ../../modules/home/fish.nix
-    ../../modules/home/starship.nix
-    ../../modules/home/zoxide.nix
+    self.modules.home.cli.fastfetch
+    self.modules.home.cli.fish
+    self.modules.home.cli.shell
+    self.modules.home.cli.starship
+    self.modules.home.cli.zoxide
   ];
 }

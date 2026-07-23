@@ -1,24 +1,24 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  self,
+  ...
+}:
 
 {
   imports = [
     ./hardware-config.nix
-
     ../../spec.nix
 
-    # Profiles
-    ../../../modules/profiles/system/base.nix
-    ../../../modules/profiles/system/laptop.nix
+    self.modules.services.core.power
+    self.modules.services.gui.igpu
+    self.modules.services.media.miracast
+    self.modules.services.network.cloudflare
 
-    ../../../modules/profiles/apps/base.nix
-    ../../../modules/profiles/apps/graphics.nix
-    ../../../modules/profiles/apps/office.nix
-
-    # Extra
-    ../../../modules/system/services/docker.nix
-    ../../../modules/apps/tailscale.nix
-    ../../../modules/apps/cloudflare.nix
-    ../../../modules/apps/steam.nix
+    ../../profiles/general.nix
+    ../../profiles/system.nix
+    ../../profiles/services.nix
+    ../../profiles/system.nix
   ];
 
   hostSpec = {
