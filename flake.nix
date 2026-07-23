@@ -97,6 +97,8 @@
       };
     in
     {
+      modules = import ./modules { lib = nixpkgs-unstable.lib; };
+
       nixosConfigurations = builtins.listToAttrs (
         map (host: {
           name = host;
@@ -105,9 +107,9 @@
               inherit host;
               isLinux = true;
             };
-            modules = [ ./hosts/profiles/${host} ];
+            modules = [ ./hosts/linux/${host} ];
           };
-        }) (nixpkgs-unstable.lib.attrNames (builtins.readDir ./hosts/profiles))
+        }) (nixpkgs-unstable.lib.attrNames (builtins.readDir ./hosts/linux))
       );
 
       # https://nix-darwin.github.io/nix-darwin/manual/index.html
