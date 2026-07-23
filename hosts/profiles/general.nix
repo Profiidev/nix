@@ -1,8 +1,8 @@
 { self, ... }:
 
 {
-  imports = [
-    self.modules.inputs
-    self.modules.users.normal
+  imports = with self.modules; [
+    inputs
+    users.normal
   ];
 }

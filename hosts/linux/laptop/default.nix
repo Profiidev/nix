@@ -6,14 +6,14 @@
 }:
 
 {
-  imports = [
+  imports = with self.modules; [
     ./hardware-config.nix
     ../../spec.nix
 
-    self.modules.services.core.power
-    self.modules.services.gui.igpu
-    self.modules.services.media.miracast
-    self.modules.services.network.cloudflare
+    services.core.power
+    services.gui.igpu
+    services.media.miracast
+    services.network.cloudflare
 
     ../../profiles/general.nix
     ../../profiles/system.nix

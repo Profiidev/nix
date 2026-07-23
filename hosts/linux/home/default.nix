@@ -1,28 +1,28 @@
 { inputs, self, ... }:
 
 {
-  imports = [
+  imports = with self.modules; [
     ./hardware-config.nix
     ../../spec.nix
 
-    self.modules.system.no-sleep
+    system.no-sleep
 
-    self.modules.services.gui.nvidia
-    self.modules.services.gui.flatpak
-    self.modules.services.core.cooling
-    self.modules.services.network.nix-serve
-    self.modules.services.media.gpu-screen-recorder
-    self.modules.services.media.jellyfin
-    self.modules.services.media.ollama
-    self.modules.services.coding.virtualization
+    services.gui.nvidia
+    services.gui.flatpak
+    services.core.cooling
+    services.network.nix-serve
+    services.media.gpu-screen-recorder
+    services.media.jellyfin
+    services.media.ollama
+    services.coding.virtualization
 
-    self.modules.apps.coding.gamedev
-    self.modules.apps.coding.graphics_coding
-    self.modules.apps.creative."3d"
-    self.modules.apps.creative."3d_print"
-    self.modules.apps.gaming.games
-    self.modules.apps.tools.betaflight
-    self.modules.apps.tools.profiling
+    apps.coding.gamedev
+    apps.coding.graphics_coding
+    apps.creative."3d"
+    apps.creative."3d_print"
+    apps.gaming.games
+    apps.tools.betaflight
+    apps.tools.profiling
 
     ../../profiles/general.nix
     ../../profiles/system.nix

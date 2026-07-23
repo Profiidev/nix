@@ -1,27 +1,27 @@
 { self, ... }:
 
 {
-  imports = [
-    self.modules.services.core.audio
-    self.modules.services.core.bluetooth
-    self.modules.services.core.btrfs
-    self.modules.services.core.gpg
-    self.modules.services.core.security
-    self.modules.services.core.time
+  imports = with self.modules; [
+    services.core.audio
+    services.core.bluetooth
+    services.core.btrfs
+    services.core.gpg
+    services.core.security
+    services.core.time
 
-    self.modules.services.network.network
-    self.modules.services.network.sshd
-    self.modules.services.network.tailscale
+    services.network.network
+    services.network.sshd
+    services.network.tailscale
 
-    self.modules.services.media.media
-    self.modules.services.media.printing
+    services.media.media
+    services.media.printing
 
-    self.modules.services.gui.display-manager
-    self.modules.services.gui.noctalia-legacy
-    #self.modules.services.gui.noctalia
-    self.modules.services.gui.sddm
-    #self.modules.services.gui.noctalia-greeter
+    services.gui.display-manager
+    services.gui.noctalia-legacy
+    #services.gui.noctalia
+    services.gui.sddm
+    #services.gui.noctalia-greeter
 
-    self.modules.services.coding.docker
+    services.coding.docker
   ];
 }
