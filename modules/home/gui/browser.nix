@@ -6,7 +6,6 @@ let
   media = [ "vlc.desktop" ];
   terminal = [ "alacritty.desktop" ];
 
-  # TODO
   associations = {
     "text/*" = editor;
     "text/plain" = editor;
@@ -54,7 +53,6 @@ let
 
     "application/vnd.jgraph.mxfile" = [ "drawio.desktop" ];
     "application/vnd.jgraph.mxfile.realtime" = [ "drawio.desktop" ];
-
   };
 in
 {
