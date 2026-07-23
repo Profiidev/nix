@@ -22,7 +22,6 @@ in
     docker-buildx
     docker-compose
     terraform
-    minikube
     k9s
     #wrapped-helmfile
     wrapped-kubernetes-helm
@@ -30,5 +29,6 @@ in
     kubevirt
     kustomize
     helm-ls
+    minikube
   ];
 }
