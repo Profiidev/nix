@@ -7,8 +7,5 @@
     karere
     teamspeak6-client
     spotify
-    
-    # TODO
-    chromium
   ];
 }

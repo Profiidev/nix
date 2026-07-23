@@ -2,7 +2,6 @@
 
 {
   imports = [
-    self.modules.home.nix
     self.modules.home.sops
 
     self.modules.home.tools.terminal

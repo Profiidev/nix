@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  settings = builtins.readFile ../../assets/other/zed.json;
+  settings = builtins.readFile ../../../assets/other/zed.json;
 
   cursor-agent-fix-script = ''
     #!/usr/bin/env node

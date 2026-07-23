@@ -18,7 +18,7 @@
     ../../profiles/general.nix
     ../../profiles/system.nix
     ../../profiles/services.nix
-    ../../profiles/system.nix
+    ../../profiles/apps.nix
   ];
 
   hostSpec = {

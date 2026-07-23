@@ -3,7 +3,7 @@
 {
   imports = [
     self.modules.apps.nix
-    self.modules.apps.lib
+    self.modules.apps.libs
 
     self.modules.apps.tools.cli
     self.modules.apps.tools.gui
@@ -15,8 +15,8 @@
     self.modules.apps.gaming.steam
     self.modules.apps.gaming.minecraft
 
-    self.modules.apps."3d".image
-    self.modules.apps."3d".video
+    self.modules.apps.creative.image
+    self.modules.apps.creative.video
 
     self.modules.apps.coding.cli_tools
     self.modules.apps.coding.code_editor
