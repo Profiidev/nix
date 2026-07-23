@@ -10,13 +10,6 @@
   environment.systemPackages =
     with pkgs;
     [
-      cargo-expand
-      cargo-generate
-      cargo-nextest
-      cargo-llvm-cov
-      cargo-tauri
-      tauri-driver
-      cargo-watch
       trunk
       nano
       home-manager
@@ -35,7 +28,6 @@
       rsync
       cmatrix
       neo-cowsay
-      git-cliff
       htop
       btop
       inetutils
@@ -66,10 +58,8 @@
       haskellPackages.hashable
       cachix
       fish
-      dioxus-cli
-      postgresql
-      bun2nix
       inputs.hibernation.packages.${stdenv.hostPlatform.system}.default
+      socat
     ]
     ++ (
       if isLinux then

@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  programs.vscode = {
-    enable = true;
-  };
-
   programs.alacritty = {
     enable = true;
     package = pkgs.alacritty-graphics;

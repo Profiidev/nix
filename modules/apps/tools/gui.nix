@@ -9,16 +9,11 @@
   environment.systemPackages =
     with pkgs;
     [
-      dbeaver-bin
-      postman
-      insomnia
-      #wireshark
-      drawio
       filezilla
       piper
-      gimp
-      vlc
       xkill
+      zathura
+      rpi-imager
     ]
     ++ lib.optionals isLinux [
       wl-clipboard

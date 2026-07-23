@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstableNoCuda, ... }:
+{ pkgs, ... }:
 
 let
   browser = [ "brave-browser.desktop" ];
@@ -6,6 +6,7 @@ let
   media = [ "vlc.desktop" ];
   terminal = [ "alacritty.desktop" ];
 
+  # TODO
   associations = {
     "text/*" = editor;
     "text/plain" = editor;
@@ -60,8 +61,9 @@ in
   # Module installing brave as default browser
   home.packages = with pkgs; [
     google-chrome
-    pkgsUnstableNoCuda.firefox
+    firefox
     brave
+    chromium
   ];
 
   xdg = {

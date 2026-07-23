@@ -1,53 +1,36 @@
 {
   pkgs,
-  pkgsUnstableNoCuda,
   isLinux,
   ...
 }:
 
 let
-  wrapped-kubernetes-helm =
-    with pkgs;
-    wrapHelm kubernetes-helm {
-      plugins = with pkgs.kubernetes-helmPlugins; [
-        helm-secrets
-        helm-diff
-        helm-s3
-        helm-git
-      ];
-    };
-
-  wrapped-helmfile = pkgs.helmfile-wrapped.override {
-    inherit (wrapped-kubernetes-helm) pluginsDir;
-  };
-
   wrapped-azure-cli = pkgs.azure-cli.withExtensions [ pkgs.azure-cli-extensions.account ];
 in
 {
   environment.systemPackages =
     with pkgs;
     [
+      cargo-expand
+      cargo-generate
+      cargo-nextest
+      cargo-llvm-cov
+      cargo-tauri
+      tauri-driver
+      cargo-watch
+      dioxus-cli
+      postgresql
+      bun2nix
+      git-cliff
       act
-      docker
-      docker-buildx
-      docker-compose
       maven
       sea-orm-cli
       wasm-pack
       ldproxy
       pkg-config
       gobject-introspection
-      terraform
-      minikube
-      k9s
       #wrapped-azure-cli
-      #wrapped-helmfile
-      wrapped-kubernetes-helm
-      kubectl
-      kubevirt
-      kustomize
-      helm-ls
-      pkgsUnstableNoCuda.devenv
+      devenv
       gh
       espflash
       stackit-cli
@@ -59,7 +42,6 @@ in
       llvmPackages.lld
       wasm-bindgen-cli
       clang.cc
-      socat
     ]
     ++ (
       if isLinux then
