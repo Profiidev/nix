@@ -6,6 +6,7 @@
     libvirt
     virt-manager
     qemu
+    quickemu
     uefi-run
     swtpm
   ];

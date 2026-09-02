@@ -10,7 +10,7 @@
     ++ (
       if isLinux then
         [
-#          android-studio
+          #android-studio
         ]
       else
         [ ]
