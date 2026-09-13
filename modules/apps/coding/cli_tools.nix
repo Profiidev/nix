@@ -41,7 +41,6 @@ in
       llvmPackages.lld
       wasm-bindgen-cli
       clang.cc
-      slintcn
     ]
     ++ (
       if isLinux then

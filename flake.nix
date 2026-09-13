@@ -16,7 +16,6 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
@@ -82,7 +81,6 @@
   outputs =
     inputs@{
       self,
-      nixpkgs,
       nixpkgs-unstable,
       nix-darwin,
       ...
@@ -124,7 +122,7 @@
             };
             modules = [ ./hosts/mac/${host} ];
           };
-        }) (nixpkgs.lib.attrNames (builtins.readDir ./hosts/mac))
+        }) (nixpkgs-unstable.lib.attrNames (builtins.readDir ./hosts/mac))
       );
     };
 }

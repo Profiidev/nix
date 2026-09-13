@@ -3,6 +3,7 @@
   config,
   inputs,
   isLinux,
+  lib,
   ...
 }:
 
@@ -81,6 +82,7 @@ in
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
+      allowInsecurePredicate = p: builtins.elem (lib.getName p) [ "nwjs" ];
     }
     // (
       if isLinux then
