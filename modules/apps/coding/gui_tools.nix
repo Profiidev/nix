@@ -5,7 +5,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dbeaver-bin
+    dbx-desktop
     postman
     wireshark
   ];
