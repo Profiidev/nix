@@ -23,6 +23,7 @@
     apps.gaming.games
     apps.tools.betaflight
     apps.tools.profiling
+    apps.tools.openlogi
 
     ../../profiles/general.nix
     ../../profiles/system.nix
