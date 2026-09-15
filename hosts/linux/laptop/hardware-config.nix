@@ -33,7 +33,7 @@
   ];
   boot.resumeDevice = "/dev/disk/by-uuid/1e6ed03a-1bc4-4199-993f-8c23e5d9a0dd";
   boot.kernelParams = [
-    "mem_sleep_default=deep"
+    "mem_sleep_default=s2idle"
     "acpi_sleep=nonvs"
     "resume_offset=533760"
   ];

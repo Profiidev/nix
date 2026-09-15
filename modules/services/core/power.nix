@@ -43,8 +43,8 @@
       RESTORE_THRESHOLDS_ON_BAT = 1;
       NATACPI_ENABLE = 1;
 
-      MEM_SLEEP_ON_AC = "deep";
-      MEM_SLEEP_ON_BAT = "deep";
+      MEM_SLEEP_ON_AC = "s2idle";
+      MEM_SLEEP_ON_BAT = "s2idle";
 
       INTEL_GPU_MIN_FREQ_ON_AC = 0;
       INTEL_GPU_MIN_FREQ_ON_BAT = 0;
