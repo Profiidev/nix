@@ -186,8 +186,19 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1", "
         show_weather = true
 
 [notification]
+filter_order = [ "filter" ]
 layer = "overlay"
 offset_x = 8
+
+    [notification.filter.filter]
+    allow_permanent = false
+    bypass_dnd = false
+    enabled = true
+    match = "home assistant"
+    match_content = "Sensoren werden aktualisiert"
+    play_sound = false
+    save_history = false
+    show_toast = false
 
 [osd]
 background_opacity = 0.99999997764825821
