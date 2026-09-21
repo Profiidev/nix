@@ -211,11 +211,11 @@
         "wayscriber": "wayscriber"
       },
       "locked": {
-        "lastModified": 1790017726,
-        "narHash": "sha256-X8OatQlHOkn0nlEul3ECcMoR5V476mmtDWAr1e4CWTg=",
+        "lastModified": 1790020490,
+        "narHash": "sha256-0B0MEo0CZUQbcspjXXUT9lrc0XVLYecSyU5VNdGFixY=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "c88bf255ed859e881a48fa22d7b5d8e39f22ec43",
+        "rev": "f50f3badfd0b7c3d86eae12ce8e0d79093fe4473",
         "type": "github"
       },
       "original": {
