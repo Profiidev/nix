@@ -12,6 +12,11 @@
     plugins = with pkgs; [
       networkmanager-openvpn
     ];
+    settings = {
+      connectivity = {
+        uri = "http://nmcheck.gnome.org/check_network_status.txt";
+      };
+    };
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
