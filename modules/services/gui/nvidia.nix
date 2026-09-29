@@ -13,7 +13,7 @@
     config.boot.kernelPackages.nvidia_x11.lib32
   ];
 
-  #hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
 
   hardware.graphics = {
     enable = true;
