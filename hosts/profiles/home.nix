@@ -13,6 +13,7 @@
     home.hyprland.default
 
     home.gui.browser
+    home.gui.lan-mouse
     home.gui.theme
 
     home.coding.editor

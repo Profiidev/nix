@@ -20,4 +20,10 @@
     enable = true;
     binfmt = true;
   };
+
+  networking.firewall = {
+    allowedUDPPorts = [
+      4242
+    ];
+  };
 }
