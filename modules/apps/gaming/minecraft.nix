@@ -6,7 +6,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    inputs.proton.packages.${stdenv.hostPlatform.system}.default
+    proton-launcher
     prismlauncher
     basalt-launcher
   ];

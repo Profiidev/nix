@@ -58,7 +58,7 @@
       haskellPackages.hashable
       cachix
       fish
-      inputs.hibernation.packages.${stdenv.hostPlatform.system}.default
+      hibernation
       socat
     ]
     ++ (

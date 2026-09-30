@@ -20,9 +20,6 @@
 
     custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
 
-    proton.url = "github:profiidev/proton/latest";
-    positron.url = "github:profiidev/positron/latest";
-    hibernation.url = "github:profiidev/hibernation/latest";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-secrets.url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
     flake-utils.url = "github:numtide/flake-utils";
@@ -38,18 +35,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.1.0";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     sops-nix = {
       url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 

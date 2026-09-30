@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    inputs.positron.packages.${stdenv.hostPlatform.system}.default
+    positron
   ];
 
   systemd.user.services.positron = {
@@ -15,7 +15,7 @@
       WantedBy = [ "graphical-session.target" ];
     };
     Service = with pkgs; {
-      ExecStart = "${inputs.positron.packages.${stdenv.hostPlatform.system}.default}/bin/positron";
+      ExecStart = "${positron}/bin/positron";
       Restart = "always";
       RestartSec = 5;
     };

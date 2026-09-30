@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.lanzaboote.nixosModules.lanzaboote
+    inputs.custom-nixpkgs.lanzaboote.nixosModules.lanzaboote
   ];
 
   boot.loader.timeout = 0;
