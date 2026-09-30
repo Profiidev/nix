@@ -20,7 +20,7 @@
     autoEnrollKeys.enable = true;
     autoEnrollKeys.autoReboot = true;
 
-    configurationLimit = 8;
+    configurationLimit = 4;
     measuredBoot = {
       pcrs = [
         0

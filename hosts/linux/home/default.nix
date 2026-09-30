@@ -6,6 +6,7 @@
     ../../spec.nix
 
     system.no-sleep
+    system.rescue
 
     services.gui.nvidia
     services.gui.flatpak

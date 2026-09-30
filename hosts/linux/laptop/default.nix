@@ -14,6 +14,7 @@
     services.gui.igpu
     services.media.miracast
     services.network.cloudflare
+    system.rescue
 
     ../../profiles/general.nix
     ../../profiles/system.nix
