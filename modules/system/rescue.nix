@@ -29,7 +29,13 @@ let
 
           '';
 
+          # The rescue image is signed with your Secure Boot key, so its PCR values
+          # may satisfy the TPM policy. Extend the PCRs before the shell starts so it
+          # can never unseal the disk key. rescue.service requires this unit: no shell
+          # if a TPM is present but locking it fails.
           lockScript = pkgs.writeShellScript "rescue-lock-tpm" ''
+            export LD_LIBRARY_PATH=${pkgs.tpm2-tss}/lib
+            export TPM2TOOLS_TCTI=device:/dev/tpmrm0
             for _ in $(${pkgs.coreutils}/bin/seq 50); do
               [ -e /dev/tpmrm0 ] && break
               ${pkgs.coreutils}/bin/sleep 0.2
@@ -37,9 +43,16 @@ let
             if [ -e /dev/tpmrm0 ]; then
               h=0000000000000000000000000000000000000000000000000000000000000000
               for pcr in 0 1 2 3 4 5 6 7 11; do
-                ${pkgs.tpm2-tools}/bin/tpm2_pcrextend "$pcr:sha256=$h" || exit 1
+                if ! ${pkgs.tpm2-tools}/bin/tpm2_pcrextend "$pcr:sha256=$h"; then
+                  echo "rescue: extending PCR $pcr failed" >&2
+                  # 4 and 7 are what a TPM policy normally binds, those must succeed
+                  case $pcr in 4|7) exit 1 ;; esac
+                fi
                 ${pkgs.tpm2-tools}/bin/tpm2_pcrextend "$pcr:sha1=''${h:0:40}" 2>/dev/null || true
               done
+            elif [ -e /sys/class/tpm/tpm0 ]; then
+              echo "rescue: TPM present but /dev/tpmrm0 missing" >&2
+              exit 1
             fi
             ${pkgs.coreutils}/bin/cat ${help}
           '';
@@ -73,6 +86,11 @@ let
             kernelModules = [
               "tpm_tis"
               "tpm_crb"
+              "i8042"
+              "atkbd"
+              "usbhid"
+              "hid_generic"
+              "xhci_pci"
             ];
 
             systemd = {
@@ -87,6 +105,8 @@ let
                 lsblk = "${pkgs.util-linux}/bin/lsblk";
                 blkid = "${pkgs.util-linux}/bin/blkid";
                 tpm2_pcrread = "${pkgs.tpm2-tools}/bin/tpm2_pcrread";
+                tpm2_pcrextend = "${pkgs.tpm2-tools}/bin/tpm2_pcrextend";
+                journalctl = "${pkgs.systemd}/bin/journalctl";
                 sbctl = "${pkgs.sbctl}/bin/sbctl";
                 efibootmgr = "${pkgs.efibootmgr}/bin/efibootmgr";
               };
@@ -95,14 +115,19 @@ let
                 help
               ];
 
+              # rescue.target (unlike emergency.target) requires sysinit.target, so udev
+              # and module loading run before the shell. sysinit.target conflicts with
+              # emergency.target, so emergency can not be used for this.
               services.rescue-lock-tpm = {
-                requiredBy = [ "emergency.service" ];
-                before = [ "emergency.service" ];
+                requiredBy = [ "rescue.service" ];
+                after = [ "sysinit.target" ];
+                before = [ "rescue.service" ];
                 unitConfig.DefaultDependencies = false;
                 serviceConfig = {
                   Type = "oneshot";
                   ExecStart = lockScript;
                   StandardOutput = "journal+console";
+                  StandardError = "journal+console";
                 };
               };
             };
@@ -115,7 +140,7 @@ let
   rescueCfg = rescue.config;
   kernel = "${rescueCfg.system.build.kernel}/${rescueCfg.system.boot.loader.kernelFile}";
   initrd = "${rescueCfg.system.build.initialRamdisk}/${rescueCfg.system.boot.loader.initrdFile}";
-  cmdline = "rd.systemd.unit=emergency.target console=tty0 loglevel=4";
+  cmdline = "rd.systemd.unit=rescue.target console=tty0 loglevel=4";
 
   osRelease = pkgs.writeText "rescue-os-release" ''
     ID=nixos-rescue
