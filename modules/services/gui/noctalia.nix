@@ -6,11 +6,15 @@
     nautilus
     kdePackages.qttools
     socat
+    ddcutil
   ];
 
   imports = [
     ./hyprland.nix
   ];
+
+  hardware.i2c.enable = true;
+  boot.kernelModules = [ "i2c-dev" ];
 
   # kde connect
   networking.firewall = rec {

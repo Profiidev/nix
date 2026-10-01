@@ -56,6 +56,7 @@ in
                   "disk" # rpi-imager
                   "greeter" # dms greeter
                   "plugdev" # for udev rules
+                  "i2c" # for i2c-dev
                 ])
               ];
               hashedPasswordFile = lib.mkIf (
