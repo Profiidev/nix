@@ -17,6 +17,7 @@
     ++ lib.optionals isLinux [
       wl-clipboard
       claude-desktop
+      lmstudio
     ];
 
   programs.localsend = {

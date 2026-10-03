@@ -18,5 +18,6 @@ in
     claude-code
     antigravity-cli
     antigravity-ide
+    opencode
   ];
 }
