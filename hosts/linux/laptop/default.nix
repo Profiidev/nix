@@ -16,6 +16,7 @@
     services.network.cloudflare
     apps.creative."3d"
     system.rescue
+    system.suspend-then-hibernate
 
     ../../profiles/general.nix
     ../../profiles/system.nix

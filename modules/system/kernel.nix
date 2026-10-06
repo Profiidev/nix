@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
-    HandleLidSwitchDocked = "ignore";
-    HandleLidSwitchExternalPower = "suspend";
+    HandleLidSwitch = lib.mkDefault "suspend";
+    HandleLidSwitchDocked = lib.mkDefault "ignore";
+    HandleLidSwitchExternalPower = lib.mkDefault "suspend";
   };
 
   boot = {
