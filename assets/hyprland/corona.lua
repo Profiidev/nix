@@ -1,4 +1,5 @@
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("corona ipc screenshot"))
+hl.bind("SUPER + C", hl.dsp.exec_cmd("corona ipc color-picker"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("corona ipc session lock"))
 
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("corona ipc switcher"))
