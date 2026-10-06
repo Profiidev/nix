@@ -21,14 +21,14 @@ hl.bind("ALT + up", hl.dsp.focus({ direction = "up" }))
 hl.bind("ALT + right", hl.dsp.focus({ direction = "right" }))
 
 -- Move Window
-hl.bind("SUPER + H", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + J", hl.dsp.window.move({ direction = "d" }))
-hl.bind("SUPER + K", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + L", hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + left", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + down", hl.dsp.window.move({ direction = "d" }))
-hl.bind("SUPER + up", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + right", hl.dsp.window.move({ direction = "r" }))
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
+hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind("SUPER + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
+hl.bind("SUPER + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
+hl.bind("SUPER + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SUPER + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
 
 -- Switch Workspace
 hl.bind("SUPER + 1", hl.dsp.focus({ workspace = 1 }))

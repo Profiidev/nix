@@ -56,4 +56,10 @@
           avatar_path = ../../../assets/images/profidev.jpeg;
         };
   };
+
+  home.activation = {
+    deleteOldCoronaSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      rm -f "$HOME/.local/state/corona/settings.toml"
+    '';
+  };
 }

@@ -1,4 +1,175 @@
-wallpaper = "http://profidev.io/api/services/apod/random"
+[shell.animation]
+enabled = true
+speed = 1.0
+
+[shell.privacy]
+mic_filter_regex = "gsr-alsa_input"
+cam_filter_regex = ""
+screen_filter_regex = ""
+
+[theme]
+name = "shadcn Zinc Blue Dark"
+font_scale = 1.0
+corner_radius_scale = 1.0
+shadow = true
+popup_borders = true
+card_borders = true
+
+[wallpaper]
+path = "http://profidev.io/api/services/apod/random"
+
+[bar.main]
+position = "top"
+thickness = 30.0
+background_opacity = 1.0
+capsule = true
+widget_spacing = 8.0
+padding_start = 5.0
+padding_end = 5.0
+
+[[bar.main.start]]
+widget_type = "workspaces"
+
+[[bar.main.start]]
+widget_type = "active_window"
+
+[[bar.main.center]]
+widget_type = "clock"
+
+[[bar.main.center]]
+widget_type = "player"
+
+[[bar.main.end]]
+widget_type = "privacy"
+
+[[bar.main.end]]
+widget_type = "tray"
+
+[bar.main.end.options]
+blacklist = [
+    "spotify",
+    "vicinae",
+    "wayscriber",
+    "udiskie",
+]
+
+[[bar.main.end]]
+
+[[bar.main.end.group]]
+widget_type = "resource"
+
+[bar.main.end.group.options]
+stat = "cpu"
+
+[[bar.main.end.group]]
+widget_type = "resource"
+
+[bar.main.end.group.options]
+stat = "temperature"
+
+[[bar.main.end.group]]
+widget_type = "resource"
+
+[bar.main.end.group.options]
+stat = "memory"
+
+[[bar.main.end.group]]
+widget_type = "resource"
+
+[bar.main.end.group.options]
+stat = "download"
+
+[[bar.main.end.group]]
+widget_type = "resource"
+
+[bar.main.end.group.options]
+stat = "upload"
+
+[[bar.main.end.group]]
+widget_type = "resource"
+
+[bar.main.end.group.options]
+stat = "disk"
+
+[[bar.main.end]]
+widget_type = "battery"
+
+[[bar.main.end]]
+widget_type = "bluetooth"
+
+[[bar.main.end]]
+widget_type = "network"
+
+[[bar.main.end]]
+widget_type = "audio"
+
+[[bar.main.end]]
+widget_type = "notifications"
+
+[[bar.main.end]]
+widget_type = "control_center"
+
+[notification]
+enabled = true
+position = "top_right"
+width = 400.0
+offset = 20.0
+timeout_ms = 5000
+critical_timeout_ms = 10000
+background_opacity = 1.0
+
+[osd]
+enabled = true
+hide_delay_ms = 1500
+position = "bottom_center"
+offset = 40.0
+background_opacity = 1.0
+
+[osd.kinds]
+volume = true
+brightness = true
+wifi = true
+bluetooth = true
+dnd = true
+power_profile = true
+privacy = true
+
+[lockscreen]
+lock_before_suspend = true
+blur = 3.0
+
+[screenshot]
+filename_pattern = "screenshot-%Y-%m-%d-%H%M%S-%3f.png"
+
+[window_switcher]
+current_monitor_only = false
+card_height = 180.0
+backdrop_opacity = 0.4
+
+[taskbar]
+enabled = true
+icon_size = 36.0
+previews = true
+preview_max_windows = 5
+background_opacity = 1.0
+
+[control_center]
+time_format = "%H:%M"
+date_format = "%a, %d.%m.%Y"
+week_start = "monday"
+background_opacity = 1.0
 
 [weather]
+units = "metric"
+refresh_minutes = 30
+
+[location]
 city = "Bad Aibling, Germany"
+auto_locate = false
+
+[brightness]
+enable_ddcutil = true
+poll_seconds = 5
+
+[system.monitor]
+poll_seconds = 3

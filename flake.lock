@@ -70,11 +70,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791278420,
-        "narHash": "sha256-V4hi/zx5SBr9Nz8IkabOiAUO+xB/VXCfoked9m+JocQ=",
+        "lastModified": 1791294357,
+        "narHash": "sha256-Nu6t3lhLqNDoNVXi5jO0b15N6hQr5iItsYC9Ty8nSok=",
         "owner": "profiidev",
         "repo": "corona",
-        "rev": "c09f10491c56c312b301dd54b976f9261f31f1d8",
+        "rev": "2eded21d355486e23b6c8e78110cfd1ebeebeb1e",
         "type": "github"
       },
       "original": {
@@ -121,11 +121,11 @@
         "wayscriber": "wayscriber"
       },
       "locked": {
-        "lastModified": 1791281493,
-        "narHash": "sha256-c/hgIypydbNIpKRsarYBefBgX1ooZso9m0BS23KZnz8=",
+        "lastModified": 1791295545,
+        "narHash": "sha256-KvZyUYkFRPhOJw0p4SLrwVHdMLDplGBbxlb9/S6ddpc=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "97f317ad972d1c1bd802ba7568ef1aa6b074a82c",
+        "rev": "c058c940c49d2192505b89a66916fc708774bc0e",
         "type": "github"
       },
       "original": {
