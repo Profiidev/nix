@@ -19,6 +19,7 @@
 
     services.gui.display-manager
     services.gui.noctalia
+    #services.gui.corona
     services.gui.sddm
     #services.gui.noctalia-greeter
 

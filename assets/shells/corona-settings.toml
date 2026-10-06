@@ -1,0 +1,4 @@
+wallpaper = "http://profidev.io/api/services/apod/random"
+
+[weather]
+city = "Bad Aibling, Germany"

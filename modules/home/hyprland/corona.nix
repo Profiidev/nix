@@ -1,0 +1,59 @@
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
+  imports = [
+    inputs.custom-nixpkgs.corona.homeModules.default
+  ];
+
+  home.packages = with pkgs; [
+    adw-gtk3
+    nwg-look
+    glib
+  ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = lib.mkForce "adw-gtk3";
+      package = lib.mkForce pkgs.adw-gtk3;
+    };
+    gtk4.theme = null;
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+  };
+
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
+    GTK_THEME = "adw-gtk3";
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "adw-gtk3";
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  services.hyprpolkitagent.enable = lib.mkForce false;
+  services.kdeconnect.enable = true;
+
+  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/corona.lua;
+
+  programs.corona = {
+    enable = true;
+
+    settings =
+      lib.recursiveUpdate (fromTOML (builtins.readFile ../../../assets/shells/corona-settings.toml))
+        {
+          avatar_path = ../../../assets/images/profidev.jpeg;
+        };
+  };
+}

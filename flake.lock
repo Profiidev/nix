@@ -58,6 +58,31 @@
         "type": "github"
       }
     },
+    "corona": {
+      "inputs": {
+        "flake-utils": [
+          "custom-nixpkgs",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "custom-nixpkgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791278420,
+        "narHash": "sha256-V4hi/zx5SBr9Nz8IkabOiAUO+xB/VXCfoked9m+JocQ=",
+        "owner": "profiidev",
+        "repo": "corona",
+        "rev": "c09f10491c56c312b301dd54b976f9261f31f1d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "profiidev",
+        "repo": "corona",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1781825982,
@@ -76,6 +101,7 @@
     "custom-nixpkgs": {
       "inputs": {
         "basalt-launcher": "basalt-launcher",
+        "corona": "corona",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "git-hooks": "git-hooks",
@@ -95,11 +121,11 @@
         "wayscriber": "wayscriber"
       },
       "locked": {
-        "lastModified": 1791196692,
-        "narHash": "sha256-r8QSU+wh0PuLaH8EgJaKrrRc22n3O1qdhCmC+j6508I=",
+        "lastModified": 1791281493,
+        "narHash": "sha256-c/hgIypydbNIpKRsarYBefBgX1ooZso9m0BS23KZnz8=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "8972beb11200c22aca237b437579c69b87fc6aac",
+        "rev": "97f317ad972d1c1bd802ba7568ef1aa6b074a82c",
         "type": "github"
       },
       "original": {
