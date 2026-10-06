@@ -4,6 +4,9 @@ do
         mode = "1920x1200@60Hz",
         position = "0x0",
         scale = "1.2",
+        -- hl.monitor() merges into an existing rule for the same output, so
+        -- this must be explicit to undo `disabled = true` from disable_internal().
+        disabled = false,
     }
 
     hl.monitor(internal)
