@@ -34,6 +34,12 @@ hl.bind("XF86LogOff", hl.dsp.exec_cmd("corona ipc session logout"))
 hl.bind("XF86SelectiveScreenshot", hl.dsp.exec_cmd("corona ipc screenshot selection"))
 hl.bind("XF86ControlPanel", hl.dsp.exec_cmd("corona ipc settings toggle"))
 
+-- Locked Key Binds
+local opts = { non_consuming = true, locked = true }
+hl.bind("Caps_Lock",   hl.dsp.exec_cmd("corona ipc lock-key caps"),   opts)
+hl.bind("Num_Lock",    hl.dsp.exec_cmd("corona ipc lock-key num"),    opts)
+hl.bind("Scroll_Lock", hl.dsp.exec_cmd("corona ipc lock-key scroll"), opts)
+
 hl.config({
   decoration = {
     blur = {
@@ -47,3 +53,4 @@ hl.config({
 
 hl.layer_rule({ match = { namespace = "corona_panel" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "corona_notification" }, no_anim = true })
+hl.layer_rule({ match = { namespace = "corona_unlock" }, no_anim = true })
