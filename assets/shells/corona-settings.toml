@@ -1,9 +1,12 @@
+[shell]
+avatar = "/nix/store/d1ys2ri119q9pw4nl4gc8iv9ayx2y209-profidev.jpeg"
+
 [shell.animation]
 enabled = true
 speed = 1.0
 
 [shell.privacy]
-mic_filter_regex = "gsr-alsa_input"
+mic_filter_regex = "gsr-alsa_input|gsr-default_output"
 cam_filter_regex = ""
 screen_filter_regex = ""
 
@@ -199,3 +202,15 @@ action = "screen_off"
 timeout = 660.0
 command = ""
 resume_command = ""
+
+[plugins]
+enabled = []
+auto_update = "official"
+
+[[plugins.source]]
+name = "official"
+kind = "git"
+location = "https://github.com/ProfiiDev/corona-plugins"
+enabled = true
+
+[plugin_settings]
