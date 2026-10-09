@@ -14,9 +14,10 @@ corner_radius_scale = 1.0
 shadow = true
 popup_borders = true
 card_borders = true
+screen_corners = true
 
 [wallpaper]
-path = "http://profidev.io/api/services/apod/random"
+path = "https://profidev.io/api/services/apod/random"
 
 [bar.main]
 position = "top"
@@ -117,6 +118,7 @@ offset = 20.0
 timeout_ms = 5000
 critical_timeout_ms = 10000
 background_opacity = 1.0
+filter_regex = "sensoren werden aktualisiert"
 
 [osd]
 enabled = true
@@ -133,10 +135,13 @@ bluetooth = true
 dnd = true
 power_profile = true
 privacy = true
+keyboard_layout = true
+lock_keys = true
 
 [lockscreen]
 lock_before_suspend = true
 blur = 3.0
+monitor = "DP-1"
 
 [screenshot]
 filename_pattern = "screenshot-%Y-%m-%d-%H%M%S-%3f.png"
@@ -173,3 +178,24 @@ poll_seconds = 5
 
 [system.monitor]
 poll_seconds = 3
+
+[idle.behavior.lock]
+enabled = true
+action = "lock"
+timeout = 600.0
+command = ""
+resume_command = ""
+
+[idle.behavior.lock-and-suspend]
+enabled = true
+action = "lock_and_suspend_then_hibernate"
+timeout = 900.0
+command = ""
+resume_command = ""
+
+[idle.behavior.screen-off]
+enabled = true
+action = "screen_off"
+timeout = 660.0
+command = ""
+resume_command = ""
