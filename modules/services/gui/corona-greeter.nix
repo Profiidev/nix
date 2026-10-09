@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   inputs,
   ...
 }:
@@ -8,6 +9,8 @@
   imports = [
     inputs.custom-nixpkgs.corona.nixosModules.greeter
   ];
+
+  systemd.services.plymouth-quit.wantedBy = lib.mkForce [ ];
 
   security.pam.services.greetd = {
     enable = true;

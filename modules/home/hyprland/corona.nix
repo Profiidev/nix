@@ -14,6 +14,7 @@
     adw-gtk3
     nwg-look
     glib
+    sshfs
   ];
 
   gtk = {
@@ -53,7 +54,9 @@
     settings =
       lib.recursiveUpdate (fromTOML (builtins.readFile ../../../assets/shells/corona-settings.toml))
         {
-          avatar_path = ../../../assets/images/profidev.jpeg;
+          shell = {
+            avatar = ../../../assets/images/profidev.jpeg;
+          };
         };
   };
 
