@@ -1,5 +1,7 @@
 {
+  config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }:
@@ -56,8 +58,11 @@
 
   hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
 
-  home-manager.users.sddm = {
-    home.file.".config/kwinoutputconfig.json".source = ./kwinoutputconfig.json;
+  services.corona-greeter = {
+    outputs = {
+      DP-1.position = "0,0";
+      HDMI-A-1.position = "2560,0";
+    };
   };
 
   services.tailscale = {

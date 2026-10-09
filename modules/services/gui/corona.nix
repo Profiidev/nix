@@ -27,6 +27,7 @@
   };
 
   services.hypridle.enable = lib.mkForce false;
+  security.pam.services.corona.fprintAuth = lib.mkDefault false;
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;

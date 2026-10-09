@@ -70,11 +70,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791294357,
-        "narHash": "sha256-Nu6t3lhLqNDoNVXi5jO0b15N6hQr5iItsYC9Ty8nSok=",
+        "lastModified": 1791550055,
+        "narHash": "sha256-gMgK7mt+l0H3pnQmWmViL0nbo1q+p2FoUwebgGJsTo8=",
         "owner": "profiidev",
         "repo": "corona",
-        "rev": "2eded21d355486e23b6c8e78110cfd1ebeebeb1e",
+        "rev": "f79203103250e23badd1cd8462c06042bcdd0662",
         "type": "github"
       },
       "original": {
@@ -121,11 +121,11 @@
         "wayscriber": "wayscriber"
       },
       "locked": {
-        "lastModified": 1791295545,
-        "narHash": "sha256-KvZyUYkFRPhOJw0p4SLrwVHdMLDplGBbxlb9/S6ddpc=",
+        "lastModified": 1791551133,
+        "narHash": "sha256-tmpayn1WGdC5/7TpsduTPdPDXCpxgikSpTSVAHzXZzA=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "c058c940c49d2192505b89a66916fc708774bc0e",
+        "rev": "1f317688009365e89d439133da3d17f199b1b6ea",
         "type": "github"
       },
       "original": {
@@ -1204,7 +1204,6 @@
         "nix-index-database": "nix-index-database",
         "nix-secrets": "nix-secrets",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "silentSDDM": "silentSDDM",
         "sops-nix": "sops-nix"
       }
     },
@@ -1293,26 +1292,6 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "silentSDDM": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1790785664,
-        "narHash": "sha256-TNGAElCnjIA4OzTtn0VuCk6pXKd92kBkz+5NjHLwbkM=",
-        "owner": "uiriansan",
-        "repo": "SilentSDDM",
-        "rev": "d32ebc060ee0f832cf2a2ea4c91d96582d3f31ce",
-        "type": "github"
-      },
-      "original": {
-        "owner": "uiriansan",
-        "repo": "SilentSDDM",
         "type": "github"
       }
     },

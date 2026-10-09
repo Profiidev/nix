@@ -20,7 +20,7 @@
     services.gui.display-manager
     services.gui.noctalia
     #services.gui.corona
-    services.gui.sddm
+    services.gui.corona-greeter
     #services.gui.noctalia-greeter
 
     services.coding.docker

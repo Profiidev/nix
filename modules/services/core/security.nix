@@ -7,10 +7,6 @@
     login.rules.auth.fprintd.settings.timeout = 99;
     gdm-password.u2fAuth = true;
     gdm-password.enableGnomeKeyring = true;
-    sddm.u2fAuth = true;
-    sddm.fprintAuth = true;
-    sddm-greeter.u2fAuth = true;
-    sddm-greeter.fprintAuth = true;
     sudo.u2fAuth = true;
     sudo.fprintAuth = true;
     polkit-1.fprintAuth = true;
@@ -59,10 +55,10 @@
   users.groups.ha_power = { };
 
   security.sudo.extraRules = [
-    # Allow execution of cosmic-randr as sddm by ha_power without sudo password
+    # Allow execution of cosmic-randr as greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "sddm,profidev";
+      runAs = "greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/cosmic-randr";
@@ -73,10 +69,10 @@
         }
       ];
     }
-    # Allow execution of wlr-randr as sddm by ha_power without sudo password
+    # Allow execution of wlr-randr as greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "sddm,profidev";
+      runAs = "greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/wlr-randr";
@@ -87,10 +83,10 @@
         }
       ];
     }
-    # Allow execution of wlopm as sddm by ha_power without sudo password
+    # Allow execution of wlopm as greeter by ha_power without sudo password
     {
       users = [ "ha_power" ];
-      runAs = "sddm,profidev";
+      runAs = "greeter,profidev";
       commands = [
         {
           command = "/run/current-system/sw/bin/wlopm";
