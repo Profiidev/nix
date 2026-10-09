@@ -59,6 +59,7 @@
   hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
 
   services.corona-greeter = {
+    settings.monitor = "DP-1";
     outputs = {
       DP-1.position = "0,0";
       HDMI-A-1.position = "2560,0";

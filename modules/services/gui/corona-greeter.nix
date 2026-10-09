@@ -18,7 +18,6 @@
   services.corona-greeter = {
     enable = true;
 
-    settings.monitor = "DP-1";
     keyboard.layout = "de";
 
     cursorTheme = {
