@@ -64,9 +64,6 @@ hl.bind("SUPER + SHIFT + E", hl.dsp.window.move({ workspace = "special:magic-e" 
 hl.bind("SUPER + D", hl.dsp.workspace.toggle_special("magic-d"))
 hl.bind("SUPER + SHIFT + D", hl.dsp.window.move({ workspace = "special:magic-d" }))
 
--- Wayscriber
-hl.bind("SUPER + W", hl.dsp.exec_cmd("pkill -SIGUSR1 wayscriber"))
-
 -- Mouse Bindings
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())

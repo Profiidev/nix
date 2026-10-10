@@ -27,7 +27,6 @@ in
     #./noctalia.nix
     ./corona.nix
     ./vicinae.nix
-    ./wallpaper.nix
     ./positron.nix
   ];
 

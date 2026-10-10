@@ -50,12 +50,7 @@ widget_type = "privacy"
 widget_type = "tray"
 
 [bar.main.end.options]
-blacklist = [
-    "spotify",
-    "vicinae",
-    "wayscriber",
-    "udiskie",
-]
+blacklist = ["spotify", "vicinae", "udiskie"]
 
 [[bar.main.end]]
 
