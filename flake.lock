@@ -70,11 +70,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791566798,
-        "narHash": "sha256-YEM3zI8XRoGVwXabJLqdZ6eaJGaS7nSKiKs1lUOo4dY=",
+        "lastModified": 1791722779,
+        "narHash": "sha256-E1vA8u41nhXWZFzXCHD6VAGfNIV+pRsrgnmFwB7PwYA=",
         "owner": "profiidev",
         "repo": "corona",
-        "rev": "25d469968a6737a8b01bef0a90492bed4247134d",
+        "rev": "b9a0f9c4ff01f1c235e13ae16f65fed4b5080091",
         "type": "github"
       },
       "original": {
@@ -110,22 +110,20 @@
         "lanzaboote": "lanzaboote",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
-        "noctalia-greeter": "noctalia-greeter",
         "openlogi": "openlogi",
         "positron": "positron",
         "proton": "proton",
         "soulver-cpp": "soulver-cpp",
         "systems": "systems",
         "vicinae": "vicinae",
-        "vicinae-extensions": "vicinae-extensions",
-        "wayscriber": "wayscriber"
+        "vicinae-extensions": "vicinae-extensions"
       },
       "locked": {
-        "lastModified": 1791568212,
-        "narHash": "sha256-PZbNV1WyfgFzOyA6opMGKwAbSXb5oUx5Sz2rteq/0R4=",
+        "lastModified": 1791724164,
+        "narHash": "sha256-Oo7mkyCcJqSqXw6UMmBrhBTNAH9sr7Gsc5Bfa8JWAaY=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "9d584730ae1ace0fcfed0d51e7c8d522bcb95e65",
+        "rev": "a1586e2e81f6f30b5f5d46c265536e12e048b4b4",
         "type": "github"
       },
       "original": {
@@ -1073,27 +1071,6 @@
         "type": "github"
       }
     },
-    "noctalia-greeter": {
-      "inputs": {
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1791192412,
-        "narHash": "sha256-BEN4jS8gSBqAgVrx8qh5ezgHVPo80Q4sEMc6hG0nqM0=",
-        "owner": "noctalia-dev",
-        "repo": "noctalia-greeter",
-        "rev": "08c045a684739ba1a52ade040c6a5f08e25f5d27",
-        "type": "github"
-      },
-      "original": {
-        "owner": "noctalia-dev",
-        "repo": "noctalia-greeter",
-        "type": "github"
-      }
-    },
     "numen": {
       "inputs": {
         "nixpkgs": [
@@ -1273,28 +1250,6 @@
         "type": "github"
       }
     },
-    "rust-overlay_4": {
-      "inputs": {
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "wayscriber",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1788505699,
-        "narHash": "sha256-PSPDCdbEBEbSDCWcqv5GkbyD2ACQ9Diz6vmEbWdy4dM=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "9eccf73c5b810052f08aa77ae0548c383259f17f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
     "sops-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1463,32 +1418,6 @@
       "original": {
         "owner": "vicinaehq",
         "repo": "extensions",
-        "type": "github"
-      }
-    },
-    "wayscriber": {
-      "inputs": {
-        "flake-utils": [
-          "custom-nixpkgs",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay_4"
-      },
-      "locked": {
-        "lastModified": 1791159882,
-        "narHash": "sha256-R5jzXMixv/+AAv3OXD1hSmM5/Qm5a20okR2LJes6wQo=",
-        "owner": "devmobasa",
-        "repo": "wayscriber",
-        "rev": "fc4c9c7614cb09320ffd3a2c9bdc448f5daf42ef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "devmobasa",
-        "repo": "wayscriber",
         "type": "github"
       }
     },
