@@ -50,7 +50,11 @@ widget_type = "privacy"
 widget_type = "tray"
 
 [bar.main.end.options]
-blacklist = ["spotify", "vicinae", "udiskie"]
+blacklist = [
+    "spotify",
+    "vicinae",
+    "udiskie",
+]
 
 [[bar.main.end]]
 
@@ -89,6 +93,12 @@ widget_type = "resource"
 
 [bar.main.end.group.options]
 stat = "disk"
+
+[[bar.main.end]]
+widget_type = "kdeconnect:phone"
+
+[[bar.main.end]]
+widget_type = "tailscale:tailscale"
 
 [[bar.main.end]]
 widget_type = "battery"
@@ -199,7 +209,10 @@ command = ""
 resume_command = ""
 
 [plugins]
-enabled = []
+enabled = [
+    "tailscale",
+    "kdeconnect",
+]
 auto_update = "official"
 
 [[plugins.source]]
@@ -208,4 +221,47 @@ kind = "git"
 location = "https://github.com/ProfiiDev/corona-plugins"
 enabled = true
 
-[plugin_settings]
+[[plugins.source]]
+name = "dev"
+kind = "dev"
+location = "/home/profidev/Coding/hyprland/corona-plugins"
+enabled = false
+
+[plugins.approved.kdeconnect]
+source = "official"
+capabilities = """
+corona = ["desktop"]
+
+[dbus]
+session = ["org.kde.kdeconnect"]
+
+[fs]
+execute = ["adb", "scrcpy"]
+
+[process]
+env = ["PATH", "HOME", "XDG_RUNTIME_DIR", "WAYLAND_DISPLAY", "DISPLAY"]
+"""
+
+[plugins.approved.tailscale]
+source = "official"
+capabilities = """
+corona = ["desktop"]
+
+[clipboard]
+write = true
+
+[fs]
+execute = ["tailscale"]
+
+[network]
+unix = ["/run/tailscale/tailscaled.sock"]
+
+[process]
+env = ["PATH"]
+"""
+
+[plugin_settings.kdeconnect]
+recordings = "/home/profidev/Videos"
+
+[plugin_settings.tailscale]
+downloads = "/home/profidev/Downloads"
