@@ -95,6 +95,9 @@ widget_type = "resource"
 stat = "disk"
 
 [[bar.main.end]]
+widget_type = "homeassistant:home"
+
+[[bar.main.end]]
 widget_type = "kdeconnect:phone"
 
 [[bar.main.end]]
@@ -212,6 +215,7 @@ resume_command = ""
 enabled = [
     "tailscale",
     "kdeconnect",
+    "homeassistant",
 ]
 auto_update = "official"
 
@@ -226,6 +230,15 @@ name = "dev"
 kind = "dev"
 location = "/home/profidev/Coding/hyprland/corona-plugins"
 enabled = false
+
+[plugins.approved.homeassistant]
+source = "official"
+capabilities = """
+corona = ["secrets"]
+
+[network]
+hosts = ["${setting:url}"]
+"""
 
 [plugins.approved.kdeconnect]
 source = "official"
@@ -259,6 +272,13 @@ unix = ["/run/tailscale/tailscaled.sock"]
 [process]
 env = ["PATH"]
 """
+
+[plugin_settings.homeassistant]
+url = "https://ha.profidev.io"
+entities = [
+    "button.wake_on_lan_a8_a1_59_ad_3b_3b",
+    "input_button.benjamin_pc_aus",
+]
 
 [plugin_settings.kdeconnect]
 recordings = "/home/profidev/Videos"
