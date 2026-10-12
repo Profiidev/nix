@@ -6,6 +6,7 @@
     nautilus
     kdePackages.qttools
     ddcutil
+    wireguard-tools
   ];
 
   imports = [
