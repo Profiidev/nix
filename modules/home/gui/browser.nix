@@ -53,6 +53,9 @@ let
 
     "application/vnd.jgraph.mxfile" = [ "drawio.desktop" ];
     "application/vnd.jgraph.mxfile.realtime" = [ "drawio.desktop" ];
+
+    "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+    "application/x-code-workspace" = [ "dev.zed.Zed.desktop" ];
   };
 in
 {
