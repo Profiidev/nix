@@ -11,25 +11,8 @@
   ];
 
   home.packages = with pkgs; [
-    adw-gtk3
-    nwg-look
-    glib
     sshfs
   ];
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = lib.mkForce "adw-gtk3";
-      package = lib.mkForce pkgs.adw-gtk3;
-    };
-    gtk4.theme = null;
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-  };
 
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
@@ -43,7 +26,7 @@
     };
   };
 
-  services.hyprpolkitagent.enable = lib.mkForce false;
+  services.hyprpolkitagent.enable = true;
   services.kdeconnect.enable = true;
 
   wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/corona.lua;
@@ -51,12 +34,15 @@
   programs.corona = {
     enable = true;
 
+    toolkits.enable = true;
+
     settings =
       lib.recursiveUpdate (fromTOML (builtins.readFile ../../../assets/shells/corona-settings.toml))
         {
           shell = {
             avatar = ../../../assets/images/profidev.jpeg;
           };
+          theme.sync_toolkits = true;
         };
   };
 

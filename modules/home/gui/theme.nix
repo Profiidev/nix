@@ -8,11 +8,6 @@
   gtk = {
     enable = true;
 
-    theme = {
-      package = pkgs.colloid-gtk-theme;
-      name = "Colloid-Dark";
-    };
-
     iconTheme = {
       package = pkgs.kora-icon-theme;
       name = "kora";
