@@ -18,6 +18,7 @@
       wl-clipboard
       claude-desktop
       lmstudio
+      disktree
     ];
 
   programs.localsend = {
