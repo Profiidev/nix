@@ -18,6 +18,7 @@ shadow = true
 popup_borders = true
 card_borders = true
 screen_corners = true
+sync_toolkits = true
 
 [wallpaper]
 path = "https://profidev.io/api/services/apod/random"
@@ -274,11 +275,11 @@ env = ["PATH"]
 """
 
 [plugin_settings.homeassistant]
-url = "https://ha.profidev.io"
 entities = [
     "button.wake_on_lan_a8_a1_59_ad_3b_3b",
     "input_button.benjamin_pc_aus",
 ]
+url = "https://ha.profidev.io"
 
 [plugin_settings.kdeconnect]
 recordings = "/home/profidev/Videos"
