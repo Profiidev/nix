@@ -22,6 +22,10 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  # FHS sandboxes (lunar-client, appimages) hide /etc/egl, so NVIDIA EGL
+  # loses its wayland/x11 platforms and falls back to llvmpipe
+  environment.sessionVariables.__EGL_EXTERNAL_PLATFORM_CONFIG_DIRS = "/run/opengl-driver/share/egl/egl_external_platform.d";
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;

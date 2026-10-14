@@ -9,5 +9,6 @@
     proton-launcher
     prismlauncher
     basalt-launcher
+    lunar-client
   ];
 }
