@@ -100,6 +100,10 @@ in
     serviceConfig = {
       Type = "simple";
       ExecStartPost = chainOtherKeyrings;
+      # gnome-keyring 50.0 can abort on OpenSession; without a restart D-Bus
+      # activates a password-less daemon and the login keyring stays locked
+      Restart = "on-failure";
+      RestartSec = 1;
     };
     path = [
       pkgs.gnome-keyring
