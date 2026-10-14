@@ -52,6 +52,4 @@ in
       highDpiFix
     ];
   };
-
-  services.hyprpolkitagent.enable = true;
 }
