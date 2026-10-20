@@ -33,6 +33,7 @@ in
       espflash
       stackit-cli
       awscli2
+      google-cloud-sdk
       pre-commit
       nodejs_26
       bun
