@@ -64,6 +64,9 @@
       pipestatus = true
       symbol = "🔴"
 
+      [gcloud]
+      disabled = true
+
       [aws]
       symbol = " "
 

@@ -49,7 +49,6 @@ in
           espup
           probe-rs-tools
           kdePackages.qtdeclarative
-          strix
         ])
       else
         [ ]
