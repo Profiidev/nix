@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   modulesPath,
   config,
   ...
@@ -38,6 +39,15 @@
     "resume_offset=533760"
   ];
   hardware.cpu.intel.updateMicrocode = true;
+
+  # MSI's BIOS bootloader rejects Intel's generic ish_ptl.bin, so ship MSI's ISH firmware
+  # under the vendor-specific name (standard CRC32 of sys_vendor) the kernel tries first.
+  # Without it there are no ISH sensors and no tablet mode.
+  hardware.firmware = lib.optional (builtins.pathExists ./ish_msi.bin) (
+    pkgs.runCommand "msi-ish-fw" { } ''
+      install -Dm444 ${./ish_msi.bin} $out/lib/firmware/intel/ish/ish_ptl_fb1c3c07.bin
+    ''
+  );
   boot.lanzaboote.measuredBoot.enable = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
