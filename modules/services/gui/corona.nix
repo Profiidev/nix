@@ -36,6 +36,11 @@
   services.upower.enable = true;
   services.gnome.evolution-data-server.enable = true;
 
+  services.printing.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns4 = true;
+  hardware.sane.enable = true;
+
   programs.nautilus-open-any-terminal = {
     enable = true;
     terminal = "alacritty";
