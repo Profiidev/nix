@@ -14,7 +14,7 @@ in
       cargo-expand
       cargo-generate
       cargo-nextest
-      cargo-llvm-cov
+      (cargo-llvm-cov.overrideAttrs { doCheck = false; }) # upstream tests fail on 0.9.0
       cargo-tauri
       tauri-driver
       cargo-watch
