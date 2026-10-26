@@ -49,11 +49,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792863504,
-        "narHash": "sha256-C0cOvvhXXeJsACSio1iMOZqonfTtmNKzQqhK/+EEJgM=",
+        "lastModified": 1793045046,
+        "narHash": "sha256-6FkHKT8ISYCh3Gkw8+YG3hpperMaeKuXHZPUHPormYc=",
         "owner": "profiidev",
         "repo": "corona",
-        "rev": "59c46fe5f8610bc41627fa0dcd8d5112d8ddb3b2",
+        "rev": "865db535d8dea4fee5a96ad093a20689939eba13",
         "type": "github"
       },
       "original": {
@@ -96,11 +96,11 @@
         "vicinae-extensions": "vicinae-extensions"
       },
       "locked": {
-        "lastModified": 1792999603,
-        "narHash": "sha256-xCd2AOcG3ifK6qsg+8Tc5l+yf1t8BtAb3ULdZgVbIQE=",
+        "lastModified": 1793047254,
+        "narHash": "sha256-QK1pHKQY+Q0O5V989jBfb3Gp35yd4kzGHmDtQAP4+cU=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "689e26928f8a73fdb14089ea29c8c8d86d292ca2",
+        "rev": "a6dee63cb802791211bcf74c733bf897c3d358a1",
         "type": "github"
       },
       "original": {
