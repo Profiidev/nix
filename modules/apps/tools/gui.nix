@@ -17,7 +17,6 @@
     ++ lib.optionals isLinux [
       wl-clipboard
       claude-desktop
-      lmstudio
       disktree
     ];
 
