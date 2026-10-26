@@ -45,7 +45,7 @@ in
     nurl
     nixd
     nixfmt
-    mcp-nixos
+#    mcp-nixos
     nix-init
   ];
 
