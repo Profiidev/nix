@@ -32,6 +32,5 @@ in
     minikube
     kind
     tilt
-    vagrant
   ];
 }
