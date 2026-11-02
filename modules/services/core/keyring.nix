@@ -93,8 +93,10 @@ in
   systemd.user.services.gnome-keyring-autounlock = {
     description = "GNOME Keyring, unlocked from sops";
 
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
+    # default.target: user manager starts on any login (ssh too, via pam_systemd),
+    # graphical-session.target is never reached there. No partOf - leaving the
+    # desktop must not lock the keyring under a still-open ssh session.
+    wantedBy = [ "default.target" ];
     before = [ "graphical-session.target" ];
 
     serviceConfig = {
