@@ -1,14 +1,12 @@
 -- Application Launchers
 hl.bind("ALT + space", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind("SUPER + space", hl.dsp.exec_cmd("vicinae toggle"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae deeplink vicinae://launch/clipboard/history"))
 hl.bind("SUPER + T", hl.dsp.exec_cmd("alacritty"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave"))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("ALT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen(1))
 hl.bind("SUPER + I", hl.dsp.layout("togglesplit"))
-hl.bind("SUPER + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Move Focus
 hl.bind("ALT + H", hl.dsp.focus({ direction = "left" }))
