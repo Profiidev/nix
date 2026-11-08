@@ -145,16 +145,16 @@ offset = 40.0
 background_opacity = 1.0
 
 [osd.kinds]
-volume = true
-brightness = true
-wifi = true
 bluetooth = true
+brightness = true
 dnd = true
-power_profile = true
-privacy = true
 keyboard_layout = true
 lock_keys = true
+power_profile = true
+privacy = true
 stay_awake = true
+volume = true
+wifi = true
 
 [lockscreen]
 lock_before_suspend = true
@@ -222,7 +222,7 @@ excludes = [
     ".git",
     ".cache",
 ]
-hidden = false
+hidden = true
 respect_ignore = true
 
 [launcher.clipboard]
@@ -280,6 +280,15 @@ quick_actions = [
     "dark_mode",
     "stay_awake",
     "airplane",
+]
+sliders = [
+    "output",
+    "input",
+    "brightness",
+]
+cards = [
+    "media",
+    "clock",
 ]
 
 [weather]
@@ -366,7 +375,7 @@ session = ["org.kde.kdeconnect"]
 execute = ["adb", "scrcpy"]
 
 [process]
-env = ["PATH", "HOME", "XDG_RUNTIME_DIR", "WAYLAND_DISPLAY", "DISPLAY"]
+env = ["PATH", "XDG_RUNTIME_DIR", "WAYLAND_DISPLAY", "DISPLAY"]
 """
 
 [plugins.approved.tailscale]
@@ -388,14 +397,17 @@ env = ["PATH"]
 """
 
 [plugin_settings.homeassistant]
-url = "https://ha.profidev.io"
 entities = [
     "button.wake_on_lan_a8_a1_59_ad_3b_3b",
     "input_button.benjamin_pc_aus",
 ]
+url = "https://ha.profidev.io"
 
 [plugin_settings.kdeconnect]
 recordings = "/home/profidev/Videos"
 
 [plugin_settings.tailscale]
 downloads = "/home/profidev/Downloads"
+
+[plugin_secret_files.homeassistant]
+token = "/home/profidev/.config/sops-nix/secrets/ha_token"
