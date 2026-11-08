@@ -9,5 +9,6 @@
     system.kernel
     system.locale
     system.sops
+    system.v4l2loopback
   ];
 }
