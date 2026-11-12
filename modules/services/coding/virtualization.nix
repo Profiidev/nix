@@ -38,6 +38,9 @@
     };
   };
 
+  # device-bound: started by vboxnet0 device appearing; restart on switch races interface removal
+  systemd.services.network-addresses-vboxnet0.restartIfChanged = false;
+
   virtualisation.waydroid.enable = true;
 
   boot.binfmt.emulatedSystems = [
