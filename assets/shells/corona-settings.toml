@@ -55,6 +55,7 @@ blacklist = [
     "spotify",
     "vicinae",
     "udiskie",
+    "gpu-screen-recorder",
 ]
 
 [[bar.main.end]]
@@ -339,6 +340,7 @@ enabled = [
     "tailscale",
     "kdeconnect",
     "homeassistant",
+    "zed-recents",
 ]
 auto_update = "official"
 
@@ -396,6 +398,18 @@ unix = ["/run/tailscale/tailscaled.sock"]
 env = ["PATH"]
 """
 
+[plugins.approved.zed-recents]
+source = "official"
+capabilities = """
+corona = ["launcher", "desktop"]
+
+[fs]
+execute = ["sh", "sqlite3", "zed", "zeditor", "zedit"]
+
+[process]
+env = ["PATH", "HOME"]
+"""
+
 [plugin_settings.homeassistant]
 entities = [
     "button.wake_on_lan_a8_a1_59_ad_3b_3b",
@@ -408,6 +422,9 @@ recordings = "/home/profidev/Videos"
 
 [plugin_settings.tailscale]
 downloads = "/home/profidev/Downloads"
+
+[plugin_settings.zed-recents]
+window = "new"
 
 [plugin_secret_files.homeassistant]
 token = "/home/profidev/.config/sops-nix/secrets/ha_token"
