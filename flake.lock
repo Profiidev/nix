@@ -1,5 +1,30 @@
 {
   "nodes": {
+    "aurora": {
+      "inputs": {
+        "flake-utils": [
+          "custom-nixpkgs",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "custom-nixpkgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794810782,
+        "narHash": "sha256-M78TjGsNdSRnHAYo40YZPNK2616wCxiKt4e0iPx2Nm8=",
+        "owner": "profiidev",
+        "repo": "aurora",
+        "rev": "cabb32393448782dc1c4eb9337397fb18dc346b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "profiidev",
+        "repo": "aurora",
+        "type": "github"
+      }
+    },
     "corona": {
       "inputs": {
         "flake-utils": [
@@ -12,11 +37,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794600221,
-        "narHash": "sha256-P2uqkFm07z0WrBITj1/i/ZDAptw2cKIHjGcszIZURMs=",
+        "lastModified": 1794826705,
+        "narHash": "sha256-0MHyW4xBOUSA+y5PLohh3Nn9Th90dGDAfi1Upj3mmBo=",
         "owner": "profiidev",
         "repo": "corona",
-        "rev": "71e2292b346e8bfed5fe5cf14ccb0e94d611febc",
+        "rev": "2a45d56ebbb2d2f890661410e75ef6311daf7be2",
         "type": "github"
       },
       "original": {
@@ -42,6 +67,7 @@
     },
     "custom-nixpkgs": {
       "inputs": {
+        "aurora": "aurora",
         "corona": "corona",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
@@ -51,17 +77,14 @@
         "nixpkgs": "nixpkgs",
         "positron": "positron",
         "proton": "proton",
-        "soulver-cpp": "soulver-cpp",
-        "systems": "systems",
-        "vicinae": "vicinae",
-        "vicinae-extensions": "vicinae-extensions"
+        "systems": "systems"
       },
       "locked": {
-        "lastModified": 1794825210,
-        "narHash": "sha256-z1djZ0oII1BdI2x+I1YjtHYy9TEd1NTo1gPPGihK8RE=",
+        "lastModified": 1794829740,
+        "narHash": "sha256-BA5afJe+SrTr3MmnSfzX3mqLDDEb9BlDspRMEJn8SIA=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "c78af258894013db06367491905adf4e534757cf",
+        "rev": "3cb7b293b1872e72bb43bbb6e214b8105b777e99",
         "type": "github"
       },
       "original": {
@@ -531,22 +554,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-libxml2": {
-      "locked": {
-        "lastModified": 1751274312,
-        "narHash": "sha256-/bVBlRpECLVzjV19t5KMdMFWSwKLtb5RyXdjz3LJT+g=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "50ab793786d9de88ee30ec4e4c24fb4236fc2674",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1794537146,
@@ -592,29 +599,6 @@
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "numen": {
-      "inputs": {
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "vicinae",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1792431476,
-        "narHash": "sha256-FqHMNjKMhlsIYZ1ekr58gZT29p/9WO3rQGz/Dcu7ez0=",
-        "owner": "vicinaehq",
-        "repo": "numen",
-        "rev": "556a73081d42f663a0a39d98b9aef945a9a7e52b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vicinaehq",
-        "ref": "v0.8.1",
-        "repo": "numen",
         "type": "github"
       }
     },
@@ -750,28 +734,6 @@
         "type": "github"
       }
     },
-    "soulver-cpp": {
-      "inputs": {
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "nixpkgs"
-        ],
-        "nixpkgs-libxml2": "nixpkgs-libxml2"
-      },
-      "locked": {
-        "lastModified": 1783621734,
-        "narHash": "sha256-YBFO+aurlz2y2hTRN1Kl0RjX6JzHn0mYBmt4zb436Yg=",
-        "owner": "vicinaehq",
-        "repo": "soulver-cpp",
-        "rev": "00e926e2bd03118638c88981f6a67bfa107210c2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vicinaehq",
-        "repo": "soulver-cpp",
-        "type": "github"
-      }
-    },
     "systems": {
       "locked": {
         "lastModified": 1791244623,
@@ -835,69 +797,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "vicinae": {
-      "inputs": {
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "nixpkgs"
-        ],
-        "numen": "numen",
-        "soulver-cpp": [
-          "custom-nixpkgs",
-          "soulver-cpp"
-        ],
-        "systems": [
-          "custom-nixpkgs",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794776304,
-        "narHash": "sha256-6dPa7KCpssLJIDUW1Q/92g8eIIKu/tdgzn7PXDrzCzc=",
-        "owner": "vicinaehq",
-        "repo": "vicinae",
-        "rev": "23fec1e1da14c422fba01db5c286589b6e946d06",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vicinaehq",
-        "repo": "vicinae",
-        "type": "github"
-      }
-    },
-    "vicinae-extensions": {
-      "inputs": {
-        "flake-compat": [
-          "custom-nixpkgs",
-          "flake-compat"
-        ],
-        "nixpkgs": [
-          "custom-nixpkgs",
-          "nixpkgs"
-        ],
-        "systems": [
-          "custom-nixpkgs",
-          "systems"
-        ],
-        "vicinae": [
-          "custom-nixpkgs",
-          "vicinae"
-        ]
-      },
-      "locked": {
-        "lastModified": 1793810868,
-        "narHash": "sha256-UR269g8GwB5jywGcxqViVscjl8gtvRO9XjtCoGnUbSs=",
-        "owner": "vicinaehq",
-        "repo": "extensions",
-        "rev": "181904331f5289b53ee3443f98cfa5441d399f35",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vicinaehq",
-        "repo": "extensions",
         "type": "github"
       }
     }
