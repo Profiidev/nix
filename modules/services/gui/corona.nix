@@ -7,6 +7,7 @@
     kdePackages.qttools
     ddcutil
     wireguard-tools
+    sqlite
   ];
 
   imports = [
