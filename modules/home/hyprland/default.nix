@@ -24,6 +24,7 @@ let
 in
 {
   imports = [
+    ./aurora.nix
     ./corona.nix
     ./positron.nix
   ];

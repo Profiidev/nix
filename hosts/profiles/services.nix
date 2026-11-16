@@ -18,6 +18,7 @@
     services.media.printing
 
     services.gui.display-manager
+    services.gui.aurora
     services.gui.corona
     services.gui.corona-greeter
 
