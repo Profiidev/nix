@@ -9,7 +9,6 @@
     apps.tools.gui
     apps.tools.media
     apps.tools.office
-    apps.tools.proton
     apps.tools.terminal
 
     apps.gaming.steam

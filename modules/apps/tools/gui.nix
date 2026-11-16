@@ -19,9 +19,4 @@
       claude-desktop
       disktree
     ];
-
-  programs.localsend = {
-    enable = true;
-    openFirewall = true;
-  };
 }
