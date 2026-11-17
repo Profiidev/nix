@@ -1,0 +1,7 @@
+# Umbriel counterpart of assets/hyprland/positron.lua
+
+[keybinds]
+"Super+N" = { action = "spawn positron ipc toggle", repeat = false }
+
+[animation.layers]
+enabled = false

@@ -1,0 +1,53 @@
+# Umbriel counterpart of assets/hyprland/corona.lua
+
+[keybinds]
+"Alt+Space" = { action = "spawn corona ipc launcher toggle", repeat = false }
+"Super+Space" = { action = "spawn corona ipc launcher toggle", repeat = false }
+"Super+V" = { action = "spawn corona ipc launcher open --command clipboard:history", repeat = false }
+"Super+Shift+S" = { action = "spawn corona ipc capture screenshot", repeat = false }
+"Super+C" = { action = "spawn corona ipc capture color-picker", repeat = false }
+"Super+L" = { action = "spawn corona ipc session lock", repeat = false }
+
+"Super+Tab" = { action = "spawn corona ipc window switcher", repeat = false }
+"Super+Shift+Tab" = { action = "spawn corona ipc window switcher --mode workspace --current-monitor", repeat = false }
+
+# Repeatable, work when locked
+"XF86AudioRaiseVolume" = { action = "spawn corona ipc audio volume up", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn corona ipc audio volume down", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn corona ipc brightness up", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn corona ipc brightness down", allow_when_locked = true }
+
+# Work when locked
+"XF86AudioMute" = { action = "spawn corona ipc audio volume mute", allow_when_locked = true, repeat = false }
+"XF86AudioMicMute" = { action = "spawn corona ipc audio mic mute", allow_when_locked = true, repeat = false }
+"XF86AudioNext" = { action = "spawn corona ipc media next", allow_when_locked = true, repeat = false }
+"XF86AudioPrev" = { action = "spawn corona ipc media previous", allow_when_locked = true, repeat = false }
+"XF86AudioPlay" = { action = "spawn corona ipc media toggle", allow_when_locked = true, repeat = false }
+"XF86AudioPause" = { action = "spawn corona ipc media pause", allow_when_locked = true, repeat = false }
+"XF86AudioStop" = { action = "spawn corona ipc media pause", allow_when_locked = true, repeat = false }
+"XF86BrightnessMax" = { action = "spawn corona ipc brightness set 100", allow_when_locked = true, repeat = false }
+"XF86BrightnessMin" = { action = "spawn corona ipc brightness set 1", allow_when_locked = true, repeat = false }
+"XF86Sleep" = { action = "spawn corona ipc session lock-and-suspend", allow_when_locked = true, repeat = false }
+"XF86Suspend" = { action = "spawn corona ipc session lock-and-suspend", allow_when_locked = true, repeat = false }
+
+# Unlocked
+"XF86WLAN" = { action = "spawn corona ipc network wifi toggle", repeat = false }
+"XF86Bluetooth" = { action = "spawn corona ipc bluetooth power toggle", repeat = false }
+"XF86Battery" = { action = "spawn corona ipc power-profile cycle", repeat = false }
+"XF86DoNotDisturb" = { action = "spawn corona ipc notification dnd toggle", repeat = false }
+"XF86ScreenSaver" = { action = "spawn corona ipc session lock", repeat = false }
+"XF86LogOff" = { action = "spawn corona ipc session logout", repeat = false }
+"XF86SelectiveScreenshot" = { action = "spawn corona ipc capture screenshot selection", repeat = false }
+"XF86ControlPanel" = { action = "spawn corona ipc settings toggle", repeat = false }
+
+# Caps/Num/Scroll_Lock OSD binds are left out: Umbriel binds always consume
+# the key, so binding them would break the lock keys themselves.
+
+[appearance.blur]
+enabled = true
+radius = 3
+passes = 2
+
+# Hyprland used no_anim per corona_* namespace; Umbriel only has a global switch.
+[animation.layers]
+enabled = false

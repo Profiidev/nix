@@ -1,0 +1,28 @@
+# Umbriel counterpart of assets/hyprland/layers.lua
+# https://docs.noctalia.dev/umbriel/window-rules/
+
+[[window_rule]]
+match.app_id = "^org\\.gnome\\."
+corner_radius = 12
+border_width = 0
+
+[[window_rule]]
+match.app_id = [
+  "^org\\.wezfurlong\\.wezterm$",
+  "^Alacritty$",
+  "^zen$",
+  "^com\\.mitchellh\\.ghostty$",
+  "^kitty$",
+]
+border_width = 0
+
+[[window_rule]]
+match.app_id = ["^gnome-calculator$", "^blueman-manager$", "^org\\.quickshell$"]
+default_floating = true
+
+# Unreal Engine Editor popups
+[[window_rule]]
+match.app_id = "^UnrealEditor$"
+match.title = "^\\w*$"
+default_focused = false
+focus_on_activate = false

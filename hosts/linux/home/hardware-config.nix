@@ -57,6 +57,7 @@
   };
 
   hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
+  hostSpec.umbrielMonitorConfig = builtins.readFile ./monitors.toml;
 
   services.corona-greeter = {
     settings.monitor = "DP-1";

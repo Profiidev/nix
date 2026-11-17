@@ -1,0 +1,9 @@
+[output.eDP-1]
+mode = "1920x1200@60"
+position = [0, 0]
+scale = 1.2
+workspace_axis = "horizontal"
+
+[events]
+lid_close = "umbriel-lid-close"
+lid_open = "umbriel msg output-enable eDP-1"

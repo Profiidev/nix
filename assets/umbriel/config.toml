@@ -1,0 +1,39 @@
+# Umbriel counterpart of assets/hyprland/config.lua
+# https://docs.noctalia.dev/umbriel/configuration/
+
+[environment]
+QT_QPA_PLATFORM = "wayland"
+ELECTRON_OZONE_PLATFORM_HINT = "auto"
+QT_QPA_PLATFORMTHEME = "gtk3"
+QT_QPA_PLATFORMTHEME_QT6 = "gtk3"
+
+[general]
+show_cheatsheet = false
+
+# Hyprland-style global workspaces 1-10: persistent names on every output.
+[[workspace]]
+name = "1"
+[[workspace]]
+name = "2"
+[[workspace]]
+name = "3"
+[[workspace]]
+name = "4"
+[[workspace]]
+name = "5"
+[[workspace]]
+name = "6"
+[[workspace]]
+name = "7"
+[[workspace]]
+name = "8"
+[[workspace]]
+name = "9"
+[[workspace]]
+name = "10"
+
+# Replaces the Hyprland special workspaces magic-e / magic-d.
+[[scratchpad]]
+name = "magic-e"
+[[scratchpad]]
+name = "magic-d"

@@ -80,6 +80,11 @@ in
       default = "";
       description = "Hyprland monitor configuration";
     };
+    umbrielMonitorConfig = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "Umbriel output configuration (TOML)";
+    };
     hyprlandHiDpiFix = lib.mkOption {
       type = lib.types.bool;
       default = false;

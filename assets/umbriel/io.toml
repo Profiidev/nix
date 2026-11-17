@@ -1,0 +1,18 @@
+# Umbriel counterpart of assets/hyprland/io.lua
+# https://docs.noctalia.dev/umbriel/input/
+
+[input.keyboard]
+layout = "de"
+numlock_toggle = true
+
+[input.mouse]
+accel_profile = "flat"
+sensitivity = 0.4
+
+[input.touchpad]
+accel_profile = "flat"
+sensitivity = 0.4
+natural_scroll = true
+tap = true
+disable_while_typing = true
+click_method = "clickfinger"

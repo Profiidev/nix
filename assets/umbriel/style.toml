@@ -1,0 +1,17 @@
+# Umbriel counterpart of assets/hyprland/style.lua
+# https://docs.noctalia.dev/umbriel/appearance/
+
+[layout]
+mode = "dwindle"
+gap = 5
+
+[appearance]
+border_width = 0
+corner_radius = 20
+
+[appearance.shadow]
+enabled = false
+
+[colors.border]
+focused = "#707070FF"
+unfocused = "#D0D0D0FF"

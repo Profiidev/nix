@@ -61,6 +61,19 @@
 
   hostSpec.hyprlandMonitorConfig = builtins.readFile ./monitors.lua;
 
+  hostSpec.umbrielMonitorConfig = builtins.readFile ./monitors.toml;
+
+  # Clamshell mode for Umbriel (called from [events] in monitors.toml): turn off
+  # the internal panel on lid close only while another output is enabled.
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "umbriel-lid-close" ''
+      if umbriel outputs --json \
+        | ${pkgs.jq}/bin/jq -e '(.ok.outputs? // .outputs) | any(.name != "eDP-1" and .enabled)' >/dev/null; then
+        umbriel msg output-disable eDP-1
+      fi
+    '')
+  ];
+
   hostSpec.hyprlandHiDpiFix = true;
 
   services.corona-greeter.settings.monitor = "eDP-1";

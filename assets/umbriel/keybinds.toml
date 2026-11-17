@@ -1,0 +1,69 @@
+# Umbriel counterpart of assets/hyprland/keybinds.lua
+# https://docs.noctalia.dev/umbriel/keybinds/
+# Mod+left-drag moves and Mod+right-drag resizes windows by default.
+
+[general]
+mod_key = "Super"
+
+[keybinds]
+# Application launchers
+"Super+T" = { action = "spawn alacritty", repeat = false }
+"Super+B" = { action = "spawn brave", repeat = false }
+"Super+Q" = { action = "window-close", repeat = false }
+"Alt+F" = { action = "window-toggle-floating", repeat = false }
+"Super+F" = { action = "window-toggle-maximize", repeat = false }
+"Super+I" = { action = "layout-toggle-split", repeat = false }
+
+# Move focus
+"Alt+H" = "window-focus-left"
+"Alt+J" = "window-focus-down"
+"Alt+K" = "window-focus-up"
+"Alt+L" = "window-focus-right"
+"Alt+Left" = "window-focus-left"
+"Alt+Down" = "window-focus-down"
+"Alt+Up" = "window-focus-up"
+"Alt+Right" = "window-focus-right"
+
+# Move window
+"Super+Shift+H" = "window-move-left"
+"Super+Shift+J" = "window-move-down"
+"Super+Shift+K" = "window-move-up"
+"Super+Shift+L" = "window-move-right"
+"Super+Shift+Left" = "window-move-left"
+"Super+Shift+Down" = "window-move-down"
+"Super+Shift+Up" = "window-move-up"
+"Super+Shift+Right" = "window-move-right"
+
+# Switch workspace
+"Super+1" = "workspace-switch --name 1"
+"Super+2" = "workspace-switch --name 2"
+"Super+3" = "workspace-switch --name 3"
+"Super+4" = "workspace-switch --name 4"
+"Super+5" = "workspace-switch --name 5"
+"Super+6" = "workspace-switch --name 6"
+"Super+7" = "workspace-switch --name 7"
+"Super+8" = "workspace-switch --name 8"
+"Super+9" = "workspace-switch --name 9"
+"Super+0" = "workspace-switch --name 10"
+
+# Move active window to workspace
+"Super+Shift+1" = "window-move-to-workspace --name 1"
+"Super+Shift+2" = "window-move-to-workspace --name 2"
+"Super+Shift+3" = "window-move-to-workspace --name 3"
+"Super+Shift+4" = "window-move-to-workspace --name 4"
+"Super+Shift+5" = "window-move-to-workspace --name 5"
+"Super+Shift+6" = "window-move-to-workspace --name 6"
+"Super+Shift+7" = "window-move-to-workspace --name 7"
+"Super+Shift+8" = "window-move-to-workspace --name 8"
+"Super+Shift+9" = "window-move-to-workspace --name 9"
+"Super+Shift+0" = "window-move-to-workspace --name 10"
+
+# Scroll through workspaces
+"Super+WheelDown" = { action = "workspace-next", cooldown_ms = 150 }
+"Super+WheelUp" = { action = "workspace-previous", cooldown_ms = 150 }
+
+# Scratchpads (Hyprland special workspaces)
+"Super+E" = { action = "scratchpad-toggle magic-e", repeat = false }
+"Super+Shift+E" = { action = "window-move-to-scratchpad magic-e", repeat = false }
+"Super+D" = { action = "scratchpad-toggle magic-d", repeat = false }
+"Super+Shift+D" = { action = "window-move-to-scratchpad magic-d", repeat = false }
