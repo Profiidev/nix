@@ -10,10 +10,6 @@
     sqlite
   ];
 
-  imports = [
-    ./hyprland.nix
-  ];
-
   environment.pathsToLink = [ "/share/corona" ];
 
   hardware.i2c.enable = true;

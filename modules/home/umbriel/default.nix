@@ -12,8 +12,7 @@ in
 {
   imports = [
     inputs.custom-nixpkgs.umbriel.homeModules.default
-    ./corona.nix
-    ./positron.nix
+    ../desktop
   ];
 
   # settings is a TOML-typed option, so tables from every module merge and rule lists concatenate.
@@ -28,6 +27,8 @@ in
         ../../../assets/umbriel/keybinds.toml
         ../../../assets/umbriel/rules.toml
         ../../../assets/umbriel/style.toml
+        ../../../assets/umbriel/corona.toml
+        ../../../assets/umbriel/positron.toml
       ]
       ++ [
         (fromTOML hostSpec.umbrielMonitorConfig)

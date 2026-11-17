@@ -29,8 +29,6 @@
 
   services.kdeconnect.enable = true;
 
-  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/corona.lua;
-
   programs.corona = {
     enable = true;
 

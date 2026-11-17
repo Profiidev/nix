@@ -11,6 +11,8 @@ let
   keybinds = builtins.readFile ../../../assets/hyprland/keybinds.lua;
   layers = builtins.readFile ../../../assets/hyprland/layers.lua;
   style = builtins.readFile ../../../assets/hyprland/style.lua;
+  corona = builtins.readFile ../../../assets/hyprland/corona.lua;
+  positron = builtins.readFile ../../../assets/hyprland/positron.lua;
 
   highDpiFix = (
     lib.optionalString hostSpec.hyprlandHiDpiFix ''
@@ -24,14 +26,11 @@ let
 in
 {
   imports = [
-    ./aurora.nix
-    ./corona.nix
-    ./positron.nix
+    ../desktop
   ];
 
   home.packages = with pkgs; [
     hyprpicker
-    wtype
   ];
 
   wayland.windowManager.hyprland = {
@@ -48,6 +47,8 @@ in
       keybinds
       layers
       style
+      corona
+      positron
       highDpiFix
     ];
   };

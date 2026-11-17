@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -20,6 +20,4 @@
       RestartSec = 5;
     };
   };
-
-  wayland.windowManager.hyprland.extraConfig = builtins.readFile ../../../assets/hyprland/positron.lua;
 }
