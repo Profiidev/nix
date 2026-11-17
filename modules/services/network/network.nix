@@ -11,6 +11,7 @@
     enable = true;
     plugins = with pkgs; [
       networkmanager-openvpn
+      networkmanager-draytek
     ];
     settings = {
       connectivity = {
