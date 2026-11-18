@@ -81,11 +81,11 @@
         "umbriel": "umbriel"
       },
       "locked": {
-        "lastModified": 1794948485,
-        "narHash": "sha256-qkev2QCFgAWUGTU5pseUNHjIcvSJ8F6vnSsHWMmZ0YI=",
+        "lastModified": 1795021469,
+        "narHash": "sha256-G7iDJ9qsbpOCc9DF8PzKTr1jdZG4dZRspO1Fu471fRQ=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "5d195b92e0d041d74c2c56aecfbc20bc8f3134cc",
+        "rev": "a56f54d840c24e2facc8d2aa931b6668b789b052",
         "type": "github"
       },
       "original": {
