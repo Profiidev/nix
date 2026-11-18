@@ -10,7 +10,7 @@
     home.services.media
 
     home.hyprland.default
-    #home.umbriel.default
+    home.umbriel.default
 
     home.gui.browser
     home.gui.lan-mouse

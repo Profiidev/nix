@@ -22,7 +22,7 @@
     services.gui.corona
     services.gui.corona-greeter
     services.gui.hyprland
-    #services.gui.umbriel
+    services.gui.umbriel
 
     services.coding.docker
   ];
