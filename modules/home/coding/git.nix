@@ -14,6 +14,7 @@
       gh-stack
       gh-classroom
       gh-webhook
+      gh-actions-lock
     ];
   };
 
