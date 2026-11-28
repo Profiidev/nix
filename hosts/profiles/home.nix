@@ -4,6 +4,7 @@
   imports = with self.modules; [
     home.sops
 
+    home.tools.office
     home.tools.terminal
     home.tools.virtualization
 
