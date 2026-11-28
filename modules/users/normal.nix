@@ -3,7 +3,6 @@
   config,
   inputs,
   pkgs,
-  pkgsUnstableNoCuda,
   isLinux,
   self,
   ...
@@ -86,7 +85,6 @@ in
     extraSpecialArgs = {
       inherit
         inputs
-        pkgsUnstableNoCuda
         isLinux
         self
         ;

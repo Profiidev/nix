@@ -1,9 +1,9 @@
-{ pkgsUnstableNoCuda, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   services.jellyfin = {
     enable = true;
-    package = pkgsUnstableNoCuda.jellyfin;
+    package = pkgs.jellyfin;
     openFirewall = true;
   };
 

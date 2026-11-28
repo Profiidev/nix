@@ -87,7 +87,6 @@ in
     // (
       if isLinux then
         {
-          cudaSupport = true;
           cudaCapabilities = [
             "8.9"
             "8.6"

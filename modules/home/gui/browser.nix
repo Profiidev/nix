@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstableNoCuda, ... }:
+{ pkgs, ... }:
 
 let
   browser = [ "brave-browser.desktop" ];
@@ -66,7 +66,7 @@ in
   # Module installing brave as default browser
   home.packages = with pkgs; [
     google-chrome
-    pkgsUnstableNoCuda.firefox
+    firefox
     brave
     chromium
   ];
