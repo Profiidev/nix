@@ -127,6 +127,6 @@ in
           );
         };
       }
-    ) { } hostSpec.users;
+    ) { } (builtins.filter (userSpec: userSpec.username != "root") hostSpec.users);
   };
 }

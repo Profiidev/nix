@@ -83,18 +83,7 @@ in
       allowUnfree = true;
       allowUnfreePredicate = _: true;
       allowInsecurePredicate = p: builtins.elem (lib.getName p) [ "nwjs" ];
-    }
-    // (
-      if isLinux then
-        {
-          cudaCapabilities = [
-            "8.9"
-            "8.6"
-          ]; # RTX 40xx + RTX 30xx
-        }
-      else
-        { }
-    );
+    };
     overlays = [
       inputs.custom-nixpkgs.overlays.default
     ];

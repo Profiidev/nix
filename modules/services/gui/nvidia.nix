@@ -1,5 +1,20 @@
-{ config, pkgs, ... }:
 {
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
+{
+  nixpkgs = {
+    config.cudaCapabilities = [
+      "8.9"
+      "8.6"
+    ]; # RTX 40xx + RTX 30xx
+    overlays = [
+      inputs.custom-nixpkgs.overlays.cuda
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     cudatoolkit
     libnvidia-container

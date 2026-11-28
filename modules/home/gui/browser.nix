@@ -66,7 +66,7 @@ in
   # Module installing brave as default browser
   home.packages = with pkgs; [
     google-chrome
-    firefox
+    firefox-bin
     brave
     chromium
   ];

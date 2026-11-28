@@ -15,6 +15,7 @@
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.lanzaboote = {
     enable = true;
+    package = pkgs.lzbt;
     pkiBundle = "/var/lib/sbctl";
     autoGenerateKeys.enable = true;
     autoEnrollKeys = {

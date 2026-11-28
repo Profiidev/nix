@@ -16,14 +16,11 @@
   };
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
     custom-nixpkgs.url = "github:ProfiiDev/custom-nixpkgs";
 
-    nix-gaming.url = "github:fufexan/nix-gaming";
+    nixpkgs-unstable.follows = "custom-nixpkgs/nixpkgs";
+
     nix-secrets.url = "git+ssh://git@github.com/ProfiiDev/nix-secrets.git?ref=main&shallow=1";
-    flake-utils.url = "github:numtide/flake-utils";
-    flake-parts.url = "github:hercules-ci/flake-parts";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -38,13 +35,6 @@
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    nix-citizen = {
-      url = "github:LovingMelody/nix-citizen?rev=cb5c54868dfca5377f0fea5c983aef833acdd4b5";
-      inputs = {
-        nix-gaming.follows = "nix-gaming";
-      };
     };
 
     nix-darwin = {
