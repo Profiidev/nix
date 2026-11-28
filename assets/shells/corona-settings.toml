@@ -96,9 +96,6 @@ widget_type = "resource"
 stat = "disk"
 
 [[bar.main.end]]
-widget_type = "homeassistant:home"
-
-[[bar.main.end]]
 widget_type = "kdeconnect:phone"
 
 [[bar.main.end]]
@@ -163,6 +160,14 @@ monitor = "DP-1"
 
 [screenshot]
 filename_pattern = "screenshot-%Y-%m-%d-%H%M%S-%3f.png"
+live = false
+
+[color_picker]
+live = false
+
+[ruler]
+tolerance = 30
+live = false
 
 [window_switcher]
 current_monitor_only = false
@@ -234,6 +239,8 @@ image_retention_days = 30
 [launcher.translate]
 target = "EN"
 
+[launcher.qr]
+
 [taskbar]
 enabled = true
 icon_size = 36.0
@@ -279,7 +286,7 @@ quick_actions = [
     "dnd",
     "dark_mode",
     "stay_awake",
-    "airplane",
+    "homeassistant:switch.benjamin_pc_power",
 ]
 sliders = [
     "output",
@@ -358,7 +365,7 @@ enabled = false
 [plugins.approved.homeassistant]
 source = "official"
 capabilities = """
-corona = ["secrets"]
+corona = ["secrets", "dashboard"]
 
 [network]
 lan_hosts = ["${setting:url}"]
@@ -410,11 +417,12 @@ env = ["PATH", "HOME"]
 """
 
 [plugin_settings.homeassistant]
+url = "https://ha.profidev.io"
 entities = [
     "button.wake_on_lan_a8_a1_59_ad_3b_3b",
     "input_button.benjamin_pc_aus",
+    "switch.benjamin_pc_power",
 ]
-url = "https://ha.profidev.io"
 
 [plugin_settings.kdeconnect]
 recordings = "/home/profidev/Videos"
