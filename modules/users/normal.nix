@@ -81,9 +81,10 @@ in
   );
 
   home-manager = {
+    useGlobalPkgs = true;
+
     extraSpecialArgs = {
       inherit
-        pkgs
         inputs
         pkgsUnstableNoCuda
         isLinux
@@ -91,6 +92,16 @@ in
         ;
       hostSpec = config.hostSpec;
     };
+
+    sharedModules = [
+      {
+        manual = {
+          manpages.enable = false;
+          html.enable = false;
+          json.enable = false;
+        };
+      }
+    ];
 
     backupFileExtension = "bak";
 

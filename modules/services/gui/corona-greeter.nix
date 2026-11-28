@@ -20,6 +20,7 @@
 
   services.corona-greeter = {
     enable = true;
+    package = pkgs.corona;
 
     keyboard.layout = "de";
 

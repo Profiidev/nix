@@ -93,6 +93,7 @@
     if isLinux then
       {
         man.cache.enable = lib.mkForce false;
+        nixos.enable = false;
       }
     else
       { }

@@ -1,13 +1,12 @@
 { inputs, pkgs, ... }:
 
+let
+  customNixpkgs = inputs.custom-nixpkgs.inputs.nixpkgs;
+  noCudaNixpkgs =
+    if customNixpkgs.rev == inputs.nixpkgs-unstable.rev then customNixpkgs else inputs.nixpkgs-unstable;
+in
 {
   _module.args = {
-    pkgsUnstableNoCuda = import inputs.nixpkgs-unstable {
-      inherit (pkgs.stdenv.hostPlatform) system;
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = _: true;
-      };
-    };
+    pkgsUnstableNoCuda = noCudaNixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   };
 }

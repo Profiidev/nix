@@ -81,6 +81,7 @@ if [ "$os" == "Darwin" ]; then
 	fi
 else
 	green "====== REBUILD ======"
+	export GC_INITIAL_HEAP_SIZE="${GC_INITIAL_HEAP_SIZE:-2G}"
 	if command -v nh &>/dev/null; then
 		REPO_PATH=$(pwd)
 		export REPO_PATH

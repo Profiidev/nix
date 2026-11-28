@@ -8,7 +8,7 @@
 
 let
   luksDev = "/dev/disk/by-partlabel/disk-disk0-luks";
-  hostSystem = pkgs.stdenv.hostPlatform.system;
+  hostPkgs = pkgs;
 
   rescue = inputs.nixpkgs-unstable.lib.nixosSystem {
     modules = [
@@ -58,7 +58,7 @@ let
           '';
         in
         {
-          nixpkgs.hostPlatform = hostSystem;
+          nixpkgs.pkgs = hostPkgs;
           system.stateVersion = config.system.stateVersion;
           networking.hostName = "rescue";
 

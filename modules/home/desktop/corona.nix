@@ -31,6 +31,7 @@
 
   programs.corona = {
     enable = true;
+    package = pkgs.corona;
 
     toolkits.enable = true;
 

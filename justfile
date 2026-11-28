@@ -20,15 +20,15 @@ check ARGS="":
 	NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --keep-going --show-trace {{ARGS}}
 	cd nixos-installer && NIXPKGS_ALLOW_UNFREE=1 REPO_PATH=$(pwd) nix flake check --keep-going --show-trace {{ARGS}}
 
-# Rebuild the system
-rebuild HOST="": rebuild-pre && rebuild-post
+# Rebuild the system (fast: skips nix-secrets update and post-checks)
+rebuild HOST="":
+  @git add --intent-to-add .
   # NOTE: Add --option eval-cache false if you end up caching a failure you can't get around
   scripts/rebuild.sh {{HOST}}
 
-# Rebuild the system and run a flake check
-rebuild-full: rebuild-pre && rebuild-post
-  scripts/rebuild.sh
-  just check
+# Full rebuild: update nix-secrets, rebuild, and run post-rebuild checks
+rebuild-full HOST="": rebuild-pre && rebuild-post
+  scripts/rebuild.sh {{HOST}}
 
 # Rebuild the system and run a flake check
 rebuild-trace: rebuild-pre && rebuild-post
