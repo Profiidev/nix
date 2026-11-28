@@ -3,12 +3,16 @@
 let
   browser = [ "brave-browser.desktop" ];
   editor = [ "nvim.desktop" ];
+  zed = [ "dev.zed.Zed.desktop" ];
   media = [ "vlc.desktop" ];
   terminal = [ "alacritty.desktop" ];
 
   associations = {
     "text/*" = editor;
-    "text/plain" = editor;
+    "text/plain" = zed;
+    "text/csv" = zed;
+    "text/markdown" = zed;
+    "text/tab-separated-values" = zed;
     "text/html" = browser;
 
     # "text/html" = browser;
@@ -55,7 +59,7 @@ let
     "application/vnd.jgraph.mxfile.realtime" = [ "drawio.desktop" ];
 
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-    "application/x-code-workspace" = [ "dev.zed.Zed.desktop" ];
+    "application/x-code-workspace" = zed;
   };
 in
 {
