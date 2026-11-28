@@ -37,11 +37,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795871456,
-        "narHash": "sha256-v0dtNnh+xjXkYTlEsCzJzFNeAZu5QWIShiY4Xz271bI=",
+        "lastModified": 1795882946,
+        "narHash": "sha256-7FyJAuPA6wjWae/ccJqBOLzpLXvwiNvZWoxP9IdaX0w=",
         "owner": "profiidev",
         "repo": "corona",
-        "rev": "4e0540a58f5b76dacf33226a1c36734207baa0a6",
+        "rev": "f5ddc79764f987c23ffa7f4212be802aedfb2ea5",
         "type": "github"
       },
       "original": {
@@ -81,11 +81,11 @@
         "umbriel": "umbriel"
       },
       "locked": {
-        "lastModified": 1795877805,
-        "narHash": "sha256-kRDlxfQN2ZcuUMew74OyOmBHajQFM6Er75DAqmwtOvE=",
+        "lastModified": 1795885293,
+        "narHash": "sha256-oyyV4laipo4kOX7nmRF365z3cgof42Zphs93+XjK3eA=",
         "owner": "ProfiiDev",
         "repo": "custom-nixpkgs",
-        "rev": "8d68d54d3a07e4d7c3567a94b53fa24bfe8b77fa",
+        "rev": "ee857d7b3a3a51111a249fc5c4e7c15ae9b6647e",
         "type": "github"
       },
       "original": {
